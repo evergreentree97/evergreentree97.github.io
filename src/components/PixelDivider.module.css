@@ -1,0 +1,18 @@
+.divider {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  align-items: center;
+  gap: 14px;
+  height: 20px;
+  color: var(--border);
+}
+
+.divider span {
+  height: 4px;
+  background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px);
+}
+
+.divider svg {
+  width: 20px;
+  height: 20px;
+}

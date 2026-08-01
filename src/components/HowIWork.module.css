@@ -1,0 +1,122 @@
+.section {
+  padding-top: 128px;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.intro > p {
+  max-width: 36ch;
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+
+.intro > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+}
+
+.intro svg {
+  width: 20px;
+  height: 20px;
+}
+
+.method {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 34px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  list-style: none;
+}
+
+.method li {
+  position: relative;
+  min-width: 0;
+  padding: 28px 24px 30px;
+}
+
+.method li + li {
+  border-left: 1px solid var(--border);
+}
+
+.marker {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 24px;
+  border: 1px solid var(--accent-dark);
+  color: var(--accent-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+}
+
+.method small {
+  color: var(--accent-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+}
+
+.method h3 {
+  margin-top: 8px;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.method p {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 0.91rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .method {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .method li:nth-child(3) {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .method li:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    padding-top: 96px;
+  }
+
+  .intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .method {
+    grid-template-columns: 1fr;
+  }
+
+  .method li + li,
+  .method li:nth-child(4) {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+}
