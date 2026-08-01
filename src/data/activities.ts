@@ -20,6 +20,6 @@ export const activities: Activity[] = [
     organization: 'Duckie',
     role: 'Android Developer',
     summary: '팬덤 퀴즈 앱을 함께 만들며 Play Store 배포와 QA 운영을 경험했습니다.',
-    highlights: ['Compose UI와 Clean Architecture 모듈화', 'Play Store 배포, 코드 리뷰와 Notion QA Board 운영'],
+    highlights: ['Compose UI 개발과 기능별 모듈 분리', 'Play Store 배포, 코드 리뷰와 Notion QA 이슈 관리'],
   },
 ]
