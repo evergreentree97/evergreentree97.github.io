@@ -115,10 +115,20 @@
 
 .sceneFrame picture {
   display: block;
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--text-primary);
   aspect-ratio: 3 / 2;
   background: var(--pixel-green);
+}
+
+.sceneFrame picture::after {
+  position: absolute;
+  inset: 0;
+  background: var(--image-tint);
+  content: '';
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 .sceneFrame img {
@@ -126,6 +136,7 @@
   height: 100%;
   object-fit: cover;
   image-rendering: pixelated;
+  filter: saturate(0.86) hue-rotate(10deg) contrast(1.02);
 }
 
 .messageBox,

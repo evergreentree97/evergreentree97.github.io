@@ -1,13 +1,14 @@
 :root {
-  --background: #f4f0e7;
-  --surface: #faf7ef;
-  --surface-muted: #ebe6d9;
-  --text-primary: #292820;
-  --text-secondary: #5f5c50;
-  --border: #b8b19d;
-  --accent: #9a823d;
-  --accent-dark: #6f653f;
-  --pixel-green: #788066;
+  --background: #eff2ea;
+  --surface: #f8faf4;
+  --surface-muted: #e0e8dd;
+  --text-primary: #1f2a23;
+  --text-secondary: #536158;
+  --border: #a8b7aa;
+  --accent: #4f8062;
+  --accent-dark: #28523a;
+  --pixel-green: #6f956e;
+  --image-tint: rgb(40 82 58 / 9%);
   --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-pixel: 'Silkscreen', ui-monospace, 'SFMono-Regular', Consolas, monospace;
   --content-width: 1180px;
@@ -33,7 +34,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 1px 1px, rgb(95 92 80 / 5%) 1px, transparent 1px) 0 0 / 18px 18px,
+    radial-gradient(circle at 1px 1px, rgb(40 82 58 / 6%) 1px, transparent 1px) 0 0 / 18px 18px,
     var(--background);
   color: var(--text-primary);
   font-size: 17px;
@@ -48,7 +49,7 @@ a,
 summary {
   font: inherit;
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgb(111 101 63 / 18%);
+  -webkit-tap-highlight-color: rgb(79 128 98 / 22%);
 }
 
 a {
