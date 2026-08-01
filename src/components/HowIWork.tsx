@@ -10,7 +10,7 @@ export function HowIWork() {
       <Reveal>
         <SectionTitle id="how-i-work-title" index="03" eyebrow="AI NATIVE" title="How I Work" />
         <div className={styles.intro}>
-          <p>AI가 저장소 맥락을 따르고, 개발자가 결과를 책임지는 방식으로 일합니다.</p>
+          <p>AI가 먼저 저장소 맥락을 읽게 합니다. 결과는 제가 리뷰하고 테스트합니다.</p>
           <span>
             <PixelIcon name="code" /> CONTEXT TO VERIFIED CHANGE
           </span>

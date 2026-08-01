@@ -46,10 +46,9 @@ export function Contact() {
         <SectionTitle id="contact-title" index="08" eyebrow="OPEN CHANNEL" title="Let's Connect" />
         <div className={styles.layout}>
           <div>
-            <h3>새로운 제품과 더 나은 개발 방식에 관해 이야기하는 것을 좋아합니다.</h3>
+            <h3>Android와 AI 제품을 만드는 이야기를 나누고 싶습니다.</h3>
             <p>
-              Android, AI Native 제품 개발, LLM 평가 또는 개발 도구에 관한
-              대화라면 언제든 편하게 연락해 주세요.
+              제품 개발, LLM 평가, 개발 도구에 관한 대화라면 편하게 연락해 주세요.
             </p>
           </div>
           <div className={styles.links}>
