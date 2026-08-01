@@ -12,11 +12,11 @@ export function Hero() {
         <h1 id="hero-title">
           Android 제품을 만들고,
           <br />
-          <strong>AI Native</strong>로 일합니다<span className={styles.cursor}>_</span>
+          <strong>AI Native</strong>로<br className={styles.mobileBreak} /> 일합니다<span className={styles.cursor}>_</span>
         </h1>
         <p className={styles.description}>
-          Kotlin과 Jetpack Compose로 제품의 구조부터 출시와 운영까지 맡았습니다.
-          최근에는 LLM 데이터, 평가 하네스와 vLLM 서빙까지 다룹니다.
+          Kotlin과 Jetpack Compose로 앱을 만들고 출시 후 운영까지 맡아왔습니다.
+          지금은 LLM 데이터를 정제하고 평가 하네스를 만들며, vLLM 서빙까지 직접 다룹니다.
         </p>
 
         <div className={styles.actions}>

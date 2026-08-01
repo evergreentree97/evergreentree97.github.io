@@ -39,6 +39,10 @@
   font-weight: inherit;
 }
 
+.mobileBreak {
+  display: none;
+}
+
 .cursor {
   display: inline-block;
   color: var(--pixel-green);
@@ -213,6 +217,10 @@
 
   .content h1 {
     font-size: clamp(2.45rem, 12vw, 3.5rem);
+  }
+
+  .mobileBreak {
+    display: block;
   }
 
   .description br {

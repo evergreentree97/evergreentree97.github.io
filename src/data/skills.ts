@@ -8,22 +8,22 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     label: 'Core Android',
-    description: '제품 구조와 화면, 비동기 상태 관리',
+    description: '앱 구조, UI와 비동기 상태 관리',
     skills: ['Kotlin', 'Jetpack Compose', 'Coroutines / Flow', 'Clean Architecture', 'Multi Module'],
   },
   {
     label: 'Product & Platform',
-    description: '기능 구현부터 출시와 운영까지',
+    description: '출시와 운영에 필요한 제품 기능',
     skills: ['Android CI/CD', 'Play Billing', 'Sendbird', 'Media3', 'Room / AlarmManager'],
   },
   {
     label: 'AI Product',
-    description: '데이터부터 평가와 서빙까지',
+    description: '데이터 정제, 평가와 모델 서빙',
     skills: ['LLM Evaluation', 'LoRA / SFT', 'vLLM', 'Python / PyTorch'],
   },
   {
     label: 'Delivery & AI Tools',
-    description: '반복 작업, 검증과 내부 데모 개발',
+    description: '반복 작업 자동화와 내부 도구 개발',
     skills: ['GitHub Actions', 'Claude Code', 'Codex', 'MCP', 'React / TypeScript'],
   },
 ]

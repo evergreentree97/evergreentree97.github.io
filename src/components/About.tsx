@@ -16,18 +16,18 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>Android를 기반으로 AI Native 제품까지 다루는 개발자</h3>
+            <h3>Android 제품을 만들고, 이제는 AI 제품의 품질까지 봅니다</h3>
             <p>
-              Kotlin과 Jetpack Compose로 앱 아키텍처, 채팅, 결제, 광고와
-              배포를 경험했습니다.
+              Kotlin과 Jetpack Compose로 앱 구조를 잡고 채팅, 결제, 광고를
+              구현해 출시까지 이어왔습니다.
             </p>
             <p>
-              최근에는 LLM 데이터 정제, LoRA 기반 SFT, 평가 하네스와 vLLM
-              서빙을 맡고 있습니다.
+              현재 LLM 데이터 정제부터 LoRA 기반 SFT, 평가 하네스와 vLLM
+              서빙까지 맡고 있습니다.
             </p>
             <p>
-              모델 점수만 보지 않고 실제 사용 경험과 제품 기준까지 함께
-              검증합니다.
+              점수가 올랐는지만 보지 않습니다. 직접 써보고, 사용자가 느낄
+              품질까지 확인합니다.
             </p>
             <a href="#experience">
               View experience <PixelIcon name="arrow" />
