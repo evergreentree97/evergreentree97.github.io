@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 96px;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.footer a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+}
+
+.footer svg {
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 540px) {
+  .footer {
+    align-items: start;
+    min-height: 120px;
+    padding-block: 24px;
+    flex-direction: column;
+  }
+}
