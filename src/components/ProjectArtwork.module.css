@@ -9,8 +9,18 @@
 .artwork::after {
   position: absolute;
   inset: 8px;
-  border: 1px solid rgb(41 40 32 / 42%);
+  border: 1px solid rgb(31 42 35 / 42%);
   content: '';
+  pointer-events: none;
+}
+
+.artwork::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--image-tint);
+  content: '';
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
@@ -19,6 +29,7 @@
   height: 100%;
   object-fit: cover;
   image-rendering: pixelated;
+  filter: saturate(0.82) hue-rotate(12deg) contrast(1.02);
   transition: transform 170ms ease;
 }
 

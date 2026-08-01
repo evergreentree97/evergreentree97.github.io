@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-block: 1px solid var(--border);
-  background: rgb(250 247 239 / 55%);
+  background: rgb(248 250 244 / 62%);
 }
 
 .strip > div {
