@@ -16,7 +16,8 @@ export function Hero() {
         </h1>
         <p className={styles.description}>
           Kotlin과 Jetpack Compose로 앱을 만들고 출시 후 운영까지 맡아왔습니다.
-          지금은 LLM 데이터를 정제하고 평가 하네스를 만들며, vLLM 서빙까지 직접 다룹니다.
+          지금은 LLM 학습 데이터를 다듬고, 같은 조건으로 모델을 비교하는 평가 하네스를 만듭니다.
+          vLLM 서빙 환경도 직접 구성합니다.
         </p>
 
         <div className={styles.actions}>
