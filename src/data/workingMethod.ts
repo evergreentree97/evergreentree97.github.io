@@ -12,8 +12,8 @@ export const workingMethod: WorkingMethod[] = [
   },
   {
     label: 'ASSIGN',
-    title: '작게 나눠 맡김',
-    description: '서버 API 반영과 반복 구현처럼 완료 여부를 확인할 수 있는 작업부터 맡깁니다.',
+    title: '완료 기준부터 정함',
+    description: '서버 API 반영과 반복 구현처럼 결과를 확인할 수 있는 단위로 작업을 맡깁니다.',
   },
   {
     label: 'REVIEW',
