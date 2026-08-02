@@ -22,8 +22,8 @@ export const skillGroups: SkillGroup[] = [
     skills: ['LLM Evaluation', 'LoRA / SFT', 'vLLM', 'Python / PyTorch'],
   },
   {
-    label: 'AI 활용과 자동화',
-    description: '저장소 맥락을 제공하고 결과를 코드 리뷰와 테스트로 검증',
+    label: 'Tools & Automation',
+    description: 'AI 코딩 도구와 빌드 자동화',
     skills: ['Claude Code / Codex', 'GitHub Actions', 'KSP', 'React / TypeScript'],
   },
 ]

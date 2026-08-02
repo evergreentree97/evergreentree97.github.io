@@ -8,8 +8,8 @@ import styles from './Projects.module.css'
 
 const caseLabels = [
   ['문제', 'problem'],
-  ['판단', 'decision'],
-  ['확인', 'verification'],
+  ['선택', 'decision'],
+  ['결과', 'verification'],
 ] as const
 
 export function Projects() {

@@ -39,11 +39,11 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'Vuddy',
     eyebrow: 'ANDROID PRODUCT',
-    summary: '신규 앱의 초기 구축에 참여해 멀티모듈 구조와 채팅, 미디어를 담당',
+    summary: '신규 앱에서 멀티모듈 구조와 채팅, 미디어 개발을 담당',
     role: '멀티모듈 구조, Sendbird 연동과 미디어',
     outcomes: [
       '초기 멀티모듈 구조를 설계하고 공통 UI와 인증 흐름을 구성',
-      '실시간 메시징과 백엔드 운영 기능을 분리해 외부 SDK의 책임 범위를 제한',
+      '실시간 메시지는 Sendbird, 채팅방 생성과 검색, 신고와 삭제는 백엔드 API로 분리',
       '채팅은 Android 개발자 2명이 나눠 구현했고 Sendbird 연동과 양방향 페이징, 미디어 메시지를 담당',
     ],
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI / MVVM', 'Sendbird', 'Media3'],
@@ -67,13 +67,13 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'LLM 평가 체계',
     eyebrow: 'AI PRODUCT',
-    summary: '질문과 채점 기준, 서빙 설정을 고정해 제품 적용 판단에 쓸 비교 근거를 만듦',
+    summary: '질문과 채점 기준, 서빙 설정을 고정하고 같은 조건에서 모델을 비교',
     role: '데이터 정제, LoRA 추가 학습, 평가와 vLLM 서빙',
     outcomes: [
       '질문과 채점 순서, 서빙 설정을 고정하고 모델 이름을 가린 채 응답을 비교',
-      '자체 구축한 LLM 채점 도구로 동일 입력 40건을 비교해 종합 점수를 76.96에서 82.28로 개선',
-      '제품 규칙 위반은 4건에서 1건으로 줄었지만 재미와 상태 이해 점수 하락은 개선 과제로 기록',
-      '채점기의 일관성을 따로 검증하고 학습 데이터와 평가 질문이 겹친 결과는 폐기한 뒤 자동 검사 추가',
+      '자체 구축한 LLM 채점 도구로 동일 입력 40건 비교, 종합 점수 76.96 → 82.28',
+      '제품 규칙 위반 4건 → 1건, 재미와 상태 이해 점수는 하락',
+      '채점 결과의 일관성을 따로 확인하고, 학습 데이터와 겹친 평가 문항은 폐기한 뒤 중복 검사 추가',
     ],
     technologies: ['Python', 'PyTorch', 'LoRA', 'LLM Evaluation', 'vLLM'],
     image: {
@@ -82,8 +82,8 @@ export const featuredProjects: FeaturedProject[] = [
     },
     caseStudy: {
       problem: '캐릭터 대화 품질은 기준이 모호했고, 평균 점수가 올라도 재미나 상태 이해가 나빠질 수 있었습니다.',
-      decision: '질문과 채점 순서, 서빙 설정을 고정하고 모델 이름을 가린 채 비교했습니다. 응답 형식과 캐릭터 일관성, 상태 이해, 치명적 실패를 나눠 보고 채점기의 일관성도 따로 검증했습니다.',
-      verification: '자체 구축한 LLM 채점 도구로 동일 입력 40건을 비교했습니다. 종합 점수는 76.96에서 82.28, 치명적 실패는 4건에서 0건, 제품 규칙 위반은 4건에서 1건으로 변했습니다. 재미와 상태 이해 점수는 낮아져 별도 개선 과제로 남겼습니다.',
+      decision: '질문과 채점 순서, 서빙 설정을 고정하고 모델 이름을 가렸습니다. 응답 형식과 캐릭터 일관성, 상태 이해, 치명적 실패를 나눠 채점했고 결과의 일관성도 따로 확인했습니다.',
+      verification: '동일 입력 40건에서 종합 점수 76.96 → 82.28, 치명적 실패 4건 → 0건, 제품 규칙 위반 4건 → 1건이었습니다. 재미와 상태 이해 점수는 낮아졌습니다.',
     },
     links: [],
   },
@@ -94,8 +94,8 @@ export const featuredProjects: FeaturedProject[] = [
     role: '포토카드 도감과 영상 알람',
     outcomes: [
       'Room과 AlarmManager로 알람을 저장하고 앱 종료와 재부팅 뒤에도 예약을 복원',
-      '여러 알람이 같은 영상 파일을 공유할 때 다른 알람이 쓰는 파일은 남도록 삭제 규칙 설계',
-      '길게 누른 카드가 화면 중앙으로 이동하는 퀵뷰를 만들고 리컴포지션을 줄임',
+      '같은 영상 파일을 여러 알람이 공유해도 사용 중인 파일은 삭제되지 않도록 처리',
+      '길게 누른 카드가 화면 중앙으로 이동하는 퀵뷰를 만들고 불필요한 리컴포지션을 줄임',
     ],
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
     image: {
@@ -105,7 +105,7 @@ export const featuredProjects: FeaturedProject[] = [
     caseStudy: {
       problem: '영상 알람은 휴대전화 재부팅과 잠금 화면을 처리해야 했고, 여러 알람이 같은 영상 파일을 공유할 수 있었습니다.',
       decision: '알람 데이터 저장과 실행 예약을 분리하고, 재부팅 복원과 파일 삭제 규칙을 따로 만들었습니다.',
-      verification: 'Android 14 기기에서 앱 종료, 재부팅 후 복원과 잠금 화면 실행을 테스트 빌드로 확인했습니다.',
+      verification: 'Android 14 기기에서 앱 종료와 재부팅 뒤 알람 복원, 잠금 화면 실행을 테스트 빌드로 확인했습니다.',
     },
     links: [
       {
