@@ -8,7 +8,7 @@ export function Experience() {
   return (
     <section className={styles.experience} id="experience" aria-labelledby="experience-title">
       <Reveal>
-        <SectionTitle id="experience-title" index="05" eyebrow="CAREER LOG" title="Experience" />
+        <SectionTitle id="experience-title" index="05" eyebrow="CAREER LOG" title="경력" />
         <ol className={styles.timeline}>
           {experiences.map((experience) => (
             <li key={`${experience.organization}-${experience.period}`}>

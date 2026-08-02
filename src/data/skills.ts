@@ -18,12 +18,12 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'AI Product',
-    description: '데이터 정제, 평가와 모델 서빙',
+    description: '학습 데이터 정제, 모델 비교와 서빙',
     skills: ['LLM Evaluation', 'LoRA / SFT', 'vLLM', 'Python / PyTorch'],
   },
   {
-    label: 'Delivery & AI Tools',
-    description: '반복 작업 자동화와 내부 도구 개발',
-    skills: ['GitHub Actions', 'Claude Code', 'Codex', 'MCP', 'React / TypeScript'],
+    label: 'AI 활용과 자동화',
+    description: '저장소 맥락을 제공하고 결과를 코드 리뷰와 테스트로 검증',
+    skills: ['Claude Code / Codex', 'GitHub Actions', 'KSP', 'React / TypeScript'],
   },
 ]

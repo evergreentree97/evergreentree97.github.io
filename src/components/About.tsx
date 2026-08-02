@@ -7,7 +7,7 @@ export function About() {
   return (
     <section className={styles.about} id="about" aria-labelledby="about-title">
       <Reveal>
-        <SectionTitle id="about-title" index="01" eyebrow="PROFILE" title="About Me" />
+        <SectionTitle id="about-title" index="01" eyebrow="PROFILE" title="소개" />
         <div className={styles.body}>
           <div className={styles.avatar} aria-hidden="true">
             <div className={styles.avatarScreen}>
@@ -16,21 +16,21 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>Android 제품을 만들고, 이제는 AI 제품의 품질까지 봅니다</h3>
+            <h3>AI에 작업을 맡기되, 제품에 반영할지는 직접 판단합니다</h3>
             <p>
-              Kotlin과 Jetpack Compose로 앱 구조를 잡고 채팅, 결제, 광고를
-              구현해 출시까지 이어왔습니다.
+              Vuddy의 초기 구조, 실시간 채팅과 미디어를 맡았고 Momentica에서는
+              포토카드 도감과 영상 알람을 개발했습니다.
             </p>
             <p>
-              현재 오픈소스 LLM의 학습 데이터 정제와 추가 학습, 자동 평가,
-              vLLM 서빙까지 맡고 있습니다.
+              사내 AI TF에서는 오픈소스 LLM의 데이터를 정제하고 추가 학습했습니다.
+              같은 질문과 채점 기준으로 모델을 비교하는 평가 도구를 만들고 채점기의 일관성도 따로 확인했습니다.
             </p>
             <p>
-              점수가 올랐는지만 보지 않습니다. 직접 써보고, 사용자가 느낄
-              품질까지 확인합니다.
+              AI 도구에는 서버 API 반영과 QA 준비처럼 범위가 분명한 작업을 맡깁니다.
+              결과는 직접 읽고 테스트하며, 기존 구조와 사용자 흐름에 맞는 코드만 반영합니다.
             </p>
             <a href="#experience">
-              View experience <PixelIcon name="arrow" />
+              경력 보기 <PixelIcon name="arrow" />
             </a>
           </div>
         </div>

@@ -7,7 +7,7 @@ export function Activities() {
   return (
     <section className={styles.section} aria-labelledby="activities-title">
       <Reveal>
-        <SectionTitle id="activities-title" index="06" eyebrow="COMMUNITY" title="Activities" />
+        <SectionTitle id="activities-title" index="06" eyebrow="COMMUNITY" title="대외 활동" />
         <div className={styles.grid}>
           {activities.map((activity) => (
             <article key={activity.organization}>

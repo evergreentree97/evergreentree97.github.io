@@ -2,9 +2,9 @@ import { PixelIcon, type PixelIconName } from './PixelIcon'
 import styles from './ProofStrip.module.css'
 
 const proofs: { icon: PixelIconName; value: string; label: string }[] = [
-  { icon: 'android', value: '3 Android products', label: '신규 개발부터 출시 후 운영까지' },
-  { icon: 'flag', value: 'new Android app launch', label: '초기 구조 설계부터 출시 후 대응' },
-  { icon: 'save', value: '+6.9% quality score', label: '핵심 질문 40건 기준으로 개선 효과 검증' },
+  { icon: 'android', value: 'Android 제품 3개', label: 'Momentica 기능, Vuddy 초기 구축, 신규 앱 결제와 광고' },
+  { icon: 'flag', value: '개발 업무에 AI 활용', label: '서버 API 반영과 QA 준비, 결과는 직접 검증' },
+  { icon: 'save', value: '76.96 → 82.28', label: '동일 입력 40건을 자체 LLM 채점 도구로 비교' },
 ]
 
 export function ProofStrip() {

@@ -7,9 +7,9 @@ import { SectionTitle } from './SectionTitle'
 import styles from './Projects.module.css'
 
 const caseLabels = [
-  ['Problem', 'problem'],
-  ['Decision', 'decision'],
-  ['Verification', 'verification'],
+  ['문제', 'problem'],
+  ['판단', 'decision'],
+  ['확인', 'verification'],
 ] as const
 
 export function Projects() {
@@ -20,10 +20,10 @@ export function Projects() {
           id="projects-title"
           index="04"
           eyebrow="SELECTED WORK"
-          title="Featured Projects"
+          title="주요 프로젝트"
           action={
             <a href={profile.githubUrl} target="_blank" rel="noreferrer">
-              View all projects <PixelIcon name="external" />
+              GitHub 프로젝트 보기 <PixelIcon name="external" />
             </a>
           }
         />
@@ -40,7 +40,7 @@ export function Projects() {
                 <p className={styles.summary}>{project.summary}</p>
 
                 <dl className={styles.role}>
-                  <dt>ROLE</dt>
+                  <dt>담당</dt>
                   <dd>{project.role}</dd>
                 </dl>
 
@@ -58,7 +58,7 @@ export function Projects() {
 
                 <details className={styles.caseStudy}>
                   <summary>
-                    View case <PixelIcon name="arrow" />
+                    사례 보기 <PixelIcon name="arrow" />
                   </summary>
                   <dl>
                     {caseLabels.map(([label, key]) => (

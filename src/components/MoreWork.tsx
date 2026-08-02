@@ -8,7 +8,7 @@ export function MoreWork() {
   return (
     <section className={styles.section} aria-labelledby="more-work-title">
       <Reveal>
-        <SectionTitle id="more-work-title" index="07" eyebrow="MORE WORK" title="Open & Side Work" />
+        <SectionTitle id="more-work-title" index="07" eyebrow="MORE WORK" title="오픈소스와 사이드 프로젝트" />
         <div className={styles.list}>
           {moreProjects.map((project) => (
             <article key={project.name}>
