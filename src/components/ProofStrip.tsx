@@ -4,7 +4,7 @@ import styles from './ProofStrip.module.css'
 const proofs: { icon: PixelIconName; value: string; label: string }[] = [
   { icon: 'android', value: '3 Android products', label: '신규 개발부터 출시 후 운영까지' },
   { icon: 'flag', value: 'new Android app launch', label: '초기 구조 설계부터 출시 후 대응' },
-  { icon: 'save', value: '+6.9% quality score', label: '같은 질문 40개로 두 모델 비교' },
+  { icon: 'save', value: '+6.9% quality score', label: '핵심 질문 40건 기준으로 개선 효과 검증' },
 ]
 
 export function ProofStrip() {
