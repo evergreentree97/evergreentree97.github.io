@@ -7,7 +7,7 @@ export function TastePanel() {
   return (
     <Reveal>
       <aside className={styles.panel} aria-label="개발자 취향">
-        <span className={styles.label}>B-SIDE / KEEPING THE RHYTHM</span>
+        <span className={styles.label}>B-SIDE / 취향</span>
         <ul>
           {tastes.map((taste) => (
             <li key={taste.label}>

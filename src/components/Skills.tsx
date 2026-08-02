@@ -7,7 +7,7 @@ export function Skills() {
   return (
     <section className={styles.skills} id="skills" aria-labelledby="skills-title">
       <Reveal>
-        <SectionTitle id="skills-title" index="02" eyebrow="TOOLKIT" title="Skills" />
+        <SectionTitle id="skills-title" index="02" eyebrow="TOOLKIT" title="기술" />
         <p className={styles.note}>실제 제품에서 써본 기술을 작업 범위별로 묶었습니다.</p>
         <div className={styles.groups}>
           {skillGroups.map((group) => (
