@@ -16,8 +16,8 @@
   aspect-ratio: 1;
   border: 2px solid var(--text-primary);
   background:
-    linear-gradient(90deg, transparent 49%, rgb(40 82 58 / 12%) 50%, transparent 51%),
-    linear-gradient(transparent 49%, rgb(40 82 58 / 12%) 50%, transparent 51%),
+    linear-gradient(90deg, transparent 49%, rgb(36 99 61 / 12%) 50%, transparent 51%),
+    linear-gradient(transparent 49%, rgb(36 99 61 / 12%) 50%, transparent 51%),
     var(--surface-muted);
   background-size: 14px 14px;
 }
