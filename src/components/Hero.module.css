@@ -88,14 +88,21 @@
   font-size: 0.68rem;
   text-decoration: none;
   transition:
-    transform 150ms ease,
+    transform 120ms steps(2, end),
+    box-shadow 120ms steps(2, end),
     border-color 150ms ease,
     background 150ms ease;
 }
 
 .button:hover {
   border-color: var(--accent-dark);
-  transform: translateY(-2px);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--accent-dark);
+}
+
+.button:active {
+  transform: translate(0, 0);
+  box-shadow: 1px 1px 0 var(--accent-dark);
 }
 
 .button svg {

@@ -48,6 +48,15 @@
   color: var(--text-primary);
   font-size: 0.85rem;
   line-height: 1.4;
+  transition:
+    transform 100ms steps(2, end),
+    background 100ms steps(2, end);
+}
+
+.group li:hover {
+  background: var(--pixel-green);
+  transform: translateY(-2px);
+  cursor: default;
 }
 
 @media (max-width: 540px) {

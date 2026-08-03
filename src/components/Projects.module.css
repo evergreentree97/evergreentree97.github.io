@@ -22,14 +22,19 @@
   border: 1px solid var(--border);
   background: var(--surface);
   flex-direction: column;
-  transition:
-    transform 170ms ease,
-    border-color 170ms ease;
+  transition: transform 140ms steps(2, end);
 }
 
 .card:hover {
-  border-color: var(--accent-dark);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  animation: selectFrame 900ms steps(2, start) infinite;
+}
+
+@keyframes selectFrame {
+  50% {
+    border-color: var(--pixel-green);
+    box-shadow: 0 0 0 2px var(--pixel-green);
+  }
 }
 
 .cardBody {
