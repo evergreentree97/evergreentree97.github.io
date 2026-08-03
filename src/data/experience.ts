@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
     highlights: [
       'Momentica에서는 포토카드 도감과 영상 알람, Vuddy에서는 초기 구조와 채팅, 미디어를 담당',
       '신규 AI 캐릭터 앱에서는 Google Play 결제와 광고, QA 배포 자동화를 담당',
-      '오픈소스 LLM의 데이터 정제부터 LoRA 추가 학습, 평가 도구, vLLM 서빙까지 담당',
+      '오픈소스 LLM의 데이터 정제와 LoRA 추가 학습, 평가 도구, vLLM 서빙을 담당',
       '저장소 규칙과 완료 조건을 정한 뒤 서버 API 연동과 QA 준비에 AI 도구 사용. 생성된 코드는 직접 리뷰하고 테스트',
     ],
     technologies: ['Kotlin', 'Jetpack Compose', 'Python', 'PyTorch', 'vLLM'],
