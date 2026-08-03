@@ -10,13 +10,14 @@ export function Hero() {
           <span aria-hidden="true">&gt;</span> CHOI SANGROK / ANDROID DEVELOPER
         </span>
         <h1 id="hero-title">
-          AI에 일을 맡기고,
+          <span className={styles.line}>채팅 앱 만들던 사람이</span>
           <br />
-          <strong>제품을</strong><br className={styles.mobileBreak} /> 만듭니다<span className={styles.cursor}>_</span>
+          <span className={styles.line}>왜 모델을 학습하냐면요<span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          Kotlin과 Jetpack Compose로 Android 앱을 만들고 운영합니다.
-          서버 API 연동이나 반복 구현에는 AI를 씁니다. 나온 코드는 직접 리뷰하고 테스트합니다.
+          Levvels에서 Android 앱을 만듭니다. Vuddy의 실시간 채팅과 미디어,
+          Momentica의 포토카드 도감과 영상 알람을 개발했고,
+          사내 AI TF에서 LLM 학습과 평가를 맡고 있습니다.
         </p>
 
         <div className={styles.actions}>
@@ -39,7 +40,7 @@ export function Hero() {
 
       <div className={styles.sceneColumn}>
         <div className={styles.sceneFrame}>
-          <div className={styles.messageBox}>앱을 만들고 운영합니다.</div>
+          <div className={styles.messageBox}>PRESS START TO SCROLL</div>
           <picture>
             <source
               srcSet="/images/hero-journey-480.avif 480w, /images/hero-journey-800.avif 800w, /images/hero-journey.avif 1200w"

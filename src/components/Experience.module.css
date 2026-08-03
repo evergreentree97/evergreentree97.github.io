@@ -2,9 +2,16 @@
   padding-top: 128px;
 }
 
+.sectionNote {
+  max-width: 54ch;
+  margin-top: 28px;
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+}
+
 .timeline {
   position: relative;
-  margin-top: 42px;
+  margin-top: 30px;
   list-style: none;
 }
 

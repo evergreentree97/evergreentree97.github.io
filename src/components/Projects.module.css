@@ -2,11 +2,18 @@
   padding-top: 128px;
 }
 
+.sectionNote {
+  max-width: 54ch;
+  margin-top: 28px;
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
-  margin-top: 38px;
+  margin-top: 26px;
 }
 
 .card {

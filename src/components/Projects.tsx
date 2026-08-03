@@ -27,6 +27,7 @@ export function Projects() {
             </a>
           }
         />
+        <p className={styles.sectionNote}>각 프로젝트는 문제, 선택, 결과 순서로 정리했습니다. 수치에는 측정 조건을 함께 적었습니다.</p>
         <div className={styles.grid}>
           {featuredProjects.map((project, index) => (
             <article className={styles.card} key={project.name}>
