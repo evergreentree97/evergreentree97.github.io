@@ -16,10 +16,11 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>Android 앱을 만들고, LLM을 학습하고 평가합니다</h3>
+            <h3>화면을 만들다가 모델까지 내려간 이유</h3>
             <p>
-              Vuddy의 초기 구조, 실시간 채팅과 미디어를 맡았고 Momentica에서는
-              포토카드 도감과 영상 알람을 개발했습니다.
+              Vuddy에서 초기 멀티모듈 구조와 실시간 채팅, 미디어를 맡았고
+              Momentica에서 포토카드 도감과 영상 알람을 개발했습니다.
+              회사에 AI TF가 생기면서 LLM 학습과 평가로 일의 범위가 넓어졌습니다.
             </p>
             <p>
               사내 AI TF에서는 오픈소스 LLM의 학습 데이터를 정제하고 LoRA로 추가 학습했습니다.

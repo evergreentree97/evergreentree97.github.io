@@ -39,7 +39,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'Vuddy',
     eyebrow: 'ANDROID PRODUCT',
-    summary: '신규 앱에서 멀티모듈 구조와 채팅, 미디어 개발을 담당',
+    summary: '신규 소셜 앱의 멀티모듈 구조를 잡고, 실시간 채팅과 미디어 메시지를 구현했습니다.',
     role: '멀티모듈 구조, Sendbird 연동과 미디어',
     outcomes: [
       '초기 멀티모듈 구조를 설계하고 공통 UI와 인증 흐름을 구성',
@@ -67,7 +67,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'LLM 평가 체계',
     eyebrow: 'AI PRODUCT',
-    summary: '질문과 채점 기준, 서빙 설정을 고정하고 같은 조건에서 모델을 비교',
+    summary: '질문, 채점 기준, 서빙 설정을 고정해 같은 조건에서 모델을 비교하는 평가 체계를 만들었습니다.',
     role: '데이터 정제, LoRA 추가 학습, 평가와 vLLM 서빙',
     outcomes: [
       '질문과 채점 순서, 서빙 설정을 고정하고 모델 이름을 가린 채 응답을 비교',
@@ -90,7 +90,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'Momentica',
     eyebrow: 'ANDROID PRODUCT',
-    summary: '포토카드 도감과 영상 알람을 맡고, 알람이 앱 종료와 재부팅 뒤에도 실행되도록 설계',
+    summary: '포토카드 도감과 영상 알람을 맡아, 앱 종료와 재부팅 뒤에도 알람이 실행되게 설계했습니다.',
     role: '포토카드 도감과 영상 알람',
     outcomes: [
       'Room과 AlarmManager로 알람을 저장하고 앱 종료와 재부팅 뒤에도 예약을 복원',

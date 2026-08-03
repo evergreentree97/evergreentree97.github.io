@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
     period: '2023.10 - Present',
     organization: 'Levvels (Dunamu & HYBE)',
     role: 'Android Developer',
-    summary: 'Kotlin과 Jetpack Compose로 Android 앱을 개발합니다. 사내 AI TF에서는 오픈소스 LLM의 데이터 정제, LoRA 추가 학습, 평가 도구와 vLLM 서빙을 맡고 있습니다.',
+    summary: 'Kotlin과 Jetpack Compose로 Android 앱을 개발합니다. 사내 AI TF에서는 오픈소스 LLM의 데이터 정제와 LoRA 추가 학습, 평가 도구, vLLM 서빙을 맡고 있습니다.',
     highlights: [
       'Momentica에서는 포토카드 도감과 영상 알람, Vuddy에서는 초기 구조와 채팅, 미디어를 담당',
       '신규 AI 캐릭터 앱에서는 Google Play 결제와 광고, QA 배포 자동화를 담당',
