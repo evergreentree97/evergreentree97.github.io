@@ -4,9 +4,10 @@ import styles from './Reveal.module.css'
 type RevealProps = {
   children: ReactNode
   className?: string
+  stagger?: boolean
 }
 
-export function Reveal({ children, className = '' }: RevealProps) {
+export function Reveal({ children, className = '', stagger = false }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -34,7 +35,7 @@ export function Reveal({ children, className = '' }: RevealProps) {
   return (
     <div
       ref={ref}
-      className={`${styles.reveal} ${isVisible ? styles.visible : ''} ${className}`}
+      className={`${styles.reveal} ${stagger ? styles.stagger : ''} ${isVisible ? styles.visible : ''} ${className}`}
     >
       {children}
     </div>

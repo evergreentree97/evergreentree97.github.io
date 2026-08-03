@@ -26,3 +26,17 @@ export const workingMethod: WorkingMethod[] = [
     description: '새 기능만 보지 않고 기존 기능까지 테스트한 뒤 반영합니다.',
   },
 ]
+
+export type QuestStep = {
+  step: string
+  title: string
+  description: string
+}
+
+export const questSteps: QuestStep[] = [
+  { step: 'STEP 1', title: '접수', description: '티켓을 읽고 상태를 In Progress로 바꿉니다.' },
+  { step: 'STEP 2', title: '격리', description: '워크트리를 만들어 진행 중인 코드와 분리합니다.' },
+  { step: 'STEP 3', title: '분석', description: '재현 조건과 원인을 먼저 정리합니다. 이 단계에서는 수정하지 않습니다.' },
+  { step: 'STEP 4', title: '수정', description: '원인이 확인된 뒤에 코드를 고칩니다.' },
+  { step: 'STEP 5', title: '검증', description: '기존 기능까지 테스트하고 결과를 티켓에 남깁니다.' },
+]

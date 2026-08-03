@@ -120,3 +120,155 @@
     border-left: 0;
   }
 }
+
+.introDetail {
+  max-width: 62ch;
+  margin-top: 18px;
+  color: var(--text-secondary);
+}
+
+.quest {
+  margin-top: 34px;
+  border: 3px solid var(--hud-dark);
+  background: var(--surface);
+  box-shadow: 6px 6px 0 var(--hud-dark);
+}
+
+.questHeading {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--hud-dark);
+  color: var(--surface);
+}
+
+.questLabel {
+  color: var(--pixel-green);
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.questHeading h3 {
+  margin-top: 6px;
+  font-size: 1.15rem;
+}
+
+.questHeading p {
+  margin-top: 4px;
+  color: rgb(251 253 248 / 72%);
+  font-size: 0.88rem;
+}
+
+.questSteps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  list-style: none;
+}
+
+.questSteps li {
+  position: relative;
+  min-width: 0;
+  padding: 22px 20px 24px;
+}
+
+.questSteps li + li {
+  border-left: 1px solid var(--border);
+}
+
+.questCheck {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 14px;
+  border: 2px solid var(--accent-dark);
+  background: var(--surface);
+}
+
+.questSteps li small {
+  color: var(--accent-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+}
+
+.questSteps li strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.02rem;
+}
+
+.questSteps li p {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.questSteps li .questCheck {
+  animation: checkFill 200ms steps(2, end) both;
+}
+
+.questSteps li:nth-child(1) .questCheck { animation-delay: 500ms; }
+.questSteps li:nth-child(2) .questCheck { animation-delay: 700ms; }
+.questSteps li:nth-child(3) .questCheck { animation-delay: 900ms; }
+.questSteps li:nth-child(4) .questCheck { animation-delay: 1100ms; }
+.questSteps li:nth-child(5) .questCheck { animation-delay: 1300ms; }
+
+@keyframes checkFill {
+  from { background: var(--surface); }
+  to { background: var(--pixel-green); }
+}
+
+.cases {
+  margin-top: 34px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.casesLabel {
+  color: var(--accent-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.cases ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+  list-style: none;
+}
+
+.cases li strong {
+  display: block;
+  font-size: 0.98rem;
+}
+
+.cases li p {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.outro {
+  max-width: 62ch;
+  margin-top: 28px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .cases ul {
+    grid-template-columns: 1fr;
+  }
+
+  .questSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .questSteps li + li {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+}
