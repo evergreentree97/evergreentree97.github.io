@@ -6,7 +6,7 @@ import styles from './Skills.module.css'
 export function Skills() {
   return (
     <section className={styles.skills} id="skills" aria-labelledby="skills-title">
-      <Reveal>
+      <Reveal stagger>
         <SectionTitle id="skills-title" index="02" eyebrow="TOOLKIT" title="기술" />
         <p className={styles.note}>제품에서 직접 써본 기술만 적었습니다.</p>
         <div className={styles.groups}>

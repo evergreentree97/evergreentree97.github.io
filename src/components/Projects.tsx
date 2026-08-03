@@ -15,7 +15,7 @@ const caseLabels = [
 export function Projects() {
   return (
     <section className={styles.projects} id="projects" aria-labelledby="projects-title">
-      <Reveal>
+      <Reveal stagger>
         <SectionTitle
           id="projects-title"
           index="04"
