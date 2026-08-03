@@ -52,7 +52,7 @@ a,
 summary {
   font: inherit;
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgb(77 158 97 / 22%);
+  -webkit-tap-highlight-color: rgb(46 167 92 / 22%);
 }
 
 a {

@@ -203,7 +203,7 @@
   line-height: 1.65;
 }
 
-.questSteps li .questCheck {
+[data-visible] .questSteps li .questCheck {
   animation: checkFill 200ms steps(2, end) both;
 }
 

@@ -11,7 +11,7 @@ export const navigation = [
   { label: '소개', href: '#about' },
   { label: '프로젝트', href: '#projects' },
   { label: '기술', href: '#skills' },
-  { label: 'AI 활용', href: '#how-i-work' },
+  { label: '일하는 방식', href: '#how-i-work' },
   { label: '경력', href: '#experience' },
   { label: '연락처', href: '#contact' },
 ] as const

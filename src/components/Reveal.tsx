@@ -36,6 +36,7 @@ export function Reveal({ children, className = '', stagger = false }: RevealProp
     <div
       ref={ref}
       className={`${styles.reveal} ${stagger ? styles.stagger : ''} ${isVisible ? styles.visible : ''} ${className}`}
+      data-visible={isVisible || undefined}
     >
       {children}
     </div>
