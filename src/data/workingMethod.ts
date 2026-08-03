@@ -7,23 +7,23 @@ export type WorkingMethod = {
 export const workingMethod: WorkingMethod[] = [
   {
     label: 'CONTEXT',
-    title: '저장소부터 읽게 함',
-    description: '구조와 코드 규칙, 결정 기록을 먼저 읽게 합니다.',
+    title: 'SSOT',
+    description: '저장소 구조, 코드 규칙과 결정 기록을 단일 작업 기준으로 관리합니다.',
   },
   {
     label: 'SCOPE',
-    title: '범위가 분명한 일을 맡김',
-    description: '서버 API 연동이나 QA 준비처럼 완료 조건이 분명한 일을 맡깁니다.',
+    title: '완료 조건',
+    description: '작업 범위와 검증 기준을 사전에 정의합니다.',
   },
   {
     label: 'REVIEW',
-    title: '코드는 직접 봄',
-    description: '생성된 코드를 읽고 기존 구조와 상태 흐름을 깨뜨리지 않았는지 확인합니다.',
+    title: '코드 리뷰',
+    description: '생성된 코드가 기존 구조와 상태 흐름에 미치는 영향을 직접 검토합니다.',
   },
   {
     label: 'TEST',
-    title: '기존 기능까지 테스트',
-    description: '새 기능만 보지 않고 기존 기능까지 테스트한 뒤 반영합니다.',
+    title: '기존 기능 확인',
+    description: '수정 기능과 영향 범위에 포함된 기존 기능을 함께 테스트합니다.',
   },
 ]
 
@@ -34,9 +34,9 @@ export type QuestStep = {
 }
 
 export const questSteps: QuestStep[] = [
-  { step: 'STEP 1', title: '접수', description: '티켓을 읽고 상태를 In Progress로 바꿉니다.' },
-  { step: 'STEP 2', title: '격리', description: '워크트리를 만들어 진행 중인 코드와 분리합니다.' },
-  { step: 'STEP 3', title: '분석', description: '재현 조건과 원인을 먼저 정리합니다. 이 단계에서는 수정하지 않습니다.' },
-  { step: 'STEP 4', title: '수정', description: '원인이 확인된 뒤에 코드를 고칩니다.' },
-  { step: 'STEP 5', title: '검증', description: '기존 기능까지 테스트하고 결과를 티켓에 남깁니다.' },
+  { step: 'STEP 1', title: 'Review', description: '티켓에 명시된 재현 조건과 기대 결과를 확인합니다.' },
+  { step: 'STEP 2', title: 'Isolate', description: '별도 워크트리를 사용해 기존 변경과 작업 환경을 분리합니다.' },
+  { step: 'STEP 3', title: 'Diagnose', description: '문제를 재현하고 원인과 영향 범위를 확인합니다.' },
+  { step: 'STEP 4', title: 'Fix', description: '확인된 원인에 필요한 코드만 수정합니다.' },
+  { step: 'STEP 5', title: 'Verify', description: '수정 사항과 기존 기능을 테스트하고 검증 결과를 티켓에 기록합니다.' },
 ]

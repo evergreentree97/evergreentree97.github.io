@@ -10,22 +10,18 @@ export function HowIWork() {
       <Reveal stagger>
         <SectionTitle id="how-i-work-title" index="03" eyebrow="PROCESS" title="AI와 일하는 방식" />
         <div className={styles.intro}>
-          <p>AI가 만든 산출물이 제 의도와 맞는지 구조적으로 검증합니다.</p>
+          <p>AI 산출물은 코드와 실제 동작을 기준으로 검증합니다.</p>
           <span>
-            <PixelIcon name="code" /> 절차를 스킬로 만들어 저장소에 둡니다
+            <PixelIcon name="code" /> 검증 절차를 저장소 스킬로 관리합니다
           </span>
         </div>
         <p className={styles.introDetail}>
-          필요한 정보를 한 번에 다 주지 않습니다. 절차를 나누고,
-          단계마다 그때 필요한 컨텍스트와 명령만 쓰게 합니다.
-          대표 사례가 QA 티켓 처리 스킬입니다.
+          작업에 필요한 맥락과 명령을 단계별로 분리하여 제공합니다.
         </p>
 
-        <div className={styles.quest} role="group" aria-label="QA 티켓 처리 절차">
+        <div className={styles.quest} role="group" aria-label="QA 수정 절차">
           <div className={styles.questHeading}>
             <span className={styles.questLabel}>QUEST LOG</span>
-            <h3>QA 티켓 처리</h3>
-            <p>티켓 URL 하나를 주면 이 순서로 움직입니다.</p>
           </div>
           <ol className={styles.questSteps}>
             {questSteps.map((quest) => (
@@ -50,27 +46,27 @@ export function HowIWork() {
           ))}
         </ol>
 
-        <div className={styles.cases} role="group" aria-label="산출물 검증 방식">
-          <span className={styles.casesLabel}>VERIFY / 코드 밖에서 확인합니다</span>
+        <div className={styles.cases} role="group" aria-label="결과 확인 방법">
+          <span className={styles.casesLabel}>VERIFICATION</span>
           <ul>
             <li>
-              <strong>기기에서 직접 조작</strong>
-              <p>코드 리뷰로 끝내지 않습니다. adb 명령으로 실제 기기에서 시나리오를 재현해 동작을 확인합니다.</p>
+              <strong>실기기 테스트</strong>
+              <p>adb를 사용해 실제 기기에서 재현 절차와 동작 결과를 확인합니다.</p>
             </li>
             <li>
-              <strong>화면을 증거로 남김</strong>
-              <p>스크린샷과 영상 녹화를 스킬로 자동화해, 확인한 동작을 PR과 QA 티켓에 그대로 첨부합니다.</p>
+              <strong>스크린샷과 영상</strong>
+              <p>검증 화면을 스크린샷과 영상으로 기록하여 PR과 티켓에 첨부합니다.</p>
             </li>
             <li>
-              <strong>기존 앱과 나란히 비교</strong>
-              <p>수정본을 별도 이름의 테스트 빌드로 설치해, 기존 버전과 같은 기기에서 나란히 비교합니다.</p>
+              <strong>버전 비교</strong>
+              <p>수정본과 기존 버전을 동일 기기와 조건에서 비교합니다.</p>
             </li>
           </ul>
         </div>
 
         <p className={styles.outro}>
-          서버 API 반영, PR 생성과 커밋 분리도 같은 방식으로 절차를 만들어 씁니다.
-          얼마나 빨라졌는지는 측정한 것만 말합니다.
+          동일한 원칙을 서버 API 반영, PR 생성과 커밋 분리에도 적용합니다.
+          생산성은 측정된 결과만 제시합니다.
         </p>
       </Reveal>
     </section>

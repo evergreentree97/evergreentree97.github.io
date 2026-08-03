@@ -41,11 +41,31 @@
   line-height: 1.42;
 }
 
-.copy p {
+.focus {
+  display: grid;
   max-width: 62ch;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.focus > div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.focus dt {
+  color: var(--accent-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.64rem;
+}
+
+.focus dd {
+  max-width: 62ch;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .copy a {
@@ -88,5 +108,10 @@
   .avatarScreen svg {
     width: 54px;
     height: 54px;
+  }
+
+  .focus > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }

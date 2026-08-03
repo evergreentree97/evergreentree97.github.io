@@ -40,9 +40,9 @@ export function Contact() {
         <SectionTitle id="contact-title" index="08" eyebrow="CONTACT" title="연락처" />
         <div className={styles.layout}>
           <div>
-            <h3>Android 개발자 채용이나 협업 제안은 아래 채널로 연락해 주세요.</h3>
+            <h3>채용이나 협업 제안은 아래 채널로 연락해 주세요.</h3>
             <p>
-              프로젝트와 경력은 GitHub와 LinkedIn에서 볼 수 있습니다.
+              프로젝트와 경력은 GitHub와 LinkedIn에서 확인할 수 있습니다.
             </p>
           </div>
           <div className={styles.links}>

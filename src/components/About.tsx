@@ -16,20 +16,17 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>화면을 만들다가 모델까지 내려간 이유</h3>
-            <p>
-              Vuddy에서 초기 멀티모듈 구조와 실시간 채팅, 미디어를 맡았고
-              Momentica에서 포토카드 도감과 영상 알람을 개발했습니다.
-              회사에 AI TF가 생기면서 LLM 학습과 평가로 일의 범위가 넓어졌습니다.
-            </p>
-            <p>
-              사내 AI TF에서는 오픈소스 LLM의 학습 데이터를 정제하고 LoRA로 추가 학습했습니다.
-              같은 질문으로 모델을 비교하는 도구를 만들고, 채점 결과가 일관적인지도 따로 확인했습니다.
-            </p>
-            <p>
-              서버 API 연동이나 QA 준비에는 AI 도구를 씁니다.
-              나온 코드는 직접 읽고 기존 기능을 테스트한 뒤 반영합니다.
-            </p>
+            <h3>불확실한 문제에 판단 기준과 검증 방법을 설계합니다</h3>
+            <dl className={styles.focus}>
+              <div>
+                <dt>Android</dt>
+                <dd>앱, 서버, 외부 SDK의 책임 분리와 출시 후 운영</dd>
+              </div>
+              <div>
+                <dt>LLM</dt>
+                <dd>학습과 평가 조건을 고정하고 제품 품질을 기준으로 채택 여부 판단</dd>
+              </div>
+            </dl>
             <a href="#experience">
               경력 보기 <PixelIcon name="arrow" />
             </a>

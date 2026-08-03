@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - 새 npm 의존성 금지. CSS와 IntersectionObserver만으로 모션 구현.
-- 문구에 U+2014(—)와 U+00B7(·) 금지. "A부터 B까지", "A하다가 B합니다" 같은 대구법 금지. 번역투 금지.
+- 문구에 U+2014 em dash와 U+00B7 가운뎃점 금지. "A부터 B까지", "A하다가 B합니다" 같은 대구법 금지. 번역투 금지.
 - 기여 등급을 넘는 문장 금지: 이 계획에 적힌 문구를 그대로 쓰고, 임의로 성과 표현을 강화하지 않는다.
 - 수치에는 채점 조건을 함께 적는다. LLM 평가 수치는 자체 LLM 채점 도구 결과임을 유지한다.
 - 모든 모션은 `prefers-reduced-motion: reduce`에서 꺼져야 한다. global.css의 기존 전역 규칙이 animation/transition을 0.01ms로 줄이므로, JS로 도는 모션(카운트업)만 별도 분기한다.
@@ -133,7 +133,7 @@ summary: 'Kotlin과 Jetpack Compose로 Android 앱을 개발합니다. 사내 AI
 
 - [x] **Step 4: 검증과 커밋**
 
-Run: `npm run check` 그리고 `grep -rn $'—\|·' src/` (결과 없어야 함)
+Run: `npm run check` 그리고 `grep -rn $'\u2014\|\u00b7' src/` (결과 없어야 함)
 Expected: 통과.
 
 ```bash
@@ -836,7 +836,7 @@ git commit -m "ProofStrip 평가 점수에 카운트업 모션 추가"
 
 - [x] **Step 1: 금지 문자와 대구법 검사**
 
-Run: `grep -rn $'—' src/ ; grep -rn $'·' src/`
+Run: `grep -rn $'\u2014' src/ ; grep -rn $'\u00b7' src/`
 Expected: 결과 없음.
 
 문구 전체를 훑어 "A부터 B까지", "A하다가 B합니다", "뿐만 아니라", "단순히 X가 아니라 Y" 패턴이 없는지 확인한다. 발견하면 평서문 두 문장으로 푼다.
