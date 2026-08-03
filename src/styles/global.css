@@ -1,14 +1,16 @@
 :root {
-  --background: #f2f7ed;
-  --surface: #fbfdf7;
-  --surface-muted: #dcebd7;
-  --text-primary: #1c2b20;
-  --text-secondary: #526157;
-  --border: #a8bea9;
-  --accent: #4d9e61;
-  --accent-dark: #24633d;
-  --pixel-green: #93c777;
-  --image-tint: rgb(36 99 61 / 8%);
+  --background: #eef8ea;
+  --surface: #fbfdf8;
+  --surface-muted: #d9eecf;
+  --text-primary: #16241a;
+  --text-secondary: #46584c;
+  --border: #9cbc9a;
+  --accent: #2ea75c;
+  --accent-dark: #1c5c38;
+  --pixel-green: #8fd47a;
+  --hud-dark: #14231a;
+  --image-tint: rgb(28 92 56 / 8%);
+  --scanline: rgb(28 92 56 / 4%);
   --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-pixel: 'Silkscreen', ui-monospace, 'SFMono-Regular', Consolas, monospace;
   --content-width: 1180px;
@@ -34,7 +36,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 1px 1px, rgb(36 99 61 / 6%) 1px, transparent 1px) 0 0 / 18px 18px,
+    repeating-linear-gradient(0deg, var(--scanline) 0 1px, transparent 1px 4px),
+    radial-gradient(circle at 1px 1px, rgb(28 92 56 / 6%) 1px, transparent 1px) 0 0 / 18px 18px,
     var(--background);
   color: var(--text-primary);
   font-size: 17px;
