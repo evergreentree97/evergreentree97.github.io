@@ -12,8 +12,10 @@
 }
 
 .label {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   gap: 8px;
   margin-bottom: 26px;
   padding: 9px 12px;
@@ -24,6 +26,11 @@
   font-size: 0.65rem;
   line-height: 1;
   animation: heroReveal 520ms 80ms var(--ease-out) both;
+}
+
+.label > span:last-child {
+  min-width: 0;
+  line-height: 1.45;
 }
 
 .content h1 {

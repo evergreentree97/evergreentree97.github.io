@@ -7,7 +7,8 @@ export function Hero() {
     <section className={styles.hero} id="top" aria-labelledby="hero-title">
       <div className={styles.content}>
         <span className={styles.label}>
-          <span aria-hidden="true">&gt;</span> CHOI SANGROK / ANDROID DEVELOPER
+          <span aria-hidden="true">&gt;</span>
+          <span>CHOI SANGROK / ANDROID DEVELOPER / AI-NATIVE PRODUCT ENGINEER</span>
         </span>
         <h1 id="hero-title">
           <span className={styles.line}>역할의 경계를 넘어,</span>

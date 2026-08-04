@@ -16,7 +16,7 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>불확실한 문제에 판단 기준과 검증 방법을 설계합니다</h3>
+            <h3>문제에 맞는 기술을 선택하고, 구현과 검증까지 연결합니다</h3>
             <dl className={styles.focus}>
               <div>
                 <dt>Android</dt>
