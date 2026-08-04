@@ -19,8 +19,8 @@ export function ProofStrip() {
         <div>
           <PixelIcon name="flag" />
           <p>
-            <strong>AI 개발 프로세스</strong>
-            <span>SSOT, 완료 조건, 코드 리뷰와 기존 기능 확인</span>
+            <strong>AI 생성 코드 검증</strong>
+            <span>변경 범위 고정, diff 리뷰, 실기기 테스트</span>
           </p>
         </div>
         <div>

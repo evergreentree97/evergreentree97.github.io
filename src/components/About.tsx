@@ -24,7 +24,7 @@ export function About() {
               </div>
               <div>
                 <dt>LLM</dt>
-                <dd>학습과 평가 조건을 고정하고 제품 품질을 기준으로 채택 여부 판단</dd>
+                <dd>학습과 평가 조건을 고정하고, 제품 품질을 기준으로 모델 채택 여부를 판단</dd>
               </div>
             </dl>
             <a href="#experience">

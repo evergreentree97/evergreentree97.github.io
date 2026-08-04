@@ -13,7 +13,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Product & Platform',
-    description: '출시와 운영에 필요한 제품 기능',
+    description: '결제, 메시징, 미디어와 출시 자동화',
     skills: ['Android CI/CD', 'Play Billing', 'Sendbird', 'Media3', 'Room / AlarmManager'],
   },
   {
@@ -23,7 +23,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Tools & Automation',
-    description: 'AI 코딩 도구와 빌드 자동화',
+    description: '개발 도구와 자동화',
     skills: ['Claude Code / Codex', 'GitHub Actions', 'KSP', 'React / TypeScript'],
   },
 ]

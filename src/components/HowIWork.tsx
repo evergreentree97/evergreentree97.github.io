@@ -12,16 +12,16 @@ export function HowIWork() {
         <div className={styles.overview}>
           <div className={styles.overviewCopy}>
             <span className={styles.overviewLabel}>WORKING PRINCIPLE</span>
-            <p>AI 산출물은 코드와 실제 동작을 기준으로 검증합니다.</p>
+            <p>AI가 생성한 코드는 diff로 검토하고, 빌드와 실기기 테스트를 통과한 경우에만 반영합니다.</p>
             <span className={styles.introDetail}>
-              작업에 필요한 맥락과 명령을 단계별로 분리하여 제공합니다.
+              Repository 구조와 코드 규칙, 변경 범위, 완료 조건을 먼저 제공한 뒤 구현을 요청합니다.
             </span>
           </div>
           <div className={styles.repositorySkill}>
             <PixelIcon name="code" />
             <span>
               <small>REPOSITORY SKILL</small>
-              검증 절차를 Repository Skill로 관리합니다.
+              반복 작업은 Repository Skill로 문서화해 같은 검증 절차를 재사용합니다.
             </span>
           </div>
         </div>

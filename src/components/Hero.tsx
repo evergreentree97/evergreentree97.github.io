@@ -15,8 +15,8 @@ export function Hero() {
           <span className={styles.line}><strong>제품을</strong> 끝까지 만듭니다<span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          Android 앱의 구조 설계와 출시 후 운영을 담당했으며, LLM 학습과 평가 체계를 구축했습니다.
-          AI는 개발 과정에 활용하고, 결과는 코드 리뷰와 동작 테스트로 검증합니다.
+          Android 앱의 멀티모듈 구조와 외부 SDK 연동을 설계하고, 출시와 운영까지 담당했습니다.
+          LLM은 학습과 평가 조건을 고정해 품질 변화를 비교했으며, AI 생성 코드는 diff 리뷰와 실기기 테스트를 통과한 경우에만 반영합니다.
         </p>
 
         <div className={styles.actions}>

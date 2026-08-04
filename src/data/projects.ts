@@ -54,7 +54,7 @@ export const featuredProjects: FeaturedProject[] = [
     caseStudy: {
       problem: '실시간 메시징과 운영 기능이 모두 Sendbird에 의존하면 제품 정책도 외부 SDK 제약에 종속될 위험이 있었습니다.',
       decision: '실시간 메시징은 Sendbird, 채팅방 생성과 검색, 신고와 삭제는 백엔드 API로 책임을 분리했습니다.',
-      verification: '출시 전에 대규모 그룹 푸시 제약을 확인하여 자체 푸시로 전환했습니다. Sendbird 연동, 양방향 페이징, 사진과 영상 메시지를 담당했습니다.',
+      verification: '대규모 그룹의 푸시 제약을 출시 전에 확인해 자체 푸시로 전환하고, 수신과 알림 이동 경로를 실기기에서 검증했습니다.',
     },
     links: [
       {
@@ -105,7 +105,7 @@ export const featuredProjects: FeaturedProject[] = [
     caseStudy: {
       problem: '영상 알람은 휴대전화 재부팅과 잠금 화면을 처리해야 했고, 여러 알람이 같은 영상 파일을 공유할 수 있었습니다.',
       decision: '알람 데이터 저장과 실행 예약을 분리하고, 재부팅 복원과 파일 삭제 규칙을 별도로 정의했습니다.',
-      verification: 'Android 14 기기에서 앱 종료와 재부팅 뒤 알람 복원, 잠금 화면 실행을 테스트 빌드로 확인했습니다.',
+      verification: 'Android 알림 정책을 반영하고, 앱 종료와 재부팅 이후의 알람 복원, 잠금 화면 실행 등 주요 시나리오를 Android 14 실기기에서 검증했습니다.',
     },
     links: [
       {
