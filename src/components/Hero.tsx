@@ -10,9 +10,9 @@ export function Hero() {
           <span aria-hidden="true">&gt;</span> CHOI SANGROK / ANDROID DEVELOPER
         </span>
         <h1 id="hero-title">
-          <span className={styles.line}>기준을 세우고,</span>
+          <span className={styles.line}>역할의 경계를 넘어,</span>
           <br />
-          <span className={styles.line}><strong>제품을</strong> 끝까지 만듭니다<span className={styles.cursor}>_</span></span>
+          <span className={styles.line}>아이디어를 <strong>제품까지</strong> 가져갑니다<span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
           Android 앱의 멀티모듈 구조와 외부 SDK 연동을 설계하고, 출시와 운영까지 담당했습니다.

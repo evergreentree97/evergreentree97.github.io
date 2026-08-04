@@ -28,7 +28,7 @@
 
 .content h1 {
   color: var(--text-primary);
-  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.55rem);
   font-weight: 780;
   letter-spacing: -0.055em;
   line-height: 1.13;
