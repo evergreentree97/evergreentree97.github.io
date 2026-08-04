@@ -27,7 +27,7 @@ export function ProofStrip() {
           <PixelIcon name="save" />
           <p>
             <strong>대화 품질 76.96 → <span ref={countRef}>0.00</span></strong>
-            <span>동일 입력 40건에서 학습 전후 모델을 같은 조건으로 비교</span>
+            <span>운영 모델과 후보 모델을 같은 대화 40건으로 비교</span>
           </p>
         </div>
       </aside>
