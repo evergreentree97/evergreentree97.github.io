@@ -16,6 +16,16 @@
   height: 44px;
   border: 1px solid var(--border);
   color: var(--accent-dark);
+  transition:
+    background var(--motion-fast) steps(2, end),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .footer a:hover {
+    background: var(--pixel-green);
+    transform: translate3d(0, -3px, 0);
+  }
 }
 
 .footer svg {

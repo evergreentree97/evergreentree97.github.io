@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import '@fontsource/silkscreen/400.css'
+import '@fontsource/silkscreen/latin-400.css'
 import './styles/global.css'
 import App from './App'
 

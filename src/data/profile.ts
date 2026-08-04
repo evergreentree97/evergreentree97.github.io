@@ -17,7 +17,7 @@ export const navigation = [
 ] as const
 
 export const tastes = [
-  { icon: 'game', label: '게임', value: 'RPG / 전략 / 인디' },
-  { icon: 'music', label: '음악', value: '키보드 / 밴드 / 록' },
-  { icon: 'fitness', label: '운동', value: '근력 운동' },
+  { icon: 'game', label: '게임', value: 'RPG / 전략' },
+  { icon: 'music', label: '음악', value: '키보드 / 밴드 / J-Pop' },
+  { icon: 'fitness', label: '운동', value: '웨이트 트레이닝 / 클라이밍' },
 ] as const

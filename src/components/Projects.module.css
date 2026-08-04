@@ -22,18 +22,17 @@
   border: 1px solid var(--border);
   background: var(--surface);
   flex-direction: column;
-  transition: transform 140ms steps(2, end);
+  transition:
+    border-color var(--motion-fast) var(--ease-standard),
+    box-shadow var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-out);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  animation: selectFrame 900ms steps(2, start) infinite;
-}
-
-@keyframes selectFrame {
-  50% {
+@media (hover: hover) {
+  .card:hover {
     border-color: var(--pixel-green);
     box-shadow: 0 0 0 2px var(--pixel-green);
+    transform: translate3d(0, -5px, 0);
   }
 }
 
@@ -180,6 +179,21 @@
 
 .caseStudy[open] summary svg {
   transform: rotate(90deg);
+}
+
+.caseStudy[open] dl {
+  animation: detailsEnter 260ms var(--ease-out) both;
+}
+
+@keyframes detailsEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .caseStudy dl {

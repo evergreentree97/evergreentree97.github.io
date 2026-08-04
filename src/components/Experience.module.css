@@ -65,6 +65,18 @@
   padding: 28px 30px;
   border: 1px solid var(--border);
   background: var(--surface);
+  transition:
+    border-color var(--motion-fast) var(--ease-standard),
+    box-shadow var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .timeline > li:hover .entry {
+    border-color: var(--accent-dark);
+    box-shadow: 4px 4px 0 var(--border);
+    transform: translate3d(-2px, -2px, 0);
+  }
 }
 
 .entryHeading {

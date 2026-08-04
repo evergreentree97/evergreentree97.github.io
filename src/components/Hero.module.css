@@ -23,6 +23,7 @@
   font-family: var(--font-pixel);
   font-size: 0.65rem;
   line-height: 1;
+  animation: heroReveal 520ms 80ms var(--ease-out) both;
 }
 
 .content h1 {
@@ -35,18 +36,36 @@
 
 .line {
   display: inline-block;
-  overflow: hidden;
-  max-width: 0;
   white-space: nowrap;
-  animation: typeIn 900ms steps(14, end) forwards;
+  animation: typeIn 720ms 180ms steps(14, end) both;
 }
 
 .content h1 .line:nth-child(3) {
-  animation-delay: 950ms;
+  animation-delay: 400ms;
 }
 
 @keyframes typeIn {
-  to { max-width: 100%; }
+  from {
+    opacity: 0.5;
+    clip-path: inset(0 100% 0 0);
+    transform: translate3d(0, 4px, 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .cursor {
@@ -65,6 +84,7 @@
   color: var(--text-secondary);
   font-size: clamp(1rem, 1vw + 0.75rem, 1.16rem);
   line-height: 1.8;
+  animation: heroReveal 600ms 620ms var(--ease-out) both;
 }
 
 .actions {
@@ -72,6 +92,7 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 30px;
+  animation: heroReveal 600ms 740ms var(--ease-out) both;
 }
 
 .button {
@@ -94,10 +115,12 @@
     background 150ms ease;
 }
 
-.button:hover {
-  border-color: var(--accent-dark);
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--accent-dark);
+@media (hover: hover) {
+  .button:hover {
+    border-color: var(--accent-dark);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--accent-dark);
+  }
 }
 
 .button:active {
@@ -118,6 +141,18 @@
 
 .sceneColumn {
   min-width: 0;
+  animation: heroSceneEnter 720ms 260ms var(--ease-out) both;
+}
+
+@keyframes heroSceneEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(20px, 12px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 .sceneFrame {
@@ -191,11 +226,11 @@
 
 .statusBox,
 .messageBox {
-  animation: hudPop 400ms cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  animation: hudPop 460ms var(--ease-out) both;
 }
 
-.statusBox { animation-delay: 1900ms; }
-.messageBox { animation-delay: 2100ms; }
+.statusBox { animation-delay: 900ms; }
+.messageBox { animation-delay: 760ms; }
 
 @keyframes hudPop {
   from { opacity: 0; transform: translateY(14px) scale(0.94); }

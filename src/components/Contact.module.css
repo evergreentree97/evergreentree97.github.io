@@ -35,13 +35,23 @@
   border-bottom: 1px solid var(--border);
   text-decoration: none;
   transition:
-    background 150ms ease,
-    padding 150ms ease;
+    background var(--motion-fast) var(--ease-standard),
+    padding var(--motion-fast) var(--ease-out);
 }
 
-.links a:hover {
-  padding-inline: 16px 8px;
-  background: var(--surface-muted);
+.links a > svg:last-child {
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .links a:hover {
+    padding-inline: 16px 8px;
+    background: var(--surface-muted);
+  }
+
+  .links a:hover > svg:last-child {
+    transform: translate3d(3px, -3px, 0);
+  }
 }
 
 .links svg {

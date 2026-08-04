@@ -8,7 +8,7 @@ export const workingMethod: WorkingMethod[] = [
   {
     label: 'CONTEXT',
     title: 'SSOT',
-    description: '저장소 구조, 코드 규칙과 결정 기록을 단일 작업 기준으로 관리합니다.',
+    description: 'Repository 구조, 코드 규칙과 결정 기록을 단일 작업 기준으로 관리합니다.',
   },
   {
     label: 'SCOPE',

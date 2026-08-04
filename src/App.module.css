@@ -12,6 +12,12 @@
   padding-top: 120px;
 }
 
+.aboutSkills,
+.shell > section:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 760px;
+}
+
 .footerShell {
   margin-top: 120px;
 }

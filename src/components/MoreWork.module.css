@@ -14,6 +14,16 @@
   gap: 34px;
   padding: 28px 4px;
   border-bottom: 1px solid var(--border);
+  transition:
+    background var(--motion-fast) var(--ease-standard),
+    padding var(--motion-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .list article:hover {
+    padding-inline: 12px;
+    background: color-mix(in srgb, var(--surface-muted) 42%, transparent);
+  }
 }
 
 .heading span {

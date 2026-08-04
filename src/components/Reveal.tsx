@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import styles from './Reveal.module.css'
 
 type RevealProps = {
@@ -9,36 +9,42 @@ type RevealProps = {
 
 export function Reveal({ children, className = '', stagger = false }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const element = ref.current
-    if (!element || !('IntersectionObserver' in window)) {
-      setIsVisible(true)
+    if (!element) return undefined
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      element.dataset.visible = 'true'
       return undefined
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
-    )
-
-    observer.observe(element)
-    return () => observer.disconnect()
+    revealObserver.observe(element)
+    return () => revealObserver.unobserve(element)
   }, [])
 
   return (
     <div
       ref={ref}
-      className={`${styles.reveal} ${stagger ? styles.stagger : ''} ${isVisible ? styles.visible : ''} ${className}`}
-      data-visible={isVisible || undefined}
+      className={`${styles.reveal} ${stagger ? styles.stagger : ''} ${className}`}
     >
       {children}
     </div>
   )
 }
+
+const revealObserver = typeof window === 'undefined' || !('IntersectionObserver' in window)
+  ? ({ observe() {}, unobserve() {} } as Pick<IntersectionObserver, 'observe' | 'unobserve'>)
+  : new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+
+          const element = entry.target as HTMLElement
+          element.dataset.visible = 'true'
+          observer.unobserve(element)
+        })
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.06 },
+    )
