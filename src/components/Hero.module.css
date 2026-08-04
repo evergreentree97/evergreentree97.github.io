@@ -153,11 +153,9 @@
 
 @keyframes heroSceneEnter {
   from {
-    opacity: 0;
     transform: translate3d(20px, 12px, 0) scale(0.985);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
   }
 }
@@ -170,12 +168,6 @@
   box-shadow:
     inset 0 0 0 3px var(--surface),
     6px 6px 0 var(--border);
-  animation: floatIdle 5s ease-in-out infinite;
-}
-
-@keyframes floatIdle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
 }
 
 .sceneFrame picture {
@@ -278,6 +270,7 @@
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    gap: 32px;
     padding-block: 72px 56px;
   }
 
@@ -289,8 +282,8 @@
 
 @media (max-width: 540px) {
   .hero {
-    gap: 40px;
-    padding-top: 54px;
+    gap: 26px;
+    padding-block: 36px 30px;
   }
 
   .content h1 {
@@ -301,12 +294,22 @@
     display: none;
   }
 
-  .button {
-    flex: 1 1 calc(50% - 10px);
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 20px;
   }
 
-  .button.primary {
-    flex-basis: 100%;
+  .button {
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 0.62rem;
+  }
+
+  .sceneColumn {
+    width: min(100%, 320px);
+    margin: 0 auto;
   }
 
   .sceneFrame {
@@ -315,21 +318,13 @@
   }
 
   .messageBox {
-    top: 16px;
-    right: 16px;
-    left: 16px;
-    padding: 9px 10px;
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    padding: 8px 9px;
   }
 
   .statusBox {
-    right: 14px;
-    bottom: -24px;
-    left: 14px;
-    grid-template-columns: auto 1fr;
-    padding: 10px 12px;
-  }
-
-  .building {
     display: none;
   }
 }

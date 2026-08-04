@@ -29,7 +29,7 @@ export function HowIWork() {
         <div className={styles.quest} role="group" aria-label="QA 수정 절차">
           <div className={styles.questHeading}>
             <span className={styles.questLabel}>QUEST LOG</span>
-            <span className={styles.questCount}>01 — 05</span>
+            <span className={styles.questCount}>01 - 05</span>
           </div>
           <ol className={styles.questSteps}>
             {questSteps.map((quest) => (

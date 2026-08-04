@@ -18,7 +18,7 @@ export type FeaturedProject = {
   outcomes: string[]
   technologies: string[]
   image: {
-    src: string
+    artwork: 'vuddy' | 'llm' | 'momentica'
     alt: string
   }
   caseStudy: ProjectCase
@@ -48,8 +48,8 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI / MVVM', 'Sendbird', 'Media3'],
     image: {
-      src: '/images/project-vuddy.jpg',
-      alt: 'Android 채팅 화면과 실시간 메시징, 운영 API의 경계를 나타낸 도트 다이어그램',
+      artwork: 'vuddy',
+      alt: '대화 카드가 중앙 장치로 모이는 도트 비네트',
     },
     caseStudy: {
       problem: '실시간 메시징과 운영 기능이 모두 Sendbird에 의존하면 제품 정책도 외부 SDK 제약에 종속될 위험이 있었습니다.',
@@ -58,7 +58,7 @@ export const featuredProjects: FeaturedProject[] = [
     },
     links: [
       {
-        label: '앱 보기',
+        label: 'Google Play에서 보기',
         href: 'https://play.google.com/store/apps/details?hl=ko&id=io.levvels.vuddy',
         external: true,
       },
@@ -76,8 +76,8 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     technologies: ['Python', 'PyTorch', 'LoRA', 'LLM Evaluation', 'vLLM'],
     image: {
-      src: '/images/project-llm-evaluation.jpg',
-      alt: '같은 대화 40건으로 운영 모델과 후보 모델을 비교하고 평가 오류를 검증하는 도트 다이어그램',
+      artwork: 'llm',
+      alt: '같은 입력으로 두 모델의 응답 패턴을 비교하는 도트 비네트',
     },
     caseStudy: {
       problem: '평균 점수만으로는 사용자 행동 대필, 캐릭터 설정 위반, 응답 형식 실패가 가려졌습니다. 판정 입력이 잘리거나 평가 대화가 학습셋에 섞이면 점수 자체도 신뢰할 수 없었습니다.',
@@ -98,8 +98,8 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
     image: {
-      src: '/images/project-momentica.jpg',
-      alt: '알람 데이터 저장, 영상 파일, 재부팅 복원과 실행 흐름을 나타낸 도트 다이어그램',
+      artwork: 'momentica',
+      alt: '영상 알람과 운동 가방, 클라이밍 벽을 연결한 도트 비네트',
     },
     caseStudy: {
       problem: '영상 알람은 휴대전화 재부팅과 잠금 화면을 처리해야 했고, 여러 알람이 같은 영상 파일을 공유할 수 있었습니다.',
@@ -108,7 +108,7 @@ export const featuredProjects: FeaturedProject[] = [
     },
     links: [
       {
-        label: '앱 보기',
+        label: 'Google Play에서 보기',
         href: 'https://play.google.com/store/apps/details?hl=ko&id=io.levvels.mmtc',
         external: true,
       },

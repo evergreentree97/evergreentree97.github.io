@@ -32,28 +32,24 @@ export function Hero() {
           >
             GitHub <PixelIcon name="external" />
           </a>
-          <a className={styles.button} href={profile.careerUrl}>
-            경력 보기 <PixelIcon name="resume" />
-          </a>
         </div>
       </div>
 
       <div className={styles.sceneColumn}>
         <div className={styles.sceneFrame}>
-          <div className={styles.messageBox}>출시 이후까지 책임집니다.</div>
+          <div className={styles.messageBox}>제품까지 가져갑니다.</div>
           <picture>
             <source
-              srcSet="/images/hero-journey-480.avif 480w, /images/hero-journey-800.avif 800w, /images/hero-journey.avif 1200w"
+              srcSet="/images/hero-product-developer-480.avif 480w, /images/hero-product-developer-800.avif 800w, /images/hero-product-developer.avif 1200w"
               sizes="(max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
               type="image/avif"
             />
             <img
-              src="/images/hero-journey.jpg"
-              srcSet="/images/hero-journey-480.jpg 480w, /images/hero-journey-800.jpg 800w, /images/hero-journey.jpg 1200w"
+              src="/images/hero-product-developer.jpg"
               sizes="(max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
-              alt="언덕길에서 멀리 도시를 바라보는 개발자의 오리지널 도트 일러스트"
-              width="1200"
-              height="800"
+              alt="노트의 아이디어를 노트북과 스마트폰의 제품으로 옮기는 개발자의 저녁 작업실"
+              width="1536"
+              height="1024"
               fetchPriority="high"
               loading="eager"
             />
