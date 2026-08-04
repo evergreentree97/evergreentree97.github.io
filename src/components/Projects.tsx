@@ -18,7 +18,7 @@ export function Projects() {
       <Reveal stagger>
         <SectionTitle
           id="projects-title"
-          index="04"
+          index="03"
           eyebrow="SELECTED WORK"
           title="주요 프로젝트"
           action={

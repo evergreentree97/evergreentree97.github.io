@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
     period: '2023.10 - Present',
     organization: 'Levvels (Dunamu & HYBE)',
     role: 'Android Developer',
-    summary: 'Kotlin과 Jetpack Compose 기반 Android 앱 개발과 오픈소스 LLM 학습 및 평가를 담당하고 있습니다.',
+    summary: 'Android 앱의 설계와 출시 후 운영을 담당하며, 대화 품질 개선을 위해 오픈소스 LLM의 학습과 평가까지 수행하고 있습니다.',
     highlights: [
       'Momentica의 영상 알람과 포토카드 도감을 구현하고, Vuddy의 초기 멀티모듈 구조와 채팅, 미디어 기능 설계',
       '신규 앱에 Google Play 결제와 광고 SDK를 연동하고, QA 빌드 배포 자동화',

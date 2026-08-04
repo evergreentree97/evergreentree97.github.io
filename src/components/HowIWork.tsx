@@ -8,11 +8,11 @@ export function HowIWork() {
   return (
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <Reveal stagger>
-        <SectionTitle id="how-i-work-title" index="03" eyebrow="PROCESS" title="AI와 일하는 방식" />
+        <SectionTitle id="how-i-work-title" index="04" eyebrow="PROCESS" title="AI와 일하는 방식" />
         <div className={styles.overview}>
           <div className={styles.overviewCopy}>
             <span className={styles.overviewLabel}>WORKING PRINCIPLE</span>
-            <p>AI가 생성한 코드는 diff로 검토하고, 빌드와 실기기 테스트를 통과한 경우에만 반영합니다.</p>
+            <p>요구사항과 완료 조건을 먼저 정의하고, AI를 구현과 검증에 활용합니다. 생성된 코드는 diff 리뷰와 빌드, 실기기 테스트를 통과한 경우에만 반영합니다.</p>
             <span className={styles.introDetail}>
               Repository 구조와 코드 규칙, 변경 범위, 완료 조건을 먼저 제공한 뒤 구현을 요청합니다.
             </span>
