@@ -50,7 +50,7 @@
 </p>
 ```
 
-messageBox 문구는 `앱을 만들고 운영합니다.` 에서 `PRESS START TO SCROLL`로 바꾼다(게임 HUD 톤, Task 3에서 스타일 적용).
+messageBox 문구는 기존 한국어 문구에서 `PRESS START TO SCROLL`로 바꾼다(게임 HUD 톤, Task 3에서 스타일 적용).
 
 - [x] **Step 2: 섹션 도입 한 줄 추가**
 
