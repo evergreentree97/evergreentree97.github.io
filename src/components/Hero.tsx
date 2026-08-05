@@ -8,16 +8,16 @@ export function Hero() {
       <div className={styles.content}>
         <span className={styles.label}>
           <span aria-hidden="true">&gt;</span>
-          <span>CHOI SANGROK / ANDROID DEVELOPER / AI-NATIVE PRODUCT ENGINEER</span>
+          <span>CHOI SANGROK / ANDROID DEVELOPER</span>
         </span>
         <h1 id="hero-title">
-          <span className={styles.line}>역할의 경계를 넘어,</span>
+          <span className={styles.line}>AI에 일을 맡기고,</span>
           <br />
-          <span className={styles.line}>아이디어를 <strong>제품까지</strong> 가져갑니다<span className={styles.cursor}>_</span></span>
+          <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          제품의 문제를 기준으로 기술과 구현 범위를 결정합니다.
-          Android 앱은 설계부터 출시 후 운영까지, LLM은 학습부터 평가와 적용 판단까지 맡았습니다.
+          Kotlin과 Jetpack Compose로 Android 앱을 만들고 운영했습니다.
+          오픈소스 LLM은 학습 데이터 정리부터 추가 학습, 평가와 서빙까지 맡았습니다.
         </p>
 
         <div className={styles.actions}>
@@ -37,7 +37,7 @@ export function Hero() {
 
       <div className={styles.sceneColumn}>
         <div className={styles.sceneFrame}>
-          <div className={styles.messageBox}>제품까지 가져갑니다.</div>
+          <div className={styles.messageBox}>앱을 만들고 운영합니다.</div>
           <picture>
             <source
               srcSet="/images/hero-product-developer-480.avif 480w, /images/hero-product-developer-560.avif 560w, /images/hero-product-developer-640.avif 640w, /images/hero-product-developer-800.avif 800w, /images/hero-product-developer.avif 1200w"
@@ -56,8 +56,8 @@ export function Hero() {
           </picture>
           <div className={styles.statusBox} aria-label="주요 경험과 기술">
             <span>Android 앱 3개</span>
-            <strong>설계부터 운영</strong>
-            <span className={styles.building}>LLM 학습과 평가</span>
+            <strong>Kotlin / Compose</strong>
+            <span className={styles.building}>LLM 평가</span>
           </div>
         </div>
       </div>

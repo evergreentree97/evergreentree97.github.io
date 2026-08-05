@@ -15,7 +15,7 @@
 - 새 npm 의존성 금지. CSS와 IntersectionObserver만으로 모션 구현.
 - 문구에 U+2014 em dash와 U+00B7 가운뎃점 금지. "A부터 B까지", "A하다가 B합니다" 같은 대구법 금지. 번역투 금지.
 - 기여 등급을 넘는 문장 금지: 이 계획에 적힌 문구를 그대로 쓰고, 임의로 성과 표현을 강화하지 않는다.
-- 수치에는 채점 조건을 함께 적는다. LLM 평가 수치는 자체 LLM 채점 도구 결과임을 유지한다.
+- 수치에는 채점 조건을 함께 적는다. LLM 평가 수치는 내부 자동 평가 결과임을 유지한다.
 - 모든 모션은 `prefers-reduced-motion: reduce`에서 꺼져야 한다. global.css의 기존 전역 규칙이 animation/transition을 0.01ms로 줄이므로, JS로 도는 모션(카운트업)만 별도 분기한다.
 - 각 태스크 끝에 `npm run check` 통과 후 커밋. 커밋 메시지는 한국어, 기존 스타일(`포트폴리오 문구를 간결하게 정리`)을 따른다.
 - push는 하지 않는다. 사용자가 별도 승인한다.
@@ -46,7 +46,7 @@
 <p className={styles.description}>
   Levvels에서 Android 앱을 만듭니다. Vuddy의 실시간 채팅과 미디어,
   Momentica의 포토카드 도감과 영상 알람을 개발했고,
-  사내 AI TF에서 LLM 학습과 평가를 맡고 있습니다.
+  오픈소스 LLM의 학습과 평가를 맡고 있습니다.
 </p>
 ```
 
@@ -115,7 +115,7 @@ summary: '포토카드 도감과 영상 알람을 맡아, 앱 종료와 재부�
 - [x] **Step 2: experience.ts summary 다듬기**
 
 ```ts
-summary: 'Kotlin과 Jetpack Compose로 Android 앱을 개발합니다. 사내 AI TF에서는 오픈소스 LLM의 데이터 정제와 LoRA 추가 학습, 평가 도구, vLLM 서빙을 맡고 있습니다.',
+summary: 'Kotlin과 Jetpack Compose로 Android 앱을 개발합니다. 오픈소스 LLM은 데이터 정제와 LoRA 추가 학습, 평가 도구, vLLM 서빙을 맡고 있습니다.',
 ```
 
 - [x] **Step 3: About 문단 다듬기**
@@ -808,7 +808,7 @@ export function ProofStrip() {
         <PixelIcon name="save" />
         <p>
           <strong ref={ref as React.RefObject<HTMLElement>}>76.96 → {value.toFixed(2)}</strong>
-          <span>동일 입력 40건을 자체 LLM 채점 도구로 비교</span>
+          <span>다시 학습한 모델을 기존 모델과 같은 질문으로 비교</span>
         </p>
       </div>
     </aside>

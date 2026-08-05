@@ -16,15 +16,15 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>문제에 맞는 기술을 선택하고, 구현과 검증까지 연결합니다</h3>
+            <h3>Android 앱과 대화형 LLM을 다룹니다</h3>
             <dl className={styles.focus}>
               <div>
                 <dt>Android</dt>
-                <dd>앱, 서버, 외부 SDK의 책임 분리와 출시 후 운영</dd>
+                <dd>구조 설계, SDK와 API 연동, 출시 후 운영</dd>
               </div>
               <div>
                 <dt>LLM</dt>
-                <dd>학습과 평가 조건을 고정하고, 제품 품질을 기준으로 모델 채택 여부를 판단</dd>
+                <dd>학습 데이터 정리, 추가 학습, 평가와 서빙</dd>
               </div>
             </dl>
             <a href="#experience">
