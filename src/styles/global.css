@@ -11,7 +11,7 @@
   --hud-dark: #14231a;
   --image-tint: rgb(28 92 56 / 8%);
   --scanline: rgb(28 92 56 / 4%);
-  --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', 'Noto Sans KR', sans-serif;
   --font-pixel: 'Silkscreen', ui-monospace, 'SFMono-Regular', Consolas, monospace;
   --content-width: 1180px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);

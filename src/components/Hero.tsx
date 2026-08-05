@@ -40,13 +40,13 @@ export function Hero() {
           <div className={styles.messageBox}>제품까지 가져갑니다.</div>
           <picture>
             <source
-              srcSet="/images/hero-product-developer-480.avif 480w, /images/hero-product-developer-800.avif 800w, /images/hero-product-developer.avif 1200w"
-              sizes="(max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
+              srcSet="/images/hero-product-developer-480.avif 480w, /images/hero-product-developer-560.avif 560w, /images/hero-product-developer-640.avif 640w, /images/hero-product-developer-800.avif 800w, /images/hero-product-developer.avif 1200w"
+              sizes="(max-width: 540px) min(320px, calc(100vw - 40px)), (max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
               type="image/avif"
             />
             <img
               src="/images/hero-product-developer.jpg"
-              sizes="(max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
+              sizes="(max-width: 540px) min(320px, calc(100vw - 40px)), (max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
               alt="노트의 아이디어를 노트북과 스마트폰의 제품으로 옮기는 개발자의 저녁 작업실"
               width="1536"
               height="1024"
