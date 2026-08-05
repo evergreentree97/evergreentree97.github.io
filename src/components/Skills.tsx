@@ -8,7 +8,6 @@ export function Skills() {
     <section className={styles.skills} id="skills" aria-labelledby="skills-title">
       <Reveal stagger>
         <SectionTitle id="skills-title" index="02" eyebrow="TOOLKIT" title="기술" />
-        <p className={styles.note}>제품에서 직접 써본 기술만 적었습니다.</p>
         <div className={styles.groups}>
           {skillGroups.map((group) => (
             <section className={styles.group} key={group.label} aria-labelledby={`skill-${group.label}`}>

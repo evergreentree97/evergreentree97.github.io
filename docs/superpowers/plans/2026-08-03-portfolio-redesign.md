@@ -70,11 +70,7 @@ messageBox 문구는 `앱을 만들고 운영합니다.` 에서 `PRESS START TO 
 <p className={styles.sectionNote}>회사 경력입니다. 담당한 범위 기준으로 적었습니다.</p>
 ```
 
-`src/components/Skills.tsx`: 기존 note 문구를 교체.
-
-```tsx
-<p className={styles.note}>제품에서 직접 써본 기술만 적었습니다.</p>
-```
+`src/components/Skills.tsx`: 별도 note 문구를 두지 않는다.
 
 - [x] **Step 3: 검증과 커밋**
 
