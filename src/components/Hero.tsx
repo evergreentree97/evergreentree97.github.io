@@ -37,7 +37,7 @@ export function Hero() {
 
       <div className={styles.sceneColumn}>
         <div className={styles.sceneFrame}>
-          <div className={styles.messageBox}>출시는 엔딩이 아닙니다.</div>
+          <div className={styles.messageBox}>BUILD. SHIP. ENJOY.</div>
           <picture>
             <source
               srcSet="/images/hero-product-developer-480.avif 480w, /images/hero-product-developer-560.avif 560w, /images/hero-product-developer-640.avif 640w, /images/hero-product-developer-800.avif 800w, /images/hero-product-developer.avif 1200w"
