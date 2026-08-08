@@ -17,3 +17,10 @@
     transform: none;
   }
 }
+
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,15 +1,8 @@
-.note {
-  max-width: 54ch;
-  margin-top: 28px;
-  color: var(--text-secondary);
-  font-size: 0.94rem;
-}
-
 .groups {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px 28px;
-  margin-top: 26px;
+  margin-top: 32px;
 }
 
 .group {
@@ -21,7 +14,7 @@
 .groupHeading h3 {
   color: var(--accent-dark);
   font-family: var(--font-pixel);
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-weight: 400;
   line-height: 1.5;
 }

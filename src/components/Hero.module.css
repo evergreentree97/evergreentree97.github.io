@@ -39,10 +39,6 @@
   font-weight: inherit;
 }
 
-.mobileBreak {
-  display: none;
-}
-
 .cursor {
   display: inline-block;
   color: var(--pixel-green);
@@ -75,7 +71,7 @@
   min-height: 48px;
   gap: 10px;
   padding: 0 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-control);
   background: var(--surface);
   color: var(--text-primary);
   font-family: var(--font-pixel);
@@ -127,12 +123,7 @@
 }
 
 .sceneFrame picture::after {
-  position: absolute;
-  inset: 0;
-  background: var(--image-tint);
-  content: '';
-  mix-blend-mode: multiply;
-  pointer-events: none;
+  display: none;
 }
 
 .sceneFrame img {
@@ -140,7 +131,7 @@
   height: 100%;
   object-fit: cover;
   image-rendering: pixelated;
-  filter: saturate(0.86) hue-rotate(10deg) contrast(1.02);
+  filter: saturate(0.96) contrast(1.03);
 }
 
 .messageBox,
@@ -154,25 +145,26 @@
 }
 
 .messageBox {
-  top: 24px;
-  right: 24px;
-  left: 24px;
-  padding: 12px 14px;
+  top: -18px;
+  left: 22px;
+  padding: 10px 12px;
   color: var(--text-primary);
   font-size: clamp(0.58rem, 1.1vw, 0.78rem);
+  white-space: nowrap;
 }
 
 .statusBox {
-  right: 22px;
-  bottom: -28px;
-  left: 22px;
+  position: static;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
+  margin-top: 8px;
   padding: 13px 16px;
+  border-width: 1px;
+  box-shadow: none;
   color: var(--text-secondary);
-  font-size: clamp(0.55rem, 0.8vw, 0.62rem);
+  font-size: clamp(0.68rem, 0.8vw, 0.72rem);
 }
 
 .statusBox strong {
@@ -196,6 +188,7 @@
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    gap: 32px;
     padding-block: 72px 56px;
   }
 
@@ -211,28 +204,44 @@
 
 @media (max-width: 540px) {
   .hero {
-    gap: 40px;
-    padding-top: 54px;
+    gap: 26px;
+    padding-block: 36px 30px;
   }
 
   .content h1 {
-    font-size: clamp(2.45rem, 12vw, 3.5rem);
+    max-width: 12ch;
+    font-size: clamp(2.2rem, 10.8vw, 2.75rem);
+    line-height: 1.12;
   }
 
-  .mobileBreak {
-    display: block;
+  .label {
+    margin-bottom: 18px;
+    padding: 8px 10px;
+    font-size: 0.58rem;
   }
 
-  .description br {
-    display: none;
+  .description {
+    margin-top: 18px;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 20px;
   }
 
   .button {
-    flex: 1 1 calc(50% - 10px);
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 0.62rem;
   }
 
-  .button.primary {
-    flex-basis: 100%;
+  .sceneColumn {
+    width: min(100%, 320px);
+    margin: 0 auto;
   }
 
   .sceneFrame {
@@ -241,21 +250,12 @@
   }
 
   .messageBox {
-    top: 16px;
-    right: 16px;
-    left: 16px;
-    padding: 9px 10px;
+    top: -13px;
+    left: 12px;
+    padding: 7px 9px;
   }
 
   .statusBox {
-    right: 14px;
-    bottom: -24px;
-    left: 14px;
-    grid-template-columns: auto 1fr;
-    padding: 10px 12px;
-  }
-
-  .building {
     display: none;
   }
 }

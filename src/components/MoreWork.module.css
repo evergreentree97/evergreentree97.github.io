@@ -9,7 +9,7 @@
 
 .list article {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr) auto;
+  grid-template-columns: 220px minmax(0, 1fr) auto;
   align-items: start;
   gap: 34px;
   padding: 28px 4px;
@@ -52,7 +52,7 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.59rem;
+  font-size: 0.68rem;
 }
 
 .list article > a {

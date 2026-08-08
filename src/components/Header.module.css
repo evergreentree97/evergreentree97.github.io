@@ -59,7 +59,7 @@
 .navigation .github {
   justify-content: center;
   width: 44px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-control);
 }
 
 .github svg {
@@ -73,7 +73,7 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-control);
   background: var(--surface);
   cursor: pointer;
 }
@@ -101,7 +101,7 @@
     grid-template-columns: 1fr;
     gap: 0;
     padding: 8px 18px 16px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-control);
     background: var(--surface);
     opacity: 0;
     visibility: hidden;
@@ -125,6 +125,6 @@
   .navigation .github {
     width: 100%;
     margin-top: 8px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-control);
   }
 }

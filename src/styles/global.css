@@ -5,6 +5,7 @@
   --text-primary: #1c2b20;
   --text-secondary: #526157;
   --border: #a8bea9;
+  --border-control: #78947c;
   --accent: #4d9e61;
   --accent-dark: #24633d;
   --pixel-green: #93c777;
@@ -103,7 +104,7 @@ section[id] {
 
 ::selection {
   background: var(--pixel-green);
-  color: var(--surface);
+  color: var(--text-primary);
 }
 
 :focus-visible {

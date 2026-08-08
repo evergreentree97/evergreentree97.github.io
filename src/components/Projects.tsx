@@ -28,66 +28,77 @@ export function Projects() {
           }
         />
         <div className={styles.grid}>
-          {featuredProjects.map((project, index) => (
-            <article className={styles.card} key={project.name}>
-              <ProjectArtwork src={project.image.src} alt={project.image.alt} />
-              <div className={styles.cardBody}>
-                <div className={styles.cardHeading}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <small>{project.eyebrow}</small>
-                </div>
-                <h3>{project.name}</h3>
-                <p className={styles.summary}>{project.summary}</p>
+          {featuredProjects.map((project, index) => {
+            const serviceLink = project.links[0]
 
-                <dl className={styles.role}>
-                  <dt>담당</dt>
-                  <dd>{project.role}</dd>
-                </dl>
-
-                <ul className={styles.outcomes}>
-                  {project.outcomes.map((outcome) => (
-                    <li key={outcome}>{outcome}</li>
-                  ))}
-                </ul>
-
-                <ul className={styles.tags} aria-label={`${project.name} 기술`}>
-                  {project.technologies.map((technology) => (
-                    <li key={technology}>{technology}</li>
-                  ))}
-                </ul>
-
-                <details className={styles.caseStudy}>
-                  <summary>
-                    사례 보기 <PixelIcon name="arrow" />
-                  </summary>
-                  <dl>
-                    {caseLabels.map(([label, key]) => (
-                      <div key={key}>
-                        <dt>{label}</dt>
-                        <dd>{project.caseStudy[key]}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </details>
-
-                {project.links.length > 0 ? (
-                  <div className={styles.links}>
-                    {project.links.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target={link.external ? '_blank' : undefined}
-                        rel={link.external ? 'noreferrer' : undefined}
-                      >
-                        {link.label}
-                        <PixelIcon name={link.external ? 'external' : 'arrow'} />
-                      </a>
-                    ))}
+            return (
+              <article className={styles.card} key={project.name}>
+                <ProjectArtwork
+                  kind={project.image.artwork}
+                  alt={project.image.alt}
+                  href={serviceLink?.href}
+                  linkLabel={serviceLink?.label}
+                  external={serviceLink?.external}
+                />
+                <div className={styles.cardBody}>
+                  <div className={styles.cardHeading}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <small>{serviceLink ? 'PUBLIC SERVICE' : project.eyebrow}</small>
                   </div>
-                ) : null}
-              </div>
-            </article>
-          ))}
+                  <div className={styles.titleRow}>
+                    <div>
+                      <h3>{project.name}</h3>
+                      <p className={styles.summary}>{project.summary}</p>
+                    </div>
+                    {serviceLink ? (
+                      <a
+                        className={styles.serviceLink}
+                        href={serviceLink.href}
+                        target={serviceLink.external ? '_blank' : undefined}
+                        rel={serviceLink.external ? 'noreferrer' : undefined}
+                      >
+                        {serviceLink.label}
+                        <PixelIcon name={serviceLink.external ? 'external' : 'arrow'} />
+                      </a>
+                    ) : (
+                      <span className={styles.caseLabel}>평가 사례</span>
+                    )}
+                  </div>
+
+                  <dl className={styles.role}>
+                    <dt>담당</dt>
+                    <dd>{project.role}</dd>
+                  </dl>
+
+                  <ul className={styles.outcomes}>
+                    {project.outcomes.map((outcome) => (
+                      <li key={outcome}>{outcome}</li>
+                    ))}
+                  </ul>
+
+                  <ul className={styles.tags} aria-label={`${project.name} 기술`}>
+                    {project.technologies.map((technology) => (
+                      <li key={technology}>{technology}</li>
+                    ))}
+                  </ul>
+
+                  <details className={styles.caseStudy}>
+                    <summary>
+                      문제와 선택 보기 <PixelIcon name="arrow" />
+                    </summary>
+                    <dl>
+                      {caseLabels.map(([label, key]) => (
+                        <div key={key}>
+                          <dt>{label}</dt>
+                          <dd>{project.caseStudy[key]}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </details>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </Reveal>
     </section>
