@@ -19,42 +19,42 @@ type RelatedSkill = {
 const qaSteps: QaStep[] = [
   {
     key: 'Review',
-    title: '티켓을 읽습니다',
-    description: '재현 경로와 기대 동작을 확인하고 작업 범위를 정합니다.',
+    title: '티켓 분석',
+    description: '재현 경로, 기대 동작, 작업 범위 확인',
   },
   {
     key: 'Isolate',
-    title: '작업을 분리합니다',
-    description: '별도 워크트리와 브랜치를 만들어 진행 중인 코드와 섞이지 않게 합니다.',
+    title: '작업 분리',
+    description: '독립 워크트리와 브랜치 생성',
   },
   {
     key: 'Diagnose',
-    title: '원인을 먼저 찾습니다',
-    description: '관련 코드를 읽고 원인과 영향 범위를 정리합니다. 다른 직군의 확인이 필요한지도 판단합니다.',
+    title: '원인 진단',
+    description: '관련 코드와 영향 범위 분석, 협업 필요 여부 판단',
   },
   {
     key: 'Fix',
-    title: '필요한 범위만 고칩니다',
-    description: '클라이언트에서 해결할 수 있으면 원인이 확인된 코드만 수정합니다.',
+    title: '최소 수정',
+    description: '원인이 확인된 코드만 최소 수정',
   },
   {
     key: 'Verify',
-    title: '기존 기능까지 확인합니다',
-    description: '컴파일과 코드 규칙, 기대 동작과 영향 범위를 확인하고 결과를 PR에 남깁니다.',
+    title: '동작 검증',
+    description: '컴파일, 코드 규칙, 기대 동작, 기존 기능 검증',
   },
 ]
 
 const relatedSkills: RelatedSkill[] = [
   {
     name: 'bff-to-aos',
-    title: '서버 API를 Android 코드로 변환',
-    description: 'API 경로, 기존 모델 재사용과 null 허용 여부를 서버 코드와 맞춥니다.',
+    title: '서버 API → Android 코드',
+    description: 'API 경로, 모델 재사용, null 허용 여부를 서버 코드와 대조',
     icon: 'code',
   },
   {
     name: 'test-build',
-    title: '기존 앱과 수정본을 나란히 테스트',
-    description: '별도 이름의 테스트 APK를 설치해 수정 전후 동작을 같은 기기에서 비교합니다.',
+    title: '수정 전후 앱 비교',
+    description: '별도 이름의 테스트 APK로 수정 전후 동작을 한 기기에서 비교',
     icon: 'device',
   },
 ]
@@ -63,11 +63,10 @@ export function HowIWork() {
   return (
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <Reveal stagger>
-        <SectionTitle id="how-i-work-title" index="04" eyebrow="PROCESS" title="QA 티켓으로 보는 작업 방식" />
+        <SectionTitle id="how-i-work-title" index="04" eyebrow="PROCESS" title="AI Native Example" />
         <p className={styles.intro}>
-          <code>qa-ticket</code> Repository Skill은 QA 티켓 하나를 입력하면 Review부터 Verify까지
-          같은 순서로 처리합니다. 반복 가능한 절차는 스킬에 맡기고, 원인과 영향 범위, 최종 변경은
-          제가 판단합니다.
+          <code>qa-ticket</code>은 QA 티켓 분석, 코드 수정, 검증, PR 생성을 자동화한 Repository Skill입니다.
+          반복 절차는 스킬이 수행하고, 원인과 영향 범위, 최종 변경은 제가 판단합니다.
         </p>
 
         <article className={styles.quest} aria-labelledby="qa-quest-title">
@@ -97,12 +96,12 @@ export function HowIWork() {
 
           <div className={styles.questOutput}>
             <span>OUTPUT</span>
-            <strong>원인, 수정 범위와 검증 결과가 담긴 PR</strong>
+            <strong>원인, 수정 범위, 검증 결과를 담은 PR</strong>
           </div>
         </article>
 
         <div className={styles.related}>
-          <h3>같은 원칙으로 만든 스킬</h3>
+          <h3>같은 방식의 Repository Skill</h3>
           <div className={styles.relatedList}>
             {relatedSkills.map((skill) => (
               <article key={skill.name}>
