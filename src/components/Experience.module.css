@@ -110,8 +110,37 @@
   color: var(--text-secondary);
 }
 
+.chapters {
+  margin-top: 26px;
+  border-top: 1px solid var(--border);
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.chapterHeading span {
+  color: var(--text-secondary);
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  line-height: 1.5;
+}
+
+.chapterHeading h4 {
+  margin-top: 7px;
+  font-size: 1rem;
+}
+
+.chapterContent > p {
+  color: var(--text-primary);
+}
+
 .highlights {
-  margin-top: 18px;
+  margin-top: 12px;
   padding-left: 20px;
   color: var(--text-secondary);
 }
@@ -163,6 +192,23 @@
   .entry {
     grid-column: 2;
     padding: 24px 22px;
+  }
+
+  .chapter {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .chapterHeading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .chapterHeading h4 {
+    margin-top: 0;
+    text-align: right;
   }
 }
 
