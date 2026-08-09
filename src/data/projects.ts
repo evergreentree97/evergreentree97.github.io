@@ -69,9 +69,9 @@ export const featuredProjects: FeaturedProject[] = [
       alt: '같은 입력으로 두 모델의 응답 패턴을 비교하는 도트 비네트',
     },
     caseStudy: {
-      problem: '전처리 과정에서 여러 조각으로 나뉜 응답은 첫 조각만 남고 이후 내용이 누락되고 있었습니다. 평가용 대화가 학습 데이터와 겹친 결과도 있어 기존 점수를 그대로 비교할 수 없었습니다.',
+      problem: '하나의 답변이 여러 부분으로 저장될 때 앞부분만 남고 나머지가 누락되고 있었습니다. 평가용 대화가 학습 데이터와 겹친 결과도 있어 기존 점수를 그대로 비교할 수 없었습니다.',
       decision: '응답 형식, 캐릭터 일관성, 재미와 상태 유지를 분리해 평가했습니다. 질문과 서빙 조건을 고정하고 모델 정보를 가린 뒤 답변 순서를 바꿨으며, 자동 평가를 실제 대화와 대조했습니다.',
-      verification: '학습용 응답 27,128턴을 감사해 다중 조각 응답의 누락을 복구했습니다. 결함이 섞인 이전 실험 19건은 비교 기준에서 제외하고 평가 데이터 중복을 막는 검사를 추가했습니다. 이후 비교 결과와 실제 대화를 함께 검토해 최종 모델은 팀에서 결정했습니다.',
+      verification: '학습용 응답 27,128턴을 점검해 누락된 뒷부분을 복구했습니다. 결함이 섞인 이전 실험 19건은 비교 기준에서 제외하고 평가 데이터 중복을 막는 검사를 추가했습니다. 이후 비교 결과와 실제 대화를 함께 검토해 최종 모델은 팀에서 결정했습니다.',
     },
     links: [],
   },
@@ -116,9 +116,9 @@ export const moreProjects: MoreProject[] = [
   {
     name: 'K-Humanizer',
     eyebrow: 'OPEN SOURCE',
-    summary: 'AI 문장의 번역투와 과한 격식을 교정하는 오픈소스 스킬',
-    evidence: '검증 항목 110개, JSONL 검증 스크립트와 GitHub Actions 구성',
-    technologies: ['Agent Skill', 'JSONL', 'GitHub Actions'],
+    summary: '한국어 문서의 번역투와 과한 격식을 다듬는 문체 교정 도구',
+    evidence: '문서 용도별 교정 범위, 검증 항목 110개, JSONL 검사와 GitHub Actions 구성',
+    technologies: ['문체 규칙', 'JSONL', 'GitHub Actions'],
     link: {
       label: 'GitHub 보기',
       href: 'https://github.com/EvergreenTree97/K-Humanizer',
