@@ -11,13 +11,14 @@ export function Hero() {
           <span>CHOI SANGROK / ANDROID DEVELOPER</span>
         </span>
         <h1 id="hero-title">
-          <span className={styles.line}>AI에 일을 맡기고,</span>
+          <span className={styles.line}>실패 조건을 확인하고</span>
           <br />
-          <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
+          <span className={styles.line}><strong>책임을 나눕니다.</strong><span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          Kotlin과 Jetpack Compose로 Android 앱을 만들고 운영했습니다.
-          오픈소스 LLM은 학습 데이터 정리부터 추가 학습, 평가와 서빙까지 맡았습니다.
+          신규 Android 앱의 채팅 구조와 Sendbird 연동을 맡았습니다.
+          대규모 그룹 푸시와 채널별 금칙어 설정이 요구사항을 충족하지 못하는 것을 출시 전에 확인해,
+          실시간 메시징은 Sendbird에 두고 비즈니스 규칙과 자체 푸시는 Backend가 맡도록 구분했습니다.
         </p>
 
         <div className={styles.actions}>
@@ -37,7 +38,7 @@ export function Hero() {
 
       <div className={styles.sceneColumn}>
         <div className={styles.sceneFrame}>
-          <div className={styles.messageBox}>BUILD. SHIP. ENJOY.</div>
+          <div className={styles.messageBox}>CHECK. DECIDE. VERIFY.</div>
           <picture>
             <source
               srcSet="/images/hero-product-developer-480.avif 480w, /images/hero-product-developer-560.avif 560w, /images/hero-product-developer-640.avif 640w, /images/hero-product-developer-800.avif 800w, /images/hero-product-developer.avif 1200w"
@@ -54,10 +55,10 @@ export function Hero() {
               loading="eager"
             />
           </picture>
-          <div className={styles.statusBox} aria-label="주요 경험과 기술">
-            <span>Android 앱 3개</span>
-            <strong>Kotlin / Compose</strong>
-            <span className={styles.building}>LLM 평가</span>
+          <div className={styles.statusBox} aria-label="채팅 구조 판단 요약">
+            <span>채팅 구조 설계</span>
+            <strong>Sendbird / Backend</strong>
+            <span className={styles.building}>출시 전 검증</span>
           </div>
         </div>
       </div>

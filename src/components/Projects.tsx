@@ -8,8 +8,8 @@ import styles from './Projects.module.css'
 
 const caseLabels = [
   ['문제', 'problem'],
-  ['선택', 'decision'],
-  ['결과', 'verification'],
+  ['판단', 'decision'],
+  ['검증', 'verification'],
 ] as const
 
 export function Projects() {
@@ -18,7 +18,7 @@ export function Projects() {
       <Reveal stagger>
         <SectionTitle
           id="projects-title"
-          index="03"
+          index="01"
           eyebrow="SELECTED WORK"
           title="주요 프로젝트"
           action={
@@ -27,7 +27,7 @@ export function Projects() {
             </a>
           }
         />
-        <p className={styles.sectionNote}>각 프로젝트는 문제, 선택, 결과 순서로 정리했습니다. 수치에는 측정 조건을 함께 적었습니다.</p>
+        <p className={styles.sectionNote}>각 프로젝트에서 맡은 범위와 문제, 판단, 검증을 분리했습니다.</p>
         <div className={styles.grid}>
           {featuredProjects.map((project, index) => {
             const serviceLink = project.links[0]
@@ -71,31 +71,20 @@ export function Projects() {
                     <dd>{project.role}</dd>
                   </dl>
 
-                  <ul className={styles.outcomes}>
-                    {project.outcomes.map((outcome) => (
-                      <li key={outcome}>{outcome}</li>
+                  <dl className={styles.caseStudy}>
+                    {caseLabels.map(([label, key]) => (
+                      <div key={key}>
+                        <dt>{label}</dt>
+                        <dd>{project.caseStudy[key]}</dd>
+                      </div>
                     ))}
-                  </ul>
+                  </dl>
 
                   <ul className={styles.tags} aria-label={`${project.name} 기술`}>
                     {project.technologies.map((technology) => (
                       <li key={technology}>{technology}</li>
                     ))}
                   </ul>
-
-                  <details className={styles.caseStudy}>
-                    <summary>
-                      해결 과정 보기 <PixelIcon name="arrow" />
-                    </summary>
-                    <dl>
-                      {caseLabels.map(([label, key]) => (
-                        <div key={key}>
-                          <dt>{label}</dt>
-                          <dd>{project.caseStudy[key]}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </details>
                 </div>
               </article>
             )

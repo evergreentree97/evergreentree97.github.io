@@ -7,7 +7,7 @@ export function About() {
   return (
     <section className={styles.about} id="about" aria-labelledby="about-title">
       <Reveal>
-        <SectionTitle id="about-title" index="01" eyebrow="PROFILE" title="소개" />
+        <SectionTitle id="about-title" index="02" eyebrow="PROFILE" title="소개" />
         <div className={styles.body}>
           <div className={styles.avatar} aria-hidden="true">
             <div className={styles.avatarScreen}>
@@ -16,15 +16,15 @@ export function About() {
             <span>PLAYER 01</span>
           </div>
           <div className={styles.copy}>
-            <h3>Android 앱과 대화형 LLM을 다룹니다</h3>
+            <h3>불확실한 기술 문제를 함께 판단할 기준으로 바꿉니다</h3>
             <dl className={styles.focus}>
               <div>
-                <dt>Android</dt>
-                <dd>구조 설계, SDK와 API 연동, 출시 후 운영</dd>
+                <dt>판단 근거</dt>
+                <dd>실패 조건, 대안과 적용 범위를 문서로 남깁니다.</dd>
               </div>
               <div>
-                <dt>LLM</dt>
-                <dd>학습 데이터 정리, 추가 학습, 평가와 서빙</dd>
+                <dt>검증 범위</dt>
+                <dd>코드 리뷰, 테스트와 실기기 결과로 변경을 확인합니다.</dd>
               </div>
             </dl>
             <a href="#experience">

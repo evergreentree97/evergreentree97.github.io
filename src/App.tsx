@@ -23,11 +23,11 @@ export default function App() {
         <Hero />
         <PixelDivider />
         <ProofStrip />
+        <Projects />
         <div className={styles.aboutSkills}>
           <About />
           <Skills />
         </div>
-        <Projects />
         <HowIWork />
         <Experience />
         <Activities />

@@ -9,7 +9,7 @@ export function Experience() {
     <section className={styles.experience} id="experience" aria-labelledby="experience-title">
       <Reveal>
         <SectionTitle id="experience-title" index="05" eyebrow="CAREER LOG" title="경력" />
-        <p className={styles.sectionNote}>Android 제품의 초기 구축, 출시와 운영을 거쳐 캐릭터 모델 학습과 평가까지 맡았습니다.</p>
+        <p className={styles.sectionNote}>프로젝트별 팀 규모와 개인 책임, 함께 결정한 범위를 구분했습니다.</p>
         <ol className={styles.timeline}>
           {experiences.map((experience) => (
             <li key={`${experience.organization}-${experience.period}`}>
