@@ -142,22 +142,6 @@
   line-height: 1.55;
 }
 
-.outcomes {
-  margin-top: 16px;
-  padding-left: 18px;
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.65;
-}
-
-.outcomes li + li {
-  margin-top: 6px;
-}
-
-.outcomes li::marker {
-  color: var(--pixel-green);
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -176,62 +160,13 @@
 }
 
 .caseStudy {
-  margin-top: 4px;
-  padding-top: 20px;
-}
-
-.caseStudy summary {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  gap: 8px;
-  color: var(--accent-dark);
-  font-family: var(--font-pixel);
-  font-size: 0.64rem;
-  cursor: pointer;
-  list-style: none;
-}
-
-.caseStudy summary::-webkit-details-marker {
-  display: none;
-}
-
-.caseStudy summary:hover {
-  text-decoration: underline;
-}
-
-.caseStudy summary svg {
-  width: 17px;
-  height: 17px;
-  transition: transform var(--motion-fast) var(--ease-out);
-}
-
-.caseStudy[open] summary svg {
-  transform: rotate(90deg);
-}
-
-.caseStudy[open] dl {
-  animation: detailsEnter 260ms var(--ease-out) both;
-}
-
-@keyframes detailsEnter {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -8px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.caseStudy dl {
+  margin-top: 20px;
   padding: 16px;
   border: 1px solid var(--border);
   background: var(--surface-muted);
 }
 
-.caseStudy dl > div + div {
+.caseStudy > div + div {
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--border);

@@ -7,7 +7,7 @@ export function Skills() {
   return (
     <section className={styles.skills} id="skills" aria-labelledby="skills-title">
       <Reveal stagger>
-        <SectionTitle id="skills-title" index="02" eyebrow="TOOLKIT" title="기술" />
+        <SectionTitle id="skills-title" index="03" eyebrow="TOOLKIT" title="기술" />
         <div className={styles.groups}>
           {skillGroups.map((group) => (
             <section className={styles.group} key={group.label} aria-labelledby={`skill-${group.label}`}>

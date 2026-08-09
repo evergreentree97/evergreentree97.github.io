@@ -1,6 +1,6 @@
 # Portfolio Site
 
-React와 TypeScript로 만든 정적 포트폴리오 사이트입니다.
+Preact와 TypeScript로 만든 정적 포트폴리오 사이트입니다.
 
 ## 로컬 실행
 
@@ -19,7 +19,7 @@ npm run check
 
 ## 기술 구성
 
-- React 19
+- Preact 10
 - TypeScript
 - Vite
 - CSS Modules
