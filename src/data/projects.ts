@@ -133,7 +133,7 @@ export const moreProjects: MoreProject[] = [
   {
     name: 'K-Humanizer',
     eyebrow: 'OPEN SOURCE',
-    summary: 'AI 문장의 번역투와 과도한 격식을 교정하는 오픈소스 한국어 도구',
+    summary: 'AI 문장의 번역투와 과한 격식을 교정하는 오픈소스 스킬',
     evidence: '검증 항목 110개, JSONL 검증 스크립트와 GitHub Actions 구성',
     technologies: ['Agent Skill', 'JSONL', 'GitHub Actions'],
     link: {
