@@ -9,7 +9,7 @@ export function Experience() {
     <section className={styles.experience} id="experience" aria-labelledby="experience-title">
       <Reveal>
         <SectionTitle id="experience-title" index="05" eyebrow="CAREER LOG" title="경력" />
-        <p className={styles.sectionNote}>공개 가능한 범위에서 직접 담당한 업무와 검증 결과를 정리했습니다.</p>
+        <p className={styles.sectionNote}>Android 제품의 초기 구축, 출시와 운영을 거쳐 캐릭터 모델 학습과 평가까지 맡았습니다.</p>
         <ol className={styles.timeline}>
           {experiences.map((experience) => (
             <li key={`${experience.organization}-${experience.period}`}>
@@ -26,11 +26,24 @@ export function Experience() {
                   {experience.current ? <span>CURRENT</span> : null}
                 </div>
                 <p className={styles.summary}>{experience.summary}</p>
-                <ul className={styles.highlights}>
-                  {experience.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
+                <div className={styles.chapters}>
+                  {experience.chapters.map((chapter) => (
+                    <section className={styles.chapter} key={`${chapter.title}-${chapter.period}`}>
+                      <div className={styles.chapterHeading}>
+                        <span>{chapter.period}</span>
+                        <h4>{chapter.title}</h4>
+                      </div>
+                      <div className={styles.chapterContent}>
+                        <p>{chapter.summary}</p>
+                        <ul className={styles.highlights}>
+                          {chapter.highlights.map((highlight) => (
+                            <li key={highlight}>{highlight}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </section>
                   ))}
-                </ul>
+                </div>
                 <ul className={styles.tags} aria-label={`${experience.organization} 기술`}>
                   {experience.technologies.map((technology) => (
                     <li key={technology}>{technology}</li>
