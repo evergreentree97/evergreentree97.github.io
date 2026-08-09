@@ -85,7 +85,7 @@ export function Projects() {
 
                   <details className={styles.caseStudy}>
                     <summary>
-                      문제와 선택 보기 <PixelIcon name="arrow" />
+                      해결 과정 보기 <PixelIcon name="arrow" />
                     </summary>
                     <dl>
                       {caseLabels.map(([label, key]) => (
