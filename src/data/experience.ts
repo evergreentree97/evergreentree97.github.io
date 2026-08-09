@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
       {
         period: '2024.05 - Present',
         title: 'Vuddy Android',
-        summary: 'Android 개발자 3명으로 구성된 팀에서 신규 앱의 초기 구조와 공통 기반, 채팅 SDK 연동을 맡았습니다.',
+        summary: '신규 앱의 초기 구조와 공통 기반, 채팅 SDK 연동을 맡았습니다.',
         highlights: [
           '멀티모듈 구조와 MVI/MVVM 기준, Build-Logic 구성',
           'QA 빌드 배포, Google Play 정책 대응과 운영 장애 분석',
@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
       {
         period: '2023.10 - 2024.05',
         title: 'Momentica Android',
-        summary: 'Android 개발자 4명으로 구성된 팀에서 아티스트 영상 알람을 주도했습니다.',
+        summary: '아티스트 영상 알람을 주도했습니다.',
         highlights: [
           'Room과 AlarmManager 기반 알람 저장과 예약, 재부팅 이후 복원',
           'Android 14 실기기에서 화면 꺼짐, 잠금 화면과 재부팅 시나리오 검증',

@@ -39,7 +39,7 @@ export const featuredProjects: FeaturedProject[] = [
     name: 'Vuddy',
     eyebrow: 'ANDROID PRODUCT',
     summary: '외부 SDK의 제한사항을 확인한 뒤 실시간 메시징과 제품 운영의 책임을 나눈 채팅 구조를 설계했습니다.',
-    role: 'Android 개발자 3명으로 구성된 팀에서 초기 구조와 Sendbird 연동을 주도했습니다. 채팅 화면은 2명이 나눠 구현했고 양방향 페이징과 사진 및 영상 메시지를 맡았습니다.',
+    role: '신규 앱의 초기 구조와 Sendbird 연동을 주도했습니다. 채팅 화면은 동료와 분담했고 양방향 페이징과 사진 및 영상 메시지를 맡았습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI / MVVM', 'Sendbird', 'Media3'],
     image: {
       artwork: 'vuddy',
@@ -79,7 +79,7 @@ export const featuredProjects: FeaturedProject[] = [
     name: 'Momentica',
     eyebrow: 'ANDROID PRODUCT',
     summary: '앱이 실행 중이지 않거나 휴대전화가 재부팅된 뒤에도 동작해야 하는 영상 알람의 저장과 예약을 분리했습니다.',
-    role: 'Android 개발자 4명으로 구성된 팀에서 영상 알람을 주도했습니다.',
+    role: '영상 알람을 주도했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
     image: {
       artwork: 'momentica',
