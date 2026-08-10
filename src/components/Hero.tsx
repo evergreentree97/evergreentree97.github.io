@@ -11,13 +11,13 @@ export function Hero() {
           <span>CHOI SANGROK / ANDROID DEVELOPER</span>
         </span>
         <h1 id="hero-title">
-          <span className={styles.line}>AI에 일을 맡기고,</span>
+          <span className={styles.line}>제품의 구조를 설계하고</span>
           <br />
-          <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
+          <span className={styles.line}><strong>출시 이후까지 운영합니다.</strong><span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          Kotlin과 Jetpack Compose로 Android 앱을 만들고 운영했습니다.
-          오픈소스 LLM은 학습 데이터 정리부터 추가 학습, 평가와 서빙까지 맡았습니다.
+          Android 앱의 초기 구조와 주요 기능을 개발해 출시와 운영까지 맡아왔습니다.
+          사내 AI TF에서는 캐릭터 대화 모델의 데이터 정제, 학습, 평가와 서빙을 담당했습니다.
         </p>
 
         <div className={styles.actions}>
