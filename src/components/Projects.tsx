@@ -15,18 +15,18 @@ const caseLabels = [
 export function Projects() {
   return (
     <section className={styles.projects} id="projects" aria-labelledby="projects-title">
+      <SectionTitle
+        id="projects-title"
+        index="01"
+        eyebrow="SELECTED WORK"
+        title="주요 프로젝트"
+        action={
+          <a href={profile.githubUrl} target="_blank" rel="noreferrer">
+            GitHub 프로젝트 보기 <PixelIcon name="external" />
+          </a>
+        }
+      />
       <Reveal stagger>
-        <SectionTitle
-          id="projects-title"
-          index="01"
-          eyebrow="SELECTED WORK"
-          title="주요 프로젝트"
-          action={
-            <a href={profile.githubUrl} target="_blank" rel="noreferrer">
-              GitHub 프로젝트 보기 <PixelIcon name="external" />
-            </a>
-          }
-        />
         <p className={styles.sectionNote}>각 프로젝트에서 맡은 범위와 문제, 판단, 검증을 분리했습니다.</p>
         <div className={styles.grid}>
           {featuredProjects.map((project, index) => {
