@@ -8,7 +8,6 @@ import { Hero } from './components/Hero'
 import { HowIWork } from './components/HowIWork'
 import { MoreWork } from './components/MoreWork'
 import { PixelDivider } from './components/PixelDivider'
-import { ProofStrip } from './components/ProofStrip'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { TastePanel } from './components/TastePanel'
@@ -22,7 +21,6 @@ export default function App() {
       <main className={styles.shell} id="main-content">
         <Hero />
         <PixelDivider />
-        <ProofStrip />
         <Projects />
         <div className={styles.aboutSkills}>
           <About />
