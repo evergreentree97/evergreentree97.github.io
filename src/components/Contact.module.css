@@ -34,19 +34,22 @@
   padding-inline: 12px;
   border-bottom: 1px solid var(--border);
   text-decoration: none;
-  transition:
-    background var(--motion-fast) var(--ease-standard),
-    padding var(--motion-fast) var(--ease-out);
+  transition: background var(--motion-fast) var(--ease-standard);
 }
 
-.links a > svg:last-child {
+.links a > svg,
+.links a > span {
   transition: transform var(--motion-fast) var(--ease-out);
 }
 
 @media (hover: hover) {
   .links a:hover {
-    padding-inline: 16px 8px;
     background: var(--surface-muted);
+  }
+
+  .links a:hover > svg:first-child,
+  .links a:hover > span {
+    transform: translateX(4px);
   }
 
   .links a:hover > svg:last-child {
@@ -68,7 +71,7 @@
   display: block;
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
 }
 
 .links strong {

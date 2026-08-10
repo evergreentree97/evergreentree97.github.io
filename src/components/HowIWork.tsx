@@ -1,5 +1,4 @@
 import { PixelIcon, type PixelIconName } from './PixelIcon'
-import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
 import styles from './HowIWork.module.css'
 
@@ -59,60 +58,58 @@ const verificationCases: VerificationCase[] = [
 export function HowIWork() {
   return (
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
-      <Reveal stagger>
-        <SectionTitle id="how-i-work-title" index="04" eyebrow="PROCESS" title="AI 활용과 검증" />
-        <p className={styles.intro}>
-          저장소 구조, 코드 규칙과 완료 조건을 기준 문서로 관리합니다.
-          Claude Code와 Codex는 이 문서를 확인한 뒤 탐색과 반복 수정을 맡고,
-          변경 범위와 설계 판단, 예외 처리는 개발자가 검토합니다.
-        </p>
+      <SectionTitle id="how-i-work-title" eyebrow="PROCESS" title="AI 활용과 검증" />
+      <p className={styles.intro}>
+        저장소 구조, 코드 규칙과 완료 조건을 기준 문서로 관리합니다.
+        Claude Code와 Codex는 이 문서를 확인한 뒤 탐색과 반복 수정을 맡고,
+        변경 범위와 설계 판단, 예외 처리는 개발자가 검토합니다.
+      </p>
 
-        <article className={styles.quest} aria-labelledby="work-process-title">
-          <header className={styles.questHeader}>
-            <div className={styles.questIdentity}>
-              <PixelIcon name="flag" />
-              <div>
-                <small>AI ASSISTED DEVELOPMENT</small>
-                <h3 id="work-process-title">기준 문서에서 실기기 검증까지</h3>
-              </div>
+      <article className={styles.quest} aria-labelledby="work-process-title">
+        <header className={styles.questHeader}>
+          <div className={styles.questIdentity}>
+            <PixelIcon name="flag" />
+            <div>
+              <small>AI ASSISTED DEVELOPMENT</small>
+              <h3 id="work-process-title">기준 문서에서 실기기 검증까지</h3>
             </div>
-            <div className={styles.questInput}>
-              <span>INPUT</span>
-              <strong>재현 조건과 완료 기준</strong>
-            </div>
-          </header>
-
-          <ol className={styles.flow} aria-label="AI를 활용한 개발 순서">
-            {workSteps.map((step) => (
-              <li key={step.key}>
-                <small>{step.key}</small>
-                <strong>{step.title}</strong>
-                <p>{step.description}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className={styles.questOutput}>
-            <span>OUTPUT</span>
-            <strong>리뷰와 테스트를 마친 변경</strong>
           </div>
-        </article>
-
-        <div className={styles.related}>
-          <h3>코드 밖에서 확인하는 방법</h3>
-          <div className={styles.relatedList}>
-            {verificationCases.map((item) => (
-              <article key={item.title}>
-                <PixelIcon name={item.icon} />
-                <div>
-                  <strong>{item.title}</strong>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
+          <div className={styles.questInput}>
+            <span>INPUT</span>
+            <strong>재현 조건과 완료 기준</strong>
           </div>
+        </header>
+
+        <ol className={styles.flow} aria-label="AI를 활용한 개발 순서">
+          {workSteps.map((step) => (
+            <li key={step.key}>
+              <small>{step.key}</small>
+              <strong>{step.title}</strong>
+              <p>{step.description}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className={styles.questOutput}>
+          <span>OUTPUT</span>
+          <strong>리뷰와 테스트를 마친 변경</strong>
         </div>
-      </Reveal>
+      </article>
+
+      <div className={styles.related}>
+        <h3>코드 밖에서 확인하는 방법</h3>
+        <div className={styles.relatedList}>
+          {verificationCases.map((item) => (
+            <article key={item.title}>
+              <PixelIcon name={item.icon} />
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

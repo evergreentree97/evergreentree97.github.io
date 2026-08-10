@@ -29,7 +29,7 @@
 .heading span {
   color: var(--accent-dark);
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
+  font-size: 0.65rem;
 }
 
 .heading h3 {
@@ -62,7 +62,7 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.59rem;
+  font-size: 0.65rem;
 }
 
 .list article > a {
@@ -72,7 +72,7 @@
   gap: 8px;
   color: var(--accent-dark);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   text-decoration: none;
 }
 

@@ -33,7 +33,7 @@
   margin-top: 9px;
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.56rem;
+  font-size: 0.65rem;
 }
 
 .copy h3 {
@@ -59,7 +59,7 @@
 .focus dt {
   color: var(--accent-dark);
   font-family: var(--font-pixel);
-  font-size: 0.64rem;
+  font-size: 0.65rem;
 }
 
 .focus dd {
@@ -76,7 +76,7 @@
   margin-top: 18px;
   color: var(--accent-dark);
   font-family: var(--font-pixel);
-  font-size: 0.64rem;
+  font-size: 0.65rem;
   text-decoration: none;
 }
 

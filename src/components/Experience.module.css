@@ -57,7 +57,7 @@
   padding-top: 13px;
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   line-height: 1.5;
 }
 
@@ -101,7 +101,7 @@
   border: 1px solid var(--accent-dark);
   color: var(--accent-dark);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
 }
 
 .summary {
@@ -126,7 +126,7 @@
 .chapterHeading span {
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   line-height: 1.5;
 }
 
@@ -166,7 +166,7 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
 }
 
 @media (max-width: 760px) {

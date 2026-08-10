@@ -17,7 +17,6 @@ export function Projects() {
     <section className={styles.projects} id="projects" aria-labelledby="projects-title">
       <SectionTitle
         id="projects-title"
-        index="01"
         eyebrow="SELECTED WORK"
         title="주요 프로젝트"
         action={
