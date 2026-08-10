@@ -5,7 +5,7 @@ import styles from './About.module.css'
 export function About() {
   return (
     <section className={styles.about} id="about" aria-labelledby="about-title">
-      <SectionTitle id="about-title" eyebrow="PROFILE" title="소개" />
+      <SectionTitle id="about-title" title="소개" />
       <div className={styles.body}>
         <div className={styles.avatar} aria-hidden="true">
           <div className={styles.avatarScreen}>

@@ -5,7 +5,7 @@ import styles from './Skills.module.css'
 export function Skills() {
   return (
     <section className={styles.skills} id="skills" aria-labelledby="skills-title">
-      <SectionTitle id="skills-title" eyebrow="TOOLKIT" title="기술" />
+      <SectionTitle id="skills-title" title="기술" />
       <div className={styles.groups}>
         {skillGroups.map((group) => (
           <section className={styles.group} key={group.label} aria-labelledby={`skill-${group.label}`}>

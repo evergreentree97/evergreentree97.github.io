@@ -9,19 +9,16 @@
 
 .list article {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(190px, max-content) minmax(0, 1fr) auto;
   align-items: start;
   gap: 34px;
   padding: 28px 4px;
   border-bottom: 1px solid var(--border);
-  transition:
-    background var(--motion-fast) var(--ease-standard),
-    padding var(--motion-fast) var(--ease-out);
+  transition: background var(--motion-fast) var(--ease-standard);
 }
 
 @media (hover: hover) {
   .list article:hover {
-    padding-inline: 12px;
     background: color-mix(in srgb, var(--surface-muted) 42%, transparent);
   }
 }
@@ -34,6 +31,7 @@
 
 .heading h3 {
   margin-top: 7px;
+  overflow-wrap: normal;
   font-size: 1.22rem;
 }
 

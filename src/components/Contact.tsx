@@ -35,7 +35,7 @@ const contactLinks: {
 export function Contact() {
   return (
     <section className={styles.contact} id="contact" aria-labelledby="contact-title">
-      <SectionTitle id="contact-title" eyebrow="CONTACT" title="연락처" />
+      <SectionTitle id="contact-title" title="연락처" />
       <div className={styles.layout}>
         <div>
           <h3>채용이나 협업 제안은 아래 채널로 연락해 주세요.</h3>
