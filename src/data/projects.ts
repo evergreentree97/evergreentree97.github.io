@@ -38,7 +38,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'Vuddy',
     eyebrow: 'ANDROID PRODUCT',
-    summary: '외부 SDK의 제한사항을 확인한 뒤 실시간 메시징과 제품 운영의 책임을 나눈 채팅 구조를 설계했습니다.',
+    summary: '외부 SDK의 제한사항을 확인한 뒤 실시간 메시징과 제품 운영의 책임을 나누는 채팅 구조를 제안했습니다.',
     role: '신규 앱의 초기 구조와 Sendbird 연동을 주도했습니다. 채팅 화면은 동료와 분담했고 양방향 페이징과 사진 및 영상 메시지를 맡았습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI / MVVM', 'Sendbird', 'Media3'],
     image: {
@@ -48,7 +48,7 @@ export const featuredProjects: FeaturedProject[] = [
     caseStudy: {
       problem: '자체 소켓 서버 구축과 Sendbird 사용을 대안으로 비교했습니다. Sendbird는 실시간 메시징 기반을 제공했지만 대규모 그룹 푸시와 채널별 금칙어 설정은 요구사항을 충족하지 못했습니다.',
       decision: '출시 일정과 서버 구현 범위를 고려해 자체 소켓 대신 Sendbird를 선택했습니다. 실시간 메시징은 Sendbird에 남기고 채팅방 생성과 검색, 비즈니스 규칙, 자체 푸시와 운영은 Backend가 맡도록 제안했습니다.',
-      verification: '출시 전에 샘플 앱과 Sendbird 문의로 제한사항을 확인했습니다. 메시지 수신, 자체 푸시와 알림 진입 경로는 Android 실기기에서 검증했습니다.',
+      verification: '채널별 금칙어는 Backend의 룰 기반 정책으로, 대규모 푸시는 자체 발송 구조로 처리하는 방안을 제안했습니다. 외부 SDK의 기능 범위에 맞춰 요구사항을 줄이지 않고 운영 정책을 Backend에서 변경할 수 있도록 책임 범위를 정리했습니다.',
     },
     links: [
       {

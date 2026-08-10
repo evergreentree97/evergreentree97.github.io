@@ -9,7 +9,7 @@ import styles from './Projects.module.css'
 const caseLabels = [
   ['문제', 'problem'],
   ['판단', 'decision'],
-  ['검증', 'verification'],
+  ['결과', 'verification'],
 ] as const
 
 export function Projects() {
