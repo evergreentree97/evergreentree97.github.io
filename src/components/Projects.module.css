@@ -1,5 +1,5 @@
 .projects {
-  padding-top: 128px;
+  padding-top: clamp(64px, 5vw, 72px);
 }
 
 .sectionNote {
@@ -201,10 +201,6 @@
 }
 
 @media (max-width: 820px) {
-  .projects {
-    padding-top: 96px;
-  }
-
   .grid {
     gap: 18px;
   }
