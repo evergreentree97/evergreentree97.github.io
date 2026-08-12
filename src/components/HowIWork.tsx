@@ -2,56 +2,43 @@ import { PixelIcon, type PixelIconName } from './PixelIcon'
 import { SectionTitle } from './SectionTitle'
 import styles from './HowIWork.module.css'
 
-type WorkStep = {
-  key: string
+type WorkPipeline = {
+  label: string
   title: string
   description: string
-}
-
-type VerificationCase = {
-  title: string
-  description: string
+  skills: string[]
+  steps: string[]
+  check: string
   icon: PixelIconName
 }
 
-const workSteps: WorkStep[] = [
+const workPipelines: WorkPipeline[] = [
   {
-    key: 'Reference',
-    title: '기준 문서',
-    description: '저장소 규칙과 완료 조건 확인',
+    label: 'API INTEGRATION',
+    title: '서버 API를 Android 코드로 연결',
+    description: '서버의 Controller와 DTO를 읽고 기존 Android 모델과 비교한 뒤 필요한 코드만 추가합니다.',
+    skills: ['bff-to-aos'],
+    steps: ['Controller와 DTO 확인', '기존 모델과 비교', 'API와 모델 구현', '모듈 빌드'],
+    check: 'API 계약과 오류 처리 방식은 직접 검토합니다.',
+    icon: 'code',
   },
   {
-    key: 'Diagnose',
-    title: '영향 분석',
-    description: '문제를 재현하고 관련 코드와 API 확인',
+    label: 'STATE REVIEW',
+    title: '화면 상태 구조를 정리',
+    description: 'ViewModel과 Compose 화면의 상태, 이벤트, 생명주기를 함께 살펴보고 구조 변경이 필요한지 먼저 판단합니다.',
+    skills: ['android-state-mapper-review'],
+    steps: ['상태와 이벤트 분류', 'Mapper 구조 검토', '테스트 보강', 'Compose 빌드'],
+    check: '상태 통합이 화면의 실제 동작과 맞는지 직접 판단합니다.',
+    icon: 'android',
   },
   {
-    key: 'Delegate',
-    title: '작업 위임',
-    description: '코드 탐색과 반복 작업을 AI에 맡김',
-  },
-  {
-    key: 'Review',
-    title: '설계 검토',
-    description: '변경 범위와 예외 처리 직접 검토',
-  },
-  {
-    key: 'Verify',
-    title: '동작 검증',
-    description: '테스트를 실행하고 기존 기능의 동작 확인',
-  },
-]
-
-const verificationCases: VerificationCase[] = [
-  {
-    title: '별도 테스트 빌드',
-    description: '기존 앱과 함께 설치되는 별도 이름의 테스트 빌드로 같은 기기에서 변경 전후 동작을 비교',
+    label: 'QA DELIVERY',
+    title: 'QA 티켓을 수정하고 기기에서 비교',
+    description: '티켓의 재현 경로부터 수정, 테스트 빌드 설치와 상태 갱신까지 한 순서로 관리합니다.',
+    skills: ['qa-ticket', 'test-build'],
+    steps: ['티켓과 재현 경로 확인', '격리된 작업 공간에서 수정', '테스트 빌드 설치', '변경 전후 비교'],
+    check: '기존 앱과 테스트 앱을 같은 기기에서 실행해 최종 확인합니다.',
     icon: 'device',
-  },
-  {
-    title: '실기기와 화면 기록',
-    description: '관련 시나리오를 실제 기기에서 실행하고 스크린샷과 실행 결과를 이전 동작과 대조한 뒤 반영',
-    icon: 'save',
   },
 ]
 
@@ -60,52 +47,54 @@ export function HowIWork() {
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <SectionTitle id="how-i-work-title" eyebrow="PROCESS" title="AI 활용과 검증" />
       <p className={styles.intro}>
-        저장소 구조와 코드 규칙, 완료 조건은 기준 문서에 적어 둡니다.
-        Claude Code와 Codex에는 코드 탐색과 반복 작업을 맡깁니다.
-        변경 범위와 예외 처리는 직접 검토합니다.
+        반복되는 Android 작업은 저장소 규칙과 확인 순서를 skill로 묶어 실행합니다.
+        구현 과정은 자동화하되 설계 판단과 최종 동작 확인은 직접 맡습니다.
       </p>
 
-      <article className={styles.quest} aria-labelledby="work-process-title">
-        <header className={styles.questHeader}>
-          <div className={styles.questIdentity}>
-            <PixelIcon name="flag" />
-            <div>
-              <small>AI-ASSISTED DEVELOPMENT</small>
-              <h3 id="work-process-title">기준 문서에서 실기기 검증까지</h3>
-            </div>
+      <div className={styles.pipelineBoard}>
+        <header className={styles.boardHeader}>
+          <div>
+            <span>SKILL PIPELINES</span>
+            <strong>자주 쓰는 작업 순서</strong>
           </div>
-          <div className={styles.questInput}>
-            <span>INPUT</span>
-            <strong>재현 조건과 완료 기준</strong>
-          </div>
+          <small>{String(workPipelines.length).padStart(2, '0')} RUNBOOKS</small>
         </header>
 
-        <ol className={styles.flow} aria-label="AI를 활용한 개발 순서">
-          {workSteps.map((step) => (
-            <li key={step.key}>
-              <small>{step.key}</small>
-              <strong>{step.title}</strong>
-              <p>{step.description}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className={styles.questOutput}>
-          <span>OUTPUT</span>
-          <strong>리뷰와 테스트를 마친 변경</strong>
-        </div>
-      </article>
-
-      <div className={styles.related}>
-        <h3>코드 밖에서 확인하는 방법</h3>
-        <div className={styles.relatedList}>
-          {verificationCases.map((item) => (
-            <article key={item.title}>
-              <PixelIcon name={item.icon} />
-              <div>
-                <strong>{item.title}</strong>
-                <p>{item.description}</p>
+        <div className={styles.pipelineList}>
+          {workPipelines.map((pipeline, pipelineIndex) => (
+            <article className={styles.pipeline} key={pipeline.label}>
+              <div className={styles.pipelineIntro}>
+                <div className={styles.pipelineLabel}>
+                  <PixelIcon name={pipeline.icon} />
+                  <span>{pipeline.label}</span>
+                </div>
+                <h3>{pipeline.title}</h3>
+                <p>{pipeline.description}</p>
+                <ul className={styles.skillList} aria-label={`${pipeline.title}에 사용하는 skill`}>
+                  {pipeline.skills.map((skill) => (
+                    <li key={skill}><code>/{skill}</code></li>
+                  ))}
+                </ul>
               </div>
+
+              <div className={styles.pipelineRun}>
+                <ol aria-label={`${pipeline.title} 작업 순서`}>
+                  {pipeline.steps.map((step, stepIndex) => (
+                    <li key={step}>
+                      <span>{String(stepIndex + 1).padStart(2, '0')}</span>
+                      <strong>{step}</strong>
+                    </li>
+                  ))}
+                </ol>
+                <div className={styles.humanCheck}>
+                  <span>HUMAN CHECK</span>
+                  <p>{pipeline.check}</p>
+                </div>
+              </div>
+
+              <span className={styles.pipelineNumber} aria-hidden="true">
+                {String(pipelineIndex + 1).padStart(2, '0')}
+              </span>
             </article>
           ))}
         </div>

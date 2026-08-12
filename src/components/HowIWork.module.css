@@ -3,20 +3,14 @@
 }
 
 .intro {
-  max-width: 800px;
+  max-width: 760px;
   margin-top: 34px;
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.8;
 }
 
-.intro code {
-  color: var(--accent-dark);
-  font-family: var(--font-pixel);
-  font-size: 0.72em;
-}
-
-.quest {
+.pipelineBoard {
   margin-top: 34px;
   border: 2px solid var(--accent-dark);
   background: var(--hud-dark);
@@ -24,288 +18,229 @@
   color: var(--surface);
 }
 
-.questHeader {
+.boardHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 20px 22px;
+  padding: 18px 22px;
   border-bottom: 1px solid color-mix(in srgb, var(--pixel-green) 42%, transparent);
 }
 
-.questIdentity {
+.boardHeader > div {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 14px;
 }
 
-.questIdentity > svg {
-  width: 30px;
-  height: 30px;
-  color: var(--pixel-green);
-}
-
-.questIdentity small,
-.questInput span,
-.questOutput span {
-  display: block;
+.boardHeader span,
+.boardHeader small,
+.pipelineLabel span,
+.humanCheck > span,
+.pipelineNumber {
   color: var(--pixel-green);
   font-family: var(--font-pixel);
   font-size: 0.65rem;
   line-height: 1.4;
 }
 
-.questIdentity h3 {
-  margin-top: 5px;
-  font-family: var(--font-pixel);
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+.boardHeader strong {
+  font-size: 0.92rem;
 }
 
-.questInput {
+.pipeline {
+  position: relative;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: baseline;
-  gap: 11px;
-  padding: 8px 10px;
-  border: 1px solid color-mix(in srgb, var(--pixel-green) 42%, transparent);
+  grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.55fr);
+  gap: clamp(28px, 4vw, 54px);
+  padding: 30px 72px 30px 26px;
 }
 
-.questInput strong {
+.pipeline + .pipeline {
+  border-top: 1px solid color-mix(in srgb, var(--pixel-green) 30%, transparent);
+}
+
+.pipelineIntro,
+.pipelineRun {
+  min-width: 0;
+}
+
+.pipelineLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.pipelineLabel svg {
+  width: 21px;
+  height: 21px;
+  color: var(--pixel-green);
+}
+
+.pipeline h3 {
+  margin-top: 14px;
   color: var(--surface);
-  font-size: 0.88rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.45;
 }
 
-.flow {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+.pipelineIntro > p {
+  margin-top: 8px;
+  color: color-mix(in srgb, var(--surface) 72%, transparent);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
   list-style: none;
 }
 
-.flow > li {
+.skillList li {
+  min-width: 0;
+}
+
+.skillList code {
+  display: block;
+  overflow-wrap: anywhere;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in srgb, var(--pixel-green) 55%, transparent);
+  background: color-mix(in srgb, var(--pixel-green) 9%, transparent);
+  color: var(--pixel-green);
+  font-family: var(--font-pixel);
+  font-size: 0.61rem;
+  line-height: 1.35;
+}
+
+.pipelineRun > ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+}
+
+.pipelineRun li {
   position: relative;
   min-width: 0;
-  padding: 24px 20px 26px;
+  padding-right: 18px;
 }
 
-.flow > li:not(:last-child) {
-  border-right: 1px solid color-mix(in srgb, var(--pixel-green) 30%, transparent);
-}
-
-.flow > li::before {
-  display: block;
-  width: 10px;
-  height: 10px;
-  margin-bottom: 16px;
-  border: 2px solid var(--pixel-green);
-  background: var(--hud-dark);
-  box-shadow: inset 0 0 0 2px var(--hud-dark);
-  content: '';
-}
-
-.flow > li::after {
+.pipelineRun li:not(:last-child)::after {
   position: absolute;
-  top: 29px;
-  left: 34px;
-  width: calc(100% - 34px);
-  height: 2px;
-  background: color-mix(in srgb, var(--pixel-green) 45%, transparent);
+  top: 8px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid var(--pixel-green);
+  border-right: 1px solid var(--pixel-green);
   content: '';
+  transform: rotate(45deg);
 }
 
-.flow > li:last-child::after {
-  display: none;
-}
-
-.flow small {
+.pipelineRun li > span {
   display: block;
   color: var(--pixel-green);
   font-family: var(--font-pixel);
-  font-size: 0.65rem;
-  line-height: 1.4;
+  font-size: 0.61rem;
 }
 
-.flow strong {
+.pipelineRun li > strong {
   display: block;
-  margin-top: 11px;
+  margin-top: 10px;
   color: var(--surface);
-  font-size: 1rem;
+  font-size: 0.84rem;
+  font-weight: 600;
   line-height: 1.5;
 }
 
-.flow p {
-  margin-top: 8px;
-  color: color-mix(in srgb, var(--surface) 72%, transparent);
-  font-size: 0.82rem;
-  line-height: 1.65;
-}
-
-.questOutput {
+.humanCheck {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: baseline;
   gap: 14px;
-  padding: 17px 22px;
-  border-top: 1px solid color-mix(in srgb, var(--pixel-green) 42%, transparent);
+  margin-top: 22px;
+  padding: 13px 14px;
+  border-left: 3px solid var(--pixel-green);
   background: color-mix(in srgb, var(--pixel-green) 10%, transparent);
 }
 
-.questOutput strong {
-  color: var(--surface);
-  font-size: 0.9rem;
+.humanCheck p {
+  color: color-mix(in srgb, var(--surface) 84%, transparent);
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
-.related {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: clamp(28px, 5vw, 64px);
-  margin-top: 42px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border);
+.pipelineNumber {
+  position: absolute;
+  top: 28px;
+  right: 22px;
+  opacity: 0.56;
 }
 
-.related > h3 {
-  font-size: 1.08rem;
-  line-height: 1.5;
-}
-
-.relatedList article {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 16px;
-  padding-block: 18px;
-}
-
-.relatedList article + article {
-  border-top: 1px solid var(--border);
-}
-
-.relatedList article > svg {
-  width: 24px;
-  height: 24px;
-  margin-top: 2px;
-  color: var(--accent-dark);
-}
-
-.relatedList strong {
-  display: block;
-  font-size: 0.98rem;
-}
-
-.relatedList p {
-  margin-top: 5px;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  line-height: 1.65;
-}
-
-@media (max-width: 940px) {
-  .flow {
+@media (max-width: 960px) {
+  .pipeline {
     grid-template-columns: 1fr;
-  }
-
-  .flow > li {
-    display: grid;
-    grid-template-columns: 16px minmax(100px, 0.35fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 0 16px;
-    padding: 20px;
-  }
-
-  .flow > li:not(:last-child) {
-    border-right: 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--pixel-green) 30%, transparent);
-  }
-
-  .flow > li::before {
-    grid-row: 1 / span 2;
-    margin-top: 3px;
-    margin-bottom: 0;
-  }
-
-  .flow > li::after {
-    top: 35px;
-    bottom: -1px;
-    left: 24px;
-    width: 2px;
-    height: auto;
-  }
-
-  .flow small,
-  .flow strong {
-    grid-column: 2;
-  }
-
-  .flow strong {
-    margin-top: 6px;
-  }
-
-  .flow p {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    margin-top: 0;
+    gap: 24px;
   }
 }
 
-@media (max-width: 760px) {
-  .related {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-}
-
-@media (max-width: 620px) {
+@media (max-width: 680px) {
   .section {
     padding-top: 96px;
   }
 
   .intro,
-  .quest {
+  .pipelineBoard {
     margin-top: 26px;
   }
 
-  .quest {
+  .pipelineBoard {
     box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent-dark) 24%, transparent);
   }
 
-  .questHeader {
-    align-items: stretch;
-    padding: 18px;
-    flex-direction: column;
-  }
-
-  .questInput {
-    width: 100%;
-  }
-
-  .flow > li {
-    grid-template-columns: 16px minmax(0, 1fr);
-    gap: 0 14px;
-    padding: 19px 18px;
-  }
-
-  .flow small,
-  .flow strong,
-  .flow p {
-    grid-column: 2;
-  }
-
-  .flow p {
-    grid-row: auto;
-    margin-top: 7px;
-  }
-
-  .flow > li::after {
-    left: 22px;
-  }
-
-  .questOutput {
-    grid-template-columns: 1fr;
-    gap: 6px;
+  .boardHeader {
+    align-items: flex-start;
     padding: 16px 18px;
   }
 
+  .boardHeader > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .pipeline {
+    padding: 24px 44px 24px 18px;
+  }
+
+  .pipelineRun > ol {
+    grid-template-columns: 1fr;
+  }
+
+  .pipelineRun li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    padding: 9px 0;
+  }
+
+  .pipelineRun li:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    bottom: -2px;
+    left: 8px;
+    transform: rotate(135deg);
+  }
+
+  .pipelineRun li > strong {
+    margin-top: 0;
+  }
+
+  .humanCheck {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-top: 17px;
+  }
 }
