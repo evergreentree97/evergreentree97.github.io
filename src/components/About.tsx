@@ -14,15 +14,15 @@ export function About() {
           <span>PLAYER 01</span>
         </div>
         <div className={styles.copy}>
-          <h3>불확실한 기술 문제를 함께 판단할 기준으로 바꿉니다</h3>
+          <h3>불확실한 문제는 실패 조건과 대안부터 정리합니다</h3>
           <dl className={styles.focus}>
             <div>
-              <dt>판단 근거</dt>
-              <dd>실패 조건, 대안과 적용 범위를 문서로 남깁니다.</dd>
+              <dt>선택 이유</dt>
+              <dd>실패 조건과 비교한 대안을 문서에 남깁니다.</dd>
             </div>
             <div>
-              <dt>검증 범위</dt>
-              <dd>코드 리뷰, 테스트와 실기기 결과로 변경을 확인합니다.</dd>
+              <dt>확인 방법</dt>
+              <dd>코드 리뷰와 테스트를 거친 뒤 실기기에서 다시 확인합니다.</dd>
             </div>
           </dl>
           <a href="#experience">

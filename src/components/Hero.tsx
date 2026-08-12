@@ -16,8 +16,9 @@ export function Hero() {
           <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          Android 앱의 초기 구조와 주요 기능을 개발해 출시와 운영까지 맡아왔습니다.
-          사내 AI TF에서는 캐릭터 대화 모델의 데이터 정제, 학습, 평가와 서빙을 담당했습니다.
+          Android 앱의 초기 구조를 설계하고 주요 기능을 개발해 출시 후 운영까지 맡아왔습니다.
+          사내 AI TF에서는 캐릭터 대화 모델의 데이터를 정제하고 LoRA로 학습했습니다.
+          평가 도구와 vLLM 서빙도 맡았습니다.
         </p>
 
         <div className={styles.actions}>
@@ -47,7 +48,7 @@ export function Hero() {
             <img
               src="/images/hero-product-developer-hand-hidden.jpg"
               sizes="(max-width: 540px) min(320px, calc(100vw - 40px)), (max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
-              alt="노트의 아이디어를 노트북과 스마트폰의 제품으로 옮기는 개발자의 저녁 작업실"
+              alt="창가 책상에서 노트북으로 작업하는 개발자의 도트 일러스트"
               width="1536"
               height="1024"
               fetchPriority="high"

@@ -22,12 +22,12 @@ export const experiences: Experience[] = [
     organization: 'Levvels (Dunamu & HYBE)',
     role: 'Android Developer',
     summary:
-      'Android 앱 개발을 주 업무로 맡아 기존 앱 기능과 신규 앱의 초기 구조, 출시와 운영을 담당했습니다. 사내 AI TF에서는 모델 데이터, 학습, 평가와 서빙을 별도 책임으로 맡았습니다.',
+      '기존 Android 앱의 기능을 개발하고 신규 앱의 초기 구조를 설계했습니다. 출시 후 운영과 Google Play 정책 대응도 맡았습니다. 사내 AI TF에서는 캐릭터 대화 모델의 데이터 정제, 학습, 평가와 서빙을 담당했습니다.',
     chapters: [
       {
         period: '2024.05 - Present',
         title: 'Vuddy Android',
-        summary: '신규 앱의 초기 구조와 공통 기반, 채팅 SDK 연동을 맡았습니다.',
+        summary: '신규 앱의 멀티모듈 구조를 설계하고 Sendbird 연동을 맡았습니다.',
         highlights: [
           '멀티모듈 구조와 MVI/MVVM 기준, Build-Logic 구성',
           'QA 빌드 배포, Google Play 정책 대응과 운영 장애 분석',

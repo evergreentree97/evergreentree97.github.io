@@ -9,7 +9,7 @@ import styles from './Projects.module.css'
 const caseLabels = [
   ['문제', 'problem'],
   ['판단', 'decision'],
-  ['결과', 'verification'],
+  ['확인', 'verification'],
 ] as const
 
 export function Projects() {
@@ -26,7 +26,6 @@ export function Projects() {
         }
       />
       <Reveal stagger>
-        <p className={styles.sectionNote}>각 프로젝트에서 맡은 범위와 문제, 판단, 검증을 분리했습니다.</p>
         <div className={styles.grid}>
           {featuredProjects.map((project, index) => {
             const serviceLink = project.links[0]
@@ -43,7 +42,7 @@ export function Projects() {
                 <div className={styles.cardBody}>
                   <div className={styles.cardHeading}>
                     <span>{String(index + 1).padStart(2, '0')}</span>
-                    <small>{serviceLink ? 'PUBLIC SERVICE' : project.eyebrow}</small>
+                    <small>{serviceLink ? 'LIVE APP' : project.eyebrow}</small>
                   </div>
                   <div className={styles.titleRow}>
                     <div>

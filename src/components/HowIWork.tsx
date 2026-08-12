@@ -18,27 +18,27 @@ const workSteps: WorkStep[] = [
   {
     key: 'Reference',
     title: '기준 문서',
-    description: '저장소 구조, 코드 규칙과 완료 조건 확인',
+    description: '저장소 규칙과 완료 조건 확인',
   },
   {
     key: 'Diagnose',
     title: '영향 분석',
-    description: '재현 조건, 관련 기능과 API 스펙 확인',
+    description: '문제를 재현하고 관련 코드와 API 확인',
   },
   {
     key: 'Delegate',
     title: '작업 위임',
-    description: 'AI에 코드 탐색, 반복 수정과 초안 작성 요청',
+    description: '코드 탐색과 반복 작업을 AI에 맡김',
   },
   {
     key: 'Review',
     title: '설계 검토',
-    description: '개발자가 변경 범위, 설계와 예외 처리 검토',
+    description: '변경 범위와 예외 처리 직접 검토',
   },
   {
     key: 'Verify',
     title: '동작 검증',
-    description: '관련 테스트, 기존 기능과 실행 결과 확인',
+    description: '테스트를 실행하고 기존 기능의 동작 확인',
   },
 ]
 
@@ -60,9 +60,9 @@ export function HowIWork() {
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <SectionTitle id="how-i-work-title" eyebrow="PROCESS" title="AI 활용과 검증" />
       <p className={styles.intro}>
-        저장소 구조, 코드 규칙과 완료 조건을 기준 문서로 관리합니다.
-        Claude Code와 Codex는 이 문서를 확인한 뒤 탐색과 반복 수정을 맡고,
-        변경 범위와 설계 판단, 예외 처리는 개발자가 검토합니다.
+        저장소 구조와 코드 규칙, 완료 조건은 기준 문서에 적어 둡니다.
+        Claude Code와 Codex에는 코드 탐색과 반복 작업을 맡깁니다.
+        변경 범위와 예외 처리는 직접 검토합니다.
       </p>
 
       <article className={styles.quest} aria-labelledby="work-process-title">
@@ -70,7 +70,7 @@ export function HowIWork() {
           <div className={styles.questIdentity}>
             <PixelIcon name="flag" />
             <div>
-              <small>AI ASSISTED DEVELOPMENT</small>
+              <small>AI-ASSISTED DEVELOPMENT</small>
               <h3 id="work-process-title">기준 문서에서 실기기 검증까지</h3>
             </div>
           </div>
