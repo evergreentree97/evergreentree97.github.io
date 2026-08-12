@@ -47,16 +47,13 @@ export function HowIWork() {
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <SectionTitle id="how-i-work-title" eyebrow="PROCESS" title="AI 활용과 검증" />
       <p className={styles.intro}>
-        반복되는 Android 작업은 저장소 규칙과 확인 순서를 skill로 묶어 실행합니다.
-        구현 과정은 자동화하되 설계 판단과 최종 동작 확인은 직접 맡습니다.
+        반복되는 Android 작업은 놓치기 쉬운 단계까지 skill로 만들어 둡니다.
+        AI에게 구현을 맡기더라도 구조를 결정하고 결과를 판단하는 일은 직접 합니다.
       </p>
 
       <div className={styles.pipelineBoard}>
         <header className={styles.boardHeader}>
-          <div>
-            <span>SKILL PIPELINES</span>
-            <strong>자주 쓰는 작업 순서</strong>
-          </div>
+          <span>SKILL PIPELINES</span>
           <small>{String(workPipelines.length).padStart(2, '0')} RUNBOOKS</small>
         </header>
 

@@ -27,12 +27,6 @@
   border-bottom: 1px solid color-mix(in srgb, var(--pixel-green) 42%, transparent);
 }
 
-.boardHeader > div {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-}
-
 .boardHeader span,
 .boardHeader small,
 .pipelineLabel span,
@@ -42,10 +36,6 @@
   font-family: var(--font-pixel);
   font-size: 0.65rem;
   line-height: 1.4;
-}
-
-.boardHeader strong {
-  font-size: 0.92rem;
 }
 
 .pipeline {
@@ -203,12 +193,6 @@
   .boardHeader {
     align-items: flex-start;
     padding: 16px 18px;
-  }
-
-  .boardHeader > div {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 5px;
   }
 
   .pipeline {
