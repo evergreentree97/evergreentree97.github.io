@@ -70,12 +70,16 @@ export function Projects() {
                   </dl>
 
                   <dl className={styles.caseStudy}>
-                    {caseLabels.map(([label, key]) => (
-                      <div key={key}>
-                        <dt>{label}</dt>
-                        <dd>{project.caseStudy[key]}</dd>
-                      </div>
-                    ))}
+                    {caseLabels.map(([label, key]) => {
+                      const copy = project.caseStudy[key]
+
+                      return copy ? (
+                        <div key={key}>
+                          <dt>{label}</dt>
+                          <dd>{copy}</dd>
+                        </div>
+                      ) : null
+                    })}
                   </dl>
 
                   <ul className={styles.tags} aria-label={`${project.name} 기술`}>

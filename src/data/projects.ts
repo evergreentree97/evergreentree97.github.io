@@ -7,7 +7,7 @@ export type ProjectLink = {
 export type ProjectCase = {
   problem: string
   decision: string
-  verification: string
+  verification?: string
 }
 
 export type FeaturedProject = {
@@ -71,7 +71,6 @@ export const featuredProjects: FeaturedProject[] = [
     caseStudy: {
       problem: '하나의 답변이 여러 부분으로 저장될 때 앞부분만 남고 나머지가 누락되고 있었습니다. 평가용 대화가 학습 데이터와 겹친 결과도 있어 기존 점수를 그대로 비교할 수 없었습니다.',
       decision: '응답 형식, 캐릭터 일관성, 재미와 상태 유지를 따로 평가했습니다. 질문과 서빙 조건을 고정하고 모델 이름을 가렸습니다. 답변 순서를 바꿔 자동 평가 결과를 실제 대화와 대조했습니다.',
-      verification: '학습용 응답 27,128턴을 점검해 누락된 뒷부분을 복구했습니다. 결함이 섞인 이전 실험 19건은 비교 기준에서 제외하고 평가 데이터 중복을 막는 검사를 추가했습니다. 이후 비교 결과와 실제 대화를 함께 검토해 최종 모델은 팀에서 결정했습니다.',
     },
     links: [],
   },

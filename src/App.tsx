@@ -1,4 +1,3 @@
-import { About } from './components/About'
 import { Activities } from './components/Activities'
 import { Contact } from './components/Contact'
 import { Experience } from './components/Experience'
@@ -20,10 +19,7 @@ export default function App() {
       <main className={styles.shell} id="main-content">
         <Hero />
         <Projects />
-        <div className={styles.aboutSkills}>
-          <About />
-          <Skills />
-        </div>
+        <Skills />
         <HowIWork />
         <Experience />
         <Activities />
