@@ -83,7 +83,7 @@ export const featuredProjects: FeaturedProject[] = [
     caseStudy: {
       problem: '영상 알람은 앱 프로세스 종료, 화면 꺼짐과 잠금 화면, 휴대전화 재부팅 뒤에도 실행돼야 했습니다.',
       decision: 'Room의 알람 데이터와 AlarmManager의 실행 예약을 분리하고, 재부팅 시 저장된 알람을 다시 예약했습니다.',
-      verification: 'Android 14 실기기에서 앱을 종료하거나 화면을 끄고 잠근 상태, 휴대전화 재부팅 뒤에도 영상 알람이 실행되는지 확인했습니다.',
+      verification: '앱 종료, 화면 잠금, 기기 재부팅 이후에도 영상 알람이 정상 실행되는지 확인했습니다.',
     },
     links: [
       {

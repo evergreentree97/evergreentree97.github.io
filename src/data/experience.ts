@@ -47,7 +47,7 @@ export const experiences: Experience[] = [
           '포토카드 도감의 퀵뷰와 3D 회전 구현',
           '불필요한 리컴포지션 제거, SceneView Bitmap 메모리 누수와 화면 이동 중 크래시 수정',
           'Room과 AlarmManager 기반 알람 저장과 예약, 재부팅 이후 복원',
-          'Android 14 실기기에서 화면 꺼짐, 잠금 화면과 재부팅 시나리오 검증',
+          '실기기에서 화면 꺼짐, 잠금 화면과 재부팅 시나리오 검증',
         ],
       },
     ],
