@@ -56,7 +56,6 @@ export function Hero() {
             />
           </picture>
           <div className={styles.statusBox} aria-label="주요 경험과 기술">
-            <span>Android 앱 3개</span>
             <strong>Kotlin / Compose</strong>
             <span className={styles.building}>LLM 평가</span>
           </div>
