@@ -6,7 +6,7 @@ import styles from './Experience.module.css'
 export function Experience() {
   return (
     <section className={styles.experience} id="experience" aria-labelledby="experience-title">
-      <SectionTitle id="experience-title" eyebrow="CAREER LOG" title="경력" />
+      <SectionTitle id="experience-title" title="경력" />
       <ol className={styles.timeline}>
         {experiences.map((experience) => (
           <li key={`${experience.organization}-${experience.period}`}>
@@ -22,7 +22,6 @@ export function Experience() {
                 </div>
                 {experience.current ? <span>CURRENT</span> : null}
               </div>
-              <p className={styles.summary}>{experience.summary}</p>
               <div className={styles.chapters}>
                 {experience.chapters.map((chapter) => (
                   <section className={styles.chapter} key={`${chapter.title}-${chapter.period}`}>

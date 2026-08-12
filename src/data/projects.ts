@@ -13,7 +13,6 @@ export type ProjectCase = {
 export type FeaturedProject = {
   name: string
   eyebrow: string
-  summary: string
   role: string
   technologies: string[]
   image: {
@@ -38,9 +37,8 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'Vuddy',
     eyebrow: 'ANDROID PRODUCT',
-    summary: 'Sendbird의 대규모 그룹 푸시와 채널별 금칙어 설정이 요구사항을 충족하지 못해 실시간 메시징만 SDK에 남기고 채팅방 생성과 검색, 운영 정책과 대규모 푸시는 Backend에서 처리하도록 제안했습니다.',
     role: '신규 앱의 초기 구조와 Sendbird 연동을 주도했습니다. 채팅 화면은 동료와 분담했고 양방향 페이징과 사진 및 영상 메시지를 맡았습니다.',
-    technologies: ['Kotlin', 'Jetpack Compose', 'MVI / MVVM', 'Sendbird', 'Media3'],
+    technologies: ['Kotlin', 'Jetpack Compose', 'MVI', 'Sendbird', 'Media3'],
     image: {
       artwork: 'vuddy',
       alt: '대화 카드가 중앙 장치로 모이는 도트 비네트',
@@ -61,8 +59,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: '캐릭터 대화 모델 학습과 평가',
     eyebrow: 'MODEL EVALUATION',
-    summary: '학습 응답의 누락과 평가 데이터 중복을 찾아 수정하고 같은 조건에서 모델을 비교하는 평가 도구를 만들었습니다.',
-    role: '사내 AI TF에서 데이터 정제, LoRA 학습, 내부 자동 평가 도구와 vLLM 서빙을 맡았습니다. 학습과 평가 기록을 관리했고 최종 모델 선택은 팀이 함께 결정했습니다.',
+    role: '사내 AI TF에서 데이터 정제, LoRA 학습, 내부 자동 평가 도구와 vLLM 서빙을 맡았습니다.',
     technologies: ['Python', 'PyTorch', 'LoRA', 'LLM Evaluation', 'vLLM'],
     image: {
       artwork: 'llm',
@@ -77,7 +74,6 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: 'Momentica',
     eyebrow: 'ANDROID PRODUCT',
-    summary: 'Room에는 알람 정보를 저장하고 AlarmManager에는 실행 예약만 맡겼습니다. 휴대전화가 재부팅되면 저장된 알람을 다시 예약했습니다.',
     role: '영상 알람을 주도했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
     image: {

@@ -6,7 +6,7 @@ import styles from './MoreWork.module.css'
 export function MoreWork() {
   return (
     <section className={styles.section} aria-labelledby="more-work-title">
-      <SectionTitle id="more-work-title" eyebrow="MORE WORK" title="오픈소스와 사이드 프로젝트" />
+      <SectionTitle id="more-work-title" title="오픈소스와 사이드 프로젝트" />
       <div className={styles.list}>
         {moreProjects.map((project) => (
           <article key={project.name}>

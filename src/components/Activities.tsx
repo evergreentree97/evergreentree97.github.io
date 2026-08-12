@@ -5,7 +5,7 @@ import styles from './Activities.module.css'
 export function Activities() {
   return (
     <section className={styles.section} aria-labelledby="activities-title">
-      <SectionTitle id="activities-title" eyebrow="COMMUNITY" title="대외 활동" />
+      <SectionTitle id="activities-title" title="대외 활동" />
       <div className={styles.grid}>
         {activities.map((activity) => (
           <article key={activity.organization}>

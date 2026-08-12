@@ -17,7 +17,6 @@ export function Projects() {
     <section className={styles.projects} id="projects" aria-labelledby="projects-title">
       <SectionTitle
         id="projects-title"
-        eyebrow="SELECTED WORK"
         title="주요 프로젝트"
         action={
           <a href={profile.githubUrl} target="_blank" rel="noreferrer">
@@ -47,7 +46,6 @@ export function Projects() {
                   <div className={styles.titleRow}>
                     <div>
                       <h3>{project.name}</h3>
-                      <p className={styles.summary}>{project.summary}</p>
                     </div>
                     {serviceLink ? (
                       <a

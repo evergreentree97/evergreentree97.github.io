@@ -11,9 +11,9 @@ export function Hero() {
           <span>CHOI SANGROK / ANDROID DEVELOPER</span>
         </span>
         <h1 id="hero-title">
-          <span className={styles.line}>AI에 일을 맡기고,</span>
+          <span className={styles.line}>제품의 구조를 설계하고</span>
           <br />
-          <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
+          <span className={styles.line}><strong>출시 이후까지 운영합니다.</strong><span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
           Android 앱의 초기 구조를 설계하고 주요 기능을 개발해 출시 후 운영까지 맡아왔습니다.

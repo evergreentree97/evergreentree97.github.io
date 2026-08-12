@@ -15,12 +15,6 @@
   line-height: 1.42;
 }
 
-.layout > div:first-child p {
-  max-width: 52ch;
-  margin-top: 18px;
-  color: var(--text-secondary);
-}
-
 .links {
   border-top: 1px solid var(--border);
 }

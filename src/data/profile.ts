@@ -4,7 +4,6 @@ export const profile = {
   role: 'Android Developer',
   githubUrl: 'https://github.com/EvergreenTree97',
   linkedinUrl: 'https://kr.linkedin.com/in/%EC%83%81%EB%A1%9D-%EC%B5%9C-070254267',
-  careerUrl: '#experience',
 } as const
 
 export const navigation = [

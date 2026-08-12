@@ -15,19 +15,12 @@
   border-top: 1px solid var(--border);
 }
 
-.groupHeading h3 {
+.group h3 {
   color: var(--accent-dark);
   font-family: var(--font-pixel);
   font-size: 0.66rem;
   font-weight: 400;
   line-height: 1.5;
-}
-
-.groupHeading p {
-  margin-top: 5px;
-  color: var(--text-secondary);
-  font-size: 0.86rem;
-  line-height: 1.55;
 }
 
 .group ul {

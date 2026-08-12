@@ -18,20 +18,8 @@
   color: var(--surface);
 }
 
-.boardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px 22px;
-  border-bottom: 1px solid color-mix(in srgb, var(--pixel-green) 42%, transparent);
-}
-
-.boardHeader span,
-.boardHeader small,
 .pipelineLabel span,
-.pipelineStage > span,
-.pipelineNumber {
+.pipelineStage > span {
   color: var(--pixel-green);
   font-family: var(--font-pixel);
   font-size: 0.65rem;
@@ -43,7 +31,7 @@
   display: grid;
   grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.55fr);
   gap: clamp(28px, 4vw, 54px);
-  padding: 30px 72px 30px 26px;
+  padding: 30px 26px;
 }
 
 .pipeline + .pipeline {
@@ -72,13 +60,6 @@
   color: var(--surface);
   font-size: 1.15rem;
   line-height: 1.45;
-}
-
-.pipelineIntro > p {
-  margin-top: 8px;
-  color: color-mix(in srgb, var(--surface) 72%, transparent);
-  font-size: 0.86rem;
-  line-height: 1.65;
 }
 
 .skillList {
@@ -161,13 +142,6 @@
   background: color-mix(in srgb, var(--pixel-green) 10%, transparent);
 }
 
-.pipelineNumber {
-  position: absolute;
-  top: 28px;
-  right: 22px;
-  opacity: 0.56;
-}
-
 @media (max-width: 960px) {
   .pipeline {
     grid-template-columns: 1fr;
@@ -189,15 +163,9 @@
     box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent-dark) 24%, transparent);
   }
 
-  .boardHeader {
-    align-items: flex-start;
-    padding: 16px 18px;
-  }
-
   .pipeline {
-    padding: 24px 44px 24px 18px;
+    padding: 24px 18px;
   }
-
 }
 
 @media (max-width: 560px) {
