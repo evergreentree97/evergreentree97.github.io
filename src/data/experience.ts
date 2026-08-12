@@ -26,7 +26,7 @@ export const experiences: Experience[] = [
         title: 'Vuddy Android',
         summary: '신규 앱의 멀티모듈 구조를 설계하고 Sendbird 연동을 맡았습니다.',
         highlights: [
-          '멀티모듈 구조와 MVI 기준, Build-Logic 구성',
+          '멀티모듈 구조 설계, MVI 적용과 Build-Logic 구성',
           'QA 빌드 배포, Google Play 정책 대응과 운영 장애 분석',
         ],
       },
