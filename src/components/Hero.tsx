@@ -16,9 +16,9 @@ export function Hero() {
           <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
         </h1>
         <p className={styles.description}>
-          Android 앱의 초기 구조를 설계하고 주요 기능을 개발해 출시 후 운영까지 맡아왔습니다.
-          사내 AI TF에서는 캐릭터 대화 모델의 데이터를 정제하고 LoRA로 학습했습니다.
-          평가 도구와 vLLM 서빙도 맡았습니다.
+          Android 앱의 초기 구조를 설계하고 주요 기능을 개발했으며, 출시 후 운영까지 이어서 담당했습니다.
+          사내 AI TF에서는 캐릭터 대화 모델의 데이터를 정제해 LoRA로 학습하고,
+          모델을 검증해 서비스할 수 있도록 평가 도구와 vLLM 기반 서빙 환경을 구축했습니다.
         </p>
 
         <div className={styles.actions}>
