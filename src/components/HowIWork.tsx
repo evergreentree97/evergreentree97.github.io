@@ -1,94 +1,69 @@
-import { PixelIcon, type PixelIconName } from './PixelIcon'
 import { SectionTitle } from './SectionTitle'
 import styles from './HowIWork.module.css'
 
-type WorkPipeline = {
-  label: string
-  title: string
-  skills: string[]
-  context: string
-  steps: string[]
-  verification: string
-  icon: PixelIconName
-}
+const workflow = [
+  {
+    label: 'INPUT',
+    title: '서버 명세 또는 QA 티켓',
+    copy: '문제의 맥락, 기존 구현과 바꾸면 안 되는 동작을 함께 제공합니다.',
+  },
+  {
+    label: 'DELEGATE',
+    title: '반복 작업을 AI에 맡김',
+    copy: 'API 모델 연결, 상태 분류와 재현 절차처럼 범위가 분명한 작업을 맡깁니다.',
+  },
+  {
+    label: 'REVIEW',
+    title: '구조와 변경 범위를 직접 확인',
+    copy: 'Compose 안정성, 상태 구조, API 계약과 결제 및 미디어처럼 중요한 경계를 코드에서 확인합니다.',
+  },
+  {
+    label: 'VERIFY',
+    title: '빌드하거나 실제 기기에서 비교',
+    copy: '테스트와 스크린샷, 모듈 빌드를 거치고 필요한 경우 같은 기기에서 변경 전후를 확인합니다.',
+  },
+] as const
 
-const workPipelines: WorkPipeline[] = [
-  {
-    label: 'API INTEGRATION',
-    title: '서버 API를 Android 코드로 연결',
-    skills: ['bff-to-aos'],
-    context: 'BFF Controller와 DTO, Android에 이미 있는 API와 모델',
-    steps: ['API 계약 비교', 'API와 모델 구현'],
-    verification: '모듈 빌드 후 API 계약과 오류 처리 방식을 직접 검토합니다.',
-    icon: 'code',
-  },
-  {
-    label: 'STATE REVIEW',
-    title: '화면 상태 구조를 정리',
-    skills: ['android-state-mapper-review'],
-    context: 'ViewModel과 Compose 화면, 이벤트 모델, 테스트와 기존 구현 사례',
-    steps: ['상태와 이벤트 분류', 'Mapper 구조 검토'],
-    verification: '테스트와 Compose 빌드 후 기존 화면 동작이 유지되는지 확인합니다.',
-    icon: 'android',
-  },
-  {
-    label: 'QA DELIVERY',
-    title: 'QA 티켓을 수정하고 기기에서 비교',
-    skills: ['qa-ticket', 'test-build'],
-    context: 'QA 티켓의 재현 경로와 기대 동작, 첨부 기록과 현재 구현',
-    steps: ['격리된 작업 공간에서 수정', '테스트 빌드 설치'],
-    verification: '기존 앱과 테스트 앱을 같은 기기에서 실행해 변경 전후를 비교합니다.',
-    icon: 'device',
-  },
-]
+const examples = [
+  ['API INTEGRATION', '서버 API를 Android 코드로 연결', 'API 계약과 오류 처리 검토'],
+  ['STATE REVIEW', '화면 상태 구조를 정리', '테스트와 Compose 빌드'],
+  ['QA DELIVERY', 'QA 티켓을 수정하고 기기에서 비교', '기존 앱과 테스트 앱 동시 확인'],
+] as const
 
 export function HowIWork() {
   return (
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <SectionTitle id="how-i-work-title" title="AI 활용과 검증" />
-      <p className={styles.intro}>
-        AI에는 문제의 맥락과 기존 구현, 바꾸면 안 되는 동작까지 함께 제공합니다.
-        결과는 그대로 받아들이지 않고 코드 리뷰와 테스트를 거친 뒤 필요하면 실기기에서 다시 검증합니다.
-      </p>
+      <div className={styles.introRow}>
+        <p>
+          AI가 코드를 작성할 수는 있지만, 변경 범위와 실제 동작은 개발자가 확인합니다.
+        </p>
+        <p>
+          작업 결과의 중요도에 따라 검증 단계를 나누고, 결제와 미디어 같은 핵심 모듈은 테스트 코드까지 확인합니다.
+        </p>
+      </div>
 
-      <div className={styles.pipelineBoard}>
-        <div className={styles.pipelineList}>
-          {workPipelines.map((pipeline) => (
-            <article className={styles.pipeline} key={pipeline.label}>
-              <div className={styles.pipelineIntro}>
-                <div className={styles.pipelineLabel}>
-                  <PixelIcon name={pipeline.icon} />
-                  <span>{pipeline.label}</span>
-                </div>
-                <h3>{pipeline.title}</h3>
-                <ul className={styles.skillList} aria-label={`${pipeline.title}에 사용하는 skill`}>
-                  {pipeline.skills.map((skill) => (
-                    <li key={skill}><code>/{skill}</code></li>
-                  ))}
-                </ul>
-              </div>
+      <ol className={styles.workflow}>
+        {workflow.map((step, index) => (
+          <li key={step.label}>
+            <div className={styles.stepMeta}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <strong>{step.label}</strong>
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.copy}</p>
+          </li>
+        ))}
+      </ol>
 
-              <div className={styles.pipelineRun}>
-                <div className={styles.pipelineStage}>
-                  <span>CONTEXT</span>
-                  <p>{pipeline.context}</p>
-                </div>
-                <div className={`${styles.pipelineStage} ${styles.skillRun}`}>
-                  <span>SKILL RUN</span>
-                  <ol aria-label={`${pipeline.title} Skill 실행`}>
-                    {pipeline.steps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ol>
-                </div>
-                <div className={`${styles.pipelineStage} ${styles.verification}`}>
-                  <span>VERIFY</span>
-                  <p>{pipeline.verification}</p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+      <div className={styles.examples} aria-label="AI 활용 작업 예시">
+        {examples.map(([label, title, verification]) => (
+          <article key={label}>
+            <span>{label}</span>
+            <h3>{title}</h3>
+            <p>{verification}</p>
+          </article>
+        ))}
       </div>
     </section>
   )

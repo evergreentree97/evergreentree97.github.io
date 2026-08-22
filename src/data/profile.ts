@@ -7,15 +7,16 @@ export const profile = {
 } as const
 
 export const navigation = [
-  { label: '프로젝트', href: '#projects' },
-  { label: '기술', href: '#skills' },
-  { label: '일하는 방식', href: '#how-i-work' },
-  { label: '경력', href: '#experience' },
-  { label: '연락처', href: '#contact' },
+  { label: 'About me', href: '#about' },
+  { label: 'Career', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Side Project', href: '#side-projects' },
+  { label: 'Activity', href: '#activities' },
+  { label: 'Contact', href: '#contact' },
 ] as const
 
 export const tastes = [
-  { icon: 'game', label: '게임', value: 'RPG / 전략' },
-  { icon: 'music', label: '음악', value: '키보드 / 밴드 / J-Pop' },
-  { icon: 'fitness', label: '운동', value: '웨이트 트레이닝 / 클라이밍' },
+  { icon: 'game', label: '게임', value: 'RPG와 전략 게임에서 긴 호흡으로 규칙을 익히는 편입니다.' },
+  { icon: 'music', label: '음악', value: '키보드를 연주하고 밴드와 J-Pop을 듣습니다.' },
+  { icon: 'fitness', label: '운동', value: '웨이트 트레이닝과 클라이밍으로 리듬을 바꿉니다.' },
 ] as const

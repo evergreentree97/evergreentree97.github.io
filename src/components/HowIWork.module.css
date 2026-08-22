@@ -1,198 +1,183 @@
 .section {
-  padding-top: 128px;
+  padding-top: clamp(124px, 15vw, 204px);
 }
 
-.intro {
-  max-width: 760px;
-  margin-top: 34px;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.pipelineBoard {
-  margin-top: 34px;
-  border: 2px solid var(--accent-dark);
-  background: var(--hud-dark);
-  box-shadow: 7px 7px 0 color-mix(in srgb, var(--accent-dark) 24%, transparent);
-  color: var(--surface);
-}
-
-.pipelineLabel span,
-.pipelineStage > span {
-  color: var(--pixel-green);
-  font-family: var(--font-pixel);
-  font-size: 0.65rem;
-  line-height: 1.4;
-}
-
-.pipeline {
-  position: relative;
+.introRow {
   display: grid;
-  grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.55fr);
-  gap: clamp(28px, 4vw, 54px);
-  padding: 30px 26px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(32px, 7vw, 92px);
+  margin-top: 42px;
 }
 
-.pipeline + .pipeline {
-  border-top: 1px solid color-mix(in srgb, var(--pixel-green) 30%, transparent);
-}
-
-.pipelineIntro,
-.pipelineRun {
-  min-width: 0;
-}
-
-.pipelineLabel {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.pipelineLabel svg {
-  width: 21px;
-  height: 21px;
-  color: var(--pixel-green);
-}
-
-.pipeline h3 {
-  margin-top: 14px;
-  color: var(--surface);
-  font-size: 1.15rem;
+.introRow p:first-child {
+  max-width: 29ch;
+  color: var(--text-primary);
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+  font-weight: 650;
   line-height: 1.45;
 }
 
-.skillList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 16px;
+.introRow p:last-child {
+  max-width: 40ch;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 64px;
+  border-top: 1px solid var(--android-green);
+  border-bottom: 1px solid var(--android-green);
   list-style: none;
 }
 
-.skillList li {
-  min-width: 0;
-}
-
-.skillList code {
-  display: block;
-  overflow-wrap: anywhere;
-  padding: 6px 8px;
-  border: 1px solid color-mix(in srgb, var(--pixel-green) 55%, transparent);
-  background: color-mix(in srgb, var(--pixel-green) 9%, transparent);
-  color: var(--pixel-green);
-  font-family: var(--font-pixel);
-  font-size: 0.61rem;
-  line-height: 1.35;
-}
-
-.pipelineRun {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.8fr) minmax(0, 1fr);
-}
-
-.pipelineStage {
+.workflow li {
   position: relative;
-  display: flex;
-  min-width: 0;
-  padding: 4px 22px;
-  flex-direction: column;
+  min-height: 286px;
+  padding: 26px 24px 30px;
 }
 
-.pipelineStage:first-child {
-  padding-left: 0;
+.workflow li + li {
+  border-left: 1px solid var(--border);
 }
 
-.pipelineStage:last-child {
-  padding-right: 0;
-}
-
-.pipelineStage:not(:last-child)::after {
+.workflow li:not(:last-child)::after {
   position: absolute;
-  top: 9px;
-  right: -4px;
-  width: 8px;
-  height: 8px;
-  border-top: 1px solid var(--pixel-green);
-  border-right: 1px solid var(--pixel-green);
+  top: 36px;
+  right: -6px;
+  z-index: 1;
+  width: 11px;
+  height: 11px;
+  border-top: 2px solid var(--android-green);
+  border-right: 2px solid var(--android-green);
+  background: var(--background);
   content: '';
   transform: rotate(45deg);
 }
 
-.pipelineStage p,
-.skillRun ol {
-  margin-top: 10px;
-  color: color-mix(in srgb, var(--surface) 84%, transparent);
-  font-size: 0.84rem;
-  line-height: 1.6;
+.stepMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--android-green);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
 }
 
-.skillRun ol {
-  padding-left: 18px;
+.stepMeta strong {
+  font-weight: 500;
 }
 
-.skillRun li + li {
-  margin-top: 5px;
+.workflow h3 {
+  margin-top: 76px;
+  font-size: 1.2rem;
+  line-height: 1.45;
 }
 
-.verification {
-  margin: -8px 0;
-  padding-block: 12px;
-  border-left: 3px solid var(--pixel-green);
-  background: color-mix(in srgb, var(--pixel-green) 10%, transparent);
+.workflow p {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
-@media (max-width: 960px) {
-  .pipeline {
+.examples {
+  margin-top: 60px;
+  border-top: 1px solid var(--border);
+}
+
+.examples article {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) minmax(240px, 0.8fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 84px;
+  border-bottom: 1px solid var(--border);
+}
+
+.examples span {
+  color: var(--android-green);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.examples h3 {
+  font-size: 1rem;
+}
+
+.examples p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .workflow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow li:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .workflow li:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+  .workflow li:nth-child(2)::after {
+    display: none;
+  }
+
+  .examples article {
+    grid-template-columns: 150px minmax(0, 1fr);
+    padding-block: 18px;
+  }
+
+  .examples p {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .introRow {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-}
 
-@media (max-width: 680px) {
-  .section {
-    padding-top: 96px;
-  }
-
-  .intro,
-  .pipelineBoard {
-    margin-top: 26px;
-  }
-
-  .pipelineBoard {
-    box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent-dark) 24%, transparent);
-  }
-
-  .pipeline {
-    padding: 24px 18px;
-  }
-}
-
-@media (max-width: 560px) {
-  .pipelineRun {
+  .workflow {
     grid-template-columns: 1fr;
   }
 
-  .pipelineStage,
-  .pipelineStage:first-child,
-  .pipelineStage:last-child {
-    padding: 16px 0;
+  .workflow li {
+    min-height: 0;
+    padding: 24px 4px 28px;
   }
 
-  .pipelineStage:first-child {
-    padding-top: 0;
+  .workflow li + li,
+  .workflow li:nth-child(3),
+  .workflow li:nth-child(4) {
+    border-top: 1px solid var(--border);
+    border-left: 0;
   }
 
-  .pipelineStage:not(:last-child)::after {
-    top: auto;
-    right: auto;
-    bottom: -2px;
-    left: 5px;
-    transform: rotate(135deg);
+  .workflow li::after {
+    display: none;
   }
 
-  .verification {
-    margin: 0;
-    padding-inline: 13px;
+  .workflow h3 {
+    margin-top: 34px;
+  }
+
+  .examples article {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .examples p {
+    grid-column: auto;
   }
 }

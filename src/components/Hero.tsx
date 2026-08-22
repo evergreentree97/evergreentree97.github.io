@@ -5,60 +5,49 @@ import styles from './Hero.module.css'
 export function Hero() {
   return (
     <section className={styles.hero} id="top" aria-labelledby="hero-title">
-      <div className={styles.content}>
-        <span className={styles.label}>
-          <span aria-hidden="true">&gt;</span>
-          <span>CHOI SANGROK / ANDROID DEVELOPER</span>
-        </span>
-        <h1 id="hero-title">
-          <span className={styles.line}>AI에 일을 맡기고,</span>
-          <br />
-          <span className={styles.line}><strong>제품을 만듭니다.</strong><span className={styles.cursor}>_</span></span>
-        </h1>
-        <p className={styles.description}>
-          Android 앱의 초기 구조를 설계하고 주요 기능을 개발했으며, 출시 후 운영까지 이어서 담당했습니다.
-          사내 AI TF에서는 캐릭터 대화 모델의 데이터를 정제해 LoRA로 학습하고,
-          모델을 검증해 서비스할 수 있도록 평가 도구와 vLLM 기반 서빙 환경을 구축했습니다.
-        </p>
+      <div className={styles.inner}>
+        <div className={styles.heroContent}>
+          <span className={styles.label}>
+            CHOI SANGROK / ANDROID DEVELOPER
+          </span>
 
-        <div className={styles.actions}>
-          <a className={`${styles.button} ${styles.primary}`} href="#projects">
-            주요 프로젝트 <PixelIcon name="arrow" />
-          </a>
-          <a
-            className={styles.button}
-            href={profile.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub <PixelIcon name="external" />
-          </a>
+          <h1 id="hero-title">
+            <span className={styles.line}>AI에 일을 맡기고,</span>
+            <span className={styles.line}>제품을 만듭니다.</span>
+          </h1>
+
+          <p className={styles.description}>
+            Android 앱의 구조를 설계하고, API 연동과 출시 후 운영 문제까지 해결합니다.
+            AI는 개발 과정에 활용하되, 결과를 직접 평가해 제품 품질까지 확인합니다.
+          </p>
+
+          <div className={styles.actions}>
+            <a className={styles.primaryAction} href="#projects">
+              주요 프로젝트 보기 <PixelIcon name="arrow" />
+            </a>
+            <a href={profile.githubUrl} target="_blank" rel="noreferrer">
+              GitHub 보기 <PixelIcon name="external" />
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.sceneColumn}>
         <div className={styles.sceneFrame}>
-          <div className={styles.messageBox}>BUILD. SHIP. ENJOY.</div>
           <picture>
             <source
-              srcSet="/images/hero-product-developer-hand-hidden-480.avif 480w, /images/hero-product-developer-hand-hidden-560.avif 560w, /images/hero-product-developer-hand-hidden-640.avif 640w, /images/hero-product-developer-hand-hidden-800.avif 800w, /images/hero-product-developer-hand-hidden.avif 1200w"
-              sizes="(max-width: 540px) min(320px, calc(100vw - 40px)), (max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
               type="image/avif"
+              srcSet="/images/hero-product-developer-hand-hidden-480.avif 480w, /images/hero-product-developer-hand-hidden-560.avif 560w, /images/hero-product-developer-hand-hidden-640.avif 640w, /images/hero-product-developer-hand-hidden-800.avif 800w, /images/hero-product-developer-hand-hidden.avif 1200w"
+              sizes="(max-width: 900px) calc(100vw - 32px), 52vw"
             />
             <img
               src="/images/hero-product-developer-hand-hidden.jpg"
-              sizes="(max-width: 540px) min(320px, calc(100vw - 40px)), (max-width: 820px) calc(100vw - 54px), (max-width: 1180px) 45vw, 540px"
               alt="창가 책상에서 노트북으로 작업하는 개발자의 도트 일러스트"
-              width="1536"
-              height="1024"
-              fetchPriority="high"
+              width="1200"
+              height="800"
               loading="eager"
+              fetchPriority="high"
             />
           </picture>
-          <div className={styles.statusBox} aria-label="주요 경험과 기술">
-            <strong>Kotlin / Compose</strong>
-            <span className={styles.building}>LLM 평가</span>
-          </div>
+          <div className={styles.scrim} aria-hidden="true" />
         </div>
       </div>
     </section>

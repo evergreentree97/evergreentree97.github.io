@@ -4,7 +4,7 @@ import styles from './Activities.module.css'
 
 export function Activities() {
   return (
-    <section className={styles.section} aria-labelledby="activities-title">
+    <section className={styles.section} id="activities" aria-labelledby="activities-title">
       <SectionTitle id="activities-title" title="대외 활동" />
       <div className={styles.grid}>
         {activities.map((activity) => (
@@ -15,6 +15,7 @@ export function Activities() {
             </div>
             <h3>{activity.organization}</h3>
             <p>{activity.summary}</p>
+            <p className={styles.takeaway}>{activity.takeaway}</p>
             <ul>
               {activity.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
             </ul>

@@ -18,6 +18,7 @@ export function Experience() {
               <div className={styles.entryHeading}>
                 <div>
                   <h3>{experience.organization}</h3>
+                  <p className={styles.intro}>{experience.intro}</p>
                   <p>{experience.role}</p>
                 </div>
                 {experience.current ? <span>CURRENT</span> : null}
@@ -27,7 +28,7 @@ export function Experience() {
                   <section className={styles.chapter} key={`${chapter.title}-${chapter.period}`}>
                     <div className={styles.chapterHeading}>
                       <span>{chapter.period}</span>
-                      <h4>{chapter.title}</h4>
+                      <h4><a href={chapter.href}>{chapter.title}</a></h4>
                     </div>
                     <div className={styles.chapterContent}>
                       <p>{chapter.summary}</p>

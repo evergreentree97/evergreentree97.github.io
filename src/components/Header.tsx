@@ -1,16 +1,42 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { navigation, profile } from '../data/profile'
 import { PixelIcon } from './PixelIcon'
 import styles from './Header.module.css'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const header = headerRef.current
+    if (!header) return undefined
+
+    let animationFrame = 0
+    const updateHeader = () => {
+      animationFrame = 0
+      header.dataset.scrolled = String(window.scrollY > 72)
+    }
+    const requestUpdate = () => {
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(updateHeader)
+    }
+
+    updateHeader()
+    window.addEventListener('scroll', requestUpdate, { passive: true })
+    return () => {
+      if (animationFrame) window.cancelAnimationFrame(animationFrame)
+      window.removeEventListener('scroll', requestUpdate)
+    }
+  }, [])
 
   useEffect(() => {
     if (!isOpen) return undefined
 
     const closeWithEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setIsOpen(false)
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+        menuButtonRef.current?.focus()
+      }
     }
 
     window.addEventListener('keydown', closeWithEscape)
@@ -18,7 +44,7 @@ export function Header() {
   }, [isOpen])
 
   return (
-    <header className={styles.header}>
+    <header ref={headerRef} className={styles.header}>
       <div className={styles.inner}>
         <a className={styles.logo} href="#top" aria-label="Ricky.dev 홈으로 이동">
           <PixelIcon name="device" className={styles.logoIcon} />
@@ -26,6 +52,7 @@ export function Header() {
         </a>
 
         <button
+          ref={menuButtonRef}
           className={styles.menuButton}
           type="button"
           aria-label={isOpen ? '메뉴 닫기' : '메뉴 열기'}
@@ -53,6 +80,7 @@ export function Header() {
             rel="noreferrer"
             aria-label="GitHub 새 창으로 열기"
           >
+            <span>GitHub</span>
             <PixelIcon name="github" />
           </a>
         </nav>

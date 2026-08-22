@@ -1,23 +1,25 @@
+/* Hallmark · genre: atmospheric · macrostructure: Split Studio · theme: studied-DNA · anchor hue: forest green */
+@import '../../tokens.css';
+
 :root {
-  --background: #eef8ea;
-  --surface: #fbfdf8;
-  --surface-muted: #d9eecf;
-  --text-primary: #16241a;
-  --text-secondary: #46584c;
-  --border: #9cbc9a;
-  --accent: #2ea75c;
-  --accent-dark: #1c5c38;
-  --pixel-green: #8fd47a;
-  --hud-dark: #14231a;
-  --image-tint: rgb(28 92 56 / 8%);
-  --scanline: rgb(28 92 56 / 4%);
-  --font-body: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', 'Noto Sans KR', sans-serif;
-  --font-pixel: 'Silkscreen', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --background: var(--color-paper);
+  --surface: var(--color-paper-2);
+  --surface-muted: var(--color-paper-3);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-2);
+  --text-muted: var(--color-muted);
+  --border: var(--color-rule);
+  --android-green: var(--color-accent);
+  --signal-mint: var(--color-accent);
+  --evaluation-blue: var(--color-accent);
+  --warning-amber: var(--color-warning);
+  --font-mono: var(--font-utility);
+  --font-pixel: var(--font-utility);
   --content-width: 1180px;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-fast: 180ms;
-  --motion-medium: 620ms;
+  --wide-width: 1360px;
+  --motion-fast: var(--dur-short);
+  --motion-medium: var(--dur-mid);
+  color-scheme: dark;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-synthesis: none;
@@ -30,22 +32,21 @@
 
 html {
   min-width: 320px;
-  scroll-behavior: smooth;
-  scroll-padding-top: 104px;
   background: var(--background);
+  scroll-padding-top: 76px;
+  overflow-x: clip;
 }
 
 body {
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
-  background:
-    repeating-linear-gradient(0deg, var(--scanline) 0 1px, transparent 1px 4px),
-    radial-gradient(circle at 1px 1px, rgb(28 92 56 / 6%) 1px, transparent 1px) 0 0 / 18px 18px,
-    var(--background);
+  background: var(--background);
   color: var(--text-primary);
   font-size: 17px;
-  line-height: 1.75;
+  font-variation-settings: 'wght' 440;
+  line-height: 1.72;
+  overflow-x: clip;
   overflow-wrap: break-word;
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
@@ -56,22 +57,22 @@ a,
 summary {
   font: inherit;
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgb(46 167 92 / 22%);
+  -webkit-tap-highlight-color: color-mix(in oklch, var(--color-accent) 18%, transparent);
 }
 
 a {
   color: inherit;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.22em;
 }
 
 button {
   color: inherit;
 }
 
-button:active,
-a:active,
-summary:active {
-  transform: translateY(1px);
+button:disabled,
+[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 img,
@@ -81,14 +82,6 @@ svg {
 
 img {
   max-width: 100%;
-}
-
-@media (hover: hover) {
-  a,
-  button,
-  summary {
-    transition-timing-function: var(--ease-standard);
-  }
 }
 
 ul,
@@ -101,6 +94,7 @@ p,
 h1,
 h2,
 h3,
+h4,
 dl,
 dd {
   margin: 0;
@@ -108,26 +102,31 @@ dd {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  min-width: 0;
+  font-family: var(--font-display);
+  font-style: normal;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 section[id] {
-  scroll-margin-top: 104px;
+  scroll-margin-top: 76px;
 }
 
 ::selection {
-  background: var(--pixel-green);
-  color: var(--surface);
+  background: var(--signal-mint);
+  color: var(--text-primary);
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
 
 .screen {
-  fill: var(--pixel-green);
+  fill: var(--signal-mint);
 }
 
 .fill {
@@ -137,15 +136,16 @@ section[id] {
 
 .skipLink {
   position: fixed;
-  top: 12px;
+  top: 10px;
   left: 12px;
-  z-index: 1000;
+  z-index: var(--z-tooltip);
   padding: 10px 14px;
   border: 2px solid var(--text-primary);
+  border-radius: 10px;
   background: var(--surface);
   color: var(--text-primary);
   transform: translateY(-160%);
-  transition: transform 160ms ease;
+  transition: transform var(--dur-short) var(--ease-out);
 }
 
 .skipLink:focus {
@@ -171,18 +171,14 @@ section[id] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-delay: 0.01ms !important;
+    animation-duration: 150ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-delay: 0.01ms !important;
+    transition-duration: 150ms !important;
+    transition-delay: 0ms !important;
   }
 }

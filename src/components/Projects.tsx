@@ -1,96 +1,26 @@
-import { profile } from '../data/profile'
 import { featuredProjects } from '../data/projects'
-import { PixelIcon } from './PixelIcon'
-import { ProjectArtwork } from './ProjectArtwork'
-import { Reveal } from './Reveal'
-import { SectionTitle } from './SectionTitle'
+import { ProjectScene } from './ProjectScene'
 import styles from './Projects.module.css'
-
-const caseLabels = [
-  ['문제', 'problem'],
-  ['판단', 'decision'],
-  ['확인', 'verification'],
-] as const
 
 export function Projects() {
   return (
-    <section className={styles.projects} id="projects" aria-labelledby="projects-title">
-      <SectionTitle
-        id="projects-title"
-        title="주요 프로젝트"
-        action={
-          <a href={profile.githubUrl} target="_blank" rel="noreferrer">
-            GitHub 프로젝트 보기 <PixelIcon name="external" />
-          </a>
-        }
-      />
-      <Reveal stagger>
-        <div className={styles.grid}>
-          {featuredProjects.map((project, index) => {
-            const serviceLink = project.links[0]
-
-            return (
-              <article className={styles.card} key={project.name}>
-                <ProjectArtwork
-                  kind={project.image.artwork}
-                  alt={project.image.alt}
-                  href={serviceLink?.href}
-                  linkLabel={serviceLink?.label}
-                  external={serviceLink?.external}
-                />
-                <div className={styles.cardBody}>
-                  <div className={styles.cardHeading}>
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                    <small>{serviceLink ? 'LIVE APP' : project.eyebrow}</small>
-                  </div>
-                  <div className={styles.titleRow}>
-                    <div>
-                      <h3>{project.name}</h3>
-                    </div>
-                    {serviceLink ? (
-                      <a
-                        className={styles.serviceLink}
-                        href={serviceLink.href}
-                        target={serviceLink.external ? '_blank' : undefined}
-                        rel={serviceLink.external ? 'noreferrer' : undefined}
-                      >
-                        {serviceLink.label}
-                        <PixelIcon name={serviceLink.external ? 'external' : 'arrow'} />
-                      </a>
-                    ) : (
-                      <span className={styles.caseLabel}>평가 사례</span>
-                    )}
-                  </div>
-
-                  <dl className={styles.role}>
-                    <dt>담당</dt>
-                    <dd>{project.role}</dd>
-                  </dl>
-
-                  <dl className={styles.caseStudy}>
-                    {caseLabels.map(([label, key]) => {
-                      const copy = project.caseStudy[key]
-
-                      return copy ? (
-                        <div key={key}>
-                          <dt>{label}</dt>
-                          <dd>{copy}</dd>
-                        </div>
-                      ) : null
-                    })}
-                  </dl>
-
-                  <ul className={styles.tags} aria-label={`${project.name} 기술`}>
-                    {project.technologies.map((technology) => (
-                      <li key={technology}>{technology}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            )
-          })}
+    <>
+      <section className={styles.overview} id="projects" aria-labelledby="projects-title">
+        <div className={styles.inner}>
+          <h2 id="projects-title">출시한 앱, 검증한 모델, 운영 환경에서 확인한 판단을 보여드립니다.</h2>
+          <nav className={styles.projectIndex} aria-label="주요 프로젝트 바로 가기">
+            {featuredProjects.map((project, index) => (
+              <a href={`#${project.id}`} key={project.id}>
+                <small>{String(index + 1).padStart(2, '0')}</small>
+                <strong>{project.indexName}</strong>
+                <span>{project.eyebrow}</span>
+              </a>
+            ))}
+          </nav>
         </div>
-      </Reveal>
-    </section>
+      </section>
+
+      {featuredProjects.map((project) => <ProjectScene key={project.id} project={project} />)}
+    </>
   )
 }
