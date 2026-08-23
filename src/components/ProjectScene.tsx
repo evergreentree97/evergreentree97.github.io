@@ -28,18 +28,6 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             ))}
           </ul>
 
-          <div className={styles.projectMeta}>
-            <ul aria-label={`${project.name} 기술`}>
-              {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
-            </ul>
-            {serviceLink ? (
-              <a href={serviceLink.href} target="_blank" rel="noreferrer">
-                {serviceLink.label} <PixelIcon name="external" />
-              </a>
-            ) : (
-              <span className={styles.internalCase}>사내 평가 사례</span>
-            )}
-          </div>
         </div>
 
         {project.screenshots.length > 0 && (
@@ -59,6 +47,19 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             ))}
           </div>
         )}
+
+        <div className={styles.projectMeta}>
+          <ul aria-label={`${project.name} 기술`}>
+            {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+          </ul>
+          {serviceLink ? (
+            <a href={serviceLink.href} target="_blank" rel="noreferrer">
+              {serviceLink.label} <PixelIcon name="external" />
+            </a>
+          ) : (
+            <span className={styles.internalCase}>사내 평가 사례</span>
+          )}
+        </div>
       </div>
     </section>
   )

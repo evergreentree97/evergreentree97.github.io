@@ -85,13 +85,16 @@
   border-radius: 12px;
 }
 
+/* 기술 목록과 서비스 링크는 두 열 아래를 가로지르고 링크가 우측 끝에 붙는다. */
 .projectMeta {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  grid-column: 1 / -1;
   min-height: 48px;
   gap: var(--space-lg);
-  margin-block-start: var(--space-lg);
+  padding-block-start: var(--space-xs);
+  border-block-start: var(--rule-hair) solid var(--color-rule);
 }
 
 .projectMeta ul {
@@ -132,7 +135,7 @@
   }
 }
 
-@media (max-width: 65rem) {
+@media (max-width: 40rem) {
   .projectMeta {
     align-items: flex-start;
     flex-direction: column;
