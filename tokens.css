@@ -3,25 +3,25 @@
  * Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
  */
 :root {
-  --color-paper: oklch(14% 0.018 148);
-  --color-paper-2: oklch(18% 0.022 148);
-  --color-paper-3: oklch(22% 0.026 148);
-  --color-paper-4: oklch(26% 0.028 148);
-  --color-scrim: oklch(10% 0.016 148);
-  --color-ink: oklch(95% 0.012 145);
-  --color-ink-2: oklch(79% 0.018 145);
-  --color-muted: oklch(64% 0.018 145);
-  --color-rule: oklch(34% 0.026 148);
-  --color-rule-strong: oklch(45% 0.04 148);
-  --color-accent: oklch(79% 0.16 145);
-  --color-accent-strong: oklch(67% 0.16 145);
-  --color-accent-ink: oklch(16% 0.035 148);
+  --color-paper: oklch(15% 0.015 20);
+  --color-paper-2: oklch(18.5% 0.019 20);
+  --color-paper-3: oklch(22% 0.023 20);
+  --color-paper-4: oklch(26% 0.025 20);
+  --color-scrim: oklch(11% 0.014 20);
+  --color-ink: oklch(95% 0.008 25);
+  --color-ink-2: oklch(79% 0.014 25);
+  --color-muted: oklch(64% 0.014 25);
+  --color-rule: oklch(34% 0.02 20);
+  --color-rule-strong: oklch(45% 0.032 20);
+  --color-accent: oklch(76% 0.12 18);
+  --color-accent-strong: oklch(60% 0.19 18);
+  --color-accent-ink: oklch(17% 0.04 20);
   --color-warning: oklch(76% 0.15 75);
-  --color-focus: oklch(84% 0.17 145);
+  --color-focus: oklch(82% 0.13 18);
 
   --font-display: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
   --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
-  --font-utility: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-utility: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
 
   --space-3xs: 0.125rem;
   --space-2xs: 0.25rem;
