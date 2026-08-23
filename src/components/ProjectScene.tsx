@@ -1,13 +1,6 @@
 import type { FeaturedProject } from '../data/projects'
-import { ModelEvaluationDiagram, MomenticaDiagram, VuddyDiagram } from './ProjectDiagrams'
 import { PixelIcon } from './PixelIcon'
 import styles from './ProjectScene.module.css'
-
-function ProjectDiagram({ id }: Pick<FeaturedProject, 'id'>) {
-  if (id === 'vuddy') return <VuddyDiagram />
-  if (id === 'model-evaluation') return <ModelEvaluationDiagram />
-  return <MomenticaDiagram />
-}
 
 export function ProjectScene({ project }: { project: FeaturedProject }) {
   const serviceLink = project.links[0]
@@ -26,15 +19,26 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             <p>{project.headline}</p>
           </div>
 
-          <div className={styles.stageList} aria-label={`${project.name} 담당, 문제, 판단과 확인`}>
-            {project.sceneSteps.map((step) => (
-              <article key={`${step.label}-${step.title}`}>
-                <span>{step.label}</span>
-                <h3>{step.title}</h3>
-                <p>{step.copy}</p>
-              </article>
+          <ul className={styles.highlightList} aria-label={`${project.name} 담당 업무`}>
+            {project.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
             ))}
-          </div>
+          </ul>
+
+          {project.screenshots.length > 0 && (
+            <div className={styles.screenshotRow} aria-label={`${project.name} 화면`}>
+              {project.screenshots.map((screenshot) => (
+                <img
+                  key={screenshot.src}
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  loading="lazy"
+                  width={screenshot.width}
+                  height={screenshot.height}
+                />
+              ))}
+            </div>
+          )}
 
           <div className={styles.projectMeta}>
             <ul aria-label={`${project.name} 기술`}>
@@ -48,10 +52,6 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
               <span className={styles.internalCase}>사내 평가 사례</span>
             )}
           </div>
-        </div>
-
-        <div className={styles.diagramColumn}>
-          <ProjectDiagram id={project.id} />
         </div>
       </div>
     </section>

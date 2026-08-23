@@ -21,7 +21,7 @@ export const sideProjects: SideProject[] = [
   {
     period: '2022.08 - 2022.11',
     name: '꽥꽥',
-    summary: 'Duckie에서 쓰는 Compose 디자인 시스템을 만들었습니다.',
+    summary: 'Duckie에서 쓰는 Compose 디자인 시스템을 함께 만들었습니다.',
     takeaway: '여럿이 쓰는 코드의 공개 범위를 판단하는 기준을 세웠습니다.',
     highlights: [
       'Modifier 공개 범위와 Compose stability 검토',

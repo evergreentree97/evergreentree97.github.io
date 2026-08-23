@@ -11,8 +11,8 @@ export const skillGroups: SkillGroup[] = [
   {
     label: 'Core Android',
     skills: [
-      { name: 'Kotlin', context: 'Vuddy · Momentica' },
-      { name: 'Jetpack Compose', context: 'Vuddy · Momentica' },
+      { name: 'Kotlin', context: 'Vuddy, Momentica' },
+      { name: 'Jetpack Compose', context: 'Vuddy, Momentica' },
       { name: 'Coroutines / Flow', context: 'Vuddy의 비동기 상태와 미디어' },
       { name: 'Multi Module', context: 'Vuddy의 초기 앱 구조' },
     ],

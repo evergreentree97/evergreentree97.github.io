@@ -4,75 +4,43 @@ export type ProjectLink = {
   external?: boolean
 }
 
-export type ProjectCase = {
-  problem: string
-  decision: string
-  verification?: string
-}
-
-export type ProjectSceneStep = {
-  label: string
-  title: string
-  copy: string
+export type ProjectScreenshot = {
+  src: string
+  alt: string
+  width: number
+  height: number
 }
 
 export type FeaturedProject = {
   id: 'vuddy' | 'model-evaluation' | 'momentica'
   name: string
-  indexName: string
   eyebrow: string
   headline: string
-  role: string
   technologies: string[]
-  caseStudy: ProjectCase
-  sceneSteps: ProjectSceneStep[]
+  highlights: string[]
+  // Google Play 공식 스크린샷을 기본으로 쓴다. 사내 화면은 사용자가 게시를 결정한 것만 쓴다.
+  screenshots: ProjectScreenshot[]
   links: ProjectLink[]
-}
-
-export type MoreProject = {
-  name: string
-  eyebrow: string
-  summary: string
-  evidence: string
-  technologies: string[]
-  link: ProjectLink
 }
 
 export const featuredProjects: FeaturedProject[] = [
   {
     id: 'vuddy',
     name: 'Vuddy',
-    indexName: 'Vuddy',
     eyebrow: 'ANDROID PRODUCT',
-    headline: '출시 일정과 구현 범위를 함께 보고, 실시간 메시징과 제품 로직의 경계를 나눴습니다.',
-    role: '신규 앱의 초기 구조와 Sendbird 연동을 주도했습니다. 채팅 화면은 동료와 분담했고 양방향 페이징과 사진 및 영상 메시지를 맡았습니다.',
+    headline: '신규 앱의 멀티모듈 구조 설계부터 실시간 채팅 개발, QA 배포와 출시 후 운영까지 담당했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI', 'Sendbird', 'Media3'],
-    caseStudy: {
-      problem: '자체 소켓 서버 구축과 Sendbird 사용을 비교했습니다. 출시 일정과 서버 구현 범위를 함께 고려해야 했습니다.',
-      decision: '출시 일정과 서버 구현 범위를 고려해 자체 소켓 대신 Sendbird를 선택했습니다. 실시간 메시징은 Sendbird에 남기고 채팅방 생성과 검색, 비즈니스 규칙, 자체 푸시와 운영은 Backend가 맡도록 제안했습니다.',
-      verification: '대규모 그룹 푸시와 채널별 금칙어 설정이 요구사항을 충족하지 못한다는 점을 출시 전에 확인했습니다.',
-    },
-    sceneSteps: [
-      {
-        label: '담당',
-        title: '신규 Android 앱의 구조와 Sendbird 연동',
-        copy: '채팅은 동료와 나눠 만들었고, 양방향 페이징과 사진 및 영상 메시지를 맡았습니다.',
-      },
-      {
-        label: '문제',
-        title: '직접 만들 것인가, SDK를 선택할 것인가',
-        copy: '자체 소켓과 Sendbird를 출시 일정, 서버 구현 범위와 함께 비교했습니다.',
-      },
-      {
-        label: '판단',
-        title: '실시간 메시지는 Sendbird에, 제품 규칙은 Backend에',
-        copy: '출시 일정 안에서 안정적으로 구현할 수 있는 Sendbird를 선택하고, 채팅방 생성과 검색, 비즈니스 규칙, 자체 푸시와 운영은 Backend가 맡도록 제안했습니다.',
-      },
-      {
-        label: '확인',
-        title: 'SDK 선택 뒤에도 실패 조건을 확인했습니다',
-        copy: '대규모 그룹 푸시와 채널별 금칙어 설정이 요구사항을 충족하지 못한다는 점을 출시 전에 확인하고, 바꿔야 하는 운영 규칙을 Backend 경계에 두었습니다.',
-      },
+    highlights: [
+      'Jetpack Compose 기반 신규 앱의 멀티모듈 구조와 MVI 상태 처리, Gradle Build Logic을 포함한 공통 개발 기준 설계',
+      '출시 일정과 서버 개발 범위를 기준으로 자체 WebSocket 구현과 Sendbird를 비교하고 샘플 앱과 기술 문의로 주요 기능과 제한사항을 검증한 뒤 Sendbird 도입',
+      '실시간 메시징은 Sendbird가 맡고 채팅방 정보, 검색, 입장 조건과 운영 정책은 Backend가 관리하도록 구성',
+      '채팅 구조와 Sendbird 연동, 양방향 페이징과 미디어 메시지 담당 (채팅 화면은 동료와 분담)',
+      '대규모 그룹 푸시 제한을 출시 전에 확인해 자체 푸시로 전환하고 채팅방 생성, 목록과 검색을 Backend API에 연동',
+    ],
+    screenshots: [
+      { src: '/screens/vuddy-chat.jpg', alt: 'Vuddy 크리에이터와 팬의 1:1 채팅 화면', width: 405, height: 720 },
+      { src: '/screens/vuddy-home.jpg', alt: 'Vuddy 홈의 크리에이터 굿즈 목록 화면', width: 405, height: 720 },
+      { src: '/screens/vuddy-card.jpg', alt: 'Vuddy 버디카드 상세 화면', width: 405, height: 720 },
     ],
     links: [
       {
@@ -84,75 +52,40 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 'model-evaluation',
-    name: '캐릭터 대화 모델',
-    indexName: 'Model Evaluation',
-    eyebrow: 'MODEL EVALUATION',
-    headline: '모델 점수를 만드는 것보다, 비교할 수 있는 평가 조건을 먼저 만들었습니다.',
-    role: '사내 AI TF에서 데이터 정제, LoRA 학습, 내부 자동 평가 도구와 vLLM 서빙을 맡았습니다.',
-    technologies: ['Python', 'PyTorch', 'LoRA', 'LLM Evaluation', 'vLLM'],
-    caseStudy: {
-      problem: '하나의 답변이 여러 부분으로 저장될 때 앞부분만 남고 나머지가 누락되고 있었습니다. 평가용 대화가 학습 데이터와 겹친 결과도 있어 기존 점수를 그대로 비교할 수 없었습니다.',
-      decision: '응답 형식, 캐릭터 일관성, 재미와 상태 유지를 따로 평가했습니다. 질문과 서빙 조건을 고정하고 모델 이름을 가렸습니다. 답변 순서를 바꿔 자동 평가 결과를 실제 대화와 대조했습니다.',
-      verification: '내부 평가 85/100을 기록한 뒤 팀의 실제 대화 심사를 거쳐 프로덕션 적용 가능한 모델로 선정됐습니다.',
-    },
-    sceneSteps: [
-      {
-        label: '문제',
-        title: '점수보다 먼저 데이터 결함을 찾았습니다',
-        copy: '여러 부분으로 저장된 답변은 앞부분만 남고 나머지가 누락됐고, 평가용 대화가 학습 데이터와 겹친 결과도 있었습니다.',
-      },
-      {
-        label: '정리',
-        title: '결함이 섞인 결과는 비교 기준에서 뺐습니다',
-        copy: '전처리 결함이 포함된 이전 실험을 제외하고, 겹친 결과는 무효 처리한 뒤 학습 전에 중복 여부를 확인하도록 바꿨습니다.',
-      },
-      {
-        label: '조건',
-        title: '하나의 점수를 네 가지 질문으로 나눴습니다',
-        copy: '응답 형식, 캐릭터 일관성, 재미와 상태 유지를 따로 평가하고, 질문과 서빙 조건을 고정한 뒤 모델 이름을 가리고 답변 순서를 바꿨습니다.',
-      },
-      {
-        label: '확인',
-        title: '자동 결과를 실제 대화와 나란히 봤습니다',
-        copy: '내부 평가 85/100과 팀의 실제 대화 심사를 함께 확인해 프로덕션 적용 가능한 모델을 선정했습니다.',
-      },
+    name: '캐릭터 대화 모델과 AI 캐릭터 앱',
+    eyebrow: 'AI MODEL & ANDROID PRODUCT',
+    headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 정제, LoRA 기반 SFT, 자동 평가와 vLLM 서빙을 맡았고, 해당 모델을 사용하는 신규 AI 캐릭터 앱에서 SSE 기반 채팅, 결제와 광고를 주도했습니다.',
+    technologies: ['Python', 'PyTorch', 'LoRA', 'vLLM', 'Kotlin', 'Jetpack Compose', 'SSE', 'Play Billing'],
+    highlights: [
+      'B200 GPU 환경에서 캐릭터 대화 모델의 데이터 구성과 학습 방식을 설계하고 데이터 정제, LoRA 기반 SFT, 자동 평가, vLLM 서빙과 내부 데모 담당',
+      '내부 평가 85/100을 기록한 뒤 팀의 실제 대화 심사를 거쳐 프로덕션 적용 가능한 모델로 선정 (모델 구현은 단독, 심사와 선정은 팀이 공동 진행)',
+      'TF에서 개발한 모델을 사용하는 SSE 기반 캐릭터 채팅 기능 개발 주도',
+      'Google Play Billing 기반 구독과 단건 결제의 상품 조회, 구매, 완료, 취소와 복구를 Backend 구매 검증과 연결',
+      'Firebase App Distribution, Sandbox QA, Playtest 빌드와 Play 비공개 트랙 배포 절차 자동화',
+    ],
+    // 대시보드 캡처는 사내 평가 스냅샷, 채팅 화면은 사내 Figma 시안 캡처다 (2026-08-23 사용자 게시 결정).
+    screenshots: [
+      { src: '/screens/smt-dashboard.jpg', alt: '캐릭터 대화 모델 평가 대시보드 화면', width: 1080, height: 810 },
+      { src: '/screens/smt-chat.jpg', alt: 'AI 캐릭터 앱 채팅 화면 시안', width: 375, height: 812 },
+      { src: '/screens/smt-chatlist.jpg', alt: 'AI 캐릭터 앱 채팅 목록 시안', width: 375, height: 812 },
     ],
     links: [],
   },
   {
     id: 'momentica',
     name: 'Momentica',
-    indexName: 'Momentica',
     eyebrow: 'ANDROID PRODUCT',
-    headline: '앱 프로세스와 화면 상태가 달라져도 사용자가 설정한 영상 알람은 실행돼야 했습니다.',
-    role: '영상 알람을 주도했습니다.',
+    headline: '포토카드 도감과 영상 알람 개발을 주도했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
-    caseStudy: {
-      problem: '영상 알람은 앱 프로세스 종료, 화면 꺼짐과 잠금 화면, 휴대전화 재부팅 뒤에도 실행돼야 했습니다.',
-      decision: 'Room의 알람 데이터와 AlarmManager의 실행 예약을 분리하고, 재부팅 시 저장된 알람을 다시 예약했습니다.',
-      verification: '앱 종료, 화면 잠금, 기기 재부팅 이후에도 영상 알람이 정상 실행되는지 확인했습니다.',
-    },
-    sceneSteps: [
-      {
-        label: '요구',
-        title: '앱이 없어도 알람은 실행돼야 했습니다',
-        copy: '앱 프로세스 종료, 화면 꺼짐과 잠금 화면, 휴대전화 재부팅 뒤에도 영상 알람이 실행돼야 했습니다.',
-      },
-      {
-        label: '판단',
-        title: '저장과 예약을 다른 책임으로 나눴습니다',
-        copy: '알람 데이터는 Room에 저장하고 실행 예약은 AlarmManager에 두어, 사용자가 정한 상태를 앱 프로세스와 분리했습니다.',
-      },
-      {
-        label: '복원',
-        title: '재부팅으로 사라진 예약을 되살렸습니다',
-        copy: '재부팅되면 AlarmManager 예약이 사라지므로, Room에 남은 설정을 읽어 다음 실행을 다시 예약했습니다.',
-      },
-      {
-        label: '확인',
-        title: '세 가지 실제 조건에서 실행을 확인했습니다',
-        copy: '앱 종료, 화면 잠금과 기기 재부팅 뒤에 영상 알람이 실행되는지 확인했습니다.',
-      },
+    highlights: [
+      '포토카드 도감의 목록, 상세, 등록과 스캔 화면 개발. 길게 누른 카드를 화면 중앙으로 이동시키는 퀵뷰와 3D 회전을 구현하고 SceneView에 Bitmap을 설정하는 과정에서 발생한 메모리 누수 해결',
+      'Room과 AlarmManager 기반 영상 알람 개발. 앱 종료와 화면 꺼짐 상태에서 알람을 실행하고 기기 재부팅 후 설정 복원과 잠금 화면 표시 개발',
+      '앱 종료, 화면 잠금과 기기 재부팅 조건에서 알람 실행 확인',
+    ],
+    screenshots: [
+      { src: '/screens/mmtc-scan.jpg', alt: 'MOMENTICA 포토카드 촬영 등록 화면', width: 405, height: 720 },
+      { src: '/screens/mmtc-board.jpg', alt: 'MOMENTICA TAKE 도감 화면', width: 405, height: 720 },
+      { src: '/screens/mmtc-unpack.jpg', alt: 'MOMENTICA TAKE 언팩 화면', width: 405, height: 720 },
     ],
     links: [
       {
@@ -163,6 +96,15 @@ export const featuredProjects: FeaturedProject[] = [
     ],
   },
 ]
+
+export type MoreProject = {
+  name: string
+  eyebrow: string
+  summary: string
+  evidence: string
+  technologies: string[]
+  link: ProjectLink
+}
 
 export const moreProjects: MoreProject[] = [
   {

@@ -3,32 +3,22 @@
   padding-top: clamp(112px, 13vw, 176px);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 32px);
+.body {
+  max-width: 62ch;
   margin-top: 30px;
 }
 
-.grid article {
-  padding: 26px 24px 30px;
-  border: 1px solid var(--border);
-}
-
-.grid h3 {
-  font-size: 1.08rem;
-  line-height: 1.45;
-}
-
-.grid p {
-  margin-top: 14px;
+.body p {
   color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 0.98rem;
+  line-height: 1.8;
 }
 
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+.body p:first-child {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.body p + p {
+  margin-top: 16px;
 }

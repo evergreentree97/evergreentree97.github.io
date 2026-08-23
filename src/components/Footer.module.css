@@ -5,16 +5,6 @@
   border-block-start: var(--rule-hair) solid var(--color-rule-strong);
 }
 
-.statement {
-  max-width: 24ch;
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4.25rem);
-  font-weight: 760;
-  letter-spacing: -0.055em;
-  line-height: 1.08;
-}
-
 .meta {
   display: flex;
   align-items: center;
