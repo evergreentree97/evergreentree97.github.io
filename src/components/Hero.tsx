@@ -8,7 +8,7 @@ export function Hero() {
       <div className={styles.inner}>
         <div className={styles.heroContent}>
           <span className={styles.label}>
-            CHOI SANGROK / ANDROID DEVELOPER
+            최상록 RICKY CHOI / ANDROID DEVELOPER
           </span>
 
           <h1 id="hero-title">
@@ -29,6 +29,16 @@ export function Hero() {
               GitHub 보기 <PixelIcon name="external" />
             </a>
           </div>
+
+          <p className={styles.identity}>
+            <strong>최상록</strong>
+            <a href={profile.linkedinUrl} target="_blank" rel="noreferrer">
+              <PixelIcon name="linkedin" /> LinkedIn
+            </a>
+            <a href="#contact">
+              <PixelIcon name="mail" /> 연락처
+            </a>
+          </p>
         </div>
 
         <div className={styles.sceneFrame}>
