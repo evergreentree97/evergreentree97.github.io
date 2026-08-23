@@ -7,8 +7,18 @@
 }
 
 .sceneInner {
-  width: min(100%, 720px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  align-items: center;
+  width: min(100%, var(--content-width));
   margin-inline: auto;
+}
+
+.sceneInner:has(.screenshotGrid:empty),
+.sceneInner:not(:has(.screenshotGrid)) {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 760px;
 }
 
 .copyColumn {
@@ -61,18 +71,16 @@
   margin-block-start: var(--space-lg);
 }
 
-.screenshotRow {
-  display: flex;
+.screenshotGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: var(--space-sm);
-  margin-block-start: var(--space-xl);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  align-content: center;
 }
 
-.screenshotRow img {
-  flex: 0 0 auto;
-  width: auto;
-  height: clamp(260px, 42vw, 384px);
+.screenshotGrid img {
+  width: 100%;
+  height: auto;
   border: var(--rule-hair) solid var(--color-rule);
   border-radius: 12px;
 }
@@ -138,6 +146,7 @@
   }
 
   .sceneInner {
+    grid-template-columns: minmax(0, 1fr);
     width: min(100%, 680px);
   }
 
