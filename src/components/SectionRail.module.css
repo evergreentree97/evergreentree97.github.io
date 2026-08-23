@@ -28,8 +28,8 @@
 
 .label {
   font-family: var(--font-utility);
-  font-size: var(--text-xs);
-  letter-spacing: 0.04em;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
   opacity: 0;
   transition: opacity var(--dur-short) var(--ease-out);
 }

@@ -64,7 +64,7 @@
   color: var(--android-green);
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
 }
 
 .stepMeta strong {
@@ -102,7 +102,7 @@
   color: var(--android-green);
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 .examples h3 {
