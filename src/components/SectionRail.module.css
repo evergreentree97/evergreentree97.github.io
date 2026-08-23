@@ -1,0 +1,64 @@
+.rail {
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: clamp(10px, 1.6vw, 26px);
+  display: grid;
+  gap: 16px;
+  translate: 0 -50%;
+}
+
+.rail a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 14px;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.tick {
+  width: 16px;
+  height: 2px;
+  background: var(--color-rule-strong);
+  transition:
+    width var(--dur-short) var(--ease-out),
+    background-color var(--dur-short) var(--ease-out);
+}
+
+.label {
+  font-family: var(--font-utility);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity var(--dur-short) var(--ease-out);
+}
+
+.rail a.active .tick {
+  width: 34px;
+  background: var(--color-ink);
+}
+
+.rail a.active .label {
+  color: var(--color-ink);
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rail a:hover .label {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1360px) {
+  .rail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tick,
+  .label {
+    transition: none;
+  }
+}
