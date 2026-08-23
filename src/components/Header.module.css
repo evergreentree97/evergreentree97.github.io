@@ -99,6 +99,14 @@
   transition: transform var(--dur-short) var(--ease-out);
 }
 
+.navigation > a.activeLink {
+  color: var(--color-ink);
+}
+
+.navigation > a.activeLink:not(.github)::after {
+  transform: scaleX(1);
+}
+
 .navigation .github {
   gap: var(--space-xs);
   padding-inline: var(--space-sm);

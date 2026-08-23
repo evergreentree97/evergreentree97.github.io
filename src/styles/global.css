@@ -20,6 +20,7 @@
   --motion-fast: var(--dur-short);
   --motion-medium: var(--dur-mid);
   color-scheme: dark;
+  font-size: 93.75%;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-synthesis: none;

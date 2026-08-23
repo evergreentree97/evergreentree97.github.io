@@ -8,11 +8,6 @@ export function AboutMe() {
       <SectionTitle id="about-title" title="소개" />
       <div className={styles.body}>
         <p className={styles.lead}>{aboutParagraphs[0]}</p>
-        <div className={styles.rest}>
-          {aboutParagraphs.slice(1).map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
       </div>
     </section>
   )

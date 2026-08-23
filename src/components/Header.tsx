@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { navigation, profile } from '../data/profile'
+import { useActiveSection } from '../hooks/useActiveSection'
 import { PixelIcon } from './PixelIcon'
 import styles from './Header.module.css'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const activeSection = useActiveSection()
   const headerRef = useRef<HTMLElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
@@ -69,7 +71,13 @@ export function Header() {
           aria-label="주요 메뉴"
         >
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+            <a
+              key={item.href}
+              href={item.href}
+              className={item.href === activeSection ? styles.activeLink : undefined}
+              aria-current={item.href === activeSection ? 'true' : undefined}
+              onClick={() => setIsOpen(false)}
+            >
               {item.label}
             </a>
           ))}

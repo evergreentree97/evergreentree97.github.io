@@ -5,7 +5,14 @@
   left: clamp(10px, 1.6vw, 26px);
   display: grid;
   gap: 16px;
+  opacity: 1;
+  transition: opacity var(--dur-short) var(--ease-out);
   translate: 0 -50%;
+}
+
+.rail.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .rail a {
