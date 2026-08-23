@@ -98,8 +98,8 @@
 }
 
 .actions .primaryAction {
-  border-color: var(--color-accent);
-  background: var(--color-accent);
+  border-color: var(--color-accent-strong);
+  background: var(--color-accent-strong);
   color: var(--color-accent-ink);
 }
 

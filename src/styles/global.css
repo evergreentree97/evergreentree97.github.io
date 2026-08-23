@@ -116,7 +116,7 @@ section[id] {
 }
 
 ::selection {
-  background: var(--signal-mint);
+  background: var(--color-accent-strong);
   color: var(--text-primary);
 }
 
