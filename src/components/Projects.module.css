@@ -1,0 +1,15 @@
+.wrapper {
+  scroll-margin-top: 64px;
+  background: var(--color-paper);
+  transition: background-color var(--dur-long) var(--ease-out);
+}
+
+.wrapper[data-scene='model-evaluation'] {
+  background: var(--color-paper-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    transition: none;
+  }
+}

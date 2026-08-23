@@ -1,6 +1,6 @@
 .section {
   min-width: 0;
-  padding-top: clamp(112px, 13vw, 176px);
+  padding-top: clamp(72px, 8vw, 112px);
 }
 
 .list {

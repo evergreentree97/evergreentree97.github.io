@@ -1,12 +1,9 @@
+/* 배경은 Projects 래퍼가 활성 장면에 따라 전환한다. */
 .scene {
   padding: clamp(var(--space-2xl), 9vw, var(--space-4xl)) var(--space-lg);
   scroll-margin-top: 64px;
-  background: var(--color-paper);
+  background: transparent;
   color: var(--color-ink);
-}
-
-.model-evaluation {
-  background: var(--color-paper-2);
 }
 
 .sceneInner {

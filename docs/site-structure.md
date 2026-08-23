@@ -32,7 +32,8 @@
 
 - 다크 테마, 차분한 초록 토큰(`tokens.css`), 픽셀 아트, 큰 타이포그래피, 분할 레이아웃을 유지한다.
 - 푸터의 "AI에 맡긴 일도, 제품의 결과는 직접 확인합니다." 대형 문구는 의미가 약해 2026-08-23 제거했다. 푸터는 저작권과 맨 위로 링크만 남긴다.
-- 애니메이션은 진입 페이드와 버튼 hover 수준만. `prefers-reduced-motion`에서 모든 콘텐츠가 즉시 보여야 한다.
+- 애니메이션은 진입 페이드, 버튼 hover와 주요 프로젝트 배경 전환 수준만. 배경 전환은 `Projects.tsx`의 IntersectionObserver가 활성 장면 id를 래퍼 data-scene에 쓰고 CSS가 배경색을 전환한다 (2026-08-23 복원). `prefers-reduced-motion`에서 모든 콘텐츠가 즉시 보이고 배경 전환도 끈다.
+- 섹션 상단 여백은 소개류 clamp(72px, 8vw, 112px), 경력과 AI 활용 clamp(88px, 10vw, 132px)다. 첫 화면과 소개 사이가 멀다는 피드백으로 2026-08-23 줄였다.
 - Build Trace와 스크롤 장면 훅(`useScrollScene`)은 저장소에서 삭제됐다. 되살리지 않는다.
 - 수정 후 `npm run check` 실행. 잠긴 제목 문구를 바꾸려면 `docs/portfolio-content.md`와 검사 스크립트를 함께 고쳐야 한다.
 
