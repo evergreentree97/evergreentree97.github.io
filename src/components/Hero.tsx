@@ -8,7 +8,7 @@ export function Hero() {
       <div className={styles.inner}>
         <div className={styles.heroContent}>
           <span className={styles.label}>
-            최상록 RICKY CHOI / ANDROID DEVELOPER
+            ANDROID DEVELOPER
           </span>
 
           <h1 id="hero-title">

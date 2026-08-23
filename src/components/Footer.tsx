@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.meta}>
-        <p>Ricky.dev © 2026 Ricky Choi</p>
+        <p>© 2026 최상록</p>
         <a href="#top" aria-label="페이지 맨 위로 이동">
           <span>맨 위로</span>
           <PixelIcon name="device" />

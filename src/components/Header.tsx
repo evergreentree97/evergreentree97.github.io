@@ -48,9 +48,9 @@ export function Header() {
   return (
     <header ref={headerRef} className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.logo} href="#top" aria-label="Ricky.dev 홈으로 이동">
+        <a className={styles.logo} href="#top" aria-label="홈으로 이동">
           <PixelIcon name="device" className={styles.logoIcon} />
-          <span>Ricky.dev</span>
+          <span>최상록</span>
         </a>
 
         <button
