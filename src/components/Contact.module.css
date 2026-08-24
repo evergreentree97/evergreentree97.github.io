@@ -81,11 +81,9 @@
 
 .links strong {
   display: block;
-  overflow: hidden;
   margin-block-start: var(--space-3xs);
   font-size: var(--text-base);
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 @media (hover: hover) and (pointer: fine) {

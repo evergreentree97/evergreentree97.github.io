@@ -1,23 +1,25 @@
-/* Hallmark · genre: atmospheric · macrostructure: Split Studio · theme: studied-DNA (source: https://junjange.github.io/) · nav: N10 · footer: Ft5
- * contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (34, 49, 50–57) · icons: pass (30)
- * Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
+/* Hallmark, genre: atmospheric, macrostructure: Split Studio, theme: studied-DNA (source: https://junjange.github.io/), nav: N10, footer: Ft5
+ * contrast: pass (40-41), slop: pass (42-45), honest: pass (46), chrome: pass (47), tokens: pass (48), responsive: pass (34, 49, 50-57), icons: pass (30)
+ * Hallmark pre-emit critique: P5 H5 E4 S5 R5 V4
  */
 :root {
-  --color-paper: oklch(14.5% 0.01 20);
-  --color-paper-2: oklch(18% 0.013 20);
-  --color-paper-3: oklch(22% 0.015 20);
-  --color-paper-4: oklch(26% 0.017 20);
-  --color-scrim: oklch(10% 0.009 20);
-  --color-ink: oklch(95% 0.008 25);
-  --color-ink-2: oklch(79% 0.014 25);
-  --color-muted: oklch(64% 0.014 25);
-  --color-rule: oklch(33% 0.016 20);
-  --color-rule-strong: oklch(44% 0.026 20);
-  --color-accent: oklch(70% 0.11 12);
-  --color-accent-strong: oklch(40% 0.155 17);
-  --color-accent-ink: oklch(98% 0.005 25);
-  --color-warning: oklch(76% 0.15 75);
-  --color-focus: oklch(76% 0.11 12);
+  /* 오렌지 다크 팔레트: 배경은 웜 차콜 단계, 글자는 밝은 웜 그레이,
+     강조 텍스트는 밝은 오렌지, 주 버튼은 채도 있는 오렌지 면에 흰 글자. */
+  --color-paper: oklch(15.5% 0.008 55);
+  --color-paper-2: oklch(19% 0.01 55);
+  --color-paper-3: oklch(22.5% 0.012 55);
+  --color-paper-4: oklch(26% 0.014 55);
+  --color-scrim: oklch(11% 0.007 55);
+  --color-ink: oklch(95% 0.006 70);
+  --color-ink-2: oklch(80% 0.01 70);
+  --color-muted: oklch(65% 0.012 70);
+  --color-rule: oklch(33% 0.012 55);
+  --color-rule-strong: oklch(44% 0.018 55);
+  --color-accent: oklch(74% 0.15 48);
+  --color-accent-strong: oklch(56% 0.195 40);
+  --color-accent-ink: oklch(98.5% 0.004 70);
+  --color-warning: oklch(78% 0.14 85);
+  --color-focus: oklch(74% 0.15 48);
 
   --font-display: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
   --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;

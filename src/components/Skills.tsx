@@ -10,12 +10,9 @@ export function Skills() {
         {skillGroups.map((group) => (
           <section className={styles.group} key={group.label} aria-labelledby={`skill-${group.label}`}>
             <h3 id={`skill-${group.label}`}>{group.label}</h3>
-          <ul>
-            {group.skills.map((skill) => (
-                <li key={skill.name}>
-                  <strong>{skill.name}</strong>
-                  <span>{skill.context}</span>
-                </li>
+            <ul>
+              {group.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
               ))}
             </ul>
           </section>

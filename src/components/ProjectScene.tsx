@@ -57,7 +57,7 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
               {serviceLink.label} <PixelIcon name="external" />
             </a>
           ) : (
-            <span className={styles.internalCase}>사내 평가 사례</span>
+            <span className={styles.internalCase}>사내 프로젝트</span>
           )}
         </div>
       </div>

@@ -46,12 +46,6 @@
   margin-top: 9px;
 }
 
-.grid p.takeaway {
-  margin-top: 12px;
-  color: var(--android-green);
-  font-weight: 560;
-}
-
 .grid ul {
   margin-top: 14px;
   padding-left: 18px;

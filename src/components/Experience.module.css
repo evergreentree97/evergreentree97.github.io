@@ -81,12 +81,6 @@
   font-size: 0.9rem;
 }
 
-.entryHeading > span {
-  color: var(--android-green);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-}
-
 .chapters {
   border-bottom: 1px solid var(--border);
 }
@@ -114,6 +108,9 @@
 }
 
 .chapterHeading a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration-color: color-mix(in srgb, var(--android-green) 36%, transparent);
 }
 
@@ -124,34 +121,6 @@
 .chapterContent > p {
   color: var(--text-primary);
   font-weight: 560;
-}
-
-.highlights {
-  margin-top: 12px;
-  padding-left: 19px;
-  color: var(--text-secondary);
-}
-
-.highlights li + li {
-  margin-top: 7px;
-}
-
-.highlights li::marker {
-  color: var(--android-green);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  margin-top: 22px;
-  list-style: none;
-}
-
-.tags li {
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
 }
 
 @media (max-width: 760px) {

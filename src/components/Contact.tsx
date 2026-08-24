@@ -19,7 +19,7 @@ const contactLinks: {
   },
   {
     label: 'LinkedIn',
-    value: 'LinkedIn 프로필',
+    value: '최상록',
     href: profile.linkedinUrl,
     icon: 'linkedin',
     external: true,
@@ -44,7 +44,7 @@ export function Contact() {
           </picture>
         </div>
         <div className={styles.contactBody}>
-          <h3>채용이나 협업 제안은 아래 채널로 연락해 주세요.</h3>
+          <h3>채용과 협업 제안 모두 받습니다.</h3>
           <div className={styles.links}>
             {contactLinks.map((link) => (
               <a

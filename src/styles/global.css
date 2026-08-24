@@ -1,4 +1,4 @@
-/* Hallmark · genre: atmospheric · macrostructure: Split Studio · theme: studied-DNA · anchor hue: forest green */
+/* Hallmark, genre: atmospheric, macrostructure: Split Studio, theme: studied-DNA, anchor hue: forest green */
 @import '../../tokens.css';
 
 :root {
@@ -34,7 +34,7 @@
 html {
   min-width: 320px;
   background: var(--background);
-  scroll-padding-top: 76px;
+  scroll-padding-top: 92px;
   overflow-x: clip;
 }
 
@@ -113,11 +113,11 @@ h4 {
 }
 
 section[id] {
-  scroll-margin-top: 76px;
+  scroll-margin-top: 92px;
 }
 
 ::selection {
-  background: var(--color-accent-strong);
+  background: color-mix(in oklch, var(--color-accent) 26%, transparent);
   color: var(--text-primary);
 }
 

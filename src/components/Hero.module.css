@@ -66,19 +66,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 52px;
   gap: var(--space-xs);
-  padding-inline: var(--space-md);
+  padding-inline: var(--space-lg);
   border: var(--rule-hair) solid var(--color-rule-strong);
   border-radius: var(--radius-pill);
   color: var(--color-ink);
   font-family: var(--font-utility);
-  font-size: var(--text-sm);
-  font-weight: 500;
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-decoration: none;
   white-space: nowrap;
   transition:
     background-color var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out),
     color var(--dur-short) var(--ease-out),
     transform var(--dur-micro) var(--ease-out);
 }
@@ -87,6 +89,12 @@
   border-color: var(--color-accent-strong);
   background: var(--color-accent-strong);
   color: var(--color-accent-ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .actions a:hover {
+    transform: translateY(-1px);
+  }
 }
 
 .actions a:active {
@@ -191,14 +199,16 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .actions a:hover {
+  .actions a:not(.primaryAction):hover {
+    border-color: var(--color-rule-strong);
     background: var(--color-ink);
     color: var(--color-paper);
   }
 
   .actions .primaryAction:hover {
-    background: var(--color-accent-strong);
-    color: var(--color-accent-ink);
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-paper);
   }
 }
 
@@ -229,7 +239,7 @@
   }
 
   .scrim {
-    background: linear-gradient(0deg, var(--color-scrim), color-mix(in oklch, var(--color-scrim) 10%, transparent) 58%, transparent 82%);
+    background: linear-gradient(0deg, var(--color-scrim), color-mix(in oklch, var(--color-scrim) 55%, transparent) 72%, color-mix(in oklch, var(--color-scrim) 18%, transparent));
   }
 
   .heroContent {

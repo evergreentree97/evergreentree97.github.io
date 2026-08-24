@@ -8,17 +8,18 @@ export function Hero() {
       <div className={styles.inner}>
         <div className={styles.heroContent}>
           <span className={styles.label}>
-            ANDROID DEVELOPER
+            ANDROID & AI PRODUCT
           </span>
 
           <h1 id="hero-title">
-            <span className={styles.line}>AI에 일을 맡기고,</span>
-            <span className={styles.line}>제품을 만듭니다.</span>
+            <span className={styles.line}>제품을 만드는</span>
+            <span className={styles.line}>엔지니어입니다</span>
           </h1>
 
           <p className={styles.description}>
-            Android 앱의 구조를 설계하고, API 연동과 출시 후 운영 문제까지 해결합니다.
-            AI는 개발 과정에 활용하되, 결과를 직접 평가해 제품 품질까지 확인합니다.
+            신규 Android 앱의 멀티모듈 구조를 설계하고
+            인증, 미디어 플레이어, 실시간 채팅, 결제 등 핵심 기능을 개발했습니다.
+            사내 AI TF에서는 캐릭터 대화 모델을 직접 파인튜닝해 제품에 적용했습니다.
           </p>
 
           <div className={styles.actions}>
@@ -26,7 +27,7 @@ export function Hero() {
               주요 프로젝트 보기 <PixelIcon name="arrow" />
             </a>
             <a href={profile.githubUrl} target="_blank" rel="noreferrer">
-              GitHub 보기 <PixelIcon name="external" />
+              GitHub <PixelIcon name="external" />
             </a>
           </div>
 

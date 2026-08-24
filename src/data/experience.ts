@@ -3,7 +3,6 @@ export type ExperienceChapter = {
   title: string
   href: string
   summary: string
-  highlights: string[]
 }
 
 export type Experience = {
@@ -12,11 +11,10 @@ export type Experience = {
   intro: string
   role: string
   chapters: ExperienceChapter[]
-  technologies: string[]
   current?: boolean
 }
 
-// TODO: 최신 경력은 검증된 역할과 본인 기여 범위 안에서 교체하세요.
+// 리멤버 프로필(2026-08-21 기준본)과 evidence-master의 기간 확인을 따른다.
 export const experiences: Experience[] = [
   {
     period: '2023.10 - Present',
@@ -25,39 +23,30 @@ export const experiences: Experience[] = [
     role: 'Android Developer',
     chapters: [
       {
+        period: '2026.06 - Present',
+        title: 'TF 모델을 적용한 신규 AI 캐릭터 앱',
+        href: '#model-evaluation',
+        summary: 'TF에서 학습한 모델을 실제 제품으로 연결한 신규 앱입니다.',
+      },
+      {
+        period: '2026.02 - 2026.08',
+        title: '사내 AI TF 캐릭터 대화 모델 파인튜닝',
+        href: '#model-evaluation',
+        summary: 'Android 개발자로 TF에 합류해 캐릭터 대화 모델 학습을 직접 맡았습니다.',
+      },
+      {
         period: '2024.05 - Present',
         title: 'Vuddy Android',
         href: '#vuddy',
-        summary: '신규 앱의 멀티모듈 구조를 설계하고 Sendbird 연동을 맡았습니다.',
-        highlights: [
-          '멀티모듈 구조 설계, MVI 적용과 Build-Logic 구성',
-          'QA 빌드 배포, Google Play 정책 대응과 운영 장애 분석',
-        ],
-      },
-      {
-        period: '2026.02 - Present',
-        title: 'AI 캐릭터 모델',
-        href: '#model-evaluation',
-        summary: '사내 AI TF에서 캐릭터 대화 모델의 데이터 정제, 학습, 평가와 서빙을 맡았습니다.',
-        highlights: [
-          'LoRA 기반 SFT, 비교 조건을 고정한 내부 평가 도구와 vLLM 서빙',
-          '유효하지 않은 실험 결과와 평가 방식의 한계, 중단 이유 기록',
-        ],
+        summary: '초기 구축부터 Google Play 출시까지 참여한 신규 앱입니다.',
       },
       {
         period: '2023.10 - 2024.05',
         title: 'Momentica Android',
         href: '#momentica',
-        summary: '아티스트 영상 알람과 포토카드 도감 개발을 주도했습니다.',
-        highlights: [
-          '포토카드 도감의 퀵뷰와 3D 회전 구현',
-          '불필요한 리컴포지션 제거, SceneView Bitmap 메모리 누수와 화면 이동 중 크래시 수정',
-          'Room과 AlarmManager 기반 알람 저장과 예약, 재부팅 이후 복원',
-          '화면 꺼짐, 잠금 화면과 재부팅 시나리오에서 알람 실행 검증',
-        ],
+        summary: '기존 앱의 구조를 유지한 채 기능을 추가하며 백그라운드 실행과 3D 렌더링을 다뤘습니다.',
       },
     ],
-    technologies: ['Kotlin', 'Jetpack Compose', 'Python', 'PyTorch', 'vLLM'],
     current: true,
   },
 ]

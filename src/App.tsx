@@ -11,7 +11,6 @@ import { MoreWork } from './components/MoreWork'
 import { Projects } from './components/Projects'
 import { SectionRail } from './components/SectionRail'
 import { SideProjects } from './components/SideProjects'
-import { Skills } from './components/Skills'
 import { TastePanel } from './components/TastePanel'
 import styles from './App.module.css'
 
@@ -25,13 +24,14 @@ export default function App() {
     const about = main.querySelector('#about')
     const experience = main.querySelector('#experience')
     const targets = [about, experience].filter((element): element is Element => element !== null)
-    let visibleCount = 0
+    const visible = new Set<Element>()
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          visibleCount += entry.isIntersecting ? 1 : -1
+          if (entry.isIntersecting) visible.add(entry.target)
+          else visible.delete(entry.target)
         }
-        main.dataset.zone = visibleCount > 0 ? 'intro' : 'default'
+        main.dataset.zone = visible.size > 0 ? 'intro' : 'default'
       },
       { rootMargin: '-15% 0px -15% 0px' },
     )
@@ -52,13 +52,12 @@ export default function App() {
         </div>
         <Projects />
         <div className={styles.contentShell}>
+          <HowIWork />
           <SideProjects />
           <div className={styles.secondaryGrid}>
             <MoreWork />
             <Activities />
           </div>
-          <Skills />
-          <HowIWork />
           <TastePanel />
           <Contact />
         </div>

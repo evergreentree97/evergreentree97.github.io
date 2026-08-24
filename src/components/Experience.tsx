@@ -21,7 +21,6 @@ export function Experience() {
                   <p className={styles.intro}>{experience.intro}</p>
                   <p>{experience.role}</p>
                 </div>
-                {experience.current ? <span>CURRENT</span> : null}
               </div>
               <div className={styles.chapters}>
                 {experience.chapters.map((chapter) => (
@@ -32,20 +31,10 @@ export function Experience() {
                     </div>
                     <div className={styles.chapterContent}>
                       <p>{chapter.summary}</p>
-                      <ul className={styles.highlights}>
-                        {chapter.highlights.map((highlight) => (
-                          <li key={highlight}>{highlight}</li>
-                        ))}
-                      </ul>
                     </div>
                   </section>
                 ))}
               </div>
-              <ul className={styles.tags} aria-label={`${experience.organization} 기술`}>
-                {experience.technologies.map((technology) => (
-                  <li key={technology}>{technology}</li>
-                ))}
-              </ul>
             </article>
           </li>
         ))}

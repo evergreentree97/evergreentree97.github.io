@@ -14,7 +14,6 @@ export function SideProjects() {
             </div>
             <h3>{project.name}</h3>
             <p>{project.summary}</p>
-            <p className={styles.takeaway}>{project.takeaway}</p>
             <ul>
               {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
             </ul>

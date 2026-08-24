@@ -49,7 +49,7 @@ export function Header() {
     <header ref={headerRef} className={styles.header}>
       <div className={styles.inner}>
         <a className={styles.logo} href="#top" aria-label="홈으로 이동">
-          <PixelIcon name="device" className={styles.logoIcon} />
+          <img className={styles.logoIcon} src="/icons/android-mark-dark.png" alt="" width="260" height="260" />
           <span>최상록</span>
         </a>
 

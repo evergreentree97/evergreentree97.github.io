@@ -3,24 +3,15 @@
 }
 
 .introRow {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(32px, 7vw, 92px);
+  max-width: 38ch;
   margin-top: 42px;
 }
 
-.introRow p:first-child {
-  max-width: 29ch;
+.introRow p {
   color: var(--text-primary);
   font-size: clamp(1.45rem, 2.5vw, 2.15rem);
   font-weight: 650;
   line-height: 1.45;
-}
-
-.introRow p:last-child {
-  max-width: 40ch;
-  color: var(--text-secondary);
-  line-height: 1.75;
 }
 
 .workflow {
@@ -34,7 +25,7 @@
 
 .workflow li {
   position: relative;
-  min-height: 286px;
+  min-height: 258px;
   padding: 26px 24px 30px;
 }
 
@@ -45,7 +36,7 @@
 .workflow li:not(:last-child)::after {
   position: absolute;
   top: 36px;
-  right: -6px;
+  right: 4px;
   z-index: 1;
   width: 11px;
   height: 11px;
@@ -67,12 +58,8 @@
   letter-spacing: 0.02em;
 }
 
-.stepMeta strong {
-  font-weight: 500;
-}
-
 .workflow h3 {
-  margin-top: 76px;
+  margin-top: 48px;
   font-size: 1.2rem;
   line-height: 1.45;
 }
@@ -91,18 +78,11 @@
 
 .examples article {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr) minmax(240px, 0.8fr);
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
   align-items: center;
   gap: 24px;
   min-height: 84px;
   border-bottom: 1px solid var(--border);
-}
-
-.examples span {
-  color: var(--android-green);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
 }
 
 .examples h3 {
@@ -133,21 +113,13 @@
   }
 
   .examples article {
-    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
     padding-block: 18px;
-  }
-
-  .examples p {
-    grid-column: 2;
   }
 }
 
 @media (max-width: 620px) {
-  .introRow {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
   .workflow {
     grid-template-columns: 1fr;
   }

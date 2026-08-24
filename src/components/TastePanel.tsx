@@ -5,7 +5,7 @@ import styles from './TastePanel.module.css'
 export function TastePanel() {
   return (
     <aside className={styles.panel} aria-label="개발자 취향">
-      <span className={styles.label}>B-SIDE / 취향</span>
+      <span className={styles.label}>취향</span>
       <ul>
         {tastes.map((taste) => (
           <li key={taste.label}>
