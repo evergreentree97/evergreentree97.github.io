@@ -114,6 +114,7 @@ function VideoMedia({ media }: { media: ProjectVideo }) {
 }
 
 export function ProjectScene({ project }: { project: FeaturedProject }) {
+  const sceneRef = useRef<HTMLElement>(null)
   const serviceLink = project.links[0]
   const mediaGridClass = project.media.length === 2
     ? styles.mediaGridTwo
@@ -121,8 +122,35 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
       ? styles.mediaGridThree
       : styles.mediaGridDefault
 
+  useEffect(() => {
+    const scene = sceneRef.current
+
+    if (!scene) return
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      scene.dataset.visible = 'true'
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+
+        scene.dataset.visible = 'true'
+        observer.disconnect()
+      },
+      { rootMargin: '-8% 0px -8% 0px', threshold: 0.06 },
+    )
+
+    observer.observe(scene)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
+      ref={sceneRef}
       className={`${styles.scene} ${styles[project.id] ?? ''}`}
       id={project.id}
       aria-labelledby={`${project.id}-title`}
@@ -144,28 +172,30 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
         </div>
 
         {project.media.length > 0 && (
-          <div className={`${styles.mediaGrid} ${mediaGridClass}`} aria-label={`${project.name} 주요 화면과 영상`}>
-            {project.media.map((media) => {
-              if (media.type === 'video') {
-                return <VideoMedia key={media.src} media={media} />
-              }
+          <div className={styles.mediaMotion}>
+            <div className={`${styles.mediaGrid} ${mediaGridClass}`} aria-label={`${project.name} 주요 화면과 영상`}>
+              {project.media.map((media) => {
+                if (media.type === 'video') {
+                  return <VideoMedia key={media.src} media={media} />
+                }
 
-              return (
-                <figure
-                  className={`${styles.mediaItem} ${media.caption ? styles.mediaItemWithCaption : ''}`}
-                  key={media.src}
-                >
-                  <img
-                    src={media.src}
-                    alt={media.alt}
-                    loading="lazy"
-                    width={media.width}
-                    height={media.height}
-                  />
-                  {media.caption && <figcaption className={styles.mediaCaption}>{media.caption}</figcaption>}
-                </figure>
-              )
-            })}
+                return (
+                  <figure
+                    className={`${styles.mediaItem} ${media.caption ? styles.mediaItemWithCaption : ''}`}
+                    key={media.src}
+                  >
+                    <img
+                      src={media.src}
+                      alt={media.alt}
+                      loading="lazy"
+                      width={media.width}
+                      height={media.height}
+                    />
+                    {media.caption && <figcaption className={styles.mediaCaption}>{media.caption}</figcaption>}
+                  </figure>
+                )
+              })}
+            </div>
           </div>
         )}
 

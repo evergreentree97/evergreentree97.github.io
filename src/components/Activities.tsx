@@ -1,14 +1,16 @@
 import { activities } from '../data/activities'
+import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
 import styles from './Activities.module.css'
 
 export function Activities() {
   return (
     <section className={styles.section} id="activities" aria-labelledby="activities-title">
-      <SectionTitle id="activities-title" title="대외 활동" />
-      <div className={styles.grid}>
-        {activities.map((activity) => (
-          <article key={activity.organization}>
+      <Reveal stagger>
+        <SectionTitle id="activities-title" title="대외 활동" />
+        <div className={styles.grid}>
+          {activities.map((activity) => (
+            <article key={activity.organization} data-reveal-item>
             <div className={styles.meta}>
               <span>{activity.period}</span>
               <small>{activity.role}</small>
@@ -18,9 +20,10 @@ export function Activities() {
             <ul>
               {activity.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
             </ul>
-          </article>
-        ))}
-      </div>
+            </article>
+          ))}
+        </div>
+      </Reveal>
     </section>
   )
 }

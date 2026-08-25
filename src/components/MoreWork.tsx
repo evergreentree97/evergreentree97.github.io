@@ -1,15 +1,17 @@
 import { moreProjects } from '../data/projects'
 import { PixelIcon } from './PixelIcon'
+import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
 import styles from './MoreWork.module.css'
 
 export function MoreWork() {
   return (
     <section className={styles.section} aria-labelledby="more-work-title">
-      <SectionTitle id="more-work-title" title="오픈소스" />
-      <div className={styles.list}>
-        {moreProjects.map((project) => (
-          <article key={project.name}>
+      <Reveal stagger>
+        <SectionTitle id="more-work-title" title="오픈소스" />
+        <div className={styles.list}>
+          {moreProjects.map((project) => (
+            <article key={project.name} data-reveal-item>
             <div className={styles.heading}>
               <span>{project.eyebrow}</span>
               <h3>{project.name}</h3>
@@ -26,9 +28,10 @@ export function MoreWork() {
             <a href={project.link.href} target="_blank" rel="noreferrer">
               {project.link.label} <PixelIcon name="external" />
             </a>
-          </article>
-        ))}
-      </div>
+            </article>
+          ))}
+        </div>
+      </Reveal>
     </section>
   )
 }

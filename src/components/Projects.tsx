@@ -10,7 +10,8 @@ export function Projects() {
     const wrapper = wrapperRef.current
     if (!wrapper) return
 
-    const scenes = Array.from(wrapper.querySelectorAll('section[id]'))
+    const scenes = Array.from(wrapper.querySelectorAll<HTMLElement>('section[id]'))
+    wrapper.dataset.scene = scenes[0]?.id ?? ''
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -22,7 +23,10 @@ export function Projects() {
       { rootMargin: '-45% 0px -45% 0px' },
     )
     scenes.forEach((scene) => observer.observe(scene))
-    return () => observer.disconnect()
+
+    return () => {
+      observer.disconnect()
+    }
   }, [])
 
   return (

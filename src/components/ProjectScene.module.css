@@ -1,5 +1,8 @@
 /* 배경은 Projects 래퍼가 활성 장면에 따라 전환한다. */
 .scene {
+  display: grid;
+  align-items: center;
+  min-height: 100svh;
   padding: clamp(var(--space-2xl), 9vw, var(--space-4xl)) var(--space-lg);
   scroll-margin-top: 64px;
   background: transparent;
@@ -15,8 +18,35 @@
   margin-inline: auto;
 }
 
+.sceneInner > .copyColumn,
+.sceneInner > .mediaMotion,
+.sceneInner > .projectMeta {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 560ms var(--ease-out),
+    transform 560ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.sceneInner > .mediaMotion {
+  transition-delay: 80ms;
+}
+
+.sceneInner > .projectMeta {
+  transition-delay: 150ms;
+}
+
+.scene[data-visible] .sceneInner > .copyColumn,
+.scene[data-visible] .sceneInner > .mediaMotion,
+.scene[data-visible] .sceneInner > .projectMeta {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
 .sceneInner:has(.mediaGrid:empty),
-.sceneInner:not(:has(.mediaGrid)) {
+.sceneInner:not(:has(.mediaMotion)) {
   grid-template-columns: minmax(0, 1fr);
   max-width: 760px;
 }
@@ -71,6 +101,10 @@
   margin-block-start: var(--space-lg);
 }
 
+.mediaMotion {
+  min-width: 0;
+}
+
 .mediaGrid {
   display: grid;
   gap: 4px;
@@ -108,6 +142,21 @@
   border: var(--rule-hair) solid color-mix(in oklch, var(--color-ink) 18%, transparent);
   overflow: hidden;
   background: #000;
+  clip-path: inset(0 0 8% 0);
+  transition: clip-path 620ms var(--ease-out);
+  transition-delay: 100ms;
+}
+
+.mediaItem:nth-child(2) {
+  transition-delay: 160ms;
+}
+
+.mediaItem:nth-child(3) {
+  transition-delay: 220ms;
+}
+
+.scene[data-visible] .mediaItem {
+  clip-path: inset(0 0 0 0);
 }
 
 .mediaItemWithCaption {
@@ -253,6 +302,7 @@
 
 @media (max-width: 56.25rem) {
   .scene {
+    min-height: 0;
     padding: var(--space-3xl) var(--space-md);
   }
 
@@ -265,6 +315,18 @@
     max-width: 34ch;
   }
 
+}
+
+@media (min-width: 56.3125rem) and (min-height: 50rem) {
+  .scene {
+    min-height: 115svh;
+    align-items: start;
+  }
+
+  .sceneInner {
+    position: sticky;
+    top: clamp(84px, 9vh, 108px);
+  }
 }
 
 @media (max-width: 30rem) {
@@ -287,4 +349,18 @@
     left: var(--space-xs);
     font-size: 0.7rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sceneInner > .copyColumn,
+  .sceneInner > .mediaMotion,
+  .sceneInner > .projectMeta,
+  .mediaItem {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: opacity 150ms var(--ease-out);
+    will-change: auto;
+  }
+
 }

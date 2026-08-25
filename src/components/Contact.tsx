@@ -1,5 +1,6 @@
 import { profile } from '../data/profile'
 import { PixelIcon, type PixelIconName } from './PixelIcon'
+import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
 import styles from './Contact.module.css'
 
@@ -29,8 +30,9 @@ const contactLinks: {
 export function Contact() {
   return (
     <section className={styles.contact} id="contact" aria-labelledby="contact-title">
-      <SectionTitle id="contact-title" title="연락처" />
-      <div className={styles.layout}>
+      <Reveal>
+        <SectionTitle id="contact-title" title="연락처" />
+        <div className={styles.layout}>
         <div className={styles.workbenchReturn}>
           <picture>
             <source srcSet="/images/hero-product-developer-hand-hidden-480.avif" type="image/avif" />
@@ -63,7 +65,8 @@ export function Contact() {
             ))}
           </div>
         </div>
-      </div>
+        </div>
+      </Reveal>
     </section>
   )
 }

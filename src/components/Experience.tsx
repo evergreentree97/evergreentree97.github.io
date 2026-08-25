@@ -1,18 +1,20 @@
 import { careerIntroduction, experiences } from '../data/experience'
 import { PixelIcon } from './PixelIcon'
+import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
 import styles from './Experience.module.css'
 
 export function Experience() {
   return (
     <section className={styles.experience} id="experience" aria-labelledby="experience-title">
-      <SectionTitle id="experience-title" title="경력" />
-      <div className={styles.summary}>
-        {careerIntroduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-      </div>
-      <ol className={styles.timeline}>
-        {experiences.map((experience) => (
-          <li key={`${experience.organization}-${experience.period}`}>
+      <Reveal stagger>
+        <SectionTitle id="experience-title" title="경력" />
+        <div className={styles.summary} data-reveal-item>
+          {careerIntroduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+        <ol className={styles.timeline}>
+          {experiences.map((experience) => (
+            <li key={`${experience.organization}-${experience.period}`} data-reveal-item>
             <div className={styles.marker} aria-hidden="true">
               <PixelIcon name={experience.current ? 'flag' : 'save'} />
             </div>
@@ -39,9 +41,10 @@ export function Experience() {
                 ))}
               </div>
             </article>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ol>
+      </Reveal>
     </section>
   )
 }

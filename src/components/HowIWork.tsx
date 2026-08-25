@@ -1,4 +1,5 @@
 import { SectionTitle } from './SectionTitle'
+import { Reveal } from './Reveal'
 import styles from './HowIWork.module.css'
 
 const evidence = [
@@ -23,21 +24,23 @@ const evidence = [
 export function HowIWork() {
   return (
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
-      <SectionTitle id="how-i-work-title" title="AI 활용과 검증" />
-      <div className={styles.introRow}>
-        <p>
-          아키텍처와 개발 규칙은 Markdown으로 관리하고 반복 작업은 Agent Skill로 만들어 재사용합니다.
-        </p>
-      </div>
+      <Reveal stagger>
+        <SectionTitle id="how-i-work-title" title="AI 활용과 검증" />
+        <div className={styles.introRow} data-reveal-item>
+          <p>
+            아키텍처와 개발 규칙은 Markdown으로 관리하고 반복 작업은 Agent Skill로 만들어 재사용합니다.
+          </p>
+        </div>
 
-      <ul className={styles.evidence} aria-label="AI 활용과 검증 사례">
-        {evidence.map((item) => (
-          <li key={item.title}>
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
-          </li>
-        ))}
-      </ul>
+        <ul className={styles.evidence} aria-label="AI 활용과 검증 사례">
+          {evidence.map((item) => (
+            <li key={item.title} data-reveal-item>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   )
 }

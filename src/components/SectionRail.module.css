@@ -107,6 +107,33 @@
 
 @media (max-width: 56.25rem) {
   .rail {
+    left: 4px;
+    gap: 6px;
+    padding: 6px 4px;
+    border-radius: var(--radius-pill);
+  }
+
+  .rail a {
+    min-height: 22px;
+  }
+
+  .tick {
+    width: 7px;
+  }
+
+  .rail a.active .tick {
+    width: 15px;
+  }
+
+  .label,
+  .rail a:hover .label,
+  .rail a:focus-visible .label {
+    display: none;
+  }
+}
+
+@media (max-width: 30rem) {
+  .rail {
     display: none;
   }
 }

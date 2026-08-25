@@ -17,7 +17,10 @@ export function Header() {
     let animationFrame = 0
     const updateHeader = () => {
       animationFrame = 0
-      header.dataset.scrolled = String(window.scrollY > 72)
+      const nextScrolled = String(window.scrollY > 72)
+      if (header.dataset.scrolled !== nextScrolled) {
+        header.dataset.scrolled = nextScrolled
+      }
     }
     const requestUpdate = () => {
       if (!animationFrame) animationFrame = window.requestAnimationFrame(updateHeader)
