@@ -3,7 +3,7 @@
 }
 
 .introRow {
-  max-width: 38ch;
+  max-width: 48ch;
   margin-top: 42px;
 }
 
@@ -11,145 +11,69 @@
   color: var(--text-primary);
   font-size: clamp(1.45rem, 2.5vw, 2.15rem);
   font-weight: 650;
-  line-height: 1.45;
+  line-height: 1.38;
 }
 
-.workflow {
+.evidence {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 64px;
+  margin-top: 46px;
   border-top: 1px solid var(--android-green);
   border-bottom: 1px solid var(--android-green);
   list-style: none;
 }
 
-.workflow li {
-  position: relative;
-  min-height: 258px;
-  padding: 26px 24px 30px;
+.evidence li {
+  min-height: 224px;
+  padding: 30px 24px;
 }
 
-.workflow li + li {
+.evidence li + li {
   border-left: 1px solid var(--border);
 }
 
-.workflow li:not(:last-child)::after {
-  position: absolute;
-  top: 36px;
-  right: 4px;
-  z-index: 1;
-  width: 11px;
-  height: 11px;
-  border-top: 2px solid var(--android-green);
-  border-right: 2px solid var(--android-green);
-  background: var(--background);
-  content: '';
-  transform: rotate(45deg);
-}
-
-.stepMeta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  color: var(--android-green);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
-}
-
-.workflow h3 {
-  margin-top: 48px;
-  font-size: 1.2rem;
+.evidence h3 {
+  color: var(--text-primary);
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
   line-height: 1.45;
 }
 
-.workflow p {
-  margin-top: 12px;
+.evidence p {
+  margin-top: 16px;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.65;
-}
-
-.examples {
-  margin-top: 60px;
-  border-top: 1px solid var(--border);
-}
-
-.examples article {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
-  align-items: center;
-  gap: 24px;
-  min-height: 84px;
-  border-bottom: 1px solid var(--border);
-}
-
-.examples h3 {
   font-size: 1rem;
-}
-
-.examples p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 @media (max-width: 900px) {
-  .workflow {
+  .evidence {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .workflow li:nth-child(3) {
+  .evidence li:nth-child(3) {
     border-left: 0;
     border-top: 1px solid var(--border);
   }
 
-  .workflow li:nth-child(4) {
+  .evidence li:nth-child(4) {
     border-top: 1px solid var(--border);
-  }
-
-  .workflow li:nth-child(2)::after {
-    display: none;
-  }
-
-  .examples article {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-    padding-block: 18px;
   }
 }
 
 @media (max-width: 620px) {
-  .workflow {
+  .evidence {
     grid-template-columns: 1fr;
   }
 
-  .workflow li {
+  .evidence li {
     min-height: 0;
     padding: 24px 4px 28px;
   }
 
-  .workflow li + li,
-  .workflow li:nth-child(3),
-  .workflow li:nth-child(4) {
+  .evidence li + li,
+  .evidence li:nth-child(3),
+  .evidence li:nth-child(4) {
     border-top: 1px solid var(--border);
     border-left: 0;
-  }
-
-  .workflow li::after {
-    display: none;
-  }
-
-  .workflow h3 {
-    margin-top: 34px;
-  }
-
-  .examples article {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .examples p {
-    grid-column: auto;
   }
 }

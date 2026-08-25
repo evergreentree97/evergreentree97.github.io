@@ -1,10 +1,31 @@
 .experience {
-  padding-top: clamp(88px, 10vw, 132px);
+  padding-top: clamp(72px, 8vw, 112px);
+}
+
+.summary {
+  display: grid;
+  max-width: 68ch;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.summary p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.summary p:first-child {
+  color: var(--text-primary);
+  font-size: clamp(1.08rem, 1.35vw, 1.22rem);
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  line-height: 1.7;
 }
 
 .timeline {
   position: relative;
-  margin-top: 48px;
+  margin-top: 56px;
   list-style: none;
 }
 
@@ -124,6 +145,14 @@
 }
 
 @media (max-width: 760px) {
+  .summary {
+    margin-top: 24px;
+  }
+
+  .timeline {
+    margin-top: 44px;
+  }
+
   .timeline > li {
     grid-template-columns: 44px minmax(0, 1fr);
     gap: 14px;

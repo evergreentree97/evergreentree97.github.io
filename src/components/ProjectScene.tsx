@@ -1,12 +1,125 @@
-import type { FeaturedProject } from '../data/projects'
+import { useEffect, useRef, useState } from 'react'
+import type { FeaturedProject, ProjectVideo } from '../data/projects'
 import { PixelIcon } from './PixelIcon'
 import styles from './ProjectScene.module.css'
 
+function VideoMedia({ media }: { media: ProjectVideo }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const hasAutoPlayedRef = useRef(false)
+  const hasEndedRef = useRef(false)
+  const isInViewRef = useRef(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    const video = videoRef.current
+
+    if (!video || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return
+    }
+
+    const playOnce = () => {
+      if (!isInViewRef.current || hasAutoPlayedRef.current) {
+        return
+      }
+
+      hasAutoPlayedRef.current = true
+      hasEndedRef.current = false
+      void video.play().catch(() => {
+        hasAutoPlayedRef.current = false
+      })
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting
+
+        if (entry.isIntersecting) {
+          playOnce()
+        } else if (!entry.isIntersecting && !video.paused) {
+          video.pause()
+        }
+      },
+      { threshold: 0.55 },
+    )
+
+    video.addEventListener('canplay', playOnce)
+    observer.observe(video)
+    return () => {
+      video.removeEventListener('canplay', playOnce)
+      observer.disconnect()
+    }
+  }, [])
+
+  const togglePlayback = () => {
+    const video = videoRef.current
+
+    if (!video) {
+      return
+    }
+
+    if (video.paused) {
+      if (hasEndedRef.current) {
+        video.currentTime = 0
+        hasEndedRef.current = false
+      }
+      void video.play()
+    } else {
+      video.pause()
+    }
+  }
+
+  const handleEnded = () => {
+    const video = videoRef.current
+
+    if (!video) {
+      return
+    }
+
+    hasEndedRef.current = true
+    video.currentTime = media.posterTime ?? 0
+    setIsPlaying(false)
+  }
+
+  return (
+    <figure className={`${styles.mediaItem} ${media.caption ? styles.mediaItemWithCaption : ''}`}>
+      <div className={styles.videoFrame}>
+        <video
+          ref={videoRef}
+          poster={media.poster}
+          preload="none"
+          muted
+          playsInline
+          width={media.width}
+          height={media.height}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onEnded={handleEnded}
+        >
+          <source src={media.src} type="video/mp4" />
+          영상 재생을 지원하지 않는 브라우저입니다.
+        </video>
+        <button
+          className={styles.videoAction}
+          type="button"
+          aria-label={`${media.alt} ${isPlaying ? '일시 정지' : '재생'}`}
+          aria-pressed={isPlaying}
+          onClick={togglePlayback}
+        >
+          {isPlaying ? '일시 정지' : '재생'}
+        </button>
+      </div>
+      {media.caption && <figcaption className={styles.mediaCaption}>{media.caption}</figcaption>}
+    </figure>
+  )
+}
+
 export function ProjectScene({ project }: { project: FeaturedProject }) {
   const serviceLink = project.links[0]
-  const portraitCount = project.screenshots.filter((s) => s.height > s.width).length
-  // 6칸 그리드: 가로 화면은 한 줄을 다 쓰고, 세로 화면은 개수에 맞춰 줄을 채운다.
-  const portraitSpan = portraitCount === 2 ? 3 : 2
+  const mediaGridClass = project.media.length === 2
+    ? styles.mediaGridTwo
+    : project.media.length === 3
+      ? styles.mediaGridThree
+      : styles.mediaGridDefault
 
   return (
     <section
@@ -30,21 +143,29 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
 
         </div>
 
-        {project.screenshots.length > 0 && (
-          <div className={styles.screenshotGrid} aria-label={`${project.name} 화면`}>
-            {project.screenshots.map((screenshot) => (
-              <img
-                key={screenshot.src}
-                src={screenshot.src}
-                alt={screenshot.alt}
-                loading="lazy"
-                width={screenshot.width}
-                height={screenshot.height}
-                style={{
-                  gridColumn: `span ${screenshot.width > screenshot.height ? 6 : portraitSpan}`,
-                }}
-              />
-            ))}
+        {project.media.length > 0 && (
+          <div className={`${styles.mediaGrid} ${mediaGridClass}`} aria-label={`${project.name} 주요 화면과 영상`}>
+            {project.media.map((media) => {
+              if (media.type === 'video') {
+                return <VideoMedia key={media.src} media={media} />
+              }
+
+              return (
+                <figure
+                  className={`${styles.mediaItem} ${media.caption ? styles.mediaItemWithCaption : ''}`}
+                  key={media.src}
+                >
+                  <img
+                    src={media.src}
+                    alt={media.alt}
+                    loading="lazy"
+                    width={media.width}
+                    height={media.height}
+                  />
+                  {media.caption && <figcaption className={styles.mediaCaption}>{media.caption}</figcaption>}
+                </figure>
+              )
+            })}
           </div>
         )}
 

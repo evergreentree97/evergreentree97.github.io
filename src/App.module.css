@@ -1,4 +1,4 @@
-/* 첫 화면에서 소개, 경력 구간으로 들어오면 배경 톤을 전환한다. */
+/* 첫 화면에서 경력 구간으로 들어오면 배경 톤을 전환한다. */
 .main {
   background: var(--color-paper);
   transition: background-color var(--dur-long) var(--ease-out);

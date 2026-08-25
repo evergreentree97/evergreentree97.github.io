@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { AboutMe } from './components/AboutMe'
 import { Activities } from './components/Activities'
 import { Contact } from './components/Contact'
 import { Experience } from './components/Experience'
@@ -21,9 +20,8 @@ export default function App() {
     const main = mainRef.current
     if (!main) return
 
-    const about = main.querySelector('#about')
     const experience = main.querySelector('#experience')
-    const targets = [about, experience].filter((element): element is Element => element !== null)
+    const targets = [experience].filter((element): element is Element => element !== null)
     const visible = new Set<Element>()
     const observer = new IntersectionObserver(
       (entries) => {
@@ -47,7 +45,6 @@ export default function App() {
       <main id="main-content" ref={mainRef} className={styles.main}>
         <Hero />
         <div className={styles.contentShell}>
-          <AboutMe />
           <Experience />
         </div>
         <Projects />

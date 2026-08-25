@@ -7,7 +7,6 @@ export const profile = {
 } as const
 
 export const navigation = [
-  { label: '소개', href: '#about' },
   { label: '경력', href: '#experience' },
   { label: '프로젝트', href: '#projects' },
   { label: '사이드 프로젝트', href: '#side-projects' },

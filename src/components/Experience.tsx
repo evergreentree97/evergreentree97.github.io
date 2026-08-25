@@ -1,4 +1,4 @@
-import { experiences } from '../data/experience'
+import { careerIntroduction, experiences } from '../data/experience'
 import { PixelIcon } from './PixelIcon'
 import { SectionTitle } from './SectionTitle'
 import styles from './Experience.module.css'
@@ -7,6 +7,9 @@ export function Experience() {
   return (
     <section className={styles.experience} id="experience" aria-labelledby="experience-title">
       <SectionTitle id="experience-title" title="경력" />
+      <div className={styles.summary}>
+        {careerIntroduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      </div>
       <ol className={styles.timeline}>
         {experiences.map((experience) => (
           <li key={`${experience.organization}-${experience.period}`}>

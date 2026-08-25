@@ -21,8 +21,8 @@ export const sideProjects: SideProject[] = [
     name: '꽥꽥',
     summary: 'Duckie에서 사용하는 Compose 디자인 시스템을 함께 개발했습니다.',
     highlights: [
-      'Modifier 공개 범위와 Compose 안정성 검토',
-      'Compose 컴포넌트 4종과 KDoc 작성',
+      '불필요한 리컴포지션을 줄이기 위한 Compose 안정성 검토',
+      'FloatingActionButton, Toggle, TagRow와 ModalDrawer 구현과 KDoc 작성',
     ],
   },
 ]
