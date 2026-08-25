@@ -149,8 +149,6 @@
   z-index: 0;
   overflow: hidden;
   min-height: 0;
-  border-block-start: var(--rule-hair) solid var(--color-rule);
-  border-inline-start: var(--rule-hair) solid var(--color-rule);
   border-radius: clamp(2rem, 5vw, 4.5rem) 0 0 0;
   background: var(--color-paper-3);
   animation: hero-fade var(--dur-long) var(--ease-out) both;

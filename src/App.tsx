@@ -44,7 +44,7 @@ export default function App() {
       <SectionRail />
       <main id="main-content" ref={mainRef} className={styles.main}>
         <Hero />
-        <div className={styles.contentShell}>
+        <div className={`${styles.contentShell} ${styles.experienceShell}`}>
           <Experience />
         </div>
         <Projects />

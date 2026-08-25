@@ -26,6 +26,30 @@
   contain-intrinsic-block-size: auto 760px;
 }
 
+.experienceShell {
+  position: relative;
+  isolation: isolate;
+}
+
+.experienceShell::before {
+  position: absolute;
+  inset: 0 auto;
+  left: 50%;
+  z-index: 0;
+  width: 100vw;
+  background:
+    linear-gradient(to bottom, var(--color-paper) 64px, transparent clamp(180px, 18vw, 280px)),
+    linear-gradient(to top, var(--color-paper) 64px, transparent clamp(180px, 18vw, 280px));
+  content: '';
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.experienceShell > * {
+  position: relative;
+  z-index: 1;
+}
+
 .secondaryGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
