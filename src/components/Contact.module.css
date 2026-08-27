@@ -1,5 +1,5 @@
 .contact {
-  padding-block: clamp(var(--space-3xl), 14vw, var(--space-4xl)) clamp(var(--space-2xl), 10vw, var(--space-3xl));
+  padding-block: clamp(var(--space-3xl), 14vw, var(--space-4xl)) var(--space-xl);
 }
 
 .layout {
