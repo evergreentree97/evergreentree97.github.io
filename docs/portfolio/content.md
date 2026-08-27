@@ -1,6 +1,6 @@
 # 포트폴리오 콘텐츠 가이드
 
-이 문서는 `evergreentree97.github.io`에 공개할 경력 내용과 작성 기준을 관리한다. 구현과 배포 방법은 `README.md`를 따른다.
+이 문서는 `evergreentree97.github.io`에 공개할 경력 내용과 작성 기준을 관리한다. 구현과 배포 방법은 [`../../README.md`](../../README.md)를 따른다.
 
 ## 포트폴리오 방향
 

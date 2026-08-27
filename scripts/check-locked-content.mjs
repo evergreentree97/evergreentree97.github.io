@@ -1,8 +1,8 @@
 import { readFile } from 'node:fs/promises'
 
 const heroSource = await readFile(new URL('../src/components/Hero.tsx', import.meta.url), 'utf8')
-const contentGuide = await readFile(new URL('../docs/portfolio-content.md', import.meta.url), 'utf8')
-const siteStructure = await readFile(new URL('../docs/site-structure.md', import.meta.url), 'utf8')
+const contentGuide = await readFile(new URL('../docs/portfolio/content.md', import.meta.url), 'utf8')
+const siteStructure = await readFile(new URL('../docs/portfolio/structure.md', import.meta.url), 'utf8')
 const projectsSource = await readFile(new URL('../src/data/projects.ts', import.meta.url), 'utf8')
 const sideProjectsSource = await readFile(new URL('../src/data/sideProjects.ts', import.meta.url), 'utf8')
 const howIWorkSource = await readFile(new URL('../src/components/HowIWork.tsx', import.meta.url), 'utf8')

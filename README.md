@@ -17,7 +17,7 @@ npm run dev
 npm run check
 ```
 
-콘텐츠 방향과 수정 위치는 [`docs/portfolio-content.md`](docs/portfolio-content.md)를 따릅니다.
+포트폴리오 문서의 시작점은 [`docs/portfolio/README.md`](docs/portfolio/README.md)입니다.
 
 ## 배포
 
