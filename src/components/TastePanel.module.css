@@ -1,7 +1,7 @@
 .panel {
   margin-top: clamp(64px, 7vw, 96px);
   padding-block: 30px 36px;
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
 }
 
 .label {
