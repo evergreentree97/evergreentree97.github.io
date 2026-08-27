@@ -1,5 +1,5 @@
 .panel {
-  margin-top: clamp(112px, 13vw, 176px);
+  margin-top: clamp(64px, 7vw, 96px);
   padding-block: 30px 36px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);

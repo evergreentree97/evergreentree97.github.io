@@ -7,12 +7,15 @@
   display: grid;
   grid-template-columns: 1fr;
   margin-top: 30px;
-  border-top: 1px solid var(--border);
 }
 
 .grid article {
   padding: 25px 0 28px;
   border-bottom: 1px solid var(--border);
+}
+
+.grid article:last-child {
+  border-bottom: 0;
 }
 
 .meta {
