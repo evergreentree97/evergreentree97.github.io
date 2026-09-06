@@ -110,7 +110,7 @@ if (/85\/100/.test(`${projectsSource}\n${contentGuide}`)) {
 const requiredProjectCopy = [
   "eyebrow: 'LLM FINE-TUNING / ANDROID'",
   "headline: '크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.'",
-  "headline: '사내 AI TF에서 캐릭터 대화 모델의 파인튜닝과 평가, 서빙을 맡았습니다. 이후 해당 모델을 적용한 신규 Android 앱 개발에 참여했습니다.'",
+  "headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 이 모델을 활용해 어떤 채팅 경험을 만들지 고민하며 Android 앱을 개발하고 있습니다.'",
   'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고',
   '프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
   "caption: 'TAKE HOME / 홈 화면 개편'",
@@ -160,7 +160,7 @@ const requiredHowIWorkEvidence = [
 
 const requiredCareerIntroduction = [
   '3년차 Android Engineer 최상록입니다. 신규 앱의 구조 설계부터 Google Play 출시와 운영까지 맡아 왔습니다.',
-  'Vuddy와 Momentica에서 팬 플랫폼을 개발했고 사내 AI TF에서는 캐릭터 대화 모델의 데이터 구성과 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 해당 모델을 사용하는 신규 Android 앱을 개발하고 있습니다.',
+  'Vuddy와 Momentica에서 팬 플랫폼을 개발했고 사내 AI TF에서는 캐릭터 대화 모델의 데이터 구성과 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 이 모델을 활용해 어떤 채팅 경험을 만들지 고민하며 Android 앱을 개발하고 있습니다.',
 ]
 
 const requiredExperienceSummaries = [

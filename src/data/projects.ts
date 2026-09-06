@@ -77,7 +77,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'model-evaluation',
     name: '캐릭터 대화 모델과 AI 캐릭터 앱',
     eyebrow: 'LLM FINE-TUNING / ANDROID',
-    headline: '사내 AI TF에서 캐릭터 대화 모델의 파인튜닝과 평가, 서빙을 맡았습니다. 이후 해당 모델을 적용한 신규 Android 앱 개발에 참여했습니다.',
+    headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 이 모델을 활용해 어떤 채팅 경험을 만들지 고민하며 Android 앱을 개발하고 있습니다.',
     technologies: ['Python', 'PyTorch', 'LoRA / SFT', 'vLLM', 'Kotlin', 'Jetpack Compose', 'SSE', 'Play Billing'],
     highlights: [
       '파인튜닝: B200 GPU 환경에서 캐릭터 대화 모델의 데이터 구성과 학습 방식을 설계하고 데이터 정제부터 LoRA 기반 SFT까지 담당',
