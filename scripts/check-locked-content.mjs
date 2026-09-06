@@ -150,7 +150,7 @@ for (const record of approvedAssetRecords) {
 }
 
 const requiredHowIWorkEvidence = [
-  '반복 작업은 AI로 자동화하고 구현 결과는 직접 검증합니다.',
+  'AI에 반복 작업을 맡기고 코드와 동작을 직접 확인합니다.',
   'QA 티켓에 기록된 문제의 재현부터 원인 분석, 코드 수정과 테스트, PR과 배포 상태 동기화까지 Agent Skill 하나로 묶었습니다.',
   'Android Studio에서 확인하기 불편했던 SSE 트래픽을 PC 브라우저에서 볼 수 있도록 디버그 앱 전용 네트워크 검사 도구를 구현했습니다.',
   'AI가 구현한 화면과 기능은 스크린샷 테스트와 직접 코드 리뷰로 확인합니다. 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증합니다.',

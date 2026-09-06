@@ -28,7 +28,7 @@ export function HowIWork() {
         <SectionTitle id="how-i-work-title" title="AI와 함께 개발하는 방식" />
         <div className={styles.introRow} data-reveal-item>
           <p>
-            반복 작업은 AI로 자동화하고 구현 결과는 직접 검증합니다.
+            AI에 반복 작업을 맡기고 코드와 동작을 직접 확인합니다.
           </p>
         </div>
 
