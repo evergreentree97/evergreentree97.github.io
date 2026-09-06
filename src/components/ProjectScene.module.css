@@ -26,7 +26,7 @@
 
 .sceneInner {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
   gap: 44px 56px;
   width: min(100%, var(--content-width));
@@ -130,8 +130,8 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
-  height: min(calc(100vh - 210px), 660px);
-  min-height: 480px;
+  height: min(calc(100vh - 240px), 600px);
+  min-height: 440px;
   padding: 18px;
   background: #000;
   place-items: center;
