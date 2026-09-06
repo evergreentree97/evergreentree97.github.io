@@ -1,5 +1,5 @@
 .panel {
-  margin-top: clamp(64px, 7vw, 96px);
+  margin-top: 72px;
   padding-block: 30px 36px;
   border-top: 1px solid var(--border);
 }
@@ -49,3 +49,5 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 63.9375rem) { .panel { margin-top: 56px; } }

@@ -1,5 +1,5 @@
 .experience {
-  padding-top: clamp(72px, 8vw, 112px);
+  padding: 96px 0 56px;
 }
 
 .summary {
@@ -206,3 +206,5 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 63.9375rem) { .experience { padding: 68px 0 32px; } }

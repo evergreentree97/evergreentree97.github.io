@@ -1,5 +1,5 @@
 .contact {
-  padding-block: clamp(var(--space-3xl), 14vw, var(--space-4xl)) var(--space-xl);
+  padding-block: 72px var(--space-xl);
 }
 
 .layout {
@@ -123,3 +123,5 @@
     transform: none !important;
   }
 }
+
+@media (max-width: 63.9375rem) { .contact { padding-block: 56px var(--space-xl); } }

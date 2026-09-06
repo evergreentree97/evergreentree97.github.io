@@ -1,9 +1,28 @@
 .scene {
-  padding: 64px 32px 112px;
+  --flow-color: #171717;
+  position: relative;
+  isolation: isolate;
+  padding: 56px 32px 88px;
   scroll-margin-top: 0;
   background: transparent;
   color: var(--color-ink);
 }
+
+.scene:nth-child(2) { --flow-color: #1b1b1b; }
+.scene:nth-child(3) { --flow-color: #211c19; padding-bottom: 48px; }
+
+.scene::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to bottom, transparent 0, var(--flow-color) 150px, var(--flow-color) calc(100% - 150px), transparent 100%);
+  content: '';
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity 760ms var(--ease-out);
+}
+
+.scene[data-flow-active='true']::before { opacity: 1; }
 
 .sceneInner {
   display: grid;
@@ -12,6 +31,8 @@
   gap: 44px 56px;
   width: min(100%, var(--content-width));
   margin-inline: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .copyColumn,
@@ -207,7 +228,9 @@
 }
 
 @media (max-width: 63.9375rem) {
-  .scene { padding: 80px 20px; }
+  .scene { padding: 48px 20px 56px; }
+  .scene:nth-child(3) { padding-bottom: 32px; }
+  .scene::before { background: linear-gradient(to bottom, transparent 0, var(--flow-color) 80px, var(--flow-color) calc(100% - 80px), transparent 100%); transition-duration: 520ms; }
   .sceneInner { grid-template-columns: minmax(0, 1fr); gap: 40px; width: min(100%, 720px); }
   .mediaColumn { grid-row: auto; }
   .mediaStage { height: auto; min-height: 0; aspect-ratio: 4 / 5; padding: 12px; }
@@ -216,7 +239,8 @@
 }
 
 @media (max-width: 40rem) {
-  .scene { padding-block: 72px; }
+  .scene { padding-block: 48px 56px; }
+  .scene:nth-child(3) { padding-bottom: 32px; }
   .projectHeading h2 { font-size: clamp(2.25rem, 10vw, 3rem); }
   .projectHeading > p, .highlightList li { font-size: 1rem; }
   .highlightList { gap: 22px; margin-top: 32px; }
@@ -230,6 +254,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .scene::before,
+  .scene[data-flow-active='true']::before { opacity: 0.72; transition: none; }
   .mediaColumn { position: static !important; }
   .mediaStage { animation: none; }
 }

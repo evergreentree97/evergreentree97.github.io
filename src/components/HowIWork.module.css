@@ -1,5 +1,5 @@
 .section {
-  padding-top: clamp(88px, 10vw, 132px);
+  padding-top: 96px;
 }
 
 .introRow {
@@ -77,3 +77,5 @@
     border-left: 0;
   }
 }
+
+@media (max-width: 63.9375rem) { .section { padding-top: 64px; } }

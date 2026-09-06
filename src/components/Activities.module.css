@@ -1,6 +1,6 @@
 .section {
   min-width: 0;
-  padding-top: clamp(72px, 8vw, 112px);
+  padding-top: 88px;
 }
 
 .grid {
@@ -57,3 +57,5 @@
 .grid li::marker {
   color: var(--android-green);
 }
+
+@media (max-width: 63.9375rem) { .section { padding-top: 64px; } }

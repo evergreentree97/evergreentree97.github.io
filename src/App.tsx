@@ -21,18 +21,14 @@ export default function App() {
     if (!main) return
     if (!('IntersectionObserver' in window)) return
 
-    const experience = main.querySelector('#experience')
-    const targets = [experience].filter((element): element is Element => element !== null)
-    const visible = new Set<Element>()
+    const targets = Array.from(main.querySelectorAll<HTMLElement>('[data-flow-region], #vuddy, #model-evaluation, #momentica'))
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) visible.add(entry.target)
-          else visible.delete(entry.target)
+          ;(entry.target as HTMLElement).dataset.flowActive = String(entry.isIntersecting)
         }
-        main.dataset.zone = visible.size > 0 ? 'intro' : 'default'
       },
-      { rootMargin: '-15% 0px -15% 0px' },
+      { rootMargin: '-25% 0px -25% 0px', threshold: 0 },
     )
     targets.forEach((target) => observer.observe(target))
     return () => observer.disconnect()
@@ -45,7 +41,7 @@ export default function App() {
       <SectionRail />
       <main id="main-content" ref={mainRef} className={styles.main}>
         <Hero />
-        <div className={`${styles.contentShell} ${styles.experienceShell}`}>
+        <div className={`${styles.contentShell} ${styles.experienceShell}`} data-flow-region>
           <Experience />
         </div>
         <Projects />

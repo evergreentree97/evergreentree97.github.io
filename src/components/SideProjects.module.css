@@ -1,6 +1,6 @@
 .section {
   min-width: 0;
-  padding-top: clamp(72px, 8vw, 112px);
+  padding-top: 96px;
 }
 
 .grid {
@@ -51,3 +51,5 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 63.9375rem) { .section { padding-top: 64px; } }
