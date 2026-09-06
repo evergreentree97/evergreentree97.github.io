@@ -1,160 +1,113 @@
 import { useEffect, useRef, useState } from 'react'
-import type { FeaturedProject, ProjectVideo } from '../data/projects'
+import type { FeaturedProject, ProjectMedia, ProjectVideo } from '../data/projects'
 import { PixelIcon } from './PixelIcon'
 import styles from './ProjectScene.module.css'
 
 function VideoMedia({ media }: { media: ProjectVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const hasAutoPlayedRef = useRef(false)
-  const hasEndedRef = useRef(false)
-  const isInViewRef = useRef(false)
   const [isPlaying, setIsPlaying] = useState(false)
-
-  useEffect(() => {
-    const video = videoRef.current
-
-    if (!video || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return
-    }
-
-    const playOnce = () => {
-      if (!isInViewRef.current || hasAutoPlayedRef.current) {
-        return
-      }
-
-      hasAutoPlayedRef.current = true
-      hasEndedRef.current = false
-      void video.play().catch(() => {
-        hasAutoPlayedRef.current = false
-      })
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isInViewRef.current = entry.isIntersecting
-
-        if (entry.isIntersecting) {
-          playOnce()
-        } else if (!entry.isIntersecting && !video.paused) {
-          video.pause()
-        }
-      },
-      { threshold: 0.55 },
-    )
-
-    video.addEventListener('canplay', playOnce)
-    observer.observe(video)
-    return () => {
-      video.removeEventListener('canplay', playOnce)
-      observer.disconnect()
-    }
-  }, [])
 
   const togglePlayback = () => {
     const video = videoRef.current
-
-    if (!video) {
-      return
-    }
-
-    if (video.paused) {
-      if (hasEndedRef.current) {
-        video.currentTime = 0
-        hasEndedRef.current = false
-      }
-      void video.play()
-    } else {
-      video.pause()
-    }
-  }
-
-  const handleEnded = () => {
-    const video = videoRef.current
-
-    if (!video) {
-      return
-    }
-
-    hasEndedRef.current = true
-    video.currentTime = media.posterTime ?? 0
-    setIsPlaying(false)
+    if (!video) return
+    if (video.paused) void video.play().catch(() => setIsPlaying(false))
+    else video.pause()
   }
 
   return (
-    <figure className={`${styles.mediaItem} ${media.caption ? styles.mediaItemWithCaption : ''}`}>
-      <div className={styles.videoFrame}>
-        <video
-          ref={videoRef}
-          poster={media.poster}
-          preload="none"
-          muted
-          playsInline
-          width={media.width}
-          height={media.height}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-          onEnded={handleEnded}
-        >
-          <source src={media.src} type="video/mp4" />
-          영상 재생을 지원하지 않는 브라우저입니다.
-        </video>
-        <button
-          className={styles.videoAction}
-          type="button"
-          aria-label={`${media.alt} ${isPlaying ? '일시 정지' : '재생'}`}
-          aria-pressed={isPlaying}
-          onClick={togglePlayback}
-        >
-          {isPlaying ? '일시 정지' : '재생'}
-        </button>
-      </div>
-      {media.caption && <figcaption className={styles.mediaCaption}>{media.caption}</figcaption>}
-    </figure>
+    <div className={styles.videoFrame}>
+      <video
+        ref={videoRef}
+        poster={media.poster}
+        preload="none"
+        muted
+        playsInline
+        width={media.width}
+        height={media.height}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+      >
+        <source src={media.src} type="video/mp4" />
+        영상 재생을 지원하지 않는 브라우저입니다.
+      </video>
+      <button className={styles.videoAction} type="button" aria-label={`${media.alt} ${isPlaying ? '일시 정지' : '재생'}`} aria-pressed={isPlaying} onClick={togglePlayback}>
+        {isPlaying ? '일시 정지' : '재생'}
+      </button>
+    </div>
   )
+}
+
+function MediaContent({ media }: { media: ProjectMedia }) {
+  if (media.type === 'video') return <VideoMedia media={media} />
+  return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
+}
+
+function HighlightText({ text }: { text: string }) {
+  const separator = text.indexOf(':')
+  if (separator < 0) return <>{text}</>
+  return <><strong>{text.slice(0, separator)}</strong>{text.slice(separator)}</>
 }
 
 export function ProjectScene({ project }: { project: FeaturedProject }) {
   const sceneRef = useRef<HTMLElement>(null)
+  const mediaRef = useRef<HTMLDivElement>(null)
+  const initialMedia = Math.max(0, project.media.findIndex((media) => media.featured))
+  const [selectedMedia, setSelectedMedia] = useState(initialMedia)
   const serviceLink = project.links[0]
-  const mediaGridClass = project.media.length === 2
-    ? styles.mediaGridTwo
-    : project.media.length === 3
-      ? styles.mediaGridThree
-      : styles.mediaGridDefault
+  const activeMedia = project.media[selectedMedia]
 
   useEffect(() => {
     const scene = sceneRef.current
+    if (!scene || !('IntersectionObserver' in window)) return
+    const query = window.matchMedia('(min-width: 64rem) and (prefers-reduced-motion: no-preference)')
+    const highlights = Array.from(scene.querySelectorAll<HTMLElement>('[data-highlight-index]'))
+    let observer: IntersectionObserver | undefined
 
-    if (!scene) return
-
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      scene.dataset.visible = 'true'
-      return
+    const configureObserver = () => {
+      observer?.disconnect()
+      observer = undefined
+      if (!query.matches) return
+      observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (!visible) return
+        const highlightIndex = Number((visible.target as HTMLElement).dataset.highlightIndex)
+        const mediaIndex = project.media.findIndex((media) => media.highlightIndex === highlightIndex)
+        if (mediaIndex >= 0) setSelectedMedia(mediaIndex)
+      }, { rootMargin: '-30% 0px -50% 0px', threshold: [0.2, 0.6] })
+      highlights.forEach((highlight) => observer?.observe(highlight))
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
+    configureObserver()
+    query.addEventListener('change', configureObserver)
+    return () => {
+      observer?.disconnect()
+      query.removeEventListener('change', configureObserver)
+    }
+  }, [project.media])
 
-        scene.dataset.visible = 'true'
-        observer.disconnect()
-      },
-      { rootMargin: '-8% 0px -8% 0px', threshold: 0.06 },
-    )
-
-    observer.observe(scene)
-    return () => observer.disconnect()
+  useEffect(() => {
+    const media = mediaRef.current
+    if (!media || !('ResizeObserver' in window)) return
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => {
+      const canStick = window.innerWidth >= 1024 && window.innerHeight >= 800 && !motion.matches && media.offsetHeight <= window.innerHeight - 112
+      media.dataset.sticky = String(canStick)
+    }
+    const observer = new ResizeObserver(update)
+    observer.observe(media)
+    window.addEventListener('resize', update)
+    motion.addEventListener('change', update)
+    update()
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', update)
+      motion.removeEventListener('change', update)
+    }
   }, [])
 
   return (
-    <section
-      ref={sceneRef}
-      className={`${styles.scene} ${styles[project.id] ?? ''}`}
-      id={project.id}
-      aria-labelledby={`${project.id}-title`}
-    >
+    <section ref={sceneRef} className={styles.scene} id={project.id} aria-labelledby={`${project.id}-title`}>
       <div className={styles.sceneInner}>
         <div className={styles.copyColumn}>
           <div className={styles.projectHeading}>
@@ -162,54 +115,34 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             <h2 id={`${project.id}-title`}>{project.name}</h2>
             <p>{project.headline}</p>
           </div>
-
           <ul className={styles.highlightList} aria-label={`${project.name} 담당 업무`}>
-            {project.highlights.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
+            {project.highlights.map((highlight, index) => (
+              <li key={highlight} data-highlight-index={index}><HighlightText text={highlight} /></li>
             ))}
           </ul>
-
         </div>
 
-        {project.media.length > 0 && (
-          <div className={styles.mediaMotion}>
-            <div className={`${styles.mediaGrid} ${mediaGridClass}`} aria-label={`${project.name} 주요 화면과 영상`}>
-              {project.media.map((media) => {
-                if (media.type === 'video') {
-                  return <VideoMedia key={media.src} media={media} />
-                }
-
-                return (
-                  <figure
-                    className={`${styles.mediaItem} ${media.caption ? styles.mediaItemWithCaption : ''}`}
-                    key={media.src}
-                  >
-                    <img
-                      src={media.src}
-                      alt={media.alt}
-                      loading="lazy"
-                      width={media.width}
-                      height={media.height}
-                    />
-                    {media.caption && <figcaption className={styles.mediaCaption}>{media.caption}</figcaption>}
-                  </figure>
-                )
-              })}
+        {activeMedia && (
+          <div ref={mediaRef} className={styles.mediaColumn}>
+            <div className={styles.mediaSelector} aria-label={`${project.name} 화면 선택`}>
+              {project.media.map((media, index) => (
+                <button key={media.src} type="button" aria-pressed={selectedMedia === index} aria-controls={`${project.id}-media`} onClick={() => setSelectedMedia(index)}>
+                  {media.caption?.split(' / ')[0] ?? `화면 ${index + 1}`}
+                </button>
+              ))}
             </div>
+            <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
+              <div className={styles.mediaStage} key={activeMedia.src}><MediaContent media={activeMedia} /></div>
+              {activeMedia.caption && <figcaption>{activeMedia.caption}</figcaption>}
+            </figure>
           </div>
         )}
 
         <div className={styles.projectMeta}>
-          <ul aria-label={`${project.name} 기술`}>
-            {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
-          </ul>
+          <ul aria-label={`${project.name} 기술`}>{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
           {serviceLink ? (
-            <a href={serviceLink.href} target="_blank" rel="noreferrer">
-              {serviceLink.label} <PixelIcon name="external" />
-            </a>
-          ) : (
-            <span className={styles.internalCase}>사내 프로젝트</span>
-          )}
+            <a href={serviceLink.href} target="_blank" rel="noreferrer">{serviceLink.label} <PixelIcon name="external" /></a>
+          ) : <span className={styles.internalCase}>사내 프로젝트</span>}
         </div>
       </div>
     </section>

@@ -19,6 +19,7 @@ export default function App() {
   useEffect(() => {
     const main = mainRef.current
     if (!main) return
+    if (!('IntersectionObserver' in window)) return
 
     const experience = main.querySelector('#experience')
     const targets = [experience].filter((element): element is Element => element !== null)

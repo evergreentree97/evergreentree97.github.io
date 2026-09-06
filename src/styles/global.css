@@ -1,4 +1,3 @@
-/* Hallmark, genre: atmospheric, macrostructure: Split Studio, theme: studied-DNA, anchor hue: forest green */
 @import '../../tokens.css';
 
 :root {
@@ -15,12 +14,12 @@
   --warning-amber: var(--color-warning);
   --font-mono: var(--font-utility);
   --font-pixel: var(--font-utility);
-  --content-width: 1180px;
+  --content-width: 1120px;
   --wide-width: 1360px;
   --motion-fast: var(--dur-short);
   --motion-medium: var(--dur-mid);
   color-scheme: dark;
-  font-size: 93.75%;
+  font-size: 100%;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-synthesis: none;
@@ -34,8 +33,7 @@
 html {
   min-width: 320px;
   background: var(--background);
-  scroll-padding-top: 92px;
-  overflow-x: clip;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -45,9 +43,8 @@ body {
   background: var(--background);
   color: var(--text-primary);
   font-size: 17px;
-  font-variation-settings: 'wght' 440;
+  font-weight: 440;
   line-height: 1.72;
-  overflow-x: clip;
   overflow-wrap: break-word;
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
@@ -113,7 +110,7 @@ h4 {
 }
 
 section[id] {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 0;
 }
 
 ::selection {

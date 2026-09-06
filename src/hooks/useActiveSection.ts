@@ -6,6 +6,8 @@ export function useActiveSection() {
   const [active, setActive] = useState('')
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) return
+
     const hero = document.querySelector('main > section:first-of-type')
     const targets = navigation
       .map((item) => document.querySelector(item.href))

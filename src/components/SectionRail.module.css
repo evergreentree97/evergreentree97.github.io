@@ -144,3 +144,5 @@
     transition: none;
   }
 }
+
+@media (max-width: 1499px) { .rail { display: none; } }

@@ -17,10 +17,9 @@ export function Reveal({ children, className = '', stagger = false }: RevealProp
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      element.dataset.visible = 'true'
-      return
-    }
+    if (reduceMotion || !('IntersectionObserver' in window)) return
+
+    element.dataset.revealReady = 'true'
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,7 +32,10 @@ export function Reveal({ children, className = '', stagger = false }: RevealProp
     )
 
     observer.observe(element)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      delete element.dataset.revealReady
+    }
   }, [])
 
   return (

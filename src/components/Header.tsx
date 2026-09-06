@@ -7,32 +7,7 @@ import styles from './Header.module.css'
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const activeSection = useActiveSection()
-  const headerRef = useRef<HTMLElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
-
-  useEffect(() => {
-    const header = headerRef.current
-    if (!header) return undefined
-
-    let animationFrame = 0
-    const updateHeader = () => {
-      animationFrame = 0
-      const nextScrolled = String(window.scrollY > 72)
-      if (header.dataset.scrolled !== nextScrolled) {
-        header.dataset.scrolled = nextScrolled
-      }
-    }
-    const requestUpdate = () => {
-      if (!animationFrame) animationFrame = window.requestAnimationFrame(updateHeader)
-    }
-
-    updateHeader()
-    window.addEventListener('scroll', requestUpdate, { passive: true })
-    return () => {
-      if (animationFrame) window.cancelAnimationFrame(animationFrame)
-      window.removeEventListener('scroll', requestUpdate)
-    }
-  }, [])
 
   useEffect(() => {
     if (!isOpen) return undefined
@@ -49,7 +24,7 @@ export function Header() {
   }, [isOpen])
 
   return (
-    <header ref={headerRef} className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.inner}>
         <a className={styles.logo} href="#top" aria-label="홈으로 이동">
           <img className={styles.logoIcon} src="/icons/android-mark-dark.png" alt="" width="260" height="260" />
@@ -78,7 +53,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={item.href === activeSection ? styles.activeLink : undefined}
-              aria-current={item.href === activeSection ? 'true' : undefined}
+              aria-current={item.href === activeSection ? 'page' : undefined}
               onClick={() => setIsOpen(false)}
             >
               {item.label}

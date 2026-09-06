@@ -8,7 +8,7 @@
 }
 
 .headingRow h2 {
-  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   font-weight: 760;
   letter-spacing: -0.055em;
   line-height: 1.05;
@@ -46,3 +46,5 @@
     align-self: stretch;
   }
 }
+
+@media (max-width: 45rem) { .headingRow h2 { font-size: clamp(1.75rem, 8vw, 2rem); } }

@@ -9,6 +9,7 @@ export function Projects() {
   useEffect(() => {
     const wrapper = wrapperRef.current
     if (!wrapper) return
+    if (!('IntersectionObserver' in window)) return
 
     const scenes = Array.from(wrapper.querySelectorAll<HTMLElement>('section[id]'))
     wrapper.dataset.scene = scenes[0]?.id ?? ''

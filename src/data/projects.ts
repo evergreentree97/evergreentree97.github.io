@@ -11,6 +11,7 @@ type ProjectMediaBase = {
   height: number
   caption?: string
   featured?: boolean
+  highlightIndex?: number
 }
 
 export type ProjectImage = ProjectMediaBase & {
@@ -59,10 +60,9 @@ export const featuredProjects: FeaturedProject[] = [
         caption: 'HOME / 크리에이터 굿즈 탐색',
         width: 405,
         height: 720,
-        featured: true,
       },
-      { type: 'image', src: '/screens/vuddy-chat-figma.png', alt: 'Vuddy 공개 채팅 안에서 특정 사용자에게 답장하는 화면', caption: 'CHATTING / 특정 사용자에게 답장', width: 360, height: 800 },
-      { type: 'image', src: '/screens/vuddy-card.jpg', alt: 'Vuddy 이미지, 영상과 음성을 전환하는 디지털 카드 상세 화면', caption: 'MEDIA / 디지털 카드 상세', width: 405, height: 720 },
+      { type: 'image', src: '/screens/vuddy-chat-figma.png', alt: 'Vuddy 공개 채팅 안에서 특정 사용자에게 답장하는 화면', caption: 'CHATTING / 특정 사용자에게 답장', width: 360, height: 800, featured: true, highlightIndex: 2 },
+      { type: 'image', src: '/screens/vuddy-card.jpg', alt: 'Vuddy 이미지, 영상과 음성을 전환하는 디지털 카드 상세 화면', caption: 'MEDIA / 디지털 카드 상세', width: 405, height: 720, highlightIndex: 4 },
     ],
     links: [
       {
@@ -88,8 +88,8 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     // 대시보드 캡처는 사내 평가 스냅샷, 채팅 화면은 사내 Figma 시안 캡처다 (2026-08-23 사용자 게시 결정).
     media: [
-      { type: 'image', src: '/screens/smt-dashboard.jpg', alt: '캐릭터 대화 모델 평가 대시보드 화면', caption: 'MODEL EVALUATION / 대화 모델 평가', width: 1080, height: 810 },
-      { type: 'image', src: '/screens/smt-chat-masked.png', alt: '캐릭터 이름을 마스킹한 AI 캐릭터 앱 채팅 화면 시안', caption: 'CHARACTER CHAT / AI 캐릭터 채팅', width: 375, height: 812 },
+      { type: 'image', src: '/screens/smt-dashboard.jpg', alt: '캐릭터 대화 모델 평가 대시보드 화면', caption: 'MODEL EVALUATION / 대화 모델 평가', width: 1080, height: 810, featured: true, highlightIndex: 1 },
+      { type: 'image', src: '/screens/smt-chat-masked.png', alt: '캐릭터 이름을 마스킹한 AI 캐릭터 앱 채팅 화면 시안', caption: 'CHARACTER CHAT / AI 캐릭터 채팅', width: 375, height: 812, highlightIndex: 3 },
       { type: 'image', src: '/screens/smt-chatlist-masked.png', alt: '캐릭터 이름을 마스킹한 AI 캐릭터 앱 채팅 목록 시안', caption: 'CHAT LIST / 캐릭터 채팅 목록', width: 375, height: 812 },
     ],
     links: [],
@@ -107,9 +107,9 @@ export const featuredProjects: FeaturedProject[] = [
       '알람 기능: Room과 AlarmManager 기반 영상 알람 개발. 앱 종료와 락스크린 상태, 기기 재부팅 후에도 알람 실행을 확인하고 설정 복원과 락스크린 표시 구현',
     ],
     media: [
-      { type: 'image', src: '/screens/mmtc-photocard-figma.png', alt: 'MOMENTICA 포토카드를 길게 눌러 SceneView 기반 3D 카드로 확인하는 화면', caption: '3D PHOTOCARD / SceneView 기반', width: 360, height: 800 },
-      { type: 'image', src: '/screens/mmtc-take-home-figma.png', alt: 'MOMENTICA LIVE NOW와 Artist Top Ranker가 포함된 테이크 홈 개편 화면', caption: 'TAKE HOME / 홈 화면 개편', width: 1080, height: 2400 },
-      { type: 'image', src: '/screens/mmtc-alarm-figma.png', alt: 'MOMENTICA 테이크 영상이 락스크린에서 재생되는 알람 화면', caption: 'TAKE ALARM / 락스크린 영상 알람', width: 360, height: 800 },
+      { type: 'image', src: '/screens/mmtc-photocard-figma.png', alt: 'MOMENTICA 포토카드를 길게 눌러 SceneView 기반 3D 카드로 확인하는 화면', caption: '3D PHOTOCARD / SceneView 기반', width: 360, height: 800, featured: true, highlightIndex: 0 },
+      { type: 'image', src: '/screens/mmtc-take-home-figma.png', alt: 'MOMENTICA LIVE NOW와 Artist Top Ranker가 포함된 테이크 홈 개편 화면', caption: 'TAKE HOME / 홈 화면 개편', width: 1080, height: 2400, highlightIndex: 1 },
+      { type: 'image', src: '/screens/mmtc-alarm-figma.png', alt: 'MOMENTICA 테이크 영상이 락스크린에서 재생되는 알람 화면', caption: 'TAKE ALARM / 락스크린 영상 알람', width: 360, height: 800, highlightIndex: 3 },
     ],
     links: [
       {
