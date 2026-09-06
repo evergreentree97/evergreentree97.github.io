@@ -11,7 +11,7 @@
 1. 첫 화면
 2. 경력
 3. 주요 프로젝트
-4. AI 활용과 검증
+4. AI와 함께 개발하는 방식
 5. 사이드 프로젝트
 6. 오픈소스와 대외 활동
 7. 취향
@@ -48,7 +48,7 @@
 | 첫 화면 | `src/components/Hero.tsx` |
 | 경력 | `src/data/experience.ts`, `src/components/Experience.tsx` |
 | 주요 프로젝트 | `src/data/projects.ts`, `src/components/Projects.tsx`, `src/components/ProjectScene.tsx` |
-| AI 활용과 검증 | `src/components/HowIWork.tsx` |
+| AI와 함께 개발하는 방식 | `src/components/HowIWork.tsx` |
 | 사이드 프로젝트 | `src/data/sideProjects.ts` |
 | 오픈소스 | `src/data/projects.ts`, `src/components/MoreWork.tsx` |
 | 대외 활동 | `src/data/activities.ts`, `src/components/Activities.tsx` |
