@@ -9,7 +9,7 @@ const evidence = [
   },
   {
     title: 'SSE 트래픽 확인 도구',
-    copy: 'debug 빌드에서 SSE 트래픽을 확인할 수 있도록 네트워크 인스펙터를 구현했습니다.',
+    copy: 'Android Studio에서 확인하기 불편했던 SSE 트래픽을 PC 브라우저에서 볼 수 있도록 디버그 앱 전용 네트워크 검사 도구를 구현했습니다.',
   },
   {
     title: '중요도에 따른 검증',

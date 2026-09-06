@@ -48,9 +48,9 @@ export const featuredProjects: FeaturedProject[] = [
     highlights: [
       '구조 설계: Jetpack Compose 기반 멀티모듈 구조와 MVI 상태 처리 설계, Gradle Build Logic 구성',
       '인증: 여러 요청이 동시에 401을 받을 때 한 요청만 토큰을 갱신하고 나머지는 완료된 결과를 재사용하는 synchronized 기반 동시성 처리 구현',
-      '채팅: 자체 WebSocket과 Sendbird를 샘플 앱과 기술 문의로 비교 검증한 뒤 Sendbird 도입. Sendbird 연동 구조와 양방향 페이징, 미디어 메시지 구현',
-      '푸시: 대규모 그룹 푸시 제한을 출시 전에 확인해 자체 푸시로 전환',
-      '채팅방 관리: 채팅방 생성, 목록과 검색을 Backend API에 연동',
+      '채팅: Sendbird 연동 구조를 설계하고 답장 원문으로 이동할 때 앞뒤 메시지를 함께 불러오는 양방향 페이징과 사진 및 영상 메시지 구현',
+      '푸시: 참여자가 많은 채팅방에 알림을 보낼 때 발생하는 Sendbird의 제약을 출시 전에 확인하고, 채팅은 Sendbird로 처리하되 알림은 자체 발송하는 구조 제안',
+      '채팅방 관리: 채팅방 정보를 클라이언트마다 다르게 해석하는 문제를 확인해 Backend에서 관리하도록 요청하고 채팅방 생성, 목록과 검색 API를 Android에 연동',
       '미디어: 재생 상태와 생명주기를 ViewModel 범위에서 관리하고 일반 화면과 전체 화면이 같은 ExoPlayer를 다시 연결하도록 구성해 화면 전환 후에도 재생 위치 유지',
     ],
     media: [
@@ -82,7 +82,7 @@ export const featuredProjects: FeaturedProject[] = [
     highlights: [
       '파인튜닝: B200 GPU 환경에서 캐릭터 대화 모델의 데이터 구성과 학습 방식을 설계하고 데이터 정제부터 LoRA 기반 SFT까지 담당',
       '평가: 자동 평가 구현. 개발한 모델은 팀의 실제 대화 검토를 거쳐 제품 적용 대상으로 선정',
-      '서빙: vLLM 기반 모델 서빙과 내부 데모 담당',
+      '서빙: 학습한 모델의 대화 응답을 팀이 확인할 수 있도록 vLLM 서빙과 내부 채팅 데모 구현',
       '채팅: TF에서 개발한 모델을 사용하는 SSE 기반 캐릭터 채팅 기능 개발 주도',
       '결제: Google Play Billing 기반 인앱 결제 흐름 구현 및 검증. 상품 조회, 구매 완료, 취소와 구매 복구를 Backend 구매 검증과 연결하고 결제 화면에 스크린샷 테스트 적용',
       '배포: Firebase App Distribution과 Play 비공개 트랙 배포 자동화',
