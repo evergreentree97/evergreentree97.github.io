@@ -47,10 +47,11 @@ export const featuredProjects: FeaturedProject[] = [
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI', 'Sendbird', 'Media3'],
     highlights: [
       '구조 설계: Jetpack Compose 기반 멀티모듈 구조와 MVI 상태 처리 설계, Gradle Build Logic 구성',
-      '인증: 여러 요청이 동시에 401을 받을 때 한 요청만 토큰을 갱신하고 나머지는 완료된 결과를 재사용하는 synchronized 기반 동시성 처리 구현',
+      '인증: 여러 요청이 동시에 401을 받아도 토큰은 한 번만 갱신합니다. synchronized로 갱신을 제어하고 나머지 요청은 완료된 결과를 재사용하도록 구현했습니다.',
       '채팅: 자체 WebSocket과 Sendbird를 샘플 앱과 기술 문의로 비교 검증한 뒤 Sendbird 도입. Sendbird 연동 구조와 양방향 페이징, 미디어 메시지 구현',
-      '푸시: 대규모 그룹 푸시 제한을 출시 전에 확인해 자체 푸시로 전환하고 채팅방 생성, 목록과 검색을 Backend API에 연동',
-      '미디어: 재생 상태와 생명주기를 ViewModel 범위에서 관리하고 일반 화면과 전체 화면이 같은 ExoPlayer를 다시 연결하도록 구성해 화면 전환 후에도 재생 위치 유지',
+      '푸시: 대규모 그룹 푸시 제한을 출시 전에 확인해 자체 푸시로 전환했습니다.',
+      '채팅방 관리: 채팅방 생성, 목록과 검색을 Backend API에 연동했습니다.',
+      '미디어: ViewModel 범위에서 재생 상태와 생명주기를 관리했습니다. 일반 화면과 전체 화면을 전환할 때 같은 ExoPlayer를 다시 연결해 재생 위치를 유지했습니다.',
     ],
     media: [
       {
@@ -62,7 +63,7 @@ export const featuredProjects: FeaturedProject[] = [
         height: 720,
       },
       { type: 'image', src: '/screens/vuddy-chat-figma.png', alt: 'Vuddy 공개 채팅 안에서 특정 사용자에게 답장하는 화면', caption: 'CHATTING / 특정 사용자에게 답장', width: 360, height: 800, featured: true, highlightIndex: 2 },
-      { type: 'image', src: '/screens/vuddy-card.jpg', alt: 'Vuddy 이미지, 영상과 음성을 전환하는 디지털 카드 상세 화면', caption: 'MEDIA / 디지털 카드 상세', width: 405, height: 720, highlightIndex: 4 },
+      { type: 'image', src: '/screens/vuddy-card.jpg', alt: 'Vuddy 이미지, 영상과 음성을 전환하는 디지털 카드 상세 화면', caption: 'MEDIA / 디지털 카드 상세', width: 405, height: 720, highlightIndex: 5 },
     ],
     links: [
       {
@@ -80,7 +81,7 @@ export const featuredProjects: FeaturedProject[] = [
     technologies: ['Python', 'PyTorch', 'LoRA / SFT', 'vLLM', 'Kotlin', 'Jetpack Compose', 'SSE', 'Play Billing'],
     highlights: [
       '파인튜닝: B200 GPU 환경에서 캐릭터 대화 모델의 데이터 구성과 학습 방식을 설계하고 데이터 정제부터 LoRA 기반 SFT까지 담당',
-      '평가: 자동 평가에서 내부 평가 85/100을 기록하고 팀의 실제 대화 심사를 거쳐 제품에 적용할 모델로 선정',
+      '평가: 자동 평가를 구현했습니다. 개발한 모델은 팀의 실제 대화 검토를 거쳐 제품 적용 대상으로 선정됐습니다.',
       '서빙: vLLM 기반 모델 서빙과 내부 데모 담당',
       '채팅: TF에서 개발한 모델을 사용하는 SSE 기반 캐릭터 채팅 기능 개발 주도',
       '결제: Google Play Billing 기반 인앱 결제 흐름 구현 및 검증. 상품 조회, 구매 완료, 취소와 구매 복구를 Backend 구매 검증과 연결하고 결제 화면에 스크린샷 테스트 적용',
@@ -101,7 +102,7 @@ export const featuredProjects: FeaturedProject[] = [
     headline: '글로벌 팬 플랫폼 Momentica에서 3D 포토카드와 영상 알람 기능을 개발했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
     highlights: [
-      '3D 포토카드: 포토카드 목록, 상세, 등록과 스캔 화면 개발. 길게 누른 카드를 화면 중앙으로 이동시키는 퀵뷰와 3D 회전을 구현하고 SceneView에 Bitmap을 설정하는 과정에서 발생한 메모리 누수 해결',
+      '3D 포토카드: 목록, 상세, 등록과 스캔 화면을 개발했습니다. 길게 누른 카드를 화면 중앙에 띄우는 퀵뷰와 3D 회전을 구현했습니다. SceneView에 Bitmap을 설정할 때 발생한 메모리 누수도 해결했습니다.',
       '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트, 판매 중인 테이크와 Artist Top Ranker 구현',
       'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
       '알람 기능: Room과 AlarmManager 기반 영상 알람 개발. 앱 종료와 락스크린 상태, 기기 재부팅 후에도 알람 실행을 확인하고 설정 복원과 락스크린 표시 구현',

@@ -92,7 +92,7 @@ const copyChecks = [
   },
   {
     source: howIWorkSource,
-    pattern: /재현부터 원인 분석|하나의 Agent Skill로 구성했습니다|기획과 디자인의 SSOT로 쓰고|규칙을 구성했습니다/,
+    pattern: /QA 티켓의 재현, 원인 분석|하나의 Agent Skill로 구성했습니다|기획과 디자인의 SSOT로 쓰고|규칙을 구성했습니다/,
     message: 'AI 활용과 검증 섹션에 교체된 이전 문구를 다시 쓰지 마세요.',
   },
 ]
@@ -101,6 +101,10 @@ for (const { source, pattern, message } of copyChecks) {
   if (pattern.test(source)) {
     throw new Error(message)
   }
+}
+
+if (/85\/100/.test(`${projectsSource}\n${contentGuide}`)) {
+  throw new Error('표시 보정이 포함된 내부 평가 점수를 새 공개 문구에 다시 넣지 마세요.')
 }
 
 const requiredProjectCopy = [
@@ -147,13 +151,11 @@ for (const record of approvedAssetRecords) {
 
 const requiredHowIWorkEvidence = [
   '아키텍처와 개발 규칙은 Markdown으로 관리하고 반복 작업은 Agent Skill로 만들어 재사용합니다.',
-  'QA 티켓의 재현, 원인 분석, 코드 수정, 테스트, PR과 배포 상태 동기화를 Agent Skill 하나로 묶었습니다.',
+  'QA 티켓에 기록된 문제의 재현부터 원인 분석, 코드 수정과 테스트, PR과 배포 상태 동기화까지 Agent Skill 하나로 묶었습니다.',
   'SSE',
   '네트워크 인스펙터',
-  'Compose Stable',
-  '스크린샷 테스트',
-  '결제와 미디어',
-  '새 AI 프로젝트에서는 GitHub를 기획과 디자인의 SSOT로 삼고 개발 전에 최신 문서를 확인하도록 했습니다.',
+  'AI가 구현한 화면과 기능은 스크린샷 테스트와 직접 코드 리뷰로 확인합니다. 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증합니다.',
+  '새 AI 프로젝트에서는 기획과 디자인의 기준 문서를 GitHub에서 관리하고, AI가 개발 전에 최신 내용을 확인하도록 했습니다.',
 ]
 
 const requiredCareerIntroduction = [
