@@ -1,5 +1,5 @@
 .experience {
-  padding: 96px 0 56px;
+  padding: 56px 0;
 }
 
 .summary {
@@ -207,4 +207,4 @@
   }
 }
 
-@media (max-width: 63.9375rem) { .experience { padding: 68px 0 32px; } }
+@media (max-width: 63.9375rem) { .experience { padding: 40px 0 32px; } }
