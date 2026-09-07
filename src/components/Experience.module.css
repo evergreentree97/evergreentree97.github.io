@@ -2,196 +2,183 @@
   padding: 56px 0;
 }
 
-.summary {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(48px, 5vw, 64px);
-  margin-top: 36px;
-}
-
-.summary p {
-  color: var(--text-secondary);
-  font-size: 1.0625rem;
-  line-height: 1.8;
-}
-
-.summary p:first-child {
-  color: var(--text-primary);
-  font-size: clamp(1.4375rem, 1.8vw, 1.5625rem);
-  font-weight: 650;
-  letter-spacing: -0.018em;
-  line-height: 1.6;
-}
-
 .timeline {
-  margin-top: 56px;
+  position: relative;
+  margin-top: 32px;
   list-style: none;
 }
 
-.timeline > li + li {
-  margin-top: 56px;
+.timeline::before {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 20px;
+  width: 1px;
+  background: var(--border);
+  content: '';
+}
+
+.timeline > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px 150px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--android-green);
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--android-green);
+  place-items: center;
+}
+
+.marker svg {
+  width: 23px;
+  height: 23px;
+}
+
+.period {
+  padding-top: 8px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .entry {
-  display: grid;
-  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
-  gap: clamp(56px, 6vw, 64px);
   min-width: 0;
+  padding-bottom: 40px;
 }
 
-.company {
-  min-width: 0;
-  padding-top: 4px;
+.entryHeading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--border);
 }
 
-.companyPeriod,
-.chapterPeriod {
-  color: var(--text-muted);
-  font-family: var(--font-utility);
-  font-size: 0.875rem;
-  line-height: 1.5;
+.entryHeading h3 {
+  font-size: clamp(1.55rem, 2.4vw, 2.1rem);
 }
 
-.company h3 {
-  margin-top: 18px;
-  font-size: clamp(1.625rem, 2.2vw, 1.875rem);
-  font-weight: 760;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
-}
-
-.company h3 span {
-  display: block;
-  margin-top: 7px;
-  color: var(--text-muted);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.45;
-  text-wrap: pretty;
-}
-
-.companyIntro {
-  max-width: 26ch;
-  margin-top: 18px;
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-  line-height: 1.7;
-}
-
-.companyRole {
-  margin-top: 16px;
+.entryHeading p {
+  margin-top: 5px;
   color: var(--android-green);
-  font-size: 0.875rem;
   font-weight: 650;
-  line-height: 1.5;
+}
+
+.entryHeading p.intro {
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .chapters {
-  min-width: 0;
-  border-block: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .chapter {
   display: grid;
-  grid-template-columns: 130px minmax(0, 1fr);
-  gap: 24px;
-  padding: 26px 0;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px 0;
 }
 
 .chapter + .chapter {
   border-top: 1px solid color-mix(in srgb, var(--border) 68%, transparent);
 }
 
-.chapterPeriod {
-  padding-top: 7px;
+.chapterHeading span {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
 }
 
-.chapterBody {
-  min-width: 0;
+.chapterHeading h4 {
+  margin-top: 8px;
+  font-size: 1rem;
 }
 
-.chapterBody h4 {
-  font-size: clamp(1.1875rem, 1.5vw, 1.25rem);
-  font-weight: 650;
-  letter-spacing: -0.018em;
-  line-height: 1.45;
-}
-
-.chapterBody a {
+.chapterHeading a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out);
+  text-decoration-color: color-mix(in srgb, var(--android-green) 36%, transparent);
 }
 
-.chapterBody a:hover,
-.chapterBody a:focus-visible {
+.chapterHeading a:hover {
   color: var(--android-green);
-  text-decoration-color: currentColor;
 }
 
-.chapterBody > p {
-  margin-top: 10px;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.75;
+.chapterContent > p {
+  color: var(--text-primary);
+  font-weight: 560;
 }
 
-@media (max-width: 56.25rem) {
-  .entry {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-
-  .companyIntro {
-    max-width: 44ch;
-  }
-}
-
-@media (max-width: 47.5rem) {
-  .summary {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-    margin-top: 28px;
-  }
-
-  .summary p {
-    font-size: 1rem;
-    line-height: 1.8;
-  }
-
-  .summary p:first-child {
-    font-size: clamp(1.25rem, 5.8vw, 1.375rem);
-    line-height: 1.62;
-  }
-
+@media (max-width: 760px) {
   .timeline {
-    margin-top: 44px;
+    margin-top: 32px;
   }
 
+  .timeline > li {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .timeline::before {
+    left: 21px;
+  }
+
+  .marker {
+    width: 44px;
+    height: 44px;
+  }
+
+  .period,
   .entry {
-    gap: 28px;
+    grid-column: 2;
   }
 
-  .chapter {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-    padding: 24px 0;
-  }
-
-  .chapterPeriod {
+  .period {
     padding-top: 0;
   }
 
-  .chapterBody h4 {
-    font-size: 1.1875rem;
+  .chapter {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .chapterBody > p {
-    margin-top: 8px;
+  .chapterHeading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .chapterHeading h4 {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .chapterHeading a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 540px) {
+  .entryHeading {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 

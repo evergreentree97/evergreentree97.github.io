@@ -68,7 +68,7 @@ const copyChecks = [
   {
     source: `${appSource}\n${profileSource}`,
     pattern: /AboutMe|#about|label: '소개'/,
-    message: '별도 소개 섹션을 되살리지 말고 경력 도입 문단을 사용하세요.',
+    message: '첫 화면과 별도로 소개 섹션을 추가하지 마세요.',
   },
   {
     source: experienceSource,
@@ -157,23 +157,12 @@ const requiredHowIWorkEvidence = [
   '새 AI 프로젝트에서는 기획과 디자인의 기준 문서를 GitHub에서 관리하고, AI가 개발 전에 최신 내용을 확인하도록 했습니다.',
 ]
 
-const requiredCareerIntroduction = [
-  '3년차 Android Engineer 최상록입니다. 신규 앱의 구조 설계부터 Google Play 출시와 운영까지 맡아 왔습니다.',
-  'Vuddy와 Momentica에서 팬 플랫폼을 개발했고 사내 AI TF에서는 캐릭터 대화 모델의 데이터 구성과 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 이 모델을 활용해 어떤 채팅 경험을 만들지 고민하며 Android 앱을 개발하고 있습니다.',
-]
-
 const requiredExperienceSummaries = [
   'SSE 기반 캐릭터 채팅과 Google Play 인앱 결제 개발을 맡았습니다.',
   '캐릭터 대화 모델의 데이터 구성과 파인튜닝, 평가와 서빙을 맡았습니다.',
   'Jetpack Compose 기반 멀티모듈 구조를 설계하고 인증, 미디어와 실시간 채팅 기능을 개발했습니다.',
   'SceneView로 3D 포토카드를 구현하고 Room과 AlarmManager 기반 영상 알람을 개발했습니다.',
 ]
-
-for (const paragraph of requiredCareerIntroduction) {
-  if (!experienceSource.includes(paragraph)) {
-    throw new Error(`경력 섹션에 통합한 소개 문단이 빠졌습니다: ${paragraph}`)
-  }
-}
 
 for (const summary of requiredExperienceSummaries) {
   if (!experienceSource.includes(summary)) {
