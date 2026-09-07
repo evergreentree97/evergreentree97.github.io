@@ -45,8 +45,14 @@ function MediaContent({ media }: { media: ProjectMedia }) {
 
 function HighlightText({ text }: { text: string }) {
   const separator = text.indexOf(':')
-  if (separator < 0) return <>{text}</>
-  return <><strong>{text.slice(0, separator)}</strong>{text.slice(separator)}</>
+  if (separator < 0) return <p>{text}</p>
+
+  return (
+    <>
+      <h3>{text.slice(0, separator)}</h3>
+      <p>{text.slice(separator + 1).trimStart()}</p>
+    </>
+  )
 }
 
 export function ProjectScene({ project }: { project: FeaturedProject }) {

@@ -58,33 +58,41 @@
 }
 
 .projectHeading > p {
-  max-width: 38ch;
+  max-width: 44ch;
   margin-top: 24px;
   color: var(--color-ink-2);
   font-size: 1.125rem;
-  line-height: 1.68;
+  line-height: 1.72;
 }
 
 .highlightList {
-  display: grid;
-  gap: 24px;
   margin-top: 40px;
+  border-top: 1px solid color-mix(in srgb, var(--color-rule) 58%, transparent);
   list-style: none;
 }
 
 .highlightList li {
   max-width: 62ch;
-  padding-left: 18px;
-  border-left: 2px solid var(--color-rule);
+  padding: 18px 0;
+}
+
+.highlightList li + li {
+  border-top: 1px solid color-mix(in srgb, var(--color-rule) 58%, transparent);
+}
+
+.highlightList h3 {
+  color: var(--color-ink);
+  font-size: 1.0625rem;
+  font-weight: 680;
+  letter-spacing: -0.012em;
+  line-height: 1.45;
+}
+
+.highlightList p {
+  margin-top: 8px;
   color: var(--color-ink-2);
   font-size: 1.0625rem;
   line-height: 1.72;
-  transition: border-color var(--dur-short) var(--ease-out);
-}
-
-.highlightList strong {
-  color: var(--color-ink);
-  font-weight: 720;
 }
 
 .mediaColumn[data-sticky='true'] {
@@ -236,8 +244,9 @@
   .scene { padding-block: 48px 56px; }
   .scene:nth-child(3) { padding-bottom: 32px; }
   .projectHeading h2 { font-size: clamp(2.25rem, 10vw, 3rem); }
-  .projectHeading > p, .highlightList li { font-size: 1rem; }
-  .highlightList { gap: 22px; margin-top: 32px; }
+  .projectHeading > p, .highlightList h3, .highlightList p { font-size: 1rem; }
+  .highlightList { margin-top: 32px; }
+  .highlightList li { padding-block: 16px 18px; }
   .mediaSelector { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .mediaSelector button { padding-inline: 6px; font-size: 0.75rem; }
   .mediaItem { border-radius: var(--radius-md); }
