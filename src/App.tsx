@@ -25,7 +25,9 @@ export default function App() {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          ;(entry.target as HTMLElement).dataset.flowActive = String(entry.isIntersecting)
+          if (!entry.isIntersecting) continue
+          ;(entry.target as HTMLElement).dataset.flowActive = 'true'
+          observer.unobserve(entry.target)
         }
       },
       { rootMargin: '-25% 0px -25% 0px', threshold: 0 },

@@ -135,7 +135,6 @@
   padding: 18px;
   background: #000;
   place-items: center;
-  animation: media-fade 280ms var(--ease-out);
 }
 
 .mediaItem.landscape .mediaStage {
@@ -217,11 +216,6 @@
 
 .projectMeta a svg { width: 17px; height: 17px; }
 
-@keyframes media-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @media (hover: hover) and (pointer: fine) {
   .mediaSelector button:hover { border-color: var(--color-accent); color: var(--color-ink); }
   .projectMeta a:hover { text-decoration: underline; }
@@ -257,5 +251,4 @@
   .scene::before,
   .scene[data-flow-active='true']::before { opacity: 0.72; transition: none; }
   .mediaColumn { position: static !important; }
-  .mediaStage { animation: none; }
 }

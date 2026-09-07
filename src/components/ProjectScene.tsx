@@ -50,41 +50,11 @@ function HighlightText({ text }: { text: string }) {
 }
 
 export function ProjectScene({ project }: { project: FeaturedProject }) {
-  const sceneRef = useRef<HTMLElement>(null)
   const mediaRef = useRef<HTMLDivElement>(null)
   const initialMedia = Math.max(0, project.media.findIndex((media) => media.featured))
   const [selectedMedia, setSelectedMedia] = useState(initialMedia)
   const serviceLink = project.links[0]
   const activeMedia = project.media[selectedMedia]
-
-  useEffect(() => {
-    const scene = sceneRef.current
-    if (!scene || !('IntersectionObserver' in window)) return
-    const query = window.matchMedia('(min-width: 64rem) and (prefers-reduced-motion: no-preference)')
-    const highlights = Array.from(scene.querySelectorAll<HTMLElement>('[data-highlight-index]'))
-    let observer: IntersectionObserver | undefined
-
-    const configureObserver = () => {
-      observer?.disconnect()
-      observer = undefined
-      if (!query.matches) return
-      observer = new IntersectionObserver((entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-        if (!visible) return
-        const highlightIndex = Number((visible.target as HTMLElement).dataset.highlightIndex)
-        const mediaIndex = project.media.findIndex((media) => media.highlightIndex === highlightIndex)
-        if (mediaIndex >= 0) setSelectedMedia(mediaIndex)
-      }, { rootMargin: '-30% 0px -50% 0px', threshold: [0.2, 0.6] })
-      highlights.forEach((highlight) => observer?.observe(highlight))
-    }
-
-    configureObserver()
-    query.addEventListener('change', configureObserver)
-    return () => {
-      observer?.disconnect()
-      query.removeEventListener('change', configureObserver)
-    }
-  }, [project.media])
 
   useEffect(() => {
     const media = mediaRef.current
@@ -107,7 +77,7 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
   }, [])
 
   return (
-    <section ref={sceneRef} className={styles.scene} id={project.id} aria-labelledby={`${project.id}-title`}>
+    <section className={styles.scene} id={project.id} aria-labelledby={`${project.id}-title`}>
       <div className={styles.sceneInner}>
         <div className={styles.copyColumn}>
           <div className={styles.projectHeading}>
@@ -116,8 +86,8 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             <p>{project.headline}</p>
           </div>
           <ul className={styles.highlightList} aria-label={`${project.name} 담당 업무`}>
-            {project.highlights.map((highlight, index) => (
-              <li key={highlight} data-highlight-index={index}><HighlightText text={highlight} /></li>
+            {project.highlights.map((highlight) => (
+              <li key={highlight}><HighlightText text={highlight} /></li>
             ))}
           </ul>
         </div>
@@ -132,7 +102,7 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
               ))}
             </div>
             <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
-              <div className={styles.mediaStage} key={activeMedia.src}><MediaContent media={activeMedia} /></div>
+              <div className={styles.mediaStage}><MediaContent media={activeMedia} /></div>
               {activeMedia.caption && <figcaption>{activeMedia.caption}</figcaption>}
             </figure>
           </div>
