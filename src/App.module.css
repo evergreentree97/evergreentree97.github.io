@@ -1,4 +1,5 @@
 .main {
+  overflow-x: clip;
   background: var(--color-paper);
 }
 
