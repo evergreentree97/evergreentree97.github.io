@@ -13,7 +13,6 @@ export const activities: Activity[] = [
     role: 'Android Developer',
     summary: 'IT 연합동아리에서 밈 공유 앱 파밈을 함께 개발했습니다.',
     highlights: [
-      'Kotlin Coroutines 스터디를 주도하고 실무 적용 사례 공유',
       'Kotlin과 Jetpack Compose로 주요 화면 개발',
     ],
   },
@@ -34,7 +33,6 @@ export const activities: Activity[] = [
     summary: '클라이밍 모임 출석 앱 홀디를 개발하고 Play Store에 출시했습니다.',
     highlights: [
       '서버 응답을 공통 형식으로 맞추도록 제안',
-      '릴리스 빌드에서만 발생한 ProGuard 문제 해결',
     ],
   },
 ]
