@@ -31,8 +31,6 @@ export const activities: Activity[] = [
     organization: 'Nexters 21기',
     role: 'Android Developer',
     summary: '클라이밍 모임 출석 앱 홀디를 개발하고 Play Store에 출시했습니다.',
-    highlights: [
-      '서버 응답을 공통 형식으로 맞추도록 제안',
-    ],
+    highlights: [],
   },
 ]

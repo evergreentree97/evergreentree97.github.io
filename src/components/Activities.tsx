@@ -17,9 +17,11 @@ export function Activities() {
             </div>
             <h3>{activity.organization}</h3>
             <p>{activity.summary}</p>
-            <ul>
-              {activity.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-            </ul>
+            {activity.highlights.length > 0 && (
+              <ul>
+                {activity.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+              </ul>
+            )}
             </article>
           ))}
         </div>
