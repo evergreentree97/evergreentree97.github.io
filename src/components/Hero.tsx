@@ -16,11 +16,10 @@ export function Hero() {
             <span className={styles.line}>엔지니어입니다</span>
           </h1>
 
-          <p className={styles.description}>
-            신규 Android 앱의 멀티모듈 구조를 설계하고
-            인증, 미디어 플레이어, 실시간 채팅, 결제 등 핵심 기능을 개발했습니다.
-            사내 AI TF에서는 캐릭터 대화 모델을 직접 파인튜닝해 제품에 적용했습니다.
-          </p>
+          <div className={styles.description}>
+            <p>Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.</p>
+            <p>사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.</p>
+          </div>
 
           <div className={styles.actions}>
             <a className={styles.primaryAction} href="#projects">

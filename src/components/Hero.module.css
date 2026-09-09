@@ -19,6 +19,7 @@
 .heroContent h1 { margin-top: 20px; font-size: clamp(4rem, 5.4vw, 4.75rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.12; }
 .line { display: block; width: max-content; max-width: 100%; }
 .description { max-width: 42ch; margin-top: 24px; color: var(--color-ink-2); font-size: 1.125rem; line-height: 1.72; }
+.description p + p { margin-top: 12px; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; gap: 8px; padding-inline: 22px; border: 1px solid var(--color-rule-strong); border-radius: var(--radius-sm); color: var(--color-ink); font-size: 1rem; font-weight: 650; text-decoration: none; white-space: nowrap; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
 .actions .primaryAction { border-color: var(--color-accent-strong); background: var(--color-accent-strong); color: #fff; }

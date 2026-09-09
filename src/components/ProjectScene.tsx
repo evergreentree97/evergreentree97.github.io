@@ -43,13 +43,14 @@ function MediaContent({ media }: { media: ProjectMedia }) {
   return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
 }
 
-function HighlightText({ text }: { text: string }) {
+function HighlightText({ text, grouped }: { text: string; grouped: boolean }) {
   const separator = text.indexOf(':')
   if (separator < 0) return <p>{text}</p>
+  const Heading = grouped ? 'h4' : 'h3'
 
   return (
     <>
-      <h3>{text.slice(0, separator)}</h3>
+      <Heading>{text.slice(0, separator)}</Heading>
       <p>{text.slice(separator + 1).trimStart()}</p>
     </>
   )
@@ -91,11 +92,16 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             <h2 id={`${project.id}-title`}>{project.name}</h2>
             <p>{project.headline}</p>
           </div>
-          <ul className={styles.highlightList} aria-label={`${project.name} 담당 업무`}>
-            {project.highlights.map((highlight) => (
-              <li key={highlight}><HighlightText text={highlight} /></li>
-            ))}
-          </ul>
+          {project.highlightGroups.map((group, index) => (
+            <div key={group.title ?? index} className={group.title ? styles.highlightGroup : undefined}>
+              {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
+              <ul className={styles.highlightList} aria-label={`${project.name} ${group.title ?? '담당 업무'}`}>
+                {group.highlights.map((highlight) => (
+                  <li key={highlight}><HighlightText text={highlight} grouped={Boolean(group.title)} /></li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         {activeMedia && (

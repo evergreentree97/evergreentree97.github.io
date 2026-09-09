@@ -14,11 +14,13 @@
 > 제품을 만드는<br>
 > 엔지니어입니다
 
-> 신규 Android 앱의 멀티모듈 구조를 설계하고 인증, 미디어 플레이어, 실시간 채팅, 결제 등 핵심 기능을 개발했습니다. 사내 AI TF에서는 캐릭터 대화 모델을 직접 파인튜닝해 제품에 적용했습니다.
+> Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.
+>
+> 사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.
 
 첫 화면 위쪽 라벨은 `ANDROID & AI PRODUCT`다. 직군을 Android로만 좁히지 않기 위해 2026-08-24 `ANDROID DEVELOPER`에서 바꿨다.
 
-별도 요청이 없으면 이 확정 문구를 바꾸지 않는다. `npm run check:content`가 구현과 이 문서의 문구를 함께 확인한다. 구체적인 경력과 사례는 경력 타임라인과 주요 프로젝트에서 설명한다.
+본문은 2026-09-09 사용자가 검토 제안 반영을 요청해 현재 문구로 갱신했다. 제목과 직군 라벨은 유지한다. 별도 요청이 없으면 이 확정 문구를 바꾸지 않는다. `npm run check:content`가 구현과 이 문서의 문구를 함께 확인한다. 구체적인 경력과 사례는 경력 타임라인과 주요 프로젝트에서 설명한다.
 
 ## 섹션 역할
 
@@ -79,9 +81,9 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 - 프로젝트 분류 라벨은 Vuddy와 Momentica에 `ANDROID`, 캐릭터 대화 모델과 AI 캐릭터 앱에 `LLM FINE-TUNING / ANDROID`를 사용한다. `ANDROID PRODUCT`는 다시 쓰지 않는다.
 - Vuddy 프로젝트 소개는 `크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.`를 사용한다.
 - Vuddy의 푸시 구조 제안과 채팅방 Backend API 연동은 별도 기여 항목으로 구분한다. 채팅은 답장 원문 이동에서 앞뒤 메시지를 함께 불러오는 양방향 페이징과 사진 및 영상 메시지를 설명하고, 채팅방 관리는 클라이언트별 정보 해석 문제와 Android API 연동 범위를 함께 쓴다. 미디어는 재생 상태와 생명주기를 ViewModel 범위에서 관리하고 화면 전환 때 같은 ExoPlayer를 다시 연결해 재생 위치를 유지한 구현을 한 항목으로 쓴다.
-- 캐릭터 대화 모델과 AI 캐릭터 앱 소개는 `사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 이 모델을 활용해 어떤 채팅 경험을 만들지 고민하며 Android 앱을 개발하고 있습니다.`를 사용한다.
+- 캐릭터 대화 모델과 AI 캐릭터 앱 소개는 `사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 해당 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.`를 사용한다.
 - 모델 평가는 자동 평가 구현과 팀의 실제 대화 검토를 거친 제품 적용 대상 선정만 공개하고, 표시 보정이 포함된 내부 점수는 새 소개 문구에서 사용하지 않는다.
-- 모델 서빙은 학습한 모델의 대화 응답을 팀이 확인할 수 있도록 vLLM 서빙과 내부 채팅 데모를 구현한 범위로 설명한다.
+- 모델 검토 도구는 vLLM 서빙과 웹 MVP를 구현하고 팀원의 대화 피드백으로 학습 데이터를 수정한 범위로 설명한다. 외부 사용자 검증이나 서비스 운영 성과로 넓히지 않는다.
 - Momentica 공개 항목 이름은 `3D 포토카드`, `테이크 홈 개편`, `Artist Top Ranker`, `알람 기능`을 사용한다. 검증 조건은 별도 항목으로 떼지 않고 알람 기능의 구현 설명에 붙인다.
 - Momentica 프로젝트 소개는 `글로벌 팬 플랫폼 Momentica에서 3D 포토카드와 영상 알람 기능을 개발했습니다.`를 사용한다.
 - Artist Top Ranker는 Compose `pointerInput` 기반 가로 스와이프와 블러 이미지 Composable 분리로 해결한 캐시 초기화 문제를 중심으로 쓴다. `LaunchedEffect`, `Crossfade`, 자동 순환은 확인된 기술 근거로만 보관하며 현재 공개 문구에는 넣지 않는다.
@@ -94,8 +96,8 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 - 큰 문장은 `AI에 반복 작업을 맡기고 코드와 동작을 직접 확인합니다.`를 중심으로 쓴다. 특정 AI 도구 이름을 먼저 내세우지 않는다.
 - 근거 항목은 `QA 티켓에 기록된 문제의 재현부터 원인 분석, 코드 수정과 테스트, PR과 배포 상태 동기화까지 Agent Skill 하나로 묶었습니다.`를 사용한다.
 - Android Studio에서 확인하기 불편했던 SSE 트래픽을 PC 브라우저에서 볼 수 있도록 디버그 앱 전용 네트워크 검사 도구를 구현한 사실을 사용한다.
-- AI 산출물은 중요도에 따라 검증 범위를 달리한다. AI가 구현한 화면과 기능은 스크린샷 테스트와 직접 코드 리뷰로 확인하고, 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증한다.
-- 신규 AI 프로젝트는 `새 AI 프로젝트에서는 기획과 디자인의 기준 문서를 GitHub에서 관리하고, AI가 개발 전에 최신 내용을 확인하도록 했습니다.`를 사용한다.
+- AI 산출물은 중요도에 따라 검증 범위를 달리한다. AI가 구현한 화면과 기능은 Compose Stable 검사, 스크린샷 테스트와 코드 리뷰로 확인하고 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증한다.
+- 신규 AI 프로젝트는 `새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리하고 AI가 개발 전에 최신 내용을 확인하도록 했습니다.`를 사용한다.
 - 위 항목을 임의의 순서형 개발 절차로 바꾸지 않는다. 큰 핵심 문장 하나와 독립된 근거 항목으로 구성한다.
 
 ## 프로젝트 미디어 배치
@@ -133,3 +135,16 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 - 공통 스타일: `src/styles`
 
 내용을 수정한 뒤에는 문안과 실제 구현이 일치하는지 확인하고 `npm run check`를 실행한다.
+
+## Approved content refresh (2026-09-09)
+
+The user approved applying the portfolio review. This is a general-profile safe edit for Android hiring readers and developers considering collaboration. The existing title, positioning, timeline, project order, side projects, activities and visual direction remain the baseline. Copy was checked against the approved 2026-09-09 resume and its verified career evidence.
+
+- Reuse the approved introduction and SSE error-handling copy. Keep model development and Android implementation as separate responsibilities.
+- Expand Vuddy's architecture item with Router-based navigation separation and tests without UI. Keep push design proposals and Backend API integration as separate contributions.
+- Group the AI project into model development and team review, followed by Android chat and billing. Remove the GPU environment and the standalone distribution-automation item from this presentation.
+- Describe the team's model selection, web MVP feedback and resulting training-data changes. Preserve the distinction between model selection and production operation.
+- Compress Momentica's screen inventory and describe the Profiler heap-dump diagnosis and explicit resource release at Composition end. Preserve the other public feature names and alarm conditions.
+- Add Vuddy's design-token-to-Kotlin automation and the verified brand-color change. State that unchanged screen code applied only to screens using the semantic tokens. Keep the shorter planning-document item and add Compose Stable checks to the validation item.
+- Use one purpose-led sentence for each open-source project. Do not repeat the release fact as a second sentence.
+- The old source comment recorded a dashboard publication decision on 2026-08-23. This refresh removes that dashboard from the page and published assets to follow the current evidence disclosure restriction. Use only the already approved masked chat and chat-list images, with the chat image selected initially. Do not restore the internal evaluation image or its scores.

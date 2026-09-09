@@ -59,3 +59,11 @@
 | 공통 스타일 | `tokens.css`, `src/styles/` |
 
 구조를 바꾼 뒤에는 이 문서와 실제 순서를 맞추고 `npm run check`를 실행한다.
+
+## Content grouping (2026-09-09)
+
+- Preserve the hero title and illustration. The approved introduction has two short paragraphs.
+- Within the AI project, use two named groups: model development and team review, then Android chat and billing. Group headings are level 3 and individual contribution headings are level 4. Other projects retain level-3 contribution headings.
+- AI media contains two approved masked screens. Select the character-chat screen initially. Size the mobile selector to the actual number of available screens.
+- The AI development section contains five evidence items. Keep two columns on desktop and one on mobile; the final short planning-document item spans the desktop row.
+- Open-source cards contain one summary, technology tags and the repository link.

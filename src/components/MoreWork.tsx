@@ -18,7 +18,6 @@ export function MoreWork() {
             </div>
             <div className={styles.copy}>
               <p>{project.summary}</p>
-              <strong>{project.evidence}</strong>
               {project.technologies.length > 0 && (
                 <ul aria-label={`${project.name} 기술`}>
                   {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}

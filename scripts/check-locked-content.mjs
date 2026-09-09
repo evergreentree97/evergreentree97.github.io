@@ -1,14 +1,20 @@
-import { readFile } from 'node:fs/promises'
+import { readdir, readFile } from 'node:fs/promises'
 
 const heroSource = await readFile(new URL('../src/components/Hero.tsx', import.meta.url), 'utf8')
 const contentGuide = await readFile(new URL('../docs/portfolio/content.md', import.meta.url), 'utf8')
 const siteStructure = await readFile(new URL('../docs/portfolio/structure.md', import.meta.url), 'utf8')
 const projectsSource = await readFile(new URL('../src/data/projects.ts', import.meta.url), 'utf8')
+const screenAssets = await readdir(new URL('../public/screens/', import.meta.url))
+if (projectsSource.includes('/screens/smt-dashboard.jpg') || screenAssets.includes('smt-dashboard.jpg')) {
+  throw new Error('내부 평가 대시보드를 공개 화면이나 배포 자산에 다시 넣지 마세요.')
+}
 const sideProjectsSource = await readFile(new URL('../src/data/sideProjects.ts', import.meta.url), 'utf8')
 const howIWorkSource = await readFile(new URL('../src/components/HowIWork.tsx', import.meta.url), 'utf8')
 const experienceSource = await readFile(new URL('../src/data/experience.ts', import.meta.url), 'utf8')
 const appSource = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8')
 const profileSource = await readFile(new URL('../src/data/profile.ts', import.meta.url), 'utf8')
+
+const indexSource = await readFile(new URL('../index.html', import.meta.url), 'utf8')
 
 const lockedHeadline = ['제품을 만드는', '엔지니어입니다']
 
@@ -22,6 +28,14 @@ const documentedHeadline = `> ${lockedHeadline[0]}<br>\n> ${lockedHeadline[1]}`
 
 if (!contentGuide.includes(documentedHeadline)) {
   throw new Error('콘텐츠 가이드의 고정된 첫 화면 문구가 변경되었습니다.')
+}
+
+const approvedIntroduction = ['Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.', '사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.']
+
+for (const paragraph of approvedIntroduction) {
+  if (![heroSource, contentGuide, indexSource].every((source) => source.includes(paragraph))) {
+    throw new Error('첫 화면과 검색 소개를 승인된 소개 문구에 맞춰주세요.')
+  }
 }
 
 const copyChecks = [
@@ -108,9 +122,14 @@ if (/85\/100/.test(`${projectsSource}\n${contentGuide}`)) {
 }
 
 const requiredProjectCopy = [
+  'Router 인터페이스로 분리해 feature 모듈 간 의존을 제거하고 mock Router로 UI 없이 이동 로직을 테스트로 검증',
+  "title: '모델 개발과 팀 검토'",
+  "title: 'Android 채팅과 결제 개발'",
+  '다양한 오류 상황에 대응하는 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
+  '팀원의 대화 피드백을 받아 학습 데이터를 수정하고 기능 실험에 반영',
   "eyebrow: 'LLM FINE-TUNING / ANDROID'",
   "headline: '크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.'",
-  "headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 현재는 이 모델을 활용해 어떤 채팅 경험을 만들지 고민하며 Android 앱을 개발하고 있습니다.'",
+  "headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 해당 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.'",
   'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고',
   '프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
   "caption: 'TAKE HOME / 홈 화면 개편'",
@@ -119,7 +138,6 @@ const requiredProjectCopy = [
   "caption: 'HOME / 크리에이터 굿즈 탐색'",
   "caption: 'CHATTING / 특정 사용자에게 답장'",
   "caption: 'MEDIA / 디지털 카드 상세'",
-  "caption: 'MODEL EVALUATION / 대화 모델 평가'",
   "caption: 'CHARACTER CHAT / AI 캐릭터 채팅'",
   "caption: 'CHAT LIST / 캐릭터 채팅 목록'",
   "headline: '글로벌 팬 플랫폼 Momentica에서 3D 포토카드와 영상 알람 기능을 개발했습니다.'",
@@ -150,11 +168,13 @@ for (const record of approvedAssetRecords) {
 }
 
 const requiredHowIWorkEvidence = [
+  'Vuddy의 디자인 토큰을 Kotlin 코드로 변환하고 PR을 생성하도록 자동화했습니다.',
+  '브랜드 색상 개편 시 시맨틱 토큰을 사용하는 화면은 화면 코드 수정 없이 토큰 값 변경으로 새 색상을 반영했습니다.',
   'AI에 반복 작업을 맡기고 코드와 동작을 직접 확인합니다.',
   'QA 티켓에 기록된 문제의 재현부터 원인 분석, 코드 수정과 테스트, PR과 배포 상태 동기화까지 Agent Skill 하나로 묶었습니다.',
   'Android Studio에서 확인하기 불편했던 SSE 트래픽을 PC 브라우저에서 볼 수 있도록 디버그 앱 전용 네트워크 검사 도구를 구현했습니다.',
-  'AI가 구현한 화면과 기능은 스크린샷 테스트와 직접 코드 리뷰로 확인합니다. 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증합니다.',
-  '새 AI 프로젝트에서는 기획과 디자인의 기준 문서를 GitHub에서 관리하고, AI가 개발 전에 최신 내용을 확인하도록 했습니다.',
+  'AI가 구현한 화면과 기능은 Compose Stable 검사, 스크린샷 테스트와 코드 리뷰로 확인합니다. 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증합니다.',
+  '새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리하고 AI가 개발 전에 최신 내용을 확인하도록 했습니다.',
 ]
 
 const requiredExperienceSummaries = [

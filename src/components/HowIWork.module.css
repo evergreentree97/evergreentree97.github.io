@@ -28,9 +28,12 @@
   padding: 30px 24px;
 }
 
-.evidence li + li {
+.evidence li:nth-child(even) {
   border-left: 1px solid var(--border);
 }
+
+.evidence li:nth-child(n + 3) { border-top: 1px solid var(--border); }
+.evidence li:last-child:nth-child(odd) { grid-column: 1 / -1; min-height: 0; }
 
 .evidence h3 {
   color: var(--text-primary);
@@ -45,21 +48,6 @@
   line-height: 1.7;
 }
 
-@media (max-width: 900px) {
-  .evidence {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .evidence li:nth-child(3) {
-  border-left: 0;
-  border-top: 1px solid var(--border);
-}
-
-.evidence li:nth-child(4) {
-  border-top: 1px solid var(--border);
-}
-}
-
 @media (max-width: 620px) {
   .evidence {
     grid-template-columns: 1fr;
@@ -70,9 +58,7 @@
     padding: 24px 4px 28px;
   }
 
-  .evidence li + li,
-  .evidence li:nth-child(3),
-  .evidence li:nth-child(4) {
+  .evidence li:nth-child(n + 2) {
     border-top: 1px solid var(--border);
     border-left: 0;
   }
