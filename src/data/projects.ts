@@ -26,13 +26,15 @@ export type ProjectVideo = ProjectMediaBase & {
 
 export type ProjectMedia = ProjectImage | ProjectVideo
 
+export type ProjectHighlight = string | { text: string; children: string[] }
+
 export type FeaturedProject = {
   id: 'vuddy' | 'model-evaluation' | 'momentica'
   name: string
   eyebrow: string
   headline: string
   technologies: string[]
-  highlightGroups: { title?: string; highlights: string[] }[]
+  highlightGroups: { title?: string; highlights: ProjectHighlight[] }[]
   // Google Play 공식 스크린샷을 기본으로 쓴다. 사내 화면은 사용자가 게시를 결정한 것만 쓴다.
   media: ProjectMedia[]
   links: ProjectLink[]
@@ -116,8 +118,12 @@ export const featuredProjects: FeaturedProject[] = [
       {
         highlights: [
           '3D 포토카드: SceneView 기반 3D 포토카드와 퀵뷰 구현. Android Profiler 힙 덤프로 SceneView 내부 Bitmap 메모리릭을 추적하고 Composition 종료 시 자원을 명시적으로 해제하도록 개선',
-          '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트, 판매 중인 테이크와 Artist Top Ranker 구현',
-          'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
+          {
+            text: '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트와 판매 중인 테이크 구현',
+            children: [
+              'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
+            ],
+          },
           '알람 기능: Room과 AlarmManager 기반 영상 알람 개발. 앱 종료와 락스크린 상태, 기기 재부팅 후에도 알람 실행을 확인하고 설정 복원과 락스크린 표시 구현',
         ],
       },
@@ -125,7 +131,7 @@ export const featuredProjects: FeaturedProject[] = [
     media: [
       { type: 'image', src: '/screens/mmtc-photocard-figma.png', alt: 'MOMENTICA 포토카드를 길게 눌러 SceneView 기반 3D 카드로 확인하는 화면', caption: '3D PHOTOCARD / SceneView 기반', width: 360, height: 800, featured: true, highlightIndex: 0 },
       { type: 'image', src: '/screens/mmtc-take-home-figma.png', alt: 'MOMENTICA LIVE NOW와 Artist Top Ranker가 포함된 테이크 홈 개편 화면', caption: 'TAKE HOME / 홈 화면 개편', width: 1080, height: 2400, highlightIndex: 1 },
-      { type: 'image', src: '/screens/mmtc-alarm-figma.png', alt: 'MOMENTICA 테이크 영상이 락스크린에서 재생되는 알람 화면', caption: 'TAKE ALARM / 락스크린 영상 알람', width: 360, height: 800, highlightIndex: 3 },
+      { type: 'image', src: '/screens/mmtc-alarm-figma.png', alt: 'MOMENTICA 테이크 영상이 락스크린에서 재생되는 알람 화면', caption: 'TAKE ALARM / 락스크린 영상 알람', width: 360, height: 800, highlightIndex: 2 },
     ],
     links: [
       {

@@ -71,17 +71,18 @@
   list-style: none;
 }
 
-.highlightList li {
+.highlightList > li {
   max-width: 62ch;
   padding: 18px 0;
 }
 
-.highlightList li + li {
+.highlightList > li + li {
   border-top: 1px solid color-mix(in srgb, var(--color-rule) 58%, transparent);
 }
 
 .highlightList h3,
-.highlightList h4 {
+.highlightList h4,
+.highlightList h5 {
   color: var(--color-ink);
   font-size: 1.0625rem;
   font-weight: 680;
@@ -92,6 +93,15 @@
 .highlightGroup { margin-top: 40px; }
 .groupTitle { color: var(--color-accent); font-size: 1.125rem; line-height: 1.45; }
 .highlightGroup .highlightList { margin-top: 16px; }
+
+.detailList {
+  margin: 18px 0 0 4px;
+  padding-left: 18px;
+  border-left: 2px solid var(--color-rule-strong);
+  list-style: none;
+}
+
+.detailList > li + li { margin-top: 18px; }
 
 .highlightList p {
   margin-top: 8px;
@@ -249,9 +259,9 @@
   .scene { padding-block: 48px 56px; }
   .scene:nth-child(3) { padding-bottom: 32px; }
   .projectHeading h2 { font-size: clamp(2.25rem, 10vw, 3rem); }
-  .projectHeading > p, .highlightList h3, .highlightList h4, .highlightList p { font-size: 1rem; }
+  .projectHeading > p, .highlightList h3, .highlightList h4, .highlightList h5, .highlightList p { font-size: 1rem; }
   .highlightList { margin-top: 32px; }
-  .highlightList li { padding-block: 16px 18px; }
+  .highlightList > li { padding-block: 16px 18px; }
   .mediaSelector { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
   .mediaSelector button { padding-inline: 6px; font-size: 0.75rem; }
   .mediaItem { border-radius: var(--radius-md); }

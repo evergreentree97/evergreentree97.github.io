@@ -67,3 +67,4 @@
 - AI media contains two approved masked screens. Select the character-chat screen initially. Size the mobile selector to the actual number of available screens.
 - The AI development section contains five evidence items. Keep two columns on desktop and one on mobile; the final short planning-document item spans the desktop row.
 - Open-source cards contain one summary, technology tags and the repository link.
+- Momentica has three top-level contributions: 3D photocard, take-home redesign and alarm. Artist Top Ranker is a level-4 heading in a nested list under the level-3 take-home redesign, with indentation and a subtle left rule. Keep this hierarchy on desktop and mobile.
