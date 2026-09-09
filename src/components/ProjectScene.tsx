@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { FeaturedProject, ProjectHighlight, ProjectMedia, ProjectVideo } from '../data/projects'
+import type { FeaturedProject, ProjectMedia, ProjectVideo } from '../data/projects'
 import { PixelIcon } from './PixelIcon'
 import styles from './ProjectScene.module.css'
 
@@ -43,31 +43,16 @@ function MediaContent({ media }: { media: ProjectMedia }) {
   return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
 }
 
-function HighlightText({ text, heading: Heading }: { text: string; heading: 'h3' | 'h4' | 'h5' }) {
+function HighlightText({ text, grouped }: { text: string; grouped: boolean }) {
   const separator = text.indexOf(':')
   if (separator < 0) return <p>{text}</p>
+  const Heading = grouped ? 'h4' : 'h3'
 
   return (
     <>
       <Heading>{text.slice(0, separator)}</Heading>
       <p>{text.slice(separator + 1).trimStart()}</p>
     </>
-  )
-}
-
-function HighlightItem({ highlight, grouped }: { highlight: ProjectHighlight; grouped: boolean }) {
-  const text = typeof highlight === 'string' ? highlight : highlight.text
-  return (
-    <li>
-      <HighlightText text={text} heading={grouped ? 'h4' : 'h3'} />
-      {typeof highlight !== 'string' && (
-        <ul className={styles.detailList}>
-          {highlight.children.map((child) => (
-            <li key={child}><HighlightText text={child} heading={grouped ? 'h5' : 'h4'} /></li>
-          ))}
-        </ul>
-      )}
-    </li>
   )
 }
 
@@ -112,7 +97,7 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
               {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
               <ul className={styles.highlightList} aria-label={`${project.name} ${group.title ?? '담당 업무'}`}>
                 {group.highlights.map((highlight) => (
-                  <HighlightItem key={typeof highlight === 'string' ? highlight : highlight.text} highlight={highlight} grouped={Boolean(group.title)} />
+                  <li key={highlight}><HighlightText text={highlight} grouped={Boolean(group.title)} /></li>
                 ))}
               </ul>
             </div>

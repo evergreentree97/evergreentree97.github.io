@@ -61,7 +61,7 @@ const copyChecks = [
   },
   {
     source: projectsSource,
-    pattern: /Artist Top Ranker:[^\n]*(LaunchedEffect|Crossfade|HorizontalPager)|TAKE HOME \/ 자동 전환과 탭 복귀 상태 보완/,
+    pattern: /Artist Top Ranker[^\n]*(LaunchedEffect|Crossfade|HorizontalPager)|TAKE HOME \/ 자동 전환과 탭 복귀 상태 보완/,
     message: 'Artist Top Ranker 공개 문구에 제외한 자동 전환을 되살리거나 헤드라인 배너 작업을 섞지 마세요.',
   },
   {
@@ -130,7 +130,7 @@ const requiredProjectCopy = [
   "eyebrow: 'LLM FINE-TUNING / ANDROID'",
   "headline: '크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.'",
   "headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 해당 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.'",
-  'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고',
+  'Artist Top Ranker는 Compose pointerInput API로 가로 스와이프를 구현하고',
   '프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
   "caption: 'TAKE HOME / 홈 화면 개편'",
   "caption: '3D PHOTOCARD / SceneView 기반'",

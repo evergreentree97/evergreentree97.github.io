@@ -86,7 +86,7 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 - 모델 검토 도구는 vLLM 서빙과 웹 MVP를 구현하고 팀원의 대화 피드백으로 학습 데이터를 수정한 범위로 설명한다. 외부 사용자 검증이나 서비스 운영 성과로 넓히지 않는다.
 - Momentica 공개 항목 이름은 `3D 포토카드`, `테이크 홈 개편`, `알람 기능`을 사용한다. 검증 조건은 별도 항목으로 떼지 않고 알람 기능의 구현 설명에 붙인다.
 - Momentica 프로젝트 소개는 `글로벌 팬 플랫폼 Momentica에서 3D 포토카드와 영상 알람 기능을 개발했습니다.`를 사용한다.
-- Keep Artist Top Ranker as a nested contribution under the take-home redesign, not a peer of that redesign (final user decision, 2026-09-09). Preserve its swipe implementation and repeated image-cache reset fix. The parent summary describes the banner, active artists and available takes without repeating the child heading. Preserve the approved home screenshot and its description.
+- Artist Top Ranker belongs to the take-home redesign. Describe its swipe implementation and repeated image-cache reset fix in the redesign's body paragraph, using the same heading and body format as the other contributions (user formatting correction, 2026-09-09). Preserve the approved home screenshot and its description.
 - Artist Top Ranker는 Compose `pointerInput` 기반 가로 스와이프와 블러 이미지 Composable 분리로 해결한 캐시 초기화 문제를 중심으로 쓴다. `LaunchedEffect`, `Crossfade`, 자동 순환은 확인된 기술 근거로만 보관하며 현재 공개 문구에는 넣지 않는다.
 - 헤드라인 배너의 `HorizontalPager` 전환과 탭 복귀 위치 정리는 Artist Top Ranker와 별도 작업이다. 두 기능을 한 성과처럼 합치지 않는다.
 - `rememberImageBlurPainterWithCache`는 기존 공통 API다. 새 캐시 API를 개발했다고 쓰지 않고, API를 사용하는 이미지의 Composable과 갱신 범위를 분리한 작업으로 쓴다.

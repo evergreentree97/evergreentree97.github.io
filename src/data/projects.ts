@@ -26,15 +26,13 @@ export type ProjectVideo = ProjectMediaBase & {
 
 export type ProjectMedia = ProjectImage | ProjectVideo
 
-export type ProjectHighlight = string | { text: string; children: string[] }
-
 export type FeaturedProject = {
   id: 'vuddy' | 'model-evaluation' | 'momentica'
   name: string
   eyebrow: string
   headline: string
   technologies: string[]
-  highlightGroups: { title?: string; highlights: ProjectHighlight[] }[]
+  highlightGroups: { title?: string; highlights: string[] }[]
   // Google Play 공식 스크린샷을 기본으로 쓴다. 사내 화면은 사용자가 게시를 결정한 것만 쓴다.
   media: ProjectMedia[]
   links: ProjectLink[]
@@ -118,12 +116,7 @@ export const featuredProjects: FeaturedProject[] = [
       {
         highlights: [
           '3D 포토카드: SceneView 기반 3D 포토카드와 퀵뷰 구현. Android Profiler 힙 덤프로 SceneView 내부 Bitmap 메모리릭을 추적하고 Composition 종료 시 자원을 명시적으로 해제하도록 개선',
-          {
-            text: '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트와 판매 중인 테이크 구현',
-            children: [
-              'Artist Top Ranker: Compose pointerInput API로 가로 스와이프를 구현하고 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
-            ],
-          },
+          '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트와 판매 중인 테이크 구현. Artist Top Ranker는 Compose pointerInput API로 가로 스와이프를 구현하고 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
           '알람 기능: Room과 AlarmManager 기반 영상 알람 개발. 앱 종료와 락스크린 상태, 기기 재부팅 후에도 알람 실행을 확인하고 설정 복원과 락스크린 표시 구현',
         ],
       },
