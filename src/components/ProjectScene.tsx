@@ -83,11 +83,11 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
   return (
     <section className={styles.scene} data-project={project.id} id={project.id} aria-labelledby={`${project.id}-title`}>
       <div className={styles.sceneInner}>
+        <div className={styles.projectHeading}>
+          <h2 id={`${project.id}-title`}>{project.name}</h2>
+          <div><p>{project.headline}</p><span className={styles.projectCategory}>{project.eyebrow}</span></div>
+        </div>
         <div className={styles.copyColumn}>
-          <div className={styles.projectHeading}>
-            <h2 id={`${project.id}-title`}>{project.name}</h2>
-            <p>{project.headline}</p><span className={styles.projectCategory}>{project.eyebrow}</span>
-          </div>
           {project.highlightGroups.map((group, index) => (
             <div key={group.title ?? index} className={group.title ? styles.highlightGroup : undefined}>
               {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
@@ -111,7 +111,10 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             </div>
             <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
               <div className={styles.mediaStage} key={activeMedia.src}><MediaContent media={activeMedia} /></div>
-              {activeMedia.caption && <figcaption>{activeMedia.caption}</figcaption>}
+              {activeMedia.caption && <figcaption>
+                <div>{activeMedia.caption}{project.id === 'model-evaluation' && <span className={styles.mediaNote}>화면 시안 (캐릭터 이름 마스킹)</span>}</div>
+                {activeMedia.type === 'image' && <a href={activeMedia.src} target="_blank" rel="noreferrer" aria-label={`${project.name} ${activeMedia.caption.split(' / ')[0]} 원본 화면 열기`}>원본 화면</a>}
+              </figcaption>}
             </figure>
           </div>
         )}

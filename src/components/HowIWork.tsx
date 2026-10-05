@@ -29,7 +29,7 @@ export function HowIWork() {
   return (
     <section className={styles.section} id="how-i-work" aria-labelledby="how-i-work-title">
       <Reveal stagger>
-        <SectionTitle id="how-i-work-title" title="AI와 함께 개발하는 방식" />
+        <SectionTitle id="how-i-work-title" title="개발 도구와 검증" />
         <div className={styles.introRow} data-reveal-item>
           <p>
             AI에 반복 작업을 맡기고 코드와 동작을 직접 확인합니다.

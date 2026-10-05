@@ -1,19 +1,20 @@
-.header { position: fixed; inset: 0 0 auto; z-index: var(--z-sticky); background: var(--color-paper); border-bottom: 1px solid var(--color-rule); }
-.inner { display: flex; justify-content: space-between; align-items: center; min-height: 68px; max-width: 1600px; padding-inline: 44px; margin-inline: auto; }
-.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 14px; font-weight: 650; min-height: 44px; }
-.logoMark { display: grid; place-items: center; width: 30px; height: 30px; background: var(--color-ink); color: var(--color-paper); border-radius: 50%; font-size: 22px; font-weight: 750; line-height: 1; }
-.navigation { display: flex; align-items: center; gap: 28px; }
-.navigation > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 13px; text-decoration: none; position: relative; }
+.header { position: fixed; inset: 0 0 auto; z-index: var(--z-sticky); background: var(--color-paper); }
+.inner { display: flex; justify-content: space-between; align-items: center; min-height: 76px; max-width: 1440px; padding-inline: 56px; margin-inline: auto; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-family: var(--font-exhibit); font-size: 20px; font-weight: 650; letter-spacing: -.02em; min-height: 44px; }
+.logoMark { color: var(--color-accent); }
+.navigation { display: flex; align-items: center; gap: 26px; }
+.navigation > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 12px; font-weight: 500; text-decoration: none; position: relative; }
 .navigation > a::after { content: ''; position: absolute; bottom: 6px; inset-inline: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 180ms var(--ease-out); }
 .navigation > a:hover::after, .navigation .activeLink::after { transform: scaleX(1); }
 .github svg { width: 16px; height: 16px; }
-.menuButton { display: none; border: 1px solid var(--color-rule-strong); background: transparent; width: 44px; height: 44px; border-radius: 4px; place-items: center; cursor: pointer; }
-.menuButton svg { width: 20px; height: 20px; }
+.menuButton { display: none; border: 0; background: transparent; width: 44px; height: 44px; place-items: center; cursor: pointer; }
+.menuButton svg { width: 22px; height: 22px; }
+@media (max-width: 1000px) { .inner { padding-inline: 32px; } }
 @media (max-width: 900px) {
- .inner { padding-inline: 20px; min-height: 64px; }
+ .inner { padding-inline: 24px; min-height: 68px; }
  .menuButton { display: grid; }
- .navigation { position: absolute; top: 64px; left: 16px; right: 16px; display: none; background: var(--color-paper); padding: 16px 24px; border: 1px solid var(--color-rule-strong); gap: 0; }
+ .navigation { position: absolute; top: 68px; left: 0; right: 0; display: none; background: var(--color-paper); padding: 16px 24px 24px; border-bottom: 1px solid var(--color-rule); gap: 0; }
  .navigation.open { display: grid; }
- .navigation > a { min-height: 48px; }
+ .navigation > a { min-height: 48px; font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) { .navigation > a::after { transition: none; } }

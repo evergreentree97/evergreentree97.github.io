@@ -15,8 +15,7 @@ export function Header() {
     }}>
       <div className={styles.inner}>
         <a className={styles.logo} href="#top" aria-label="홈으로 이동">
-          <span className={styles.logoMark} aria-hidden="true">s.</span>
-          <span>최상록</span>
+          <span>ricky choi<span className={styles.logoMark}>.</span></span>
         </a>
 
         <button

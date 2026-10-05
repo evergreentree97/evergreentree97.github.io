@@ -1,9 +1,9 @@
 :root {
- --color-paper: #f4f5f1; --color-paper-2: #e9ece7; --color-paper-3: #e2e7e2; --color-paper-4: #d8ddd7; --color-scrim: #101c2b;
- --color-ink: #152238; --color-ink-2: #3c4d5e; --color-muted: #526273; --color-rule: #c5cec9; --color-rule-strong: #7c8a92;
- --color-accent: #273f7c; --color-accent-strong: #19306b; --color-accent-ink: #fff; --color-warning: #945200; --color-focus: #2447ab;
- --font-display: 'Pretendard Variable', Pretendard, sans-serif; --font-body: 'Pretendard Variable', Pretendard, sans-serif;
- --font-utility: 'Pretendard Variable', Pretendard, sans-serif; --font-exhibit: 'Barlow Condensed', 'Pretendard Variable', sans-serif;
+ --color-paper: #f7f7f5; --color-paper-2: #eeeeeb; --color-paper-3: #e7e7e2; --color-paper-4: #d8d8d1; --color-scrim: #101c2b;
+ --color-ink: #181818; --color-ink-2: #484844; --color-muted: #62625d; --color-rule: #d0d0c8; --color-rule-strong: #9a9a91;
+ --color-accent: #c63819; --color-accent-strong: #a9260f; --color-accent-ink: #fff; --color-warning: #945200; --color-focus: #be3215;
+ --font-display: 'Wanted Sans', sans-serif; --font-body: 'Wanted Sans', sans-serif;
+ --font-utility: 'Wanted Sans', sans-serif; --font-exhibit: 'Uncut Sans', 'Wanted Sans', sans-serif;
  --space-3xs: .125rem; --space-2xs: .25rem; --space-xs: .5rem; --space-sm: .75rem; --space-md: 1rem; --space-lg: 1.5rem; --space-xl: 2.5rem; --space-2xl: 4rem; --space-3xl: 6rem; --space-4xl: 9rem;
  --text-xs: .72rem; --text-sm: .84rem; --text-base: 1rem; --text-md: 1.25rem; --text-lg: 1.5625rem; --text-xl: 1.953rem; --text-2xl: 2.441rem; --text-3xl: 3.052rem; --text-4xl: 3.815rem;
  --text-display-s: clamp(2.75rem, 5vw, 4.75rem); --text-display: clamp(3rem, 6vw, 5.5rem);

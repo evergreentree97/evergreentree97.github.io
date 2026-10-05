@@ -1,210 +1,252 @@
 ---
-name: Choi Sangrok Portfolio
-description: A provisional digital engineering exhibition built around actual product screens.
+name: Ricky Choi Portfolio
+description: A provisional personal editorial portfolio with approved product screens and technical reading rows.
 colors:
-  paper: "#f4f5f1"
-  ink: "#152238"
-  ink-secondary: "#3c4d5e"
-  muted: "#526273"
-  rule: "#c5cec9"
-  rule-strong: "#7c8a92"
-  accent: "#273f7c"
-  focus: "#2447ab"
+  paper: "#f7f7f5"
+  ink: "#181818"
+  ink-secondary: "#484844"
+  muted: "#62625d"
+  rule: "#d0d0c8"
+  rule-strong: "#9a9a91"
+  accent: "#c63819"
+  focus: "#be3215"
+  hero-surface: "#202020"
+  ai-paper: "#e8e8e3"
+  tools-surface: "#191919"
+  tools-rule: "#4d4d48"
+  tools-muted: "#c5c5bd"
   white: "#fff"
-  periwinkle-wall: "#aebbf3"
-  sage-wall: "#bed5c7"
-  lilac-wall: "#d3c8e8"
-  periwinkle-reading: "#e7ebf8"
-  sage-reading: "#e0ebe2"
-  lilac-reading: "#ece7f3"
-  method-surface: "#e1e6d9"
 typography:
-  exhibit:
-    fontFamily: "Barlow Condensed, Pretendard Variable, sans-serif"
-    fontSize: "clamp(4rem, 7vw, 5rem)"
-    fontWeight: 700
+  identity:
+    fontFamily: "Uncut Sans, Wanted Sans, sans-serif"
+    fontSize: "clamp(64px, 7.5vw, 96px)"
+    fontWeight: 650
+    lineHeight: 0.95
+    letterSpacing: "-.03em"
+    fontFeature: "'ss01' 1, 'ss02' 1"
+  product-title:
+    fontFamily: "Uncut Sans, Wanted Sans, sans-serif"
+    fontSize: "clamp(46px, 6vw, 80px)"
+    fontWeight: 620
     lineHeight: 1
     letterSpacing: "-.025em"
-  introduction:
-    fontFamily: "Pretendard Variable, Pretendard, sans-serif"
-    fontSize: "clamp(1.7rem, 3vw, 2.5rem)"
-    fontWeight: 760
-    lineHeight: 1.16
-    letterSpacing: "-.035em"
-  section:
-    fontFamily: "Pretendard Variable, Pretendard, sans-serif"
-    fontSize: "clamp(2.5rem, 4vw, 3rem)"
-    fontWeight: 760
-    lineHeight: 1.05
-    letterSpacing: "-.035em"
+    fontFeature: "'ss01' 1"
+  section-title:
+    fontFamily: "Wanted Sans, sans-serif"
+    fontSize: "clamp(28px, 3.5vw, 42px)"
+    fontWeight: 550
+    lineHeight: 1.25
+    letterSpacing: "-.02em"
   body:
-    fontFamily: "Pretendard Variable, Pretendard, sans-serif"
+    fontFamily: "Wanted Sans, sans-serif"
     fontSize: "17px"
     fontWeight: 440
     lineHeight: 1.72
-  contribution-title:
-    fontFamily: "Pretendard Variable, Pretendard, sans-serif"
-    fontSize: "16px"
-    fontWeight: 650
-    lineHeight: 1.45
-  tab:
-    fontFamily: "Pretendard Variable, Pretendard, sans-serif"
+  technical-body:
+    fontFamily: "Wanted Sans, sans-serif"
     fontSize: "14px"
+    fontWeight: 440
+    lineHeight: 1.85
+  contribution-title:
+    fontFamily: "Wanted Sans, sans-serif"
+    fontSize: "16px"
+    fontWeight: 600
+    lineHeight: 1.45
+  work-link:
+    fontFamily: "Uncut Sans, Wanted Sans, sans-serif"
+    fontSize: "20px"
+    fontWeight: 600
+    lineHeight: 1.2
+  navigation-label:
+    fontFamily: "Wanted Sans, sans-serif"
+    fontSize: "12px"
+    fontWeight: 500
+    lineHeight: 1.72
+  media-label:
+    fontFamily: "Uncut Sans, Wanted Sans, sans-serif"
+    fontSize: "11px"
+    fontWeight: 550
+    lineHeight: 1.72
+  chapter-title:
+    fontFamily: "Wanted Sans, sans-serif"
+    fontSize: "14px"
+    fontWeight: 550
+    lineHeight: 1.72
 rounded:
-  control: "2px"
-  menu: "4px"
-  screen: "9px"
-  circle: "50%"
+  skip-link: "10px"
 spacing:
   xs: ".5rem"
-  md: "1rem"
   lg: "1.5rem"
   xl: "2.5rem"
   2xl: "4rem"
 components:
-  project-tab:
-    typography: "{typography.tab}"
+  navigation:
     textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "8px 16px"
-    height: "44px"
-  project-tab-selected:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.white}"
-    typography: "{typography.tab}"
-    rounded: "{rounded.control}"
-    padding: "8px 16px"
-    height: "44px"
-  menu-button:
+    typography: "{typography.navigation-label}"
+  work-index:
     textColor: "{colors.ink}"
-    rounded: "{rounded.menu}"
-    width: "44px"
-    height: "44px"
+    typography: "{typography.work-link}"
+    padding: "15px 0"
+  media-selector:
+    textColor: "{colors.muted}"
+    typography: "{typography.media-label}"
+    padding: "8px 0"
+  media-selector-selected:
+    textColor: "{colors.ink}"
+    typography: "{typography.media-label}"
+    padding: "8px 0"
   contribution:
     textColor: "{colors.ink}"
     typography: "{typography.contribution-title}"
-    padding: "14px 0"
-  side-project-card:
+    padding: "16px 0"
+  tools-evidence:
+    backgroundColor: "{colors.tools-surface}"
+    textColor: "{colors.paper}"
+    padding: "26px 0"
+  career-chapter:
     textColor: "{colors.ink}"
-    padding: "25px 24px 28px"
+    typography: "{typography.chapter-title}"
+    padding: "14px 0"
+  side-project-row:
+    textColor: "{colors.ink}"
+    padding: "28px 0"
+  contact-row:
+    textColor: "{colors.ink}"
+    padding: "22px 0"
 ---
 
-# Design System: Choi Sangrok Portfolio
+# Design System: Ricky Choi Portfolio
 
 ## Overview
 
-**Creative North Star: "The Digital Engineering Exhibition"**
+**Creative North Star: "Personal Editorial Portfolio"**
 
-Actual product screens are the exhibits. Compressed English product lettering and colored walls give the work a recognizable frame; Korean technical writing has a quiet, spacious reading surface. Thin rules and rectangular controls support inspection rather than compete with the screenshots.
+The personal editorial portfolio gives Ricky Choi's name, actual product screens and verified responsibilities the largest visual roles. Uncut Sans lettering, Wanted Sans Korean text, paper surfaces and one red-orange accent define the current local implementation. Thin rules separate contributions, dates and destinations without enclosing each item in a card.
 
-This document captures the implemented local proposal on October 6, 2026. It is provisional visual guidance, not a user-approved brand or a deployed release. Public evidence boundaries in PRODUCT.md and the portfolio content guide continue to govern claims and assets.
+The user rejected the earlier generic headline, conventional typography and pastel exhibition. This record replaces that discarded world. It describes the October 6, 2026 local replacement and remains provisional until the user reviews it. PRODUCT.md and docs/portfolio/content.md continue to govern identity, claims and approved assets.
 
 **Key Characteristics:**
 
-- Actual product screens as the primary visual material.
-- Periwinkle, sage and lilac exhibition walls paired with lighter reading surfaces.
-- Compressed product lettering with clear Pretendard Korean text.
-- Flat catalog controls, ruled contribution lists and selective motion.
+- Named identity and approved product screens in an asymmetric opening.
+- Open project spreads with intact portrait media and native contribution disclosures.
+- Separate model-development and Android responsibilities in the AI case.
+- Dark tools reading section, compact career dates and flat secondary-work rows.
+
+Local finish evidence: all `npm run check` gates passed. Responsive inspection at 320px, 390px, 1280px and 1440px found no horizontal overflow; the actual self-hosted fonts loaded. Disclosures, media selection, mobile Escape focus restoration and reduced motion passed the final interaction inspection. The independent final verdict was **SHIP for local review** after its four composition findings were resolved. This is not a record of user aesthetic approval or deployment.
+
+Current captures: `.impeccable/review/replacement/desktop-hero.png` (1440 x 960), `desktop.png` (1440 x 8162), `mobile-hero.png` (390 x 844) and `mobile.png` (390 x 11305), with readable crops in the same directory. Token sources are `tokens.css`, `src/styles/global.css` and the current component styles. The frontmatter is normative; the sidecar records extensions and representative snippets.
 
 ## Colors
 
-Muted exhibition colors sit behind dark ink, with cooler blue reserved for links, hover feedback and focus.
+Neutral paper and charcoal ink carry the reading surfaces; red-orange supplies the single accent.
 
 ### Primary
 
-- **Ink:** headings, selected controls, arrows and the identity mark.
-- **Catalog Blue:** links and contribution hover feedback.
-- **Focus Blue:** the global keyboard outline.
-
-### Secondary
-
-- **Periwinkle Wall:** Vuddy exhibition; its lighter reading surface continues the project context.
-- **Sage Wall:** character AI exhibition; its lighter reading surface supports the AI case.
-- **Lilac Wall:** Momentica exhibition; its lighter reading surface supports the interaction case.
+- **Red-orange Accent:** the second line of the name, identity punctuation, link feedback and interest icons.
+- **Focus Red-orange:** the global visible keyboard outline.
 
 ### Neutral
 
-- **Paper:** page, header and career reading space.
-- **Secondary Ink** and **Muted:** supporting copy, captions and footer metadata.
-- **Rule** and **Strong Rule:** quiet section boundaries and interactive contribution rows.
-- **White:** selected-control text.
-- **Method Surface:** the subdued green background behind the working-method section.
+- **Paper:** page, fixed header and primary project surfaces.
+- **Ink:** headings, contribution titles, arrows and selected media labels.
+- **Secondary Ink:** introductions, project context and technical explanation.
+- **Muted:** screen captions, dates, metadata and unselected media labels.
+- **Rule** and **Strong Rule:** section boundaries and contact destinations.
+- **Hero Charcoal:** the opening composition of approved Vuddy home and chat images.
+- **AI Paper:** the slightly darker neutral surface behind the reversed AI case.
+- **Tools Charcoal**, **Tools Rule** and **Tools Muted:** the dark development-tools reading section and its evidence rows.
+- **White:** the link on the opening charcoal media panel and video-action text when video media is used.
 
-**The Exhibit Context Rule.** Wall colors identify the selected project and its reading context; control selection remains ink with white text.
+**The Accent Rule.** Use red-orange for the identity mark, selected link feedback and keyboard focus. Keep project reading surfaces neutral.
 
 ## Typography
 
-**Display Font:** Barlow Condensed, falling back to Pretendard Variable and sans-serif.
+**Display Font:** Uncut Sans, with Wanted Sans and sans-serif fallbacks.
 
-**Body Font:** Pretendard Variable, Pretendard and sans-serif. Utility labels use the same family; the legacy mono aliases do not introduce a monospace face.
+**Body Font:** Wanted Sans, with a sans-serif fallback. Utility labels and the legacy mono aliases use Wanted Sans; the current page has no separate monospace face.
 
-Barlow Condensed gives product names a compact exhibition silhouette. Pretendard carries Korean headings, explanations and navigation without forcing English display styling onto technical prose.
+Both variable fonts are self-hosted from their official repositories with OFL licenses in `public/fonts/`. The name uses Uncut Sans stylistic sets ss01 and ss02; English product headings use ss01. Wanted Sans carries Korean paragraphs and the longer AI project heading.
 
-- **Exhibit:** uppercase product names above screenshots; decorative lettering is hidden from assistive technology.
-- **Introduction:** the short personal statement, reduced to 25px on narrow screens.
-- **Section:** strong reading-section titles, reduced to a 1.75rem to 2rem clamp below 720px.
-- **Body:** the global reading baseline, reduced to 16px below 720px. Case descriptions use 15px to 16px with generous line height and a 65ch maximum where implemented.
-- **Contribution Title:** the compact heading inside an expandable technical row.
-- **Tab:** restrained project controls, reduced to 13px on mobile.
+### Hierarchy
 
-**The Reading Voice Rule.** Use the exhibit face for product lettering. Keep Korean explanations and controls in Pretendard.
+- **Identity:** the large two-line name; mobile uses `clamp(62px, 16vw, 86px)` with line height `.98`.
+- **Product title:** Vuddy and Momentica lettering; mobile uses 54px. The Korean AI title uses Wanted Sans, weight 600, `clamp(30px, 3.8vw, 48px)` and line height 1.3, becoming 32px on mobile.
+- **Section title:** tools, career and secondary reading headings; below 540px it becomes 27px.
+- **Body:** the global baseline becomes 16px below 720px. The opening introduction uses 15px and a 44ch maximum, becoming 14px on mobile.
+- **Technical body:** disclosure and tools explanation uses the frontmatter's smaller reading role. Tools paragraphs have a 65ch maximum.
+- **Contribution title:** compact headings in expandable rows, with separate 19px group headings for the AI responsibilities.
+- **Work link, navigation label and media label:** product links, fixed-header destinations and screen-selection controls.
+
+**The Reading Voice Rule.** Keep Korean explanations in Wanted Sans. Use Uncut Sans for the English identity, product names and compact project metadata.
 
 ## Layout
 
-The exhibition is framed within a maximum width of 1600px with 32px desktop gutters. The main reading grid is 1120px wide; career and footer shells are 1184px including their 32px gutters. Working-method copy shares the reading alignment.
+The opening uses a two-column grid within 1440px, with 56px desktop gutters and a fluid 40px to 96px gap. The identity sits at left; two rotated approved Vuddy screens and three project anchor rows sit at right. Below 700px the opening stacks with 24px gutters. Introduction, media and project links keep that reading order.
 
-Project cases use a two-column copy/media grid with a 1.2:1 ratio and a fluid gap. Below 850px they stack into one column. The media column becomes sticky only when the viewport is at least 1024px wide and 800px tall, the media fits, and reduced motion is not requested. Career cards and secondary sections stack below 820px.
+Project spreads use a 1216px maximum inner grid. Vuddy and Momentica place media left and technical reading right in a .85:1.15 ratio, with headings across the spread. The AI case reverses the columns and uses a 1.15:.85 ratio. Its model-development and Android groups remain independent. At 760px and below, every case uses one column: project context, media, contribution groups and project metadata.
 
-Below 700px, the exhibition shows the featured screen alone, stacks the selector and case link, and uses 16px outer gutters. Reading shells use 20px gutters. The header switches to its mobile menu below 900px. Keep controls at their implemented 44px minimum target height, with 48px mobile navigation rows.
+Case images retain their complete original ratio and use up to 330px width on desktop and 300px on mobile. Captions share the image width. There is no fixed vacant media stage around case images. Conditional sticky media requires at least 1024px viewport width and 800px height, a media block that fits the viewport, and no reduced-motion preference.
 
-The spacing scale supports repeated gaps, but section padding remains purpose-specific. Preserve breathing room around screens and 65ch case prose rather than compressing every region into equal cards.
+The tools section spans the dark surface while its content follows the 1216px reading alignment. Career and footer shells are at most 1328px including gutters. Career dates occupy a 190px column on desktop and stack above the organization below 760px. Secondary work uses two columns until 820px; side-project rows stack below 760px. Gutters step to 32px below 1000px and 24px on mobile.
+
+The spacing tokens are the actual reused footer steps. Component layouts retain their observed purpose-specific padding rather than forcing one scale onto every region. Controls use at least 44px targets where implemented; mobile navigation rows use 48px.
 
 ## Elevation & Depth
 
-The system is flat except for exhibition screenshots. Their soft shadow (`0 16px 28px rgba(20, 31, 57, .17)`) separates the actual product from the colored wall. Reading sections, cards and controls use tone or thin rules instead of elevation. The biography disclosure overlays a bordered paper panel without a shadow.
+Reading surfaces, rows and controls are flat. Neutral surface changes and thin rules separate sections. The opening Vuddy chat screen has the only decorative screen shadow (`0 12px 30px #0004`); case images receive no shadow or outer staged container.
 
-The project change uses a short mask reveal and wall-color transition. Media changes enter with a small upward displacement. Navigation underlines and arrows provide local feedback. Reduced motion removes these specific animations and transitions; the global fallback caps remaining motion at 150ms and disables smooth scrolling.
+**The Flat Reading Rule.** Keep reading rows and controls flat. Reserve the existing screen shadow for the opening Vuddy composition.
 
-**The Specimen Depth Rule.** Preserve the screenshot shadow as a specimen treatment; ordinary reading cards remain flat.
+Motion remains local: a short clip reveal on media changes, arrow feedback on project links and disclosures, and a navigation underline. Reduced motion removes those local transitions and the media reveal, disables smooth scrolling and prevents media stickiness. Content is visible without an entrance-animation gate.
 
 ## Shapes
 
-The dominant geometry is rectangular: uninterrupted project walls, squared reading cards and ruled lists. Tabs have barely softened control corners. The mobile menu button is lightly rounded; exhibition screenshots retain a modest corner radius. The circular identity mark and timeline markers are existing exceptions, not a general pill treatment.
+The page uses rectangular surfaces, intact portrait screens and open horizontal rules. Media labels use a one-pixel underline for selection. Contact rows have top and bottom rules. The fixed header and mobile menu remain paper surfaces. The focus-only skip link retains its existing rounded corners; its radius is the sole rounded token extracted for the rendered page.
 
 ## Components
 
-### Project Controls
-
-Project tabs use a transparent default, an ink selected state and an ink hover border. ArrowLeft, ArrowRight, Home and End select and focus a tab through roving tabIndex. The case link points directly to the selected project and moves its arrow on hover. Media selectors repeat the ink-selected pattern with compact labels and aria-pressed.
-
 ### Navigation
 
-A fixed paper header has a thin bottom rule. Links reveal an underline on hover and for the current section. Mobile navigation opens as a bordered paper panel; Escape closes it and returns focus to the menu button. The skip link becomes visible on focus.
+A fixed paper header pairs the compact name with text destinations. Hover and current-section states reveal a thin underline. Below 900px a square 44px menu control opens stacked 48px links. Escape closes the menu and restores focus to the control; following a section link closes it.
+
+### Work Index
+
+Three open rows pair the project name, concrete responsibility label and arrow. Hover changes the name to the accent and moves the arrow. Each anchor leads directly to its project section.
+
+### Media Selector and Caption
+
+Text buttons show the caption's English feature name. The selected label has ink text and a thin underline; `aria-pressed` records selection. Selection is explicit, with no automatic rotation. The complete approved image appears below, followed by its caption and original-image link. AI captions additionally identify screen mockups and name masking.
 
 ### Contribution Disclosure
 
-Native details rows pair a compact title with an arrow. Strong rules divide the rows, hover changes the summary to Catalog Blue, and opening rotates the arrow. The first contribution in each group starts open. Keep the complete public contribution record accessible through these rows.
+Native `details` and `summary` preserve each implementation claim. The arrow rotates when open, and the summary changes to the accent on hover. The first contribution in each responsibility group is initially open. The AI case uses group headings and h4 contribution titles; the other cases use h3 contribution titles.
 
-### Media and Containers
+### Tools Evidence Row
 
-Exhibition images use contain sizing to preserve the complete screen. Case media sits on a subtly tinted stage with a caption and selector. Video has an explicit play/pause control and does not autoplay. Side-project cards are flat, bordered rectangles with 24px horizontal padding; working-method evidence uses ruled rows instead of cards.
+A dark two-column row places the named tool or verification topic beside its factual explanation. It stacks below 700px. These are independent evidence items, not an invented sequence of development steps.
 
-### Contact Links
+### Career Chapter and Side Project Row
 
-Contact choices are full ruled rows with an icon, stacked label and destination, and a trailing external arrow. They form two columns on desktop and one column below 650px. Hover uses Catalog Blue; keyboard focus uses the global outline.
+Career chapters pair compact dates with linked project titles, without repeating the case descriptions. Side projects use open two-column rows with name and period at left and approved work at right; mobile stacks the row. Neither pattern needs a card shell.
+
+### Contact Row
+
+GitHub and LinkedIn are full-row destinations with an icon, destination name, account label and external-link arrow. Hover uses the accent; keyboard focus uses the global ring. The two rows stack below 650px.
+
+The sidecar includes eight actual representative component snippets. The current portfolio has no input fields, filled primary CTA or standalone filter-chip pattern to document.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve intact approved screens and their readable captions.
-- **Do** keep project selection visible through ink and white contrast, independently of wall color.
-- **Do** preserve native disclosures, keyboard tab selection and visible focus.
-- **Do** keep motion tied to selection or direct interaction and honor reduced motion.
+- **Do** preserve complete approved images, their captions and direct original-image links.
+- **Do** keep the two AI responsibility groups separate and identify the masked images as mockups.
+- **Do** retain native disclosures, visible keyboard focus and explicit media selection.
+- **Do** inspect current desktop and mobile renders after a visual change and apply plain-language.md before adding copy.
 
 ### Don't:
 
-- **Don't** replace real product screens with invented interface imagery or performance metrics.
-- **Don't** extend Barlow Condensed into Korean reading text.
-- **Don't** add shadows or rounded shells to ordinary reading cards.
-- **Don't** treat this local proposal as an approved identity or deployed release.
+- **Don't** restore the generic engineer headline, pastel exhibition walls or centered three-screen showcase.
+- **Don't** crop case images to fill a fixed vacant stage or replace approved screens with invented artwork.
+- **Don't** add rounded or elevated shells around ordinary reading rows.
+- **Don't** infer user aesthetic approval or deployment from a technical check or independent local-review verdict.

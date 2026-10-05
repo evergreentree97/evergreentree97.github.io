@@ -8,7 +8,7 @@ export const profile = {
 
 export const navigation = [
   { label: '프로젝트', href: '#projects' },
-  { label: '일하는 방식', href: '#how-i-work' },
+  { label: '개발 도구', href: '#how-i-work' },
   { label: '경력', href: '#experience' },
   { label: '오픈소스', href: '#more-work' },
   { label: '연락처', href: '#contact' },

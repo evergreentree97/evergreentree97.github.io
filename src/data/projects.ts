@@ -94,7 +94,7 @@ export const featuredProjects: FeaturedProject[] = [
       {
         title: 'Android 채팅과 결제 개발',
         highlights: [
-          'SSE 채팅과 예외 처리: 사내 AI 모델을 활용한 SSE 기반 캐릭터 채팅 개발 주도. 다양한 오류 상황에 대응하는 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
+          'SSE 채팅과 예외 처리: 사내 AI 모델을 활용한 SSE 기반 캐릭터 채팅 개발 주도. 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
           '구독과 단건 결제: Google Play Billing의 상품 조회, 구매, 완료, 취소와 복구를 Backend 구매 검증과 연결. 단위 테스트로 결제 로직을 검증하고 스크린샷 테스트로 결제 화면 표시 결과 확인',
         ],
       },

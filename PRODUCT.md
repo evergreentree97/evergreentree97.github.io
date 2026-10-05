@@ -18,7 +18,7 @@ Initial Android architecture and production operation, runtime problem solving a
 Preact, TypeScript, Vite, GitHub Pages. Preserve public project facts, approved screenshots, useful links, responsive reading and keyboard navigation. Never publish private contact details, original resume, internal code names, evaluation scores or fabricated impact.
 
 ## Brand Commitments
-User requested a distinctive redesign informed by the latest resume and the referenced Instagram motion reel. Existing Korean copy and public terminology are authoritative. Layout and visual treatment may change under this request.
+User requested a distinctive redesign informed by the latest resume and the referenced Instagram motion reel. The user subsequently rejected the generic copy, conventional typography and pastel exhibition. Replace that visual proposal and generic headline. Preserve verified facts and approved assets. Apply docs/portfolio/plain-language.md to UI copy and reports.
 
 ## Evidence on Hand
 The public-content guide, approved assets in public/screens, and NextStep career/index.md point to the selected 2026-10-02 synchronized working resume. Canonical chapters own the claims. This selected resume is a draft, not an approved release. The portfolio's public contribution boundaries still apply.

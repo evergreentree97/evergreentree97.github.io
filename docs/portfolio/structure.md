@@ -1,19 +1,28 @@
-# Portfolio structure
+# Current portfolio structure
 
-The public wording and approved assets are owned by [content.md](content.md). The October 6 redesign is a local proposal; the public site is unchanged until deployment.
+The October 6 replacement is an editorial personal portfolio. The previous pastel exhibition was rejected by the user and is no longer design authority. This remains a local preview; the live GitHub Pages site is unchanged.
 
 ## Reading order
-1. Personal introduction and interactive exhibition of real product screens.
-2. Vuddy, character AI, Momentica implementation cases.
-3. AI-assisted working methods and verification.
-4. Career, side projects, open source and community.
-5. Personal interests and usable contact links.
 
-## Composition and behavior
-The first viewport uses a periwinkle exhibition wall, compressed product lettering and intact screenshots. Selecting a project changes its wall and media together. Use arrow keys, Home and End on the tablist. Mobile shows the featured screenshot in full and retains every project selector. No automatic switching.
+1. Ricky Choi identity, verified introduction, two approved Vuddy screens and project anchor links.
+2. Vuddy: large product heading, selected screen at left and implementation disclosures at right.
+3. Character model and AI app: grouped model and Android contributions at left, masked app screens at right.
+4. Momentica: product heading, 3D card and alarm media, and three implementation cases.
+5. Development tools and verification on a dark reading surface.
+6. Compact career chronology with organization, dates and project links, followed by side projects, open source, activities, interests and contact destinations.
 
-Each case preserves its public contributions as native details controls. The first contribution is open initially. Screens retain their original proportions in a bounded stage, with captions below. Media can stick only when it fits the desktop viewport. No section rail or scroll-locked scene.
+## Behavior and visual rules
 
-The short project replacement and media-selection transition own the motion. Reading sections stay visible by default. Reduced-motion mode disables exhibition and media transitions and smooth scrolling. No per-frame pointer listeners or scroll measurements.
+- Uncut Sans variable supplies English identity and product lettering. Wanted Sans supplies Korean text. Both are self-hosted with OFL licenses.
+- Paper and ink are primary; muted red-orange marks identity and links. Do not restore colored showcase walls or the generic engineer slogan.
+- Headers sit across the project spread. Preserve the model and Android responsibility groups; never combine their claims.
+- Case images occupy up to 330px width on desktop and 300px on mobile without vacant colored stages. AI captions identify mockups; original-image links expose complete approved files.
+- Native disclosures retain every approved contribution. Media selectors preserve the whole image and its caption; video starts only by explicit user action.
+- Below 760px, each case puts the project context and media before technical detail. The header menu closes on Escape and restores focus.
+- Reduced motion removes the media reveal. Content is visible without an observer or entrance-animation gate.
+- Section rules align the reading grid. Secondary projects use open rows rather than nested cards.
+- Apply [plain-language.md](plain-language.md) before adding visible copy.
 
-See [redesign-2026-10-06.md](redesign-2026-10-06.md) for the proposal and claim boundaries.
+## Change locations
+
+Hero.tsx owns identity and project anchors. ProjectScene.tsx owns case layout, image selection and disclosures. Data files own verified career statements. Global CSS and tokens.css own shared typography and palette; component CSS owns layouts. DESIGN.md and .impeccable/design.json describe the current provisional system.

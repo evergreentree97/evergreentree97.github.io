@@ -12,9 +12,9 @@ export function SideProjects() {
           {sideProjects.map((project) => (
             <article key={project.name} data-reveal-item>
             <div className={styles.meta}>
+              <h3>{project.name}</h3>
               <span>{project.period}</span>
             </div>
-            <h3>{project.name}</h3>
             <p>{project.summary}</p>
             <ul>
               {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}

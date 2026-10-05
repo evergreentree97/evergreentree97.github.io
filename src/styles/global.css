@@ -181,6 +181,7 @@ section[id] {
   }
 }
 
-html { scrollbar-color: #7b8eb8 #e9ece7; scroll-behavior: smooth; }
-@font-face { font-family: 'Barlow Condensed'; src: url('/fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-style: normal; font-weight: 700; font-display: swap; }
+html { scrollbar-color: #989891 #f7f7f5; scroll-behavior: smooth; }
+@font-face { font-family: 'Wanted Sans'; src: url('/fonts/WantedSansVariable.woff2') format('woff2'); font-style: normal; font-weight: 100 1000; font-display: swap; }
+@font-face { font-family: 'Uncut Sans'; src: url('/fonts/UncutSansVariable.woff2') format('woff2'); font-style: normal; font-weight: 300 700; font-display: swap; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

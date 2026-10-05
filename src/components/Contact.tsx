@@ -34,7 +34,6 @@ export function Contact() {
         <SectionTitle id="contact-title" title="연락처" />
         <div className={styles.layout}>
         <div className={styles.contactBody}>
-          <h3>채용과 협업 제안 모두 받습니다.</h3>
           <div className={styles.links}>
             {contactLinks.map((link) => (
               <a

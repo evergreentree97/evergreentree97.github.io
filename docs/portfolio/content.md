@@ -9,23 +9,22 @@
 - 사내 AI TF의 데이터 정제, 학습, 평가와 서빙 경험은 문제를 판단하고 검증하는 방식을 보여주는 보조축으로 사용한다.
 - 제품 문제와 판단 범위를 먼저 설명하고, 기술 이름은 이를 증명하는 경험으로 연결한다.
 
-## 현재 첫 화면
+## Current first viewport (2026-10-06 revision)
 
-> 제품을 만드는<br>
-> 엔지니어입니다
+The user rejected the earlier visual proposal and generic AI phrasing and authorized a replacement of copy and visual identity. The old locked headline `제품을 만드는 엔지니어입니다` is retired. The visible identity is **Ricky Choi**, accompanied by the verified Korean name 최상록 and Android Developer role.
+
+Retain these approved factual introduction paragraphs, shown directly in the first viewport rather than in a hidden disclosure:
 
 > Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.
 >
 > 사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.
 
-첫 화면 위쪽 라벨은 `ANDROID & AI PRODUCT`다. 직군을 Android로만 좁히지 않기 위해 2026-08-24 `ANDROID DEVELOPER`에서 바꿨다.
-
-본문은 2026-09-09 사용자가 검토 제안 반영을 요청해 현재 문구로 갱신했다. 제목과 직군 라벨은 유지한다. 별도 요청이 없으면 이 확정 문구를 바꾸지 않는다. `npm run check:content`가 구현과 이 문서의 문구를 함께 확인한다. 구체적인 경력과 사례는 경력 타임라인과 주요 프로젝트에서 설명한다.
+Project names and concrete responsibility labels provide navigation. Do not restore an abstract professional slogan, the ANDROID & AI PRODUCT eyebrow, or a promise about how clearly the page reads. Apply [plain-language.md](plain-language.md) to new copy and assistant reports. The automated copy check catches named regressions; human review owns meaning and naturalness.
 
 ## 섹션 역할
 
 - 첫 화면: 전체 경력과 담당 범위 요약
-- 경력: 첫 화면과 겹치는 별도 도입 문단을 두지 않고 회사, 기간과 프로젝트 흐름을 타임라인으로 보여준다. 구체적인 구현과 결과는 주요 프로젝트에서 설명한다
+- Career: show organization, role, dates and linked project chapters. Do not repeat the implementation summaries already present in the cases.
 - 주요 프로젝트: 문제, 판단, 맡은 구현과 확인 가능한 결과. 카드 제목 아래 소개 문장은 제품 맥락을 쓰고 경력 챕터 요약은 대표 구현 기술과 기능을 한 문장으로 보여준다. 상세한 해결 과정은 주요 프로젝트 항목에만 둔다 (2026-08-25)
 - 기술 이름은 주요 프로젝트의 태그에서 사용 맥락과 함께 보여주며 별도 기술 섹션은 두지 않는다
 - AI와 함께 개발하는 방식: AI에 맡긴 범위와 개발자가 직접 확인한 범위
@@ -152,4 +151,6 @@ The user approved applying the portfolio review. This is a general-profile safe 
 
 ## October 6 redesign proposal
 
-The latest selected resume is the October 2 synchronized Toss working source, not an approved release. The public page keeps verified Android architecture, runtime stability and AI verification claims; private resume details and unsupported outcome language are excluded. The new exhibition changes layout and navigation while preserving the existing approved headline, introduction, project facts and per-file asset permissions. The current reading order and new interaction are recorded in structure.md.
+The latest selected resume is an October 2 synchronized working source, not an approved release. The public page keeps verified Android architecture, runtime stability and AI verification claims; private resume details and unsupported outcome language are excluded. The initial exhibition proposal was rejected. The replacement keeps the factual introduction, project facts and per-file asset permissions while retiring its generic headline and pastel showcase. The current reading order and new interaction are recorded in structure.md.
+
+The AI media captions identify the approved images as screen mockups with character-name masking. Original approved files are preserved and available through the original-image links. The vague qualifier before the SSE exception-handling claim has been removed; the verified retry and unit-test facts remain.

@@ -3,6 +3,7 @@
 이 디렉토리에는 현재 공개 포트폴리오를 운영할 때 필요한 기준만 둔다.
 
 - [`content.md`](content.md): 공개 문구, 경력 서술 원칙, 프로젝트별 선택과 공개 자산 승인 기록
+- [`plain-language.md`](plain-language.md): User-defined writing method and known copy regressions
 - [`structure.md`](structure.md): 현재 화면 순서, 레이아웃 결정, 수정 위치와 유지할 구분선 규칙
 - [`../../README.md`](../../README.md): 로컬 실행, 검사와 GitHub Pages 배포 방법
 
