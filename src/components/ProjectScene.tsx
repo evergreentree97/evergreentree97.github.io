@@ -43,17 +43,14 @@ function MediaContent({ media }: { media: ProjectMedia }) {
   return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
 }
 
-function HighlightText({ text, grouped }: { text: string; grouped: boolean }) {
+function Contribution({ text, grouped, open }: { text: string; grouped: boolean; open: boolean }) {
   const separator = text.indexOf(':')
   if (separator < 0) return <p>{text}</p>
   const Heading = grouped ? 'h4' : 'h3'
-
-  return (
-    <>
-      <Heading>{text.slice(0, separator)}</Heading>
-      <p>{text.slice(separator + 1).trimStart()}</p>
-    </>
-  )
+  return <details className={styles.contribution} open={open}>
+    <summary><Heading>{text.slice(0, separator)}</Heading><PixelIcon name="arrow" /></summary>
+    <p>{text.slice(separator + 1).trimStart()}</p>
+  </details>
 }
 
 export function ProjectScene({ project }: { project: FeaturedProject }) {
@@ -84,20 +81,19 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
   }, [])
 
   return (
-    <section className={styles.scene} id={project.id} aria-labelledby={`${project.id}-title`}>
+    <section className={styles.scene} data-project={project.id} id={project.id} aria-labelledby={`${project.id}-title`}>
       <div className={styles.sceneInner}>
         <div className={styles.copyColumn}>
           <div className={styles.projectHeading}>
-            <span>{project.eyebrow}</span>
             <h2 id={`${project.id}-title`}>{project.name}</h2>
-            <p>{project.headline}</p>
+            <p>{project.headline}</p><span className={styles.projectCategory}>{project.eyebrow}</span>
           </div>
           {project.highlightGroups.map((group, index) => (
             <div key={group.title ?? index} className={group.title ? styles.highlightGroup : undefined}>
               {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
               <ul className={styles.highlightList} aria-label={`${project.name} ${group.title ?? '담당 업무'}`}>
-                {group.highlights.map((highlight) => (
-                  <li key={highlight}><HighlightText text={highlight} grouped={Boolean(group.title)} /></li>
+                {group.highlights.map((highlight, highlightIndex) => (
+                  <li key={highlight}><Contribution text={highlight} grouped={Boolean(group.title)} open={highlightIndex === 0} /></li>
                 ))}
               </ul>
             </div>
@@ -114,7 +110,7 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
               ))}
             </div>
             <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
-              <div className={styles.mediaStage}><MediaContent media={activeMedia} /></div>
+              <div className={styles.mediaStage} key={activeMedia.src}><MediaContent media={activeMedia} /></div>
               {activeMedia.caption && <figcaption>{activeMedia.caption}</figcaption>}
             </figure>
           </div>

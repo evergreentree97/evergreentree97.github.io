@@ -6,14 +6,13 @@ import styles from './MoreWork.module.css'
 
 export function MoreWork() {
   return (
-    <section className={styles.section} aria-labelledby="more-work-title">
+    <section id="more-work" className={styles.section} aria-labelledby="more-work-title">
       <Reveal stagger>
         <SectionTitle id="more-work-title" title="오픈소스" />
         <div className={styles.list}>
           {moreProjects.map((project) => (
             <article key={project.name} data-reveal-item>
             <div className={styles.heading}>
-              <span>{project.eyebrow}</span>
               <h3>{project.name}</h3>
             </div>
             <div className={styles.copy}>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { navigation, profile } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { PixelIcon } from './PixelIcon'
@@ -9,25 +9,13 @@ export function Header() {
   const activeSection = useActiveSection()
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
-  useEffect(() => {
-    if (!isOpen) return undefined
-
-    const closeWithEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false)
-        menuButtonRef.current?.focus()
-      }
-    }
-
-    window.addEventListener('keydown', closeWithEscape)
-    return () => window.removeEventListener('keydown', closeWithEscape)
-  }, [isOpen])
-
   return (
-    <header className={styles.header}>
+    <header className={styles.header} onKeyDown={(event) => {
+      if (event.key === 'Escape') { setIsOpen(false); menuButtonRef.current?.focus() }
+    }}>
       <div className={styles.inner}>
         <a className={styles.logo} href="#top" aria-label="홈으로 이동">
-          <img className={styles.logoIcon} src="/icons/android-mark-dark.png" alt="" width="260" height="260" />
+          <span className={styles.logoMark} aria-hidden="true">s.</span>
           <span>최상록</span>
         </a>
 

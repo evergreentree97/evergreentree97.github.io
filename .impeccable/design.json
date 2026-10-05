@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T17:00:10.340260+00:00",
+  "title": "Design System: Choi Sangrok Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0054 117.92)",
+          "oklch(26% 0.0054 117.92)",
+          "oklch(37% 0.0054 117.92)",
+          "oklch(49% 0.0054 117.92)",
+          "oklch(61% 0.0054 117.92)",
+          "oklch(73% 0.0054 117.92)",
+          "oklch(85% 0.0054 117.92)",
+          "oklch(95% 0.0054 117.92)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0458 260.46)",
+          "oklch(26% 0.0458 260.46)",
+          "oklch(37% 0.0458 260.46)",
+          "oklch(49% 0.0458 260.46)",
+          "oklch(61% 0.0458 260.46)",
+          "oklch(73% 0.0458 260.46)",
+          "oklch(85% 0.0458 260.46)",
+          "oklch(95% 0.0458 260.46)"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0358 248.71)",
+          "oklch(26% 0.0358 248.71)",
+          "oklch(37% 0.0358 248.71)",
+          "oklch(49% 0.0358 248.71)",
+          "oklch(61% 0.0358 248.71)",
+          "oklch(73% 0.0358 248.71)",
+          "oklch(85% 0.0358 248.71)",
+          "oklch(95% 0.0358 248.71)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0337 250.09)",
+          "oklch(26% 0.0337 250.09)",
+          "oklch(37% 0.0337 250.09)",
+          "oklch(49% 0.0337 250.09)",
+          "oklch(61% 0.0337 250.09)",
+          "oklch(73% 0.0337 250.09)",
+          "oklch(85% 0.0337 250.09)",
+          "oklch(95% 0.0337 250.09)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0120 161.99)",
+          "oklch(26% 0.0120 161.99)",
+          "oklch(37% 0.0120 161.99)",
+          "oklch(49% 0.0120 161.99)",
+          "oklch(61% 0.0120 161.99)",
+          "oklch(73% 0.0120 161.99)",
+          "oklch(85% 0.0120 161.99)",
+          "oklch(95% 0.0120 161.99)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0203 232.72)",
+          "oklch(26% 0.0203 232.72)",
+          "oklch(37% 0.0203 232.72)",
+          "oklch(49% 0.0203 232.72)",
+          "oklch(61% 0.0203 232.72)",
+          "oklch(73% 0.0203 232.72)",
+          "oklch(85% 0.0203 232.72)",
+          "oklch(95% 0.0203 232.72)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Catalog Blue",
+        "tonalRamp": [
+          "oklch(15% 0.1077 265.47)",
+          "oklch(26% 0.1077 265.47)",
+          "oklch(37% 0.1077 265.47)",
+          "oklch(49% 0.1077 265.47)",
+          "oklch(61% 0.1077 265.47)",
+          "oklch(73% 0.1077 265.47)",
+          "oklch(85% 0.1077 265.47)",
+          "oklch(95% 0.1077 265.47)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Blue",
+        "tonalRamp": [
+          "oklch(15% 0.1655 265.30)",
+          "oklch(26% 0.1655 265.30)",
+          "oklch(37% 0.1655 265.30)",
+          "oklch(49% 0.1655 265.30)",
+          "oklch(61% 0.1655 265.30)",
+          "oklch(73% 0.1655 265.30)",
+          "oklch(85% 0.1655 265.30)",
+          "oklch(95% 0.1655 265.30)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(37% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(73% 0.0000 89.88)",
+          "oklch(85% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "periwinkle-wall": {
+        "role": "secondary",
+        "displayName": "Periwinkle Wall",
+        "tonalRamp": [
+          "oklch(15% 0.0808 274.30)",
+          "oklch(26% 0.0808 274.30)",
+          "oklch(37% 0.0808 274.30)",
+          "oklch(49% 0.0808 274.30)",
+          "oklch(61% 0.0808 274.30)",
+          "oklch(73% 0.0808 274.30)",
+          "oklch(85% 0.0808 274.30)",
+          "oklch(95% 0.0808 274.30)"
+        ]
+      },
+      "sage-wall": {
+        "role": "secondary",
+        "displayName": "Sage Wall",
+        "tonalRamp": [
+          "oklch(15% 0.0313 158.98)",
+          "oklch(26% 0.0313 158.98)",
+          "oklch(37% 0.0313 158.98)",
+          "oklch(49% 0.0313 158.98)",
+          "oklch(61% 0.0313 158.98)",
+          "oklch(73% 0.0313 158.98)",
+          "oklch(85% 0.0313 158.98)",
+          "oklch(95% 0.0313 158.98)"
+        ]
+      },
+      "lilac-wall": {
+        "role": "secondary",
+        "displayName": "Lilac Wall",
+        "tonalRamp": [
+          "oklch(15% 0.0454 301.10)",
+          "oklch(26% 0.0454 301.10)",
+          "oklch(37% 0.0454 301.10)",
+          "oklch(49% 0.0454 301.10)",
+          "oklch(61% 0.0454 301.10)",
+          "oklch(73% 0.0454 301.10)",
+          "oklch(85% 0.0454 301.10)",
+          "oklch(95% 0.0454 301.10)"
+        ]
+      },
+      "periwinkle-reading": {
+        "role": "secondary",
+        "displayName": "Periwinkle Reading",
+        "tonalRamp": [
+          "oklch(15% 0.0180 272.31)",
+          "oklch(26% 0.0180 272.31)",
+          "oklch(37% 0.0180 272.31)",
+          "oklch(49% 0.0180 272.31)",
+          "oklch(61% 0.0180 272.31)",
+          "oklch(73% 0.0180 272.31)",
+          "oklch(85% 0.0180 272.31)",
+          "oklch(95% 0.0180 272.31)"
+        ]
+      },
+      "sage-reading": {
+        "role": "secondary",
+        "displayName": "Sage Reading",
+        "tonalRamp": [
+          "oklch(15% 0.0168 151.09)",
+          "oklch(26% 0.0168 151.09)",
+          "oklch(37% 0.0168 151.09)",
+          "oklch(49% 0.0168 151.09)",
+          "oklch(61% 0.0168 151.09)",
+          "oklch(73% 0.0168 151.09)",
+          "oklch(85% 0.0168 151.09)",
+          "oklch(95% 0.0168 151.09)"
+        ]
+      },
+      "lilac-reading": {
+        "role": "secondary",
+        "displayName": "Lilac Reading",
+        "tonalRamp": [
+          "oklch(15% 0.0169 304.80)",
+          "oklch(26% 0.0169 304.80)",
+          "oklch(37% 0.0169 304.80)",
+          "oklch(49% 0.0169 304.80)",
+          "oklch(61% 0.0169 304.80)",
+          "oklch(73% 0.0169 304.80)",
+          "oklch(85% 0.0169 304.80)",
+          "oklch(95% 0.0169 304.80)"
+        ]
+      },
+      "method-surface": {
+        "role": "neutral",
+        "displayName": "Method Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0182 123.99)",
+          "oklch(26% 0.0182 123.99)",
+          "oklch(37% 0.0182 123.99)",
+          "oklch(49% 0.0182 123.99)",
+          "oklch(61% 0.0182 123.99)",
+          "oklch(73% 0.0182 123.99)",
+          "oklch(85% 0.0182 123.99)",
+          "oklch(95% 0.0182 123.99)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "exhibit": {
+        "displayName": "Exhibit",
+        "purpose": "Decorative product lettering above actual screens."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Korean technical reading and supporting prose."
+      }
+    },
+    "shadows": [
+      {
+        "name": "exhibition-specimen",
+        "value": "0 16px 28px rgba(20, 31, 57, .17)",
+        "purpose": "Separate product screens from colored exhibition walls."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Selection reveals and local control feedback."
+      },
+      {
+        "name": "wall-transition",
+        "value": "380ms",
+        "purpose": "Exhibition wall-color change."
+      },
+      {
+        "name": "exhibit-reveal",
+        "value": "460ms",
+        "purpose": "Mask reveal on project selection."
+      },
+      {
+        "name": "media-reveal",
+        "value": "300ms",
+        "purpose": "Case media entrance."
+      },
+      {
+        "name": "control-transition",
+        "value": "180ms",
+        "purpose": "Arrow and underline feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "hero-mobile",
+        "value": "700px"
+      },
+      {
+        "name": "reading-stack",
+        "value": "850px"
+      },
+      {
+        "name": "navigation-mobile",
+        "value": "900px"
+      },
+      {
+        "name": "secondary-stack",
+        "value": "820px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Project Tab",
+      "kind": "button",
+      "refersTo": "project-tab",
+      "description": "Unselected exhibition selector.",
+      "html": "<button class=\"ds-project-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\">AI 캐릭터</button>",
+      "css": ".ds-project-tab { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); cursor: pointer; min-height: 44px; padding: 8px 16px; color: var(--color-ink, #152238); background: transparent; border: 1px solid transparent; border-radius: 2px; font-size: 14px; } .ds-project-tab[aria-selected=\"true\"] { background: var(--color-ink, #152238); color: #fff; } .ds-project-tab:hover:not([aria-selected=\"true\"]) { border-color: var(--color-ink, #152238); } .ds-project-tab:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; }"
+    },
+    {
+      "name": "Selected Project Tab",
+      "kind": "button",
+      "refersTo": "project-tab-selected",
+      "description": "Ink selection independent of exhibition wall color.",
+      "html": "<button class=\"ds-project-tab\" type=\"button\" role=\"tab\" aria-selected=\"true\">Vuddy</button>",
+      "css": ".ds-project-tab { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); cursor: pointer; min-height: 44px; padding: 8px 16px; color: var(--color-ink, #152238); background: transparent; border: 1px solid transparent; border-radius: 2px; font-size: 14px; } .ds-project-tab[aria-selected=\"true\"] { background: var(--color-ink, #152238); color: #fff; } .ds-project-tab:hover:not([aria-selected=\"true\"]) { border-color: var(--color-ink, #152238); } .ds-project-tab:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; }"
+    },
+    {
+      "name": "Case Link",
+      "kind": "custom",
+      "description": "Direct link from the exhibition to the selected case.",
+      "html": "<a class=\"ds-case-link\" href=\"#vuddy\">담당한 구현 보기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\" /></svg></a>",
+      "css": ".ds-case-link { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--color-ink, #152238); font-size: 14px; font-weight: 650; text-decoration: none; } .ds-case-link svg { width: 22px; height: 22px; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-case-link:hover svg { transform: translateX(4px); } .ds-case-link:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-case-link svg { transition: none; } }"
+    },
+    {
+      "name": "Mobile Menu Button",
+      "kind": "button",
+      "refersTo": "menu-button",
+      "description": "The outlined mobile navigation control.",
+      "html": "<button class=\"ds-menu\" type=\"button\" aria-label=\"메뉴 열기\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M4 6h16M4 12h16M4 18h16\" /></svg></button>",
+      "css": ".ds-menu { display: grid; place-items: center; cursor: pointer; width: 44px; height: 44px; border: 1px solid var(--color-rule-strong, #7c8a92); background: transparent; color: var(--color-ink, #152238); border-radius: 4px; } .ds-menu svg { width: 20px; height: 20px; } .ds-menu:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; }"
+    },
+    {
+      "name": "Catalog Navigation",
+      "kind": "nav",
+      "description": "Underlined current-section and hover states.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"주요 메뉴\"><a href=\"#projects\" aria-current=\"page\">대표 프로젝트</a><a href=\"#experience\">경력</a></nav>",
+      "css": ".ds-nav { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); display: flex; align-items: center; gap: 28px; color: var(--color-ink, #152238); } .ds-nav a { display: inline-flex; align-items: center; position: relative; min-height: 44px; color: inherit; font-size: 13px; text-decoration: none; } .ds-nav a::after { content: \"\"; position: absolute; bottom: 6px; inset-inline: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-nav a:hover::after, .ds-nav a[aria-current=\"page\"]::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-nav a::after { transition: none; } }"
+    },
+    {
+      "name": "Contribution Disclosure",
+      "kind": "custom",
+      "refersTo": "contribution",
+      "description": "Native expandable technical contribution with ruled separation.",
+      "html": "<details class=\"ds-contribution\" open><summary><h3>앱 초기 구조와 공통 기반</h3><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\" /></svg></summary><p>신규 Android 앱의 초기 구조와 공통 기반을 설계했습니다.</p></details>",
+      "css": ".ds-contribution { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); color: var(--color-ink, #152238); border-top: 1px solid var(--color-rule-strong, #7c8a92); border-bottom: 1px solid var(--color-rule-strong, #7c8a92); } .ds-contribution summary { display: flex; justify-content: space-between; align-items: center; min-height: 62px; gap: 24px; padding: 14px 0; cursor: pointer; list-style: none; } .ds-contribution summary::-webkit-details-marker { display: none; } .ds-contribution h3 { margin: 0; font-size: 16px; line-height: 1.45; font-weight: 650; } .ds-contribution svg { flex-shrink: 0; width: 18px; height: 18px; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution[open] svg { transform: rotate(90deg); } .ds-contribution p { margin: 0; padding: 0 24px 22px 0; color: var(--color-ink-2, #3c4d5e); font-size: 15px; line-height: 1.85; } .ds-contribution summary:hover { color: var(--color-accent, #273f7c); } .ds-contribution summary:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-contribution svg { transition: none; } }"
+    },
+    {
+      "name": "Side Project Card",
+      "kind": "card",
+      "refersTo": "side-project-card",
+      "description": "Flat secondary-work container with a thin rule and no shadow.",
+      "html": "<article class=\"ds-side-card\"><span>사이드 프로젝트</span><h3>프로젝트 기록</h3><p>기술 선택과 구현 경험을 기록합니다.</p></article>",
+      "css": ".ds-side-card { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); padding: 25px 24px 28px; border: 1px solid var(--color-rule, #c5cec9); color: var(--color-ink, #152238); } .ds-side-card span { color: var(--color-ink-2, #3c4d5e); font-size: .8125rem; } .ds-side-card h3 { margin: 16px 0 0; font-size: 1.34rem; } .ds-side-card p { margin: 9px 0 0; color: var(--color-ink-2, #3c4d5e); font-size: .92rem; line-height: 1.65; }"
+    },
+    {
+      "name": "Contact Row",
+      "kind": "custom",
+      "description": "Ruled full-width contact destination.",
+      "html": "<a class=\"ds-contact\" href=\"https://github.com/evergreentree97\"><span><small>GitHub</small><strong>evergreentree97</strong></span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\" /></svg></a>",
+      "css": ".ds-contact { font-family: var(--font-body, 'Pretendard Variable', Pretendard, sans-serif); display: flex; align-items: center; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-rule-strong, #7c8a92); border-bottom: 1px solid var(--color-rule-strong, #7c8a92); color: var(--color-ink, #152238); text-decoration: none; } .ds-contact span { display: flex; flex-direction: column; } .ds-contact small { font-size: 12px; color: var(--color-ink-2, #3c4d5e); } .ds-contact strong { font-size: 18px; font-weight: 600; } .ds-contact svg { margin-left: auto; width: 22px; height: 22px; } .ds-contact:hover { color: var(--color-accent, #273f7c); } .ds-contact:focus-visible { outline: 3px solid var(--color-focus, #2447ab); outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Digital Engineering Exhibition",
+    "overview": "Actual product screens are the exhibits. Compressed English product lettering and colored walls give the work a recognizable frame; Korean technical writing has a quiet, spacious reading surface. Thin rules and rectangular controls support inspection rather than compete with the screenshots.\n\nThis document captures the implemented local proposal on October 6, 2026. It is provisional visual guidance, not a user-approved brand or a deployed release. Public evidence boundaries in PRODUCT.md and the portfolio content guide continue to govern claims and assets.",
+    "keyCharacteristics": [
+      "Actual product screens as the primary visual material.",
+      "Periwinkle, sage and lilac exhibition walls paired with lighter reading surfaces.",
+      "Compressed product lettering with clear Pretendard Korean text.",
+      "Flat catalog controls, ruled contribution lists and selective motion."
+    ],
+    "rules": [
+      {
+        "name": "The Exhibit Context Rule",
+        "body": "Wall colors identify the selected project and its reading context; control selection remains ink with white text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Voice Rule",
+        "body": "Use the exhibit face for product lettering. Keep Korean explanations and controls in Pretendard.",
+        "section": "typography"
+      },
+      {
+        "name": "The Specimen Depth Rule",
+        "body": "Preserve the screenshot shadow as a specimen treatment; ordinary reading cards remain flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve intact approved screens and their readable captions.",
+      "Do keep project selection visible through ink and white contrast, independently of wall color.",
+      "Do preserve native disclosures, keyboard tab selection and visible focus.",
+      "Do keep motion tied to selection or direct interaction and honor reduced motion."
+    ],
+    "donts": [
+      "Don't replace real product screens with invented interface imagery or performance metrics.",
+      "Don't extend Barlow Condensed into Korean reading text.",
+      "Don't add shadows or rounded shells to ordinary reading cards.",
+      "Don't treat this local proposal as an approved identity or deployed release."
+    ]
+  }
+}

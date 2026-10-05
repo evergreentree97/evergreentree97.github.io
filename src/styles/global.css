@@ -18,7 +18,7 @@
   --wide-width: 1360px;
   --motion-fast: var(--dur-short);
   --motion-medium: var(--dur-mid);
-  color-scheme: dark;
+  color-scheme: light;
   font-size: 100%;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -180,3 +180,7 @@ section[id] {
     transition-delay: 0ms !important;
   }
 }
+
+html { scrollbar-color: #7b8eb8 #e9ece7; scroll-behavior: smooth; }
+@font-face { font-family: 'Barlow Condensed'; src: url('/fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-style: normal; font-weight: 700; font-display: swap; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -33,18 +33,6 @@ export function Contact() {
       <Reveal>
         <SectionTitle id="contact-title" title="연락처" />
         <div className={styles.layout}>
-        <div className={styles.workbenchReturn}>
-          <picture>
-            <source srcSet="/images/hero-product-developer-hand-hidden-480.avif" type="image/avif" />
-            <img
-              src="/images/hero-product-developer-hand-hidden.jpg"
-              alt="창가 책상에서 노트북으로 작업하는 개발자의 도트 일러스트"
-              width="480"
-              height="320"
-              loading="lazy"
-            />
-          </picture>
-        </div>
         <div className={styles.contactBody}>
           <h3>채용과 협업 제안 모두 받습니다.</h3>
           <div className={styles.links}>

@@ -10,7 +10,7 @@
 .headingRow h2 {
   font-size: clamp(2.5rem, 4vw, 3rem);
   font-weight: 760;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   line-height: 1.05;
 }
 

@@ -1,71 +1,14 @@
-/* Neutral charcoal foundation with orange reserved for actions and active states. */
 :root {
-  /* 오렌지 다크 팔레트: 배경은 웜 차콜 단계, 글자는 밝은 웜 그레이,
-     강조 텍스트는 밝은 오렌지, 주 버튼은 채도 있는 오렌지 면에 흰 글자. */
-  --color-paper: #121212;
-  --color-paper-2: #1c1c1c;
-  --color-paper-3: #242424;
-  --color-paper-4: #2b2b2b;
-  --color-scrim: #0b0b0b;
-  --color-ink: #f5f5f5;
-  --color-ink-2: #d0d0d0;
-  --color-muted: #b5b5b5;
-  --color-rule: #353535;
-  --color-rule-strong: #575757;
-  --color-accent: #f68a4f;
-  --color-accent-strong: #c74000;
-  --color-accent-ink: #ffffff;
-  --color-warning: oklch(78% 0.14 85);
-  --color-focus: #f68a4f;
-
-  --font-display: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
-  --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
-  --font-utility: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
-
-  --space-3xs: 0.125rem;
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2.5rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-  --space-4xl: 9rem;
-
-  --text-xs: 0.72rem;
-  --text-sm: 0.84rem;
-  --text-base: 1rem;
-  --text-md: 1.25rem;
-  --text-lg: 1.5625rem;
-  --text-xl: 1.953rem;
-  --text-2xl: 2.441rem;
-  --text-3xl: 3.052rem;
-  --text-4xl: 3.815rem;
-  --text-display-s: clamp(2.75rem, 5vw, 4.75rem);
-  --text-display: clamp(3rem, 6vw, 5.5rem);
-
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --dur-micro: 120ms;
-  --dur-short: 220ms;
-  --dur-mid: 420ms;
-  --dur-long: 500ms;
-
-  --rule-hair: 1px;
-  --rule-strong: 2px;
-  --radius-sm: 0.75rem;
-  --radius-md: 1.25rem;
-  --radius-lg: 2rem;
-  --radius-pill: 999px;
-
-  --z-base: 1;
-  --z-raised: 10;
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-modal: 400;
-  --z-toast: 500;
-  --z-tooltip: 600;
+ --color-paper: #f4f5f1; --color-paper-2: #e9ece7; --color-paper-3: #e2e7e2; --color-paper-4: #d8ddd7; --color-scrim: #101c2b;
+ --color-ink: #152238; --color-ink-2: #3c4d5e; --color-muted: #526273; --color-rule: #c5cec9; --color-rule-strong: #7c8a92;
+ --color-accent: #273f7c; --color-accent-strong: #19306b; --color-accent-ink: #fff; --color-warning: #945200; --color-focus: #2447ab;
+ --font-display: 'Pretendard Variable', Pretendard, sans-serif; --font-body: 'Pretendard Variable', Pretendard, sans-serif;
+ --font-utility: 'Pretendard Variable', Pretendard, sans-serif; --font-exhibit: 'Barlow Condensed', 'Pretendard Variable', sans-serif;
+ --space-3xs: .125rem; --space-2xs: .25rem; --space-xs: .5rem; --space-sm: .75rem; --space-md: 1rem; --space-lg: 1.5rem; --space-xl: 2.5rem; --space-2xl: 4rem; --space-3xl: 6rem; --space-4xl: 9rem;
+ --text-xs: .72rem; --text-sm: .84rem; --text-base: 1rem; --text-md: 1.25rem; --text-lg: 1.5625rem; --text-xl: 1.953rem; --text-2xl: 2.441rem; --text-3xl: 3.052rem; --text-4xl: 3.815rem;
+ --text-display-s: clamp(2.75rem, 5vw, 4.75rem); --text-display: clamp(3rem, 6vw, 5.5rem);
+ --ease-out: cubic-bezier(.16,1,.3,1); --ease-in: cubic-bezier(.7,0,.84,0); --ease-in-out: cubic-bezier(.65,0,.35,1); --ease-standard: cubic-bezier(.4,0,.2,1);
+ --dur-micro: 120ms; --dur-short: 180ms; --dur-mid: 380ms; --dur-long: 460ms;
+ --rule-hair: 1px; --rule-strong: 2px; --radius-sm: 4px; --radius-md: 12px; --radius-lg: 16px; --radius-pill: 999px;
+ --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
 }

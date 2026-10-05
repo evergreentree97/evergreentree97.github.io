@@ -149,3 +149,7 @@ The user approved applying the portfolio review. This is a general-profile safe 
 - Add Vuddy's design-token-to-Kotlin automation and the verified brand-color change. State that unchanged screen code applied only to screens using the semantic tokens. Keep the shorter planning-document item and add Compose Stable checks to the validation item.
 - Use one purpose-led sentence for each open-source project. Do not repeat the release fact as a second sentence.
 - The old source comment recorded a dashboard publication decision on 2026-08-23. This refresh removes that dashboard from the page and published assets to follow the current evidence disclosure restriction. Use only the already approved masked chat and chat-list images, with the chat image selected initially. Do not restore the internal evaluation image or its scores.
+
+## October 6 redesign proposal
+
+The latest selected resume is the October 2 synchronized Toss working source, not an approved release. The public page keeps verified Android architecture, runtime stability and AI verification claims; private resume details and unsupported outcome language are excluded. The new exhibition changes layout and navigation while preserving the existing approved headline, introduction, project facts and per-file asset permissions. The current reading order and new interaction are recorded in structure.md.
