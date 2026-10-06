@@ -14,7 +14,7 @@ export function Header() {
       if (event.key === 'Escape') { setIsOpen(false); menuButtonRef.current?.focus() }
     }}>
       <div className={styles.inner}>
-        <a className={styles.logo} href="#top" aria-label="홈으로 이동">
+        <a className={styles.logo} href="#top" aria-label="홈으로 이동" onClick={() => setIsOpen(false)}>
           <span>ricky choi<span className={styles.logoMark}>.</span></span>
         </a>
 

@@ -181,7 +181,7 @@ section[id] {
   }
 }
 
-html { scrollbar-color: #A3A99A #FAF9F6; scroll-behavior: smooth; }
+html { scrollbar-color: var(--color-rule-strong) var(--color-paper); scroll-behavior: smooth; }
 @font-face { font-family: 'Wanted Sans'; src: url('/fonts/WantedSansVariable.woff2') format('woff2'); font-style: normal; font-weight: 100 1000; font-display: swap; }
 @font-face { font-family: 'Uncut Sans'; src: url('/fonts/UncutSansVariable.woff2') format('woff2'); font-style: normal; font-weight: 300 700; font-display: swap; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-06T01:54:22Z",
+  "generatedAt": "2026-10-06T02:45:32.307878Z",
   "title": "Design System: Ricky Choi Portfolio",
   "extensions": {
     "colorMeta": {
       "paper": {
         "role": "neutral",
-        "displayName": "Warm Cream"
+        "displayName": "White Page"
       },
       "paper-2": {
         "role": "neutral",
-        "displayName": "White"
+        "displayName": "White Surface"
       },
       "paper-3": {
-        "role": "primary",
-        "displayName": "Light Olive"
+        "role": "neutral",
+        "displayName": "Cool Gray"
       },
       "ink": {
         "role": "neutral",
@@ -38,61 +38,57 @@
       },
       "accent": {
         "role": "primary",
-        "displayName": "Olive"
+        "displayName": "Blue"
       },
       "accent-strong": {
         "role": "primary",
-        "displayName": "Deep Olive"
+        "displayName": "Strong Blue"
       },
       "focus": {
         "role": "primary",
-        "displayName": "Focus Olive"
+        "displayName": "Focus Blue"
       }
     },
     "typographyMeta": {
       "identity": {
         "displayName": "Identity",
-        "purpose": "The Korean name in the opening; 36px below 700px."
+        "purpose": "Opening Korean name; 36px below 760px."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headings; detail headings use line height 1.28. The stack variant uses 32px."
+        "purpose": "Upper desktop heading size; source clamp(40px, 4vw, 48px). Details use line height 1.28; mobile uses 32px."
       },
       "project-title": {
         "displayName": "Project Title",
-        "purpose": "Secondary project-index titles, and all project-index titles below 700px."
+        "purpose": "Secondary English index titles; 32px below 760px."
       },
       "featured-project-title": {
         "displayName": "Featured Project Title",
-        "purpose": "Vuddy in the desktop project index."
+        "purpose": "Vuddy desktop index title; 32px below 760px."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Explanatory reading; global mobile baseline is 16px."
+        "purpose": "Global explanatory reading; 16px below 720px."
       },
       "case-title": {
         "displayName": "Case Title",
-        "purpose": "Native contribution summaries; 18px below 760px."
+        "purpose": "Native contribution summaries; 20px below 800px."
       },
       "action-label": {
         "displayName": "Action Label",
-        "purpose": "Opening project and GitHub actions."
-      },
-      "detail-label": {
-        "displayName": "Detail Label",
-        "purpose": "Named project-detail anchors."
+        "purpose": "Opening actions and named project-detail links."
       },
       "navigation-label": {
         "displayName": "Navigation Label",
-        "purpose": "Desktop header destinations; 15px below 900px."
+        "purpose": "Desktop destinations; mobile uses 20px below 900px."
       },
-      "utility-label": {
-        "displayName": "Utility Label",
-        "purpose": "Detail media-selection buttons."
+      "media-selector-label": {
+        "displayName": "Media Selector Label",
+        "purpose": "Explicit detail screen-selection buttons."
       },
       "media-caption": {
         "displayName": "Media Caption",
-        "purpose": "Index and detail screen captions."
+        "purpose": "Index and detail captions, including original-image access."
       },
       "chapter-title": {
         "displayName": "Chapter Title",
@@ -104,37 +100,45 @@
       {
         "name": "ease-out",
         "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Existing control and image feedback curve."
+        "purpose": "Existing control, image and index-appearance curve."
       },
       {
         "name": "control-feedback",
         "value": "180ms",
-        "purpose": "Control color, underline and screenshot hover feedback."
+        "purpose": "Control color, background and underline feedback, image hover and disclosure arrows."
       },
       {
         "name": "project-index-appearance",
         "value": "300ms",
-        "purpose": "Project-index items only; opacity 0.85 to 1 and translateY(8px) to translateY(0). Content starts visible."
+        "purpose": "Project index only: opacity 0.85 to 1 and translateY(8px) to zero; content starts visible."
       },
       {
         "name": "project-index-stagger",
         "value": "50ms",
-        "purpose": "Sibling delay capped at 100ms."
+        "purpose": "Sibling appearance delay capped at 100ms."
       },
       {
         "name": "image-hover",
         "value": "scale(1.015)",
-        "purpose": "Image-only feedback on hover-capable devices; removed for reduced motion."
+        "purpose": "Hover-capable image feedback; removed for reduced motion."
       },
       {
         "name": "footer-press",
         "value": "120ms",
-        "purpose": "Existing footer link translateY(1px) on active; removed for reduced motion."
+        "purpose": "Existing active footer translateY(1px); removed for reduced motion."
       }
     ],
     "breakpoints": [
       {
+        "name": "opening-compact",
+        "value": "1100px"
+      },
+      {
         "name": "detail-compact",
+        "value": "1050px"
+      },
+      {
+        "name": "featured-compact",
         "value": "1000px"
       },
       {
@@ -146,7 +150,11 @@
         "value": "820px"
       },
       {
-        "name": "detail-and-career-stack",
+        "name": "detail-stack",
+        "value": "800px"
+      },
+      {
+        "name": "opening-index-career-stack",
         "value": "760px"
       },
       {
@@ -154,7 +162,7 @@
         "value": "720px"
       },
       {
-        "name": "opening-and-index-stack",
+        "name": "section-title-and-evidence-stack",
         "value": "700px"
       },
       {
@@ -173,109 +181,93 @@
   },
   "components": [
     {
-      "name": "Project Action",
+      "name": "Primary Action",
       "kind": "button",
       "refersTo": "project-action",
-      "description": "The filled project anchor from the opening, with its actual hover and focus states.",
-      "html": "<a class=\"ds-project-action\" href=\"#projects\">프로젝트 보기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></a>",
-      "css": ".ds-project-action { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 12px 20px; border-radius: var(--radius-sm, 4px); background: var(--color-accent, #526343); color: var(--color-paper-2, #FFFFFF); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; font-size: 15px; font-weight: 600; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-project-action svg { width: 18px; height: 18px; } .ds-project-action:hover { background: var(--color-accent-strong, #3D4B31); } .ds-project-action:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-project-action { transition: none; } }"
+      "description": "The opening project anchor with its source hover and keyboard-focus states.",
+      "html": "<a class=\"ds-primary-action\" href=\"#projects\">프로젝트 보기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></a>",
+      "css": ".ds-primary-action { display: inline-flex; box-sizing: border-box; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 20px; border-radius: var(--radius-md, 12px); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 15px; font-weight: 650; line-height: 1.72; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); background: var(--color-accent, #1B64DA); color: var(--color-paper-2, #FFFFFF); } .ds-primary-action svg { width: 18px; height: 18px; } .ds-primary-action:hover { background: var(--color-accent-strong, #1554BC); } .ds-primary-action:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (max-width: 760px) { .ds-primary-action { padding-inline: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-primary-action { transition: none; } }"
     },
     {
-      "name": "Text Action",
+      "name": "Secondary Action",
       "kind": "button",
-      "refersTo": "text-action",
-      "description": "The opening GitHub destination, with an underline on hover.",
-      "html": "<a class=\"ds-text-action\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\">GitHub 보기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a>",
-      "css": ".ds-text-action { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; color: var(--color-accent, #526343); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; font-size: 15px; font-weight: 600; text-decoration: none; text-underline-offset: .22em; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-text-action svg { width: 18px; height: 18px; } .ds-text-action:hover { text-decoration: underline; } .ds-text-action:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-text-action { transition: none; } }"
+      "refersTo": "secondary-action",
+      "description": "The opening GitHub destination with the implemented white fill and neutral hover.",
+      "html": "<a class=\"ds-secondary-action\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\">GitHub 보기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a>",
+      "css": ".ds-secondary-action { display: inline-flex; box-sizing: border-box; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 20px; border-radius: var(--radius-md, 12px); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 15px; font-weight: 650; line-height: 1.72; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); background: var(--color-paper-2, #FFFFFF); color: var(--color-ink, #191F28); } .ds-secondary-action svg { width: 18px; height: 18px; } .ds-secondary-action:hover { background: var(--color-rule, #E5E8EB); } .ds-secondary-action:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (max-width: 760px) { .ds-secondary-action { padding-inline: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-secondary-action { transition: none; } }"
     },
     {
       "name": "Navigation",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "Actual destinations with a current-section state and a wrapped no-JavaScript mobile presentation.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"주요 메뉴\"><a href=\"#projects\" aria-current=\"location\">프로젝트</a><a href=\"#experience\">경력</a><a href=\"#how-i-work\">개발 기록</a><a href=\"#more-work\">오픈소스</a><a href=\"#contact\">연락처</a><a href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\">GitHub <svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z\"/></svg></a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 26px; background: var(--color-paper, #FAF9F6); color: var(--color-ink, #20211E); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; } .ds-nav > a { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 13px; font-weight: 500; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-nav > a::after { content: \"\"; position: absolute; bottom: 6px; inset-inline: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-nav > a:hover::after, .ds-nav > a[aria-current=\"location\"]::after { transform: scaleX(1); } .ds-nav > a[aria-current=\"location\"] { color: var(--color-accent, #526343); } .ds-nav > a:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } .ds-nav svg { width: 16px; height: 16px; } @media (max-width: 900px) { .ds-nav { flex-wrap: wrap; gap: 0 16px; } .ds-nav > a { min-height: 48px; font-size: 15px; } } @media (prefers-reduced-motion: reduce) { .ds-nav > a, .ds-nav > a::after { transition: none; } }"
-    },
-    {
-      "name": "Featured Project Summary",
-      "kind": "custom",
-      "refersTo": "project-summary-featured",
-      "description": "The actual Vuddy copy column: service, role, period, technologies and named detail link.",
-      "html": "<article class=\"ds-project-summary\"><h3><a href=\"#vuddy\">Vuddy</a></h3><p>크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다.</p><dl><div><dt>담당</dt><dd>Android 구조 설계, 핵심 기능 개발과 출시 후 운영</dd></div><div><dt>개발 기간</dt><dd>2024.05 - 현재</dd></div></dl><ul aria-label=\"Vuddy 주요 기술\"><li>Jetpack Compose</li><li>MVI</li><li>Sendbird</li></ul><a class=\"ds-project-detail\" href=\"#vuddy\">Vuddy 상세 보기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></a></article>",
-      "css": ".ds-project-summary { min-width: 0; color: var(--color-ink, #20211E); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; } .ds-project-summary h3 { margin: 0; font-family: var(--font-exhibit, 'Uncut Sans', 'Wanted Sans', sans-serif); font-size: 48px; font-weight: 650; line-height: 1.25; } .ds-project-summary h3 a { text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-project-summary h3 a:hover { color: var(--color-accent, #526343); } .ds-project-summary p { margin: 18px 0 0; font-size: 17px; line-height: 1.7; } .ds-project-summary dl { margin: 24px 0 0; font-size: 14px; } .ds-project-summary dl > div { display: grid; grid-template-columns: 86px minmax(0,1fr); gap: 12px; margin-top: 8px; } .ds-project-summary dt { color: var(--color-muted, #66685F); } .ds-project-summary dd { margin: 0; font-weight: 500; } .ds-project-summary ul { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 22px 0 0; padding: 0; list-style: none; font-size: 13px; color: var(--color-ink-2, #66685F); } .ds-project-detail { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; margin-top: 18px; font-size: 15px; font-weight: 650; color: var(--color-accent, #526343); text-decoration: none; text-underline-offset: .22em; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-project-detail svg { width: 18px; height: 18px; } .ds-project-detail:hover { text-decoration: underline; } .ds-project-summary a:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } @media (max-width: 700px) { .ds-project-summary h3 { font-size: 32px; } .ds-project-summary p { margin-top: 12px; font-size: 16px; } .ds-project-summary dl { margin-top: 18px; } } @media (prefers-reduced-motion: reduce) { .ds-project-summary a { transition: none; } }"
+      "description": "Actual header destinations, including current, hover and static mobile fallback appearances.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"주요 메뉴\"><a href=\"#projects\" aria-current=\"location\">프로젝트</a><a href=\"#experience\">경력</a><a href=\"#how-i-work\">개발 기록</a><a href=\"#more-work\">오픈소스</a><a href=\"#contact\">연락처</a><a class=\"ds-navigation-github\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\" aria-label=\"GitHub 새 창으로 열기\"><span>GitHub</span><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z\"/></svg></a></nav>",
+      "css": ".ds-navigation { display: flex; align-items: center; gap: 8px; background: var(--color-paper, #FFFFFF); } .ds-navigation > a { display: inline-flex; box-sizing: border-box; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 10px; color: var(--color-ink-2, #4E5968); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 14px; font-weight: 550; line-height: 1.72; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-navigation > a:hover { background: var(--color-paper-3, #F2F4F6); color: var(--color-ink, #191F28); } .ds-navigation > a[aria-current=\"location\"] { color: var(--color-accent, #1B64DA); background: var(--color-paper-3, #F2F4F6); } .ds-navigation .ds-navigation-github { margin-left: 16px; background: var(--color-paper-3, #F2F4F6); color: var(--color-ink, #191F28); } .ds-navigation svg { width: 16px; height: 16px; } .ds-navigation > a:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (max-width: 900px) { .ds-navigation { flex-wrap: wrap; gap: 0 16px; } .ds-navigation > a { min-height: 52px; padding: 10px 16px; border-radius: var(--radius-md, 12px); font-size: 20px; } .ds-navigation .ds-navigation-github { margin-left: 0; margin-top: 12px; justify-content: space-between; font-size: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-navigation > a { transition: none; } }"
     },
     {
       "name": "Media Selector",
       "kind": "button",
       "refersTo": "media-selector",
-      "description": "Momentica detail selection labels showing actual pressed and unpressed appearances.",
-      "html": "<div class=\"ds-selector\" aria-label=\"Momentica 화면 선택\"><button type=\"button\" aria-pressed=\"true\">3D PHOTOCARD</button><button type=\"button\" aria-pressed=\"false\">TAKE ALARM</button></div>",
-      "css": ".ds-selector { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; } .ds-selector button { min-height: 44px; border: 0; border-bottom: 1px solid transparent; padding: 8px 0; background: transparent; color: var(--color-muted, #66685F); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; font-size: 12px; cursor: pointer; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-selector button[aria-pressed=\"true\"] { color: var(--color-accent, #526343); border-bottom-color: currentColor; } .ds-selector button:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } @media (max-width: 760px) { .ds-selector { justify-content: center; } } @media (prefers-reduced-motion: reduce) { .ds-selector button { transition: none; } }"
-    },
-    {
-      "name": "Screen Caption",
-      "kind": "custom",
-      "refersTo": "screen-caption",
-      "description": "The actual detail caption and original-image destination, separated by a 4px column gap.",
-      "html": "<figure class=\"ds-caption-figure\"><figcaption class=\"ds-caption\">3D PHOTOCARD / SceneView 기반<a href=\"/screens/mmtc-photocard-figma.png\" target=\"_blank\" rel=\"noreferrer\">원본 화면 열기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a></figcaption></figure>",
-      "css": ".ds-caption-figure { margin: 0; } .ds-caption { display: flex; flex-direction: column; align-items: start; gap: 4px; margin-top: 14px; color: var(--color-muted, #66685F); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; font-size: 12px; line-height: 1.65; } .ds-caption a { display: inline-flex; align-items: center; min-height: 44px; gap: 8px; color: var(--color-accent, #526343); text-underline-offset: .22em; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-caption svg { width: 16px; height: 16px; } .ds-caption a:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } @media (max-width: 760px) { .ds-caption { max-width: 280px; margin-inline: auto; } } @media (prefers-reduced-motion: reduce) { .ds-caption a { transition: none; } }"
+      "description": "Momentica screen labels showing the actual pressed and unpressed states; production selection is explicit.",
+      "html": "<div class=\"ds-media-selector\" aria-label=\"Momentica 화면 선택\"><button type=\"button\" aria-pressed=\"true\">3D PHOTOCARD</button><button type=\"button\" aria-pressed=\"false\">TAKE ALARM</button></div>",
+      "css": ".ds-media-selector { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; } .ds-media-selector button { box-sizing: border-box; min-height: 44px; border: 0; border-radius: var(--radius-md, 12px); padding: 10px 16px; font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 13px; font-weight: 550; line-height: 1.72; background: var(--color-paper-2, #FFFFFF); color: var(--color-muted, #4E5968); cursor: pointer; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-media-selector button[aria-pressed=\"true\"] { color: var(--color-paper-2, #FFFFFF); background: var(--color-accent, #1B64DA); } .ds-media-selector button:hover:not([aria-pressed=\"true\"]) { color: var(--color-ink, #191F28); background: var(--color-rule, #E5E8EB); } .ds-media-selector button:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-media-selector button { transition: none; } }"
     },
     {
       "name": "Contribution Disclosure",
       "kind": "custom",
       "refersTo": "case-summary",
-      "description": "The native Momentica disclosure, retaining context, choice and implemented behavior.",
-      "html": "<details class=\"ds-case\" open><summary><h3>3D 포토카드</h3><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></summary><dl class=\"ds-case-body\"><div><dt>상황과 제약</dt><dd>3D 포토카드의 Composition이 종료된 뒤에도 SceneView 내부 Bitmap이 해제되지 않았습니다.</dd></div><div><dt>선택과 이유</dt><dd>Android Profiler 힙 덤프로 원인을 추적하고, 라이브러리 API를 감싸 Composition 종료 시 자원을 명시적으로 해제하도록 했습니다.</dd></div><div><dt>구현과 확인한 동작</dt><dd>SceneView 기반 3D 포토카드와 퀵뷰를 구현했습니다. Composition 종료 시 Bitmap 자원을 명시적으로 해제하도록 개선했습니다.</dd></div></dl></details>",
-      "css": ".ds-case { border-bottom: 1px solid var(--color-rule, #DDDED7); color: var(--color-ink, #20211E); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; } .ds-case summary { display: flex; justify-content: space-between; align-items: center; list-style: none; min-height: 64px; padding-block: 18px; gap: 24px; cursor: pointer; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-case summary::-webkit-details-marker { display: none; } .ds-case summary h3 { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.45; } .ds-case summary svg { width: 18px; height: 18px; flex-shrink: 0; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-case[open] summary svg { transform: rotate(90deg); } .ds-case summary:hover, .ds-case summary:focus-visible { color: var(--color-accent, #526343); } .ds-case summary:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } .ds-case-body { margin: 0; padding-bottom: 28px; } .ds-case-body > div + div { margin-top: 20px; } .ds-case-body dt { margin-bottom: 6px; font-size: 13px; font-weight: 650; color: var(--color-accent, #526343); } .ds-case-body dd { margin: 0; color: var(--color-ink-2, #66685F); font-size: 17px; line-height: 1.72; } @media (max-width: 760px) { .ds-case summary h3 { font-size: 18px; } .ds-case-body dd { font-size: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-case summary, .ds-case summary svg { transition: none; } }"
+      "description": "The native Momentica 3D disclosure, with source context, choice and implemented behavior.",
+      "html": "<details class=\"ds-contribution\" open><summary><h3>3D 포토카드</h3><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></summary><dl><div><dt>상황과 제약</dt><dd>3D 포토카드의 Composition이 종료된 뒤에도 SceneView 내부 Bitmap이 해제되지 않았습니다.</dd></div><div><dt>선택과 이유</dt><dd>Android Profiler 힙 덤프로 원인을 추적하고, 라이브러리 API를 감싸 Composition 종료 시 자원을 명시적으로 해제하도록 했습니다.</dd></div><div><dt>구현과 확인한 동작</dt><dd>SceneView 기반 3D 포토카드와 퀵뷰를 구현했습니다. Composition 종료 시 Bitmap 자원을 명시적으로 해제하도록 개선했습니다.</dd></div></dl></details>",
+      "css": ".ds-contribution { border-bottom: 1px solid var(--color-rule, #E5E8EB); color: var(--color-ink, #191F28); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; } .ds-contribution summary { display: flex; box-sizing: border-box; justify-content: space-between; align-items: center; list-style: none; min-height: 72px; padding-block: 22px; gap: 24px; cursor: pointer; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution summary::-webkit-details-marker { display: none; } .ds-contribution h3 { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.45; } .ds-contribution summary svg { width: 18px; height: 18px; flex-shrink: 0; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution[open] summary svg { transform: rotate(90deg); } .ds-contribution summary:hover, .ds-contribution summary:focus-visible { color: var(--color-accent, #1B64DA); } .ds-contribution summary:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } .ds-contribution dl { margin: 0; padding-bottom: 32px; } .ds-contribution dl > div { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 24px; } .ds-contribution dl > div + div { margin-top: 20px; } .ds-contribution dt { font-size: 14px; font-weight: 650; color: var(--color-accent, #1B64DA); padding-top: 2px; } .ds-contribution dd { margin: 0; color: var(--color-ink-2, #4E5968); font-size: 17px; line-height: 1.72; max-width: 70ch; } @media (max-width: 800px) { .ds-contribution h3 { font-size: 20px; } .ds-contribution dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; } .ds-contribution dd { font-size: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-contribution summary, .ds-contribution summary svg { transition: none; } }"
     },
     {
-      "name": "Contact Destination",
+      "name": "Screen Caption",
       "kind": "custom",
-      "refersTo": "contact-row",
-      "description": "The actual GitHub contact row with its account label and inline SVG icons.",
-      "html": "<a class=\"ds-contact\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z\"/></svg><span><small>GitHub</small><strong>@EvergreenTree97</strong></span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a>",
-      "css": ".ds-contact { display: flex; align-items: center; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-rule-strong, #A3A99A); border-bottom: 1px solid var(--color-rule-strong, #A3A99A); color: var(--color-ink, #20211E); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contact > svg { width: 22px; height: 22px; } .ds-contact > svg:last-child { margin-left: auto; } .ds-contact span { display: flex; flex-direction: column; } .ds-contact small { font-size: 12px; color: var(--color-ink-2, #66685F); } .ds-contact strong { font-size: 18px; font-weight: 600; } .ds-contact:hover { color: var(--color-accent, #526343); } .ds-contact:focus-visible { outline: 3px solid var(--color-focus, #526343); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-contact { transition: none; } }"
+      "refersTo": "screen-caption",
+      "description": "The approved Momentica caption and direct original-image destination, without a fabricated screenshot.",
+      "html": "<figure class=\"ds-caption-figure\"><figcaption class=\"ds-screen-caption\">3D PHOTOCARD / SceneView 기반<a href=\"/screens/mmtc-photocard-figma.png\" target=\"_blank\" rel=\"noreferrer\">원본 화면 열기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a></figcaption></figure>",
+      "css": ".ds-caption-figure { margin: 0; } .ds-screen-caption { display: flex; flex-direction: column; align-items: start; gap: 4px; max-width: 330px; margin: 16px auto 0; font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 12px; font-weight: 440; line-height: 1.65; color: var(--color-muted, #4E5968); } .ds-screen-caption a { display: inline-flex; align-items: center; min-height: 44px; gap: 8px; color: var(--color-accent, #1B64DA); text-decoration: underline; text-underline-offset: .22em; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-screen-caption svg { width: 16px; height: 16px; } .ds-screen-caption a:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-screen-caption a { transition: none; } }"
     }
   ],
   "narrative": {
-    "northStar": "Warm light surfaces with restrained olive",
-    "overview": "Ricky Choi's portfolio uses warm cream and white backgrounds with dark text. Olive identifies actions, selected controls and keyboard focus. Real Android application screens provide the imagery; thin rules and surface changes separate reading regions.\n\nWanted Sans carries Korean names and explanations. Uncut Sans carries English project names and compact English labels. Major headings remain within the current brief of 40–56px on desktop and 28–36px on mobile, while explanatory body text stays at 16–18px.\n\nThis scan records the October 6, 2026 local olive implementation in tokens.css, src/styles/global.css and the components rendered by src/App.tsx. The request, evidence and completed local review are recorded in docs/portfolio/olive-revision-2026-10-06.md. User aesthetic acceptance and publication are not implied.",
+    "northStar": "Approved Android screens on white and cool gray",
+    "overview": "Ricky Choi's portfolio pairs dark headings and Korean explanations with large approved Android application screens. White and cool-gray surfaces separate the opening, project images and technical reading. Blue identifies actions, current navigation, selected media and keyboard focus.\n\nThis scan records the implemented October 6, 2026 interpretation of the user's Toss UI and UX reference. Wanted Sans and Uncut Sans remain self-hosted. Blue is an implementation assumption because the optional accent-color question was unanswered. The local finish review reported ship; this records the implementation and does not imply user aesthetic acceptance or publication.",
     "keyCharacteristics": [
-      "Cream and white reading surfaces with restrained olive actions.",
-      "Intact approved app screens with captions and original-image links.",
-      "Project facts beside named detail links, with native disclosures for implementation reading.",
-      "Visible keyboard focus, reduced motion and readable prerendered HTML."
+      "Compact white navigation and broad rounded image surfaces.",
+      "Complete approved app screens with captions and original-image access.",
+      "Introduction and responsibility beside app imagery, followed by native contribution disclosures.",
+      "Visible keyboard focus, reduced motion and styled prerendered reading without JavaScript."
     ],
     "rules": [
       {
-        "name": "The Accent Rule",
-        "body": "Use olive for actions, selected states and keyboard focus. Keep page and case reading surfaces cream or white.",
+        "name": "The Action Color Rule",
+        "body": "Use blue for actions, current or selected states and keyboard focus. Keep reading surfaces white or cool gray.",
         "section": "colors"
       },
       {
         "name": "The Reading Voice Rule",
-        "body": "Keep Korean explanations in Wanted Sans. Use Uncut Sans for English names and compact English project labels.",
+        "body": "Keep Korean explanations in Wanted Sans. Use Uncut Sans for English names, project titles and career dates.",
         "section": "typography"
       },
       {
         "name": "The Flat Reading Rule",
-        "body": "Separate sections with surface changes and thin rules. Reading rows, controls and app images have no box shadow.",
+        "body": "Separate regions with neutral surface changes and thin rules. Keep reading rows, controls and app images free of box shadows.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do preserve complete approved images, intrinsic dimensions, captions and direct original-image links.",
-      "Do keep the model-development and Android responsibility groups separate, and identify the masked AI images as screen mockups.",
+      "Do preserve complete approved images, intrinsic dimensions, captions, mockup labels and direct original-image links.",
+      "Do keep the model-development and Android responsibility groups separate, with only evidenced disclosure fields.",
       "Do retain native disclosures, explicit media selection, visible keyboard focus and the readable no-JavaScript fallback.",
-      "Do use the current restrained heading sizes and 16–18px explanatory body text.",
+      "Do use the implemented heading hierarchy and 16–18px explanatory body text.",
       "Do inspect current desktop and mobile renders after visual changes and follow docs/portfolio/plain-language.md before adding copy."
     ],
     "donts": [
-      "Don't restore the previous red-orange accent, oversized identity lettering or dark tools reading surface.",
-      "Don't replace approved screens with invented artwork, crop them to fill a vacant stage or add an unsupported app icon.",
-      "Don't add shadows or rounded card shells around ordinary reading rows.",
-      "Don't hide reading content behind entrance animations, intercept scrolling or require JavaScript for native disclosures.",
-      "Don't infer user aesthetic acceptance or publication from a build check or a local-review disposition."
+      "Don't restore the superseded olive or red-orange palette, oversized identity lettering or dark tools reading surface.",
+      "Don't replace approved screens with invented artwork, crop their content to fill a stage or add an unsupported app icon.",
+      "Don't add shadows or rounded card shells around ordinary contribution and career reading rows.",
+      "Don't hide reading behind entrance animations, intercept scrolling or require JavaScript for native disclosures.",
+      "Don't infer user aesthetic acceptance or publication from build checks or the local-review disposition."
     ]
   }
 }

@@ -1,32 +1,35 @@
-.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; gap: 80px; width: min(100% - 48px, 1160px); margin-inline: auto; padding-block: 116px 72px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: 64px; width: min(100% - 32px, 1360px); margin: 88px auto 0; padding: 48px 80px; background: var(--color-paper-3); border-radius: 40px; }
+.identity { min-width: 0; }
 .identity h1 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 14px; font-size: 56px; font-weight: 750; letter-spacing: -.025em; line-height: 1.2; }
 .identity h1 span { font-family: var(--font-exhibit); font-size: 18px; color: var(--color-muted); font-weight: 500; letter-spacing: -.01em; }
-.role { margin-top: 14px; font-size: 22px; font-weight: 600; }
-.introduction { margin-top: 30px; max-width: 54ch; font-size: 17px; line-height: 1.72; color: var(--color-ink-2); }
+.role { margin-top: 14px; font-size: 24px; font-weight: 700; }
+.introduction { margin-top: 28px; max-width: 54ch; font-size: 17px; line-height: 1.72; color: var(--color-ink-2); }
 .introduction p + p { margin-top: 16px; }
-.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 26px; margin-top: 32px; }
-.actions a { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; font-size: 15px; font-weight: 600; color: var(--color-accent); text-decoration: none; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
+.actions a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 20px; border-radius: 12px; background: var(--color-paper-2); font-size: 15px; font-weight: 650; color: var(--color-ink); text-decoration: none; }
 .actions svg { width: 18px; height: 18px; }
-.actions .primaryAction { padding: 12px 20px; background: var(--color-accent); color: white; border-radius: 4px; }
+.actions .primaryAction { background: var(--color-accent); color: white; }
 .primaryAction:hover { background: var(--color-accent-strong); }
-.actions a:not(.primaryAction):hover { text-decoration: underline; }
-.preview { margin: 0; padding: 28px 28px 20px; background: var(--color-paper-3); }
-.screen { display: block; width: min(100%, 236px); margin-inline: auto; overflow: hidden; }
+.actions a:not(.primaryAction):hover { background: var(--color-rule); }
+.preview { margin: 0; min-width: 0; }
+.screen { display: block; width: min(100%, 290px); margin-inline: auto; overflow: hidden; }
 .screen img { width: 100%; height: auto; transition: transform 180ms var(--ease-out); }
 @media (hover: hover) { .screen:hover img { transform: scale(1.015); } }
-.preview figcaption { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding-top: 18px; font-size: 12px; color: var(--color-muted); }
+.preview figcaption { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px; max-width: 370px; margin-inline: auto; padding-top: 16px; font-size: 12px; color: var(--color-muted); }
 .preview figcaption strong { color: var(--color-ink); font-family: var(--font-exhibit); font-size: 17px; font-weight: 650; }
 .preview figcaption span { grid-column: 1 / -1; }
 .preview figcaption a { display: inline-flex; align-items: center; grid-column: 2; grid-row: 1; min-height: 44px; color: var(--color-accent); }
-@media (max-width: 900px) { .hero { gap: 40px; } }
-@media (max-width: 700px) {
- .hero { grid-template-columns: minmax(0, 1fr); padding-block: 96px 48px; gap: 32px; }
+@media (max-width: 1100px) { .hero { padding-inline: 48px; gap: 40px; } }
+@media (max-width: 760px) {
+ .hero { grid-template-columns: minmax(0, 1fr); width: calc(100% - 24px); margin-top: 80px; padding: 28px 12px 24px; gap: 32px; border-radius: 28px; }
  .identity h1 { font-size: 36px; gap: 12px; }
  .identity h1 span { font-size: 15px; }
  .role { font-size: 20px; margin-top: 10px; }
- .introduction { margin-top: 22px; font-size: 16px; line-height: 1.7; }
- .actions { margin-top: 24px; gap: 16px 22px; }
- .preview { padding: 24px 20px 16px; }
- .screen { width: min(100%, 224px); }
+ .introduction { margin-top: 20px; font-size: 16px; line-height: 1.7; }
+ .introduction p + p { margin-top: 12px; }
+ .actions { margin-top: 24px; }
+ .actions a { padding-inline: 16px; }
+ .screen { width: min(100%, 244px); }
+ .preview figcaption { max-width: 290px; }
 }
 @media (prefers-reduced-motion: reduce) { .screen img { transition: none; transform: none !important; } }

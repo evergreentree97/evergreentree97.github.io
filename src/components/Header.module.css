@@ -1,21 +1,20 @@
 .header { position: fixed; inset: 0 0 auto; z-index: var(--z-sticky); background: var(--color-paper); }
-.inner { display: flex; justify-content: space-between; align-items: center; min-height: 76px; max-width: 1208px; padding-inline: 24px; margin-inline: auto; }
-.logo { display: inline-flex; align-items: center; text-decoration: none; font-family: var(--font-exhibit); font-size: 20px; font-weight: 650; letter-spacing: -.02em; min-height: 44px; }
+.inner { display: flex; justify-content: space-between; align-items: center; min-height: 64px; max-width: 1208px; padding-inline: 24px; margin-inline: auto; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-family: var(--font-exhibit); font-size: 22px; font-weight: 700; letter-spacing: -.02em; min-height: 44px; }
 .logoMark { color: var(--color-accent); }
-.navigation { display: flex; align-items: center; gap: 26px; }
-.navigation > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 13px; font-weight: 500; text-decoration: none; position: relative; }
-.navigation > a::after { content: ''; position: absolute; bottom: 6px; inset-inline: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 180ms var(--ease-out); }
-.navigation > a:hover::after, .navigation .activeLink::after { transform: scaleX(1); }
-.navigation .activeLink { color: var(--color-accent); }
+.navigation { display: flex; align-items: center; gap: 8px; }
+.navigation > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 10px; color: var(--color-ink-2); font-size: 14px; font-weight: 550; text-decoration: none; }
+.navigation > a:hover { background: var(--color-paper-3); color: var(--color-ink); }
+.navigation .activeLink { color: var(--color-accent); background: var(--color-paper-3); }
+.navigation .github { margin-left: 16px; background: var(--color-paper-3); color: var(--color-ink); }
 .github svg { width: 16px; height: 16px; }
-.menuButton { display: none; border: 0; background: transparent; width: 44px; height: 44px; place-items: center; cursor: pointer; }
-.menuButton svg { width: 22px; height: 22px; }
-@media (max-width: 1000px) { .inner { padding-inline: 24px; } }
+.menuButton { display: none; border: 0; background: transparent; border-radius: 10px; width: 44px; height: 44px; place-items: center; cursor: pointer; }
+.menuButton:hover { background: var(--color-paper-3); }
+.menuButton svg { width: 24px; height: 24px; }
 @media (max-width: 900px) {
- .inner { padding-inline: 24px; min-height: 68px; }
  .menuButton { display: grid; }
- .navigation { position: absolute; top: 68px; left: 0; right: 0; display: none; background: var(--color-paper); padding: 16px 24px 24px; border-bottom: 1px solid var(--color-rule); gap: 0; }
+ .navigation { position: absolute; top: 64px; left: 0; right: 0; display: none; background: var(--color-paper); padding: 24px 24px 32px; border-bottom: 1px solid var(--color-rule); gap: 8px; max-height: calc(100dvh - 64px); overflow-y: auto; }
  .navigation.open { display: grid; }
- .navigation > a { min-height: 48px; font-size: 15px; }
+ .navigation > a { min-height: 52px; font-size: 20px; padding: 10px 16px; border-radius: 12px; }
+ .navigation .github { margin-left: 0; margin-top: 12px; justify-content: space-between; font-size: 16px; }
 }
-@media (prefers-reduced-motion: reduce) { .navigation > a::after { transition: none; } }
