@@ -9,9 +9,9 @@
 
 .introRow p {
   color: var(--text-primary);
-  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
-  font-weight: 650;
-  line-height: 1.38;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 .evidence {

@@ -42,18 +42,18 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: 'vuddy',
     name: 'Vuddy',
-    eyebrow: 'ANDROID',
-    headline: '크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.',
+    eyebrow: 'Android',
+    headline: '크리에이터와 팬을 위한 채팅과 디지털 콘텐츠 앱입니다. 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'MVI', 'Sendbird', 'Media3'],
     highlightGroups: [
       {
         highlights: [
-          '구조 설계와 화면 이동 테스트: Jetpack Compose 기반 멀티모듈 구조와 MVI 상태 처리 설계. 화면 이동을 Router 인터페이스로 분리해 feature 모듈 간 의존을 제거하고 mock Router로 UI 없이 이동 로직을 테스트로 검증',
-          '토큰 갱신 동시성 제어: 여러 요청이 동시에 401을 받을 때 한 요청만 토큰을 갱신하고 나머지는 완료된 결과를 재사용하는 synchronized 기반 동시성 처리 구현',
-          '채팅: Sendbird 연동 구조를 설계하고 답장 원문으로 이동할 때 앞뒤 메시지를 함께 불러오는 양방향 페이징과 사진 및 영상 메시지 구현',
-          '푸시: 참여자가 많은 채팅방에 알림을 보낼 때 발생하는 Sendbird의 제약을 출시 전에 확인하고 채팅은 Sendbird로 처리하되 알림은 자체 발송하는 구조 제안',
-          '채팅방 관리: 채팅방 정보를 클라이언트마다 다르게 해석하는 문제를 확인해 Backend에서 관리하도록 요청하고 채팅방 생성, 목록과 검색 API를 Android에 연동',
-          '미디어: 재생 상태와 생명주기를 ViewModel 범위에서 관리하고 일반 화면과 전체 화면이 같은 ExoPlayer를 다시 연결하도록 구성해 화면 전환 후에도 재생 위치 유지',
+          '구조 설계와 화면 이동 테스트: Jetpack Compose 기반 멀티모듈 구조와 MVI 상태 처리를 설계했습니다. 화면 이동을 Router 인터페이스로 분리해 feature 모듈 간 의존을 제거하고 mock Router로 UI 없이 이동 로직을 테스트했습니다.',
+          '토큰 갱신 동시성 제어: 여러 요청에서 동시에 401 응답을 받아도 토큰은 한 요청에서만 갱신하도록 synchronized로 제어했습니다. 나머지 요청은 완료된 갱신 결과를 재사용합니다.',
+          '채팅: Sendbird 연동 구조를 설계하고 사진과 영상 메시지를 구현했습니다. 답장 원문으로 이동할 때 앞뒤 메시지를 함께 불러오도록 양방향 페이징을 적용했습니다.',
+          '푸시: 참여자가 많은 채팅방에 알림을 보낼 때 발생하는 Sendbird의 제약을 출시 전에 확인했습니다. 채팅은 Sendbird로 처리하고 알림은 자체 발송하는 구조를 제안했습니다.',
+          '채팅방 관리: 클라이언트마다 채팅방 정보를 다르게 해석하는 문제를 확인했습니다. Backend에서 정보를 관리하도록 요청하고 채팅방 생성, 목록과 검색 API를 Android에 연동했습니다.',
+          '미디어: 재생 상태와 생명주기를 ViewModel 범위에서 관리하도록 구현했습니다. 일반 화면과 전체 화면에서 같은 ExoPlayer를 다시 연결해 전환 뒤에도 재생 위치를 유지합니다.',
         ],
       },
     ],
@@ -80,22 +80,22 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: 'model-evaluation',
     name: '캐릭터 대화 모델과 AI 캐릭터 앱',
-    eyebrow: 'LLM FINE-TUNING / ANDROID',
-    headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 해당 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.',
+    eyebrow: 'LLM fine-tuning / Android',
+    headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 이 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.',
     technologies: ['Python', 'PyTorch', 'LoRA / SFT', 'vLLM', 'Kotlin', 'Jetpack Compose', 'SSE', 'Play Billing'],
     highlightGroups: [
       {
         title: '모델 개발과 팀 검토',
         highlights: [
-          '학습과 평가: 캐릭터 대화 모델의 데이터 구성과 학습 방식을 설계하고 데이터 정제, LoRA 기반 SFT와 자동 평가 구현. 개발한 모델은 팀의 실제 대화 검토를 거쳐 프로덕션 적용 가능한 모델로 선정',
-          '모델 검토 도구와 피드백: 학습한 모델과 팀원이 직접 대화할 수 있도록 vLLM 서빙과 웹 MVP 구현. 팀원의 대화 피드백을 받아 학습 데이터를 수정하고 기능 실험에 반영',
+          '학습과 평가: 캐릭터 대화 모델의 데이터 구성과 학습 방식을 설계하고 데이터 정제, LoRA 기반 SFT와 자동 평가를 구현했습니다. 개발한 모델은 팀의 실제 대화 검토를 거쳐 프로덕션에 적용할 수 있는 모델로 선정됐습니다.',
+          '모델 검토 도구와 피드백: 학습한 모델을 vLLM으로 서빙하고 팀원이 직접 대화할 수 있는 웹 MVP를 만들었습니다. 팀원의 대화 피드백을 받아 학습 데이터를 수정하고 기능 실험에 반영했습니다.',
         ],
       },
       {
         title: 'Android 채팅과 결제 개발',
         highlights: [
-          'SSE 채팅과 예외 처리: 사내 AI 모델을 활용한 SSE 기반 캐릭터 채팅 개발 주도. 다양한 오류 상황에 대응하는 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
-          '구독과 단건 결제: Google Play Billing의 상품 조회, 구매, 완료, 취소와 복구를 Backend 구매 검증과 연결. 단위 테스트로 결제 로직을 검증하고 스크린샷 테스트로 결제 화면 표시 결과 확인',
+          'SSE 채팅과 예외 처리: 사내 AI 모델을 사용하는 SSE 기반 캐릭터 채팅 개발을 주도했습니다. 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작을 확인했습니다.',
+          '구독과 단건 결제: Google Play Billing의 상품 조회, 구매, 완료, 취소와 복구를 Backend 구매 검증과 연결했습니다. 결제 로직은 단위 테스트로, 화면 표시는 스크린샷 테스트로 확인했습니다.',
         ],
       },
     ],
@@ -109,15 +109,15 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: 'momentica',
     name: 'Momentica',
-    eyebrow: 'ANDROID',
+    eyebrow: 'Android',
     headline: '글로벌 팬 플랫폼 Momentica에서 3D 포토카드와 영상 알람 기능을 개발했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AlarmManager'],
     highlightGroups: [
       {
         highlights: [
-          '3D 포토카드: SceneView 기반 3D 포토카드와 퀵뷰 구현. Android Profiler 힙 덤프로 SceneView 내부 Bitmap 메모리릭을 추적하고 Composition 종료 시 자원을 명시적으로 해제하도록 개선',
-          '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트와 판매 중인 테이크 구현. Artist Top Ranker는 Compose pointerInput API로 가로 스와이프를 구현하고 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
-          '알람 기능: Room과 AlarmManager 기반 영상 알람 개발. 앱 종료와 락스크린 상태, 기기 재부팅 후에도 알람 실행을 확인하고 설정 복원과 락스크린 표시 구현',
+          '3D 포토카드: SceneView로 3D 포토카드와 퀵뷰를 구현했습니다. Android Profiler 힙 덤프로 SceneView 내부 Bitmap 메모리 누수를 추적하고 Composition이 끝날 때 자원을 명시적으로 해제하도록 수정했습니다.',
+          '테이크 홈 개편: 헤드라인 배너, 진행 중인 아티스트와 판매 중인 테이크를 구현했습니다. Artist Top Ranker는 Compose pointerInput API로 가로 스와이프를 구현했습니다. 프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제를 해결했습니다.',
+          '알람 기능: Room과 AlarmManager로 영상 알람을 개발했습니다. 앱 종료, 락스크린 상태와 기기 재부팅 후에도 실행을 확인했고 설정 복원과 락스크린 표시를 구현했습니다.',
         ],
       },
     ],
@@ -148,7 +148,7 @@ export const moreProjects: MoreProject[] = [
   {
     name: 'EasyShimmerCompose',
     eyebrow: 'OPEN SOURCE',
-    summary: '쉽게 스켈레톤 로딩을 사용할 수 있는 Jetpack Compose Shimmer 라이브러리를 오픈소스로 공개',
+    summary: 'Jetpack Compose 스켈레톤 로딩용 Shimmer 라이브러리를 만들어 공개했습니다.',
     technologies: ['Kotlin', 'Jetpack Compose', 'Coil'],
     link: {
       label: 'GitHub',
@@ -159,7 +159,7 @@ export const moreProjects: MoreProject[] = [
   {
     name: 'K-Humanizer',
     eyebrow: 'OPEN SOURCE',
-    summary: 'AI 특유의 문체와 번역투를 자연스러운 한국어로 고치는 Agent Skill을 오픈소스로 공개',
+    summary: 'AI 특유의 문체와 번역투를 고치는 한국어 Agent Skill을 공개했습니다.',
     technologies: ['Agent Skill', 'Codex', 'Claude', 'Cursor'],
     link: {
       label: 'GitHub',

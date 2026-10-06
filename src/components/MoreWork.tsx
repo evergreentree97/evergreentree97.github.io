@@ -13,7 +13,6 @@ export function MoreWork() {
           {moreProjects.map((project) => (
             <article key={project.name} data-reveal-item>
             <div className={styles.heading}>
-              <span>{project.eyebrow}</span>
               <h3>{project.name}</h3>
             </div>
             <div className={styles.copy}>

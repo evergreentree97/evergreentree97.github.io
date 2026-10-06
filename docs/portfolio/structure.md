@@ -11,7 +11,7 @@
 1. 첫 화면
 2. 경력
 3. 주요 프로젝트
-4. AI와 함께 개발하는 방식
+4. 개발 도구와 자동화
 5. 사이드 프로젝트
 6. 오픈소스와 대외 활동
 7. 취향
@@ -87,3 +87,25 @@ Baseline: `e3c3458`, restored by `61e9a5b`. Preserve the dark orange palette, il
 Validation: content checks, ESLint, TypeScript and Vite build pass. Current browser renders were inspected at desktop 1280px, mobile 390px and 320px. No horizontal overflow, missing eager images or missing internal anchor targets were observed. The long AI project title was inspected on desktop. The mobile career section stayed below the fixed header. Project selection with Enter, visible keyboard focus, and menu dismissal with Escape were verified. The original-image link opened the selected 360×800 source image in a new tab. Reduced-motion rules were inspected in the served stylesheet; OS preference emulation was unavailable, so that environment was not visually tested.
 
 Typography diagnostic: 8/10 rows verified. Body size, line measure, line height, hierarchy, actual viewport rendering, fallback stacks, heading wrapping and link distinction pass. The existing dynamically subsetted Pretendard loading was retained; a total network font budget below 200KB and browser zoom at 200% were not verified in this pass. No additional typefaces were introduced.
+
+## Current typography and copy (2026-10-06)
+
+The user requested a font and wording revision on the restored layout. This section supersedes the earlier headline, font and introduction choices; retain the illustration, palette, section order and image presentation from the original-layout polish.
+
+- Use self-hosted Noto Sans KR at 400 for body text, 500 for utility labels and 600 for headings. The three WOFF2 files together are 88,028 bytes. Current glyph coverage and checksums are checked by `npm run check:fonts`. Font source and license are documented in `public/fonts/README.md`.
+- Name and role replace the generic hero slogan. The hero contains `최상록` and `Android 개발자`. Search and social metadata use the same role and revised introduction.
+- Use moderate heading weights and -0.02em heading tracking. Body remains 16–18px. `text-wrap: pretty` supports Korean paragraph wrapping where available. Existing system Korean fallback fonts remain available.
+- Rewrite project, side-project and activity contribution fragments as complete sentences, retaining named technologies, responsibility boundaries and verification conditions. A design proposal stays a proposal; team model selection does not become a claimed production release.
+- Name the automation section `개발 도구와 자동화` and lead with QA processing and design-token conversion. Keep the existing five implementation records. Remove repeated OPEN SOURCE labels from the open-source list. Contact wording names LinkedIn, the actual available destination.
+
+| Before | After | Purpose |
+| --- | --- | --- |
+| `제품을 만드는 / 엔지니어입니다` | `Android 개발자 / 최상록` | Identify the author and role directly |
+| Heavy Pretendard headings with tightly spaced letters | Noto Sans KR, 600 headings, 400 body and moderate tracking | Give Korean text a quieter, less compressed appearance |
+| `synchronized 기반 동시성 처리 구현` | Describe one token-refresh request and other requests reusing the result | Preserve the mechanism while making the behavior explicit |
+| `Agent Skill 하나로 묶었습니다` | Name the QA steps automated and PR/deployment state synchronization | Replace a vague summary with the actual scope |
+| Generic contact invitation | `LinkedIn으로 연락 주세요.` | Match the wording to the available contact link |
+
+Validation: `npm run check` passes content assertions, font coverage and integrity, ESLint, TypeScript and Vite build. Data comparison confirms unchanged career dates, organizations, roles, technology lists, approved image records, project links and contribution counts. The wording diff was reviewed for responsibility and certainty. Browser renders were inspected at desktop 1280px, mobile 390px and 320px. The browser Font Loading API reports the 400, 500 and 600 faces loaded. Hero and project text, automation copy, side-project bullets and contact text were inspected; no horizontal overflow or missing internal anchor targets was observed. The restored layout and existing motion behavior remain the baseline. Browser zoom at 200% and physical-device rendering were not tested.
+
+Typography diagnostic: 9/10 verified rows. Size, measure, line height, hierarchy, actual browser rendering, font payload, fallback stacks, heading wrapping and link distinction pass. The 200% browser-zoom row remains unverified.

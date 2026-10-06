@@ -43,7 +43,7 @@
   color: var(--color-accent);
   font-family: var(--font-utility);
   font-size: 0.875rem;
-  font-weight: 650;
+  font-weight: 500;
   letter-spacing: 0.02em;
 }
 
@@ -51,13 +51,14 @@
   margin-top: 14px;
   color: var(--color-ink);
   font-size: clamp(2.5rem, 3.8vw, 3rem);
-  font-weight: 760;
-  letter-spacing: -0.045em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   overflow-wrap: normal;
 }
 
 .projectHeading > p {
+  text-wrap: pretty;
   max-width: 44ch;
   margin-top: 24px;
   color: var(--color-ink-2);
@@ -84,7 +85,7 @@
 .highlightList h4 {
   color: var(--color-ink);
   font-size: 1.0625rem;
-  font-weight: 680;
+  font-weight: 600;
   letter-spacing: -0.012em;
   line-height: 1.45;
 }
@@ -94,6 +95,7 @@
 .highlightGroup .highlightList { margin-top: 16px; }
 
 .highlightList p {
+  text-wrap: pretty;
   margin-top: 8px;
   color: var(--color-ink-2);
   font-size: 1.0625rem;
@@ -120,7 +122,7 @@
   background: transparent;
   color: var(--color-muted);
   font-size: 0.8125rem;
-  font-weight: 650;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
@@ -254,7 +256,8 @@
   .scene { padding-block: 48px 56px; }
   .scene:nth-child(3) { padding-bottom: 32px; }
   .projectHeading h2 { font-size: clamp(1.875rem, 8vw, 2.25rem); }
-  .projectHeading > p, .highlightList h3, .highlightList h4, .highlightList p { font-size: 1rem; }
+  .projectHeading > p, .highlightList h3, .highlightList h4, .highlightList p {
+  text-wrap: pretty; font-size: 1rem; }
   .highlightList { margin-top: 32px; }
   .highlightList li { padding-block: 16px 18px; }
   .mediaSelector { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }

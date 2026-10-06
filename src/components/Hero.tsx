@@ -8,17 +8,16 @@ export function Hero() {
       <div className={styles.inner}>
         <div className={styles.heroContent}>
           <span className={styles.label}>
-            ANDROID & AI PRODUCT
+            Android 개발자
           </span>
 
           <h1 id="hero-title">
-            <span className={styles.line}>제품을 만드는</span>
-            <span className={styles.line}>엔지니어입니다</span>
+            <span className={styles.line}>최상록</span>
           </h1>
 
           <div className={styles.description}>
-            <p>Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.</p>
-            <p>사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.</p>
+            <p>Vuddy의 Android 앱 구조를 설계하고 채팅과 미디어 기능을 개발했습니다. QA 배포와 출시 후 운영도 맡았습니다.</p>
+            <p>사내 AI TF에서 캐릭터 대화 모델을 개발하고 이 모델을 사용하는 Android 채팅 개발을 주도했습니다.</p>
           </div>
 
           <div className={styles.actions}>
@@ -31,7 +30,6 @@ export function Hero() {
           </div>
 
           <p className={styles.identity}>
-            <strong>최상록</strong>
             <a href={profile.linkedinUrl} target="_blank" rel="noreferrer">
               <PixelIcon name="linkedin" /> LinkedIn
             </a>

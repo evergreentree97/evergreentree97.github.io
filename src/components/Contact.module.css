@@ -34,9 +34,9 @@
 
 .contactBody h3 {
   max-width: 16ch;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-weight: 760;
-  letter-spacing: -0.045em;
+  font-size: clamp(1.75rem, 2.7vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 1.18;
 }
 

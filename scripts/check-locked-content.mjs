@@ -16,7 +16,7 @@ const profileSource = await readFile(new URL('../src/data/profile.ts', import.me
 
 const indexSource = await readFile(new URL('../index.html', import.meta.url), 'utf8')
 
-const lockedHeadline = ['제품을 만드는', '엔지니어입니다']
+const lockedHeadline = ['최상록']
 
 for (const line of lockedHeadline) {
   if (!heroSource.includes(`>${line}<`)) {
@@ -24,13 +24,13 @@ for (const line of lockedHeadline) {
   }
 }
 
-const documentedHeadline = `> ${lockedHeadline[0]}<br>\n> ${lockedHeadline[1]}`
+const documentedHeadline = `> ${lockedHeadline[0]}`
 
 if (!contentGuide.includes(documentedHeadline)) {
   throw new Error('콘텐츠 가이드의 고정된 첫 화면 문구가 변경되었습니다.')
 }
 
-const approvedIntroduction = ['Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.', '사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.']
+const approvedIntroduction = ['Vuddy의 Android 앱 구조를 설계하고 채팅과 미디어 기능을 개발했습니다. QA 배포와 출시 후 운영도 맡았습니다.', '사내 AI TF에서 캐릭터 대화 모델을 개발하고 이 모델을 사용하는 Android 채팅 개발을 주도했습니다.']
 
 for (const paragraph of approvedIntroduction) {
   if (![heroSource, contentGuide, indexSource].every((source) => source.includes(paragraph))) {
@@ -107,7 +107,7 @@ const copyChecks = [
   {
     source: howIWorkSource,
     pattern: /QA 티켓의 재현, 원인 분석|하나의 Agent Skill로 구성했습니다|기획과 디자인의 SSOT로 쓰고|규칙을 구성했습니다/,
-    message: 'AI와 함께 개발하는 방식 섹션에 교체된 이전 문구를 다시 쓰지 마세요.',
+    message: '개발 도구와 자동화 섹션에 교체된 이전 문구를 다시 쓰지 마세요.',
   },
 ]
 
@@ -122,16 +122,16 @@ if (/85\/100/.test(`${projectsSource}\n${contentGuide}`)) {
 }
 
 const requiredProjectCopy = [
-  'Router 인터페이스로 분리해 feature 모듈 간 의존을 제거하고 mock Router로 UI 없이 이동 로직을 테스트로 검증',
+  'Router 인터페이스로 분리해 feature 모듈 간 의존을 제거하고 mock Router로 UI 없이 이동 로직을 테스트했습니다.',
   "title: '모델 개발과 팀 검토'",
   "title: 'Android 채팅과 결제 개발'",
-  '다양한 오류 상황에 대응하는 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
-  '팀원의 대화 피드백을 받아 학습 데이터를 수정하고 기능 실험에 반영',
-  "eyebrow: 'LLM FINE-TUNING / ANDROID'",
-  "headline: '크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.'",
-  "headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 해당 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.'",
-  'Artist Top Ranker는 Compose pointerInput API로 가로 스와이프를 구현하고',
-  '프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제 해결',
+  '예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작을 확인했습니다.',
+  '팀원의 대화 피드백을 받아 학습 데이터를 수정하고 기능 실험에 반영했습니다.',
+  "eyebrow: 'LLM fine-tuning / Android'",
+  "headline: '크리에이터와 팬을 위한 채팅과 디지털 콘텐츠 앱입니다. 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.'",
+  "headline: '사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 이 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.'",
+  'Artist Top Ranker는 Compose pointerInput API로 가로 스와이프를 구현했습니다.',
+  '프로필 블러 이미지를 별도 Composable로 분리해 진행률 갱신 때 반복되던 이미지 캐시 초기화 문제를 해결했습니다.',
   "caption: 'TAKE HOME / 홈 화면 개편'",
   "caption: '3D PHOTOCARD / SceneView 기반'",
   "caption: 'TAKE ALARM / 락스크린 영상 알람'",
@@ -169,12 +169,12 @@ for (const record of approvedAssetRecords) {
 
 const requiredHowIWorkEvidence = [
   'Vuddy의 디자인 토큰을 Kotlin 코드로 변환하고 PR을 생성하도록 자동화했습니다.',
-  '브랜드 색상 개편 시 시맨틱 토큰을 사용하는 화면은 화면 코드 수정 없이 토큰 값 변경으로 새 색상을 반영했습니다.',
-  'AI에 반복 작업을 맡기고 코드와 동작을 직접 확인합니다.',
-  'QA 티켓에 기록된 문제의 재현부터 원인 분석, 코드 수정과 테스트, PR과 배포 상태 동기화까지 Agent Skill 하나로 묶었습니다.',
-  'Android Studio에서 확인하기 불편했던 SSE 트래픽을 PC 브라우저에서 볼 수 있도록 디버그 앱 전용 네트워크 검사 도구를 구현했습니다.',
+  '브랜드 색상 개편 때 시맨틱 토큰을 사용하는 화면은 토큰 값 변경만으로 새 색상을 반영했습니다.',
+  'QA 티켓 처리와 디자인 토큰 변환을 자동화했습니다.',
+  'QA 티켓에 기록된 문제의 재현, 원인 분석, 코드 수정과 테스트를 Agent Skill로 자동화했습니다. PR과 배포 상태도 함께 동기화합니다.',
+  'Android Studio에서 보기 불편했던 SSE 트래픽을 PC 브라우저에서 확인하도록 디버그 앱 전용 네트워크 검사 도구를 만들었습니다.',
   'AI가 구현한 화면과 기능은 Compose Stable 검사, 스크린샷 테스트와 코드 리뷰로 확인합니다. 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증합니다.',
-  '새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리하고 AI가 개발 전에 최신 내용을 확인하도록 했습니다.',
+  '새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리했습니다. AI가 개발을 시작하기 전에 최신 문서를 확인하도록 했습니다.',
 ]
 
 const requiredExperienceSummaries = [
@@ -192,7 +192,7 @@ for (const summary of requiredExperienceSummaries) {
 
 for (const evidence of requiredHowIWorkEvidence) {
   if (!howIWorkSource.includes(evidence)) {
-    throw new Error(`AI와 함께 개발하는 방식 섹션의 근거가 빠졌습니다: ${evidence}`)
+    throw new Error(`개발 도구와 자동화 섹션의 근거가 빠졌습니다: ${evidence}`)
   }
 }
 

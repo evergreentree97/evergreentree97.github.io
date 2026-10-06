@@ -46,7 +46,7 @@ export function Contact() {
           </picture>
         </div>
         <div className={styles.contactBody}>
-          <h3>채용과 협업 제안 모두 받습니다.</h3>
+          <h3>LinkedIn으로 연락 주세요.</h3>
           <div className={styles.links}>
             {contactLinks.map((link) => (
               <a
