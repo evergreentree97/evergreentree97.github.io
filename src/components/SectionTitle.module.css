@@ -10,8 +10,8 @@
 .headingRow h2 {
   font-size: clamp(2.5rem, 4vw, 3rem);
   font-weight: 760;
-  letter-spacing: -0.055em;
-  line-height: 1.05;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
 }
 
 .action a {
@@ -21,7 +21,7 @@
   gap: 8px;
   color: var(--text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   text-decoration: none;
 }
 

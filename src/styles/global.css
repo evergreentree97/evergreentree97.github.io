@@ -143,7 +143,6 @@ section[id] {
   background: var(--surface);
   color: var(--text-primary);
   transform: translateY(-160%);
-  transition: transform var(--dur-short) var(--ease-out);
 }
 
 .skipLink:focus {
@@ -173,10 +172,14 @@ section[id] {
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    animation-duration: 150ms !important;
+    animation-duration: 0.01ms !important;
     animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 150ms !important;
+    transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
   }
+}
+
+:focus-visible, :focus-visible::after {
+  transition: none !important;
 }

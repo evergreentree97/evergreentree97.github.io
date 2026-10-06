@@ -115,7 +115,14 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             </div>
             <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
               <div className={styles.mediaStage}><MediaContent media={activeMedia} /></div>
-              {activeMedia.caption && <figcaption>{activeMedia.caption}</figcaption>}
+              <figcaption>
+                {activeMedia.caption && <span>{activeMedia.caption}</span>}
+                {activeMedia.type === 'image' && (
+                  <a href={activeMedia.src} target="_blank" rel="noreferrer" aria-label={`${activeMedia.alt} 원본 보기`}>
+                    원본 화면 보기 <PixelIcon name="external" />
+                  </a>
+                )}
+              </figcaption>
             </figure>
           </div>
         )}
