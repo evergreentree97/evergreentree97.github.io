@@ -6,18 +6,18 @@
 .entryHeading { padding-bottom: 24px; border-bottom: 1px solid var(--border); }
 .entryHeading h3 { font-size: 28px; font-weight: 550; }
 .entryHeading p { margin-top: 6px; font-size: 13px; }
-.entryHeading p.intro { color: var(--text-secondary); font-size: 14px; }
+.entryHeading p.intro { color: var(--text-secondary); font-size: 17px; }
 .chapters { border-bottom: 1px solid var(--border); }
 .chapter { padding: 14px 0; }
 .chapterHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
 .chapter + .chapter { border-top: 1px solid var(--border); }
 .chapterHeading span { color: var(--text-secondary); font-family: var(--font-exhibit); font-size: 11px; }
-.chapterHeading h4 { margin-top: 0; font-size: 14px; font-weight: 550; }
+.chapterHeading h4 { margin-top: 0; font-size: 17px; font-weight: 550; }
 .chapterHeading a { display: inline-flex; align-items: center; min-height: 44px; text-decoration-color: var(--color-rule-strong); }
 .chapterHeading a:hover { color: var(--color-accent); }
 @media (max-width: 760px) {
  .experience { padding-top: 52px; }
  .timeline > li { grid-template-columns: 1fr; gap: 12px; }
- .chapterHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+ .chapterHeading { flex-direction: column; gap: 4px; }
  .chapterHeading h4 { margin-top: 0; }
 }

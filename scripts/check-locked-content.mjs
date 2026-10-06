@@ -9,15 +9,14 @@ if (projectsSource.includes('/screens/smt-dashboard.jpg') || screenAssets.includ
   throw new Error('내부 평가 대시보드를 공개 화면이나 배포 자산에 다시 넣지 마세요.')
 }
 const sideProjectsSource = await readFile(new URL('../src/data/sideProjects.ts', import.meta.url), 'utf8')
-const howIWorkSource = await readFile(new URL('../src/components/HowIWork.tsx', import.meta.url), 'utf8')
+const howIWorkSource = [await readFile(new URL('../src/components/HowIWork.tsx', import.meta.url), 'utf8'), await readFile(new URL('../src/data/workEvidence.ts', import.meta.url), 'utf8')].join('\n')
 const experienceSource = await readFile(new URL('../src/data/experience.ts', import.meta.url), 'utf8')
 const appSource = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8')
 const profileSource = await readFile(new URL('../src/data/profile.ts', import.meta.url), 'utf8')
 
 const indexSource = await readFile(new URL('../index.html', import.meta.url), 'utf8')
 
-const identity = 'Ricky'
-if (!heroSource.includes(`>${identity}<`) || !heroSource.includes('>Choi.</span>')) {
+if (!heroSource.includes('{profile.name}') || !heroSource.includes('{profile.englishName}')) {
   throw new Error('Keep the verified public identity in the first heading.')
 }
 if (!contentGuide.includes('Ricky Choi')) {

@@ -10,7 +10,7 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <header className={styles.header} onKeyDown={(event) => {
+    <header data-site-header className={styles.header} onKeyDown={(event) => {
       if (event.key === 'Escape') { setIsOpen(false); menuButtonRef.current?.focus() }
     }}>
       <div className={styles.inner}>
@@ -19,6 +19,7 @@ export function Header() {
         </a>
 
         <button
+          data-menu-toggle
           ref={menuButtonRef}
           className={styles.menuButton}
           type="button"
@@ -31,6 +32,7 @@ export function Header() {
         </button>
 
         <nav
+          data-nav-panel
           id="site-navigation"
           className={`${styles.navigation} ${isOpen ? styles.open : ''}`}
           aria-label="주요 메뉴"
@@ -40,7 +42,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={item.href === activeSection ? styles.activeLink : undefined}
-              aria-current={item.href === activeSection ? 'page' : undefined}
+              aria-current={item.href === activeSection ? 'location' : undefined}
               onClick={() => setIsOpen(false)}
             >
               {item.label}

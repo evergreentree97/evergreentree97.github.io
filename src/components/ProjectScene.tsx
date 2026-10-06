@@ -1,131 +1,64 @@
-import { useEffect, useRef, useState } from 'react'
-import type { FeaturedProject, ProjectMedia, ProjectVideo } from '../data/projects'
+import { useState } from 'react'
+import type { FeaturedProject } from '../data/projects'
+import { projectReading } from '../data/projectReading'
+import { workEvidence } from '../data/workEvidence'
 import { PixelIcon } from './PixelIcon'
 import styles from './ProjectScene.module.css'
 
-function VideoMedia({ media }: { media: ProjectVideo }) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-
-  const togglePlayback = () => {
-    const video = videoRef.current
-    if (!video) return
-    if (video.paused) void video.play().catch(() => setIsPlaying(false))
-    else video.pause()
-  }
-
-  return (
-    <div className={styles.videoFrame}>
-      <video
-        ref={videoRef}
-        poster={media.poster}
-        preload="none"
-        muted
-        playsInline
-        width={media.width}
-        height={media.height}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        onEnded={() => setIsPlaying(false)}
-      >
-        <source src={media.src} type="video/mp4" />
-        영상 재생을 지원하지 않는 브라우저입니다.
-      </video>
-      <button className={styles.videoAction} type="button" aria-label={`${media.alt} ${isPlaying ? '일시 정지' : '재생'}`} aria-pressed={isPlaying} onClick={togglePlayback}>
-        {isPlaying ? '일시 정지' : '재생'}
-      </button>
-    </div>
-  )
-}
-
-function MediaContent({ media }: { media: ProjectMedia }) {
-  if (media.type === 'video') return <VideoMedia media={media} />
-  return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
-}
-
-function Contribution({ text, grouped, open }: { text: string; grouped: boolean; open: boolean }) {
-  const separator = text.indexOf(':')
-  if (separator < 0) return <p>{text}</p>
-  const Heading = grouped ? 'h4' : 'h3'
-  return <details className={styles.contribution} open={open}>
-    <summary><Heading>{text.slice(0, separator)}</Heading><PixelIcon name="arrow" /></summary>
-    <p>{text.slice(separator + 1).trimStart()}</p>
-  </details>
-}
-
 export function ProjectScene({ project }: { project: FeaturedProject }) {
-  const mediaRef = useRef<HTMLDivElement>(null)
-  const initialMedia = Math.max(0, project.media.findIndex((media) => media.featured))
-  const [selectedMedia, setSelectedMedia] = useState(initialMedia)
-  const serviceLink = project.links[0]
-  const activeMedia = project.media[selectedMedia]
+  const [selectedMedia, setSelectedMedia] = useState(0)
+  const reading = projectReading[project.id]
+  const detailMedia = reading.detailMedia.map(index => project.media[index])
+  const extras = workEvidence.filter(item => 'project' in item && item.project === project.id)
+  let caseIndex = 0
 
-  useEffect(() => {
-    const media = mediaRef.current
-    if (!media || !('ResizeObserver' in window)) return
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => {
-      const canStick = window.innerWidth >= 1024 && window.innerHeight >= 800 && !motion.matches && media.offsetHeight <= window.innerHeight - 112
-      media.dataset.sticky = String(canStick)
-    }
-    const observer = new ResizeObserver(update)
-    observer.observe(media)
-    window.addEventListener('resize', update)
-    motion.addEventListener('change', update)
-    update()
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('resize', update)
-      motion.removeEventListener('change', update)
-    }
-  }, [])
-
-  return (
-    <section className={styles.scene} data-project={project.id} id={project.id} aria-labelledby={`${project.id}-title`}>
-      <div className={styles.sceneInner}>
-        <div className={styles.projectHeading}>
-          <h2 id={`${project.id}-title`}>{project.name}</h2>
-          <div><p>{project.headline}</p><span className={styles.projectCategory}>{project.eyebrow}</span></div>
-        </div>
-        <div className={styles.copyColumn}>
-          {project.highlightGroups.map((group, index) => (
-            <div key={group.title ?? index} className={group.title ? styles.highlightGroup : undefined}>
-              {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
-              <ul className={styles.highlightList} aria-label={`${project.name} ${group.title ?? '담당 업무'}`}>
-                {group.highlights.map((highlight, highlightIndex) => (
-                  <li key={highlight}><Contribution text={highlight} grouped={Boolean(group.title)} open={highlightIndex === 0} /></li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {activeMedia && (
-          <div ref={mediaRef} className={styles.mediaColumn}>
-            <div className={styles.mediaSelector} aria-label={`${project.name} 화면 선택`}>
-              {project.media.map((media, index) => (
-                <button key={media.src} type="button" aria-pressed={selectedMedia === index} aria-controls={`${project.id}-media`} onClick={() => setSelectedMedia(index)}>
-                  {media.caption?.split(' / ')[0] ?? `화면 ${index + 1}`}
-                </button>
-              ))}
-            </div>
-            <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
-              <div className={styles.mediaStage} key={activeMedia.src}><MediaContent media={activeMedia} /></div>
-              {activeMedia.caption && <figcaption>
-                <div>{activeMedia.caption}{project.id === 'model-evaluation' && <span className={styles.mediaNote}>화면 시안 (캐릭터 이름 마스킹)</span>}</div>
-                {activeMedia.type === 'image' && <a href={activeMedia.src} target="_blank" rel="noreferrer" aria-label={`${project.name} ${activeMedia.caption.split(' / ')[0]} 원본 화면 열기`}>원본 화면</a>}
-              </figcaption>}
-            </figure>
-          </div>
-        )}
-
-        <div className={styles.projectMeta}>
-          <ul aria-label={`${project.name} 기술`}>{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
-          {serviceLink ? (
-            <a href={serviceLink.href} target="_blank" rel="noreferrer">{serviceLink.label} <PixelIcon name="external" /></a>
-          ) : <span className={styles.internalCase}>사내 프로젝트</span>}
-        </div>
+  return <section className={styles.scene} id={project.id} data-project={project.id} aria-labelledby={`${project.id}-title`}>
+    <div className={styles.sceneInner}>
+      <div className={styles.heading}>
+        <h2 id={`${project.id}-title`}>{project.name}</h2>
+        <p>{reading.service}</p>
+        <dl className={styles.meta}>
+          <div><dt>담당</dt><dd>{reading.role}</dd></div>
+          {reading.periods.map(period => <div key={period.label}><dt>{period.label}</dt><dd>{period.value}</dd></div>)}
+        </dl>
       </div>
-    </section>
-  )
+      <div className={styles.scope}><h3>담당 범위와 협업</h3><p>{reading.scope}</p></div>
+      <div className={styles.reading}>
+        {project.highlightGroups.map((group, groupIndex) => <div key={group.title ?? groupIndex} className={styles.group}>
+          {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
+          {group.highlights.map((highlight, index) => {
+            const separator = highlight.indexOf(':')
+            const context = reading.cases[caseIndex++] ?? {}
+            const Heading = group.title ? 'h4' : 'h3'
+            return <details className={styles.case} key={highlight} open={index === 0}>
+              <summary><Heading>{highlight.slice(0, separator)}</Heading><PixelIcon name="arrow" /></summary>
+              <dl className={styles.caseBody}>
+                {context.context && <div><dt>상황과 제약</dt><dd>{context.context}</dd></div>}
+                {context.choice && <div><dt>선택과 이유</dt><dd>{context.choice}</dd></div>}
+                <div><dt>구현과 확인한 동작</dt><dd>{context.implementation ?? highlight.slice(separator + 1).trim()}</dd></div>
+                {context.boundary && <div><dt>적용 범위와 한계</dt><dd>{context.boundary}</dd></div>}
+              </dl>
+            </details>
+          })}
+        </div>)}
+        {extras.length > 0 && <div className={styles.relatedWork}><h3>함께 만든 개발 도구</h3>{extras.map(item => <div key={item.title}><h4>{item.title}</h4><p>{item.copy}</p></div>)}</div>}
+      </div>
+      <div className={styles.media}>
+        {detailMedia.length > 1 && <div className={styles.selector} data-media-selector aria-label={`${project.name} 화면 선택`}>
+          {detailMedia.map((media, index) => <button key={media.src} type="button" aria-pressed={selectedMedia === index} aria-controls={`${project.id}-screen-${index}`} onClick={() => setSelectedMedia(index)}>{media.caption?.split(' / ')[0]}</button>)}
+        </div>}
+        {detailMedia.map((media, index) => <figure key={media.src} id={`${project.id}-screen-${index}`} className={styles.figure} data-media-active={selectedMedia === index}>
+          <a className={styles.imageFrame} href={media.src} target="_blank" rel="noreferrer" aria-label={`${project.name} ${media.caption} 원본 화면 열기`}>
+            <img src={media.src} alt={media.alt} width={media.width} height={media.height} loading="lazy" />
+          </a>
+          <figcaption>{media.caption}{project.id === 'model-evaluation' && <span>화면 시안 (캐릭터 이름 마스킹)</span>}<a href={media.src} target="_blank" rel="noreferrer">원본 화면 열기 <PixelIcon name="external" /></a></figcaption>
+        </figure>)}
+      </div>
+      <div className={styles.footer}>
+        <ul aria-label={`${project.name} 사용 기술`}>{project.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul>
+        <div>{project.links.map(link => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label} <PixelIcon name="external" /></a>)}</div>
+        <a href="#projects">프로젝트 목록으로</a>
+      </div>
+    </div>
+  </section>
 }

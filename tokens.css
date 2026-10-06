@@ -1,7 +1,7 @@
 :root {
- --color-paper: #f7f7f5; --color-paper-2: #eeeeeb; --color-paper-3: #e7e7e2; --color-paper-4: #d8d8d1; --color-scrim: #101c2b;
- --color-ink: #181818; --color-ink-2: #484844; --color-muted: #62625d; --color-rule: #d0d0c8; --color-rule-strong: #9a9a91;
- --color-accent: #c63819; --color-accent-strong: #a9260f; --color-accent-ink: #fff; --color-warning: #945200; --color-focus: #be3215;
+ --color-paper: #FAF9F6; --color-paper-2: #FFFFFF; --color-paper-3: #E9EEDF; --color-paper-4: #DDDED7; --color-scrim: #101c2b;
+ --color-ink: #20211E; --color-ink-2: #66685F; --color-muted: #66685F; --color-rule: #DDDED7; --color-rule-strong: #A3A99A;
+ --color-accent: #526343; --color-accent-strong: #3D4B31; --color-accent-ink: #fff; --color-warning: #945200; --color-focus: #526343;
  --font-display: 'Wanted Sans', sans-serif; --font-body: 'Wanted Sans', sans-serif;
  --font-utility: 'Wanted Sans', sans-serif; --font-exhibit: 'Uncut Sans', 'Wanted Sans', sans-serif;
  --space-3xs: .125rem; --space-2xs: .25rem; --space-xs: .5rem; --space-sm: .75rem; --space-md: 1rem; --space-lg: 1.5rem; --space-xl: 2.5rem; --space-2xl: 4rem; --space-3xl: 6rem; --space-4xl: 9rem;

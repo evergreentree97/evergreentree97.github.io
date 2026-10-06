@@ -9,17 +9,15 @@
 - 사내 AI TF의 데이터 정제, 학습, 평가와 서빙 경험은 문제를 판단하고 검증하는 방식을 보여주는 보조축으로 사용한다.
 - 제품 문제와 판단 범위를 먼저 설명하고, 기술 이름은 이를 증명하는 경험으로 연결한다.
 
-## Current first viewport (2026-10-06 revision)
+## Current first viewport (2026-10-06 olive revision)
 
-The user rejected the earlier visual proposal and generic AI phrasing and authorized a replacement of copy and visual identity. The old locked headline `제품을 만드는 엔지니어입니다` is retired. The visible identity is **Ricky Choi**, accompanied by the verified Korean name 최상록 and Android Developer role.
-
-Retain these approved factual introduction paragraphs, shown directly in the first viewport rather than in a hidden disclosure:
+The current user brief replaces the previous local visual proposals. The first heading names 최상록 with the verified English name Ricky Choi, followed by the Android role. Keep the following two factual introduction sentences visible:
 
 > Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.
 >
 > 사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.
 
-Project names and concrete responsibility labels provide navigation. Do not restore an abstract professional slogan, the ANDROID & AI PRODUCT eyebrow, or a promise about how clearly the page reads. Apply [plain-language.md](plain-language.md) to new copy and assistant reports. The automated copy check catches named regressions; human review owns meaning and naturalness.
+The Vuddy home screenshot accompanies this introduction. Project and GitHub actions use real destinations. No public resume URL is currently supplied, so do not invent a resume action. Follow [plain-language.md](plain-language.md) for all copy and reports.
 
 ## 섹션 역할
 
@@ -38,7 +36,7 @@ Project names and concrete responsibility labels provide navigation. Do not rest
 
 - 기본 절차보다 문제와 판단, 선택한 해결 방식과 결과를 중심으로 쓴다.
 - 특정 사례의 해결 방식이나 문장을 다른 경력에 그대로 반복하지 않는다.
-- 담당한 구현 사실만 쓰고 "(기능은 동료와 분담)", "두 명이 분담해", "(구현은 단독, 심사는 팀 공동)" 같은 분담과 공동, 단독 고지 문구는 쓰지 않는다. 경력, 프로젝트, 대외 활동 모두 적용한다 (2026-08-24 사용자 결정). 단, 공동 작업을 "주도"나 "단독"으로 격상하는 것은 여전히 금지다.
+- The current brief explicitly requests responsibility and collaborating roles. Describe verified Android work and Backend collaboration without presenting server implementation as personal work. Preserve the distinction between personal model implementation and the team's model review and selection.
 - 수치는 무엇을 바꿨는지, 비교 조건과 결과가 무엇인지 함께 적는다.
 - AI나 룰 기반 방식은 실제로 사용했고 문제 해결에 의미가 있을 때만 언급한다.
 
@@ -100,12 +98,9 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 - 신규 AI 프로젝트는 `새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리하고 AI가 개발 전에 최신 내용을 확인하도록 했습니다.`를 사용한다.
 - 위 항목을 임의의 순서형 개발 절차로 바꾸지 않는다. 큰 핵심 문장 하나와 독립된 근거 항목으로 구성한다.
 
-## 프로젝트 미디어 배치
+## Current media layout
 
-- 데스크톱에서는 프로젝트 글과 화면을 같은 너비로 함께 읽고, 화면 높이는 글의 흐름을 압도하지 않도록 제한한다. 캡션에서 가져온 화면 선택 버튼으로 원하는 한 장을 크게 보여준다.
-- 작은 화면에서도 같은 선택 버튼으로 한 장을 크게 보여준다. 자동 전환은 사용하지 않으며 가로 스크롤을 만들지 않는다.
-- 스크린샷과 영상은 원본 비율을 유지해 전체 화면이 보이도록 맞춘다. 칸의 비율과 맞지 않아 생기는 여백은 검정으로 채우고 각 미디어에 경계선을 두며, 화면을 잘라 칸을 채우지 않는다.
-- 캡션은 짧은 영문 기능명과 자연스러운 한국어 설명을 슬래시로 구분한다. Vuddy는 `HOME / 크리에이터 굿즈 탐색`, `CHATTING / 특정 사용자에게 답장`, `MEDIA / 디지털 카드 상세`를 사용한다. Momentica는 `3D PHOTOCARD / SceneView 기반`, `TAKE ALARM / 락스크린 영상 알람`을 사용한다. 알람 관련 문구는 `락스크린`으로 통일한다. 캡션은 화면 위에 겹치지 않고 각 미디어 아래 전용 영역에 둔다.
+Allocate approved screenshots across the hero, index and details without repeating a screen within its project. The exact allocation is in [structure.md](structure.md). Preserve full image proportions, intrinsic dimensions and project colors. Each figure has a short approved caption and original-image action. AI images remain identified as masked mockups. Momentica detail selection is explicit; every image remains readable without JavaScript. Do not fabricate a project icon, phone screenshot or service.
 
 ## 공개 자산 승인 기록
 
@@ -149,8 +144,6 @@ The user approved applying the portfolio review. This is a general-profile safe 
 - Use one purpose-led sentence for each open-source project. Do not repeat the release fact as a second sentence.
 - The old source comment recorded a dashboard publication decision on 2026-08-23. This refresh removes that dashboard from the page and published assets to follow the current evidence disclosure restriction. Use only the already approved masked chat and chat-list images, with the chat image selected initially. Do not restore the internal evaluation image or its scores.
 
-## October 6 redesign proposal
+## Current evidence and revision
 
-The latest selected resume is an October 2 synchronized working source, not an approved release. The public page keeps verified Android architecture, runtime stability and AI verification claims; private resume details and unsupported outcome language are excluded. The initial exhibition proposal was rejected. The replacement keeps the factual introduction, project facts and per-file asset permissions while retiring its generic headline and pastel showcase. The current reading order and new interaction are recorded in structure.md.
-
-The AI media captions identify the approved images as screen mockups with character-name masking. Original approved files are preserved and available through the original-image links. The vague qualifier before the SSE exception-handling claim has been removed; the verified retry and unit-test facts remain.
+The latest approved Android reference is NextStep/career/resumes/base-resume-2026-10-06.md. Canonical evidence owns contribution and disclosure scope. Model development uses 2026.04–2026.08, honoring the owning chapter's explicit correction; Android app work uses 2026.06–current. The olive revision adds existing constraints, choices and implementation facts, without new performance metrics. Public screenshots and the per-file approvals above remain unchanged. Earlier local design descriptions are historical and do not override the current user brief.

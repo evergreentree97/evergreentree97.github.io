@@ -8,25 +8,23 @@ import { HowIWork } from './components/HowIWork'
 import { MoreWork } from './components/MoreWork'
 import { Projects } from './components/Projects'
 import { SideProjects } from './components/SideProjects'
-import { TastePanel } from './components/TastePanel'
 import styles from './App.module.css'
 
 export default function App() {
   return <>
     <a className="skipLink" href="#main-content">본문으로 건너뛰기</a>
     <Header />
-    <main id="main-content" className={styles.main}>
+    <main id="main-content">
       <Hero />
       <Projects />
-      <div className={styles.workShell}><HowIWork /></div>
       <div className={styles.contentShell}>
         <Experience />
+        <HowIWork />
         <SideProjects />
         <div className={styles.secondaryGrid}><MoreWork /><Activities /></div>
-        <TastePanel />
         <Contact />
       </div>
     </main>
-    <div className={styles.footerShell}><Footer /></div>
+    <div className={styles.contentShell}><Footer /></div>
   </>
 }

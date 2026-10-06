@@ -19,3 +19,5 @@
 최신 공개 상태는 `main` 브랜치의 성공한 배포 실행과 실제 공개 화면을 함께 확인한다.
 
 콘텐츠를 바꾸면 구현 파일과 `content.md`, 필요한 검사 항목을 함께 수정한다. 화면 순서나 시각 규칙을 바꾸면 `structure.md`를 갱신한다. 모든 변경 뒤에는 `npm run check`를 실행한다.
+
+- [Olive revision, October 6](olive-revision-2026-10-06.md): current brief, evidence, reference decisions and verification.
