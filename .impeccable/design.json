@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-06T02:45:32.307878Z",
+  "generatedAt": "2026-10-06T05:49:27.680939Z",
   "title": "Design System: Ricky Choi Portfolio",
   "extensions": {
     "colorMeta": {
@@ -52,7 +52,7 @@
     "typographyMeta": {
       "identity": {
         "displayName": "Identity",
-        "purpose": "Opening Korean name; 36px below 760px."
+        "purpose": "Opening Korean name; 32px below 760px."
       },
       "headline": {
         "displayName": "Headline",
@@ -68,7 +68,7 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Global explanatory reading; 16px below 720px."
+        "purpose": "Global explanatory reading; 16px below 720px. Opening support uses 17px desktop and 16px with line height 1.7 below 760px."
       },
       "case-title": {
         "displayName": "Case Title",
@@ -93,6 +93,30 @@
       "chapter-title": {
         "displayName": "Chapter Title",
         "purpose": "Linked career project chapters."
+      },
+      "english-name": {
+        "displayName": "English Name",
+        "purpose": "Inline opening English name; 15px below 760px."
+      },
+      "role": {
+        "displayName": "Android Role",
+        "purpose": "Opening role; 16px below 760px."
+      },
+      "opening-lead": {
+        "displayName": "Opening Responsibility",
+        "purpose": "Source-verified Vuddy statement; 30ch maximum, 26px and line height 1.5 below 760px."
+      },
+      "representative-contribution": {
+        "displayName": "Representative Contribution",
+        "purpose": "Separate index contribution statement; 22px on desktop and mobile."
+      },
+      "featured-contribution": {
+        "displayName": "Featured Contribution",
+        "purpose": "Vuddy index contribution; 26ch maximum, 22px below 760px."
+      },
+      "development-lead": {
+        "displayName": "Development Record Introduction",
+        "purpose": "Emphasized general development-record introduction; 21px below 700px."
       }
     },
     "shadows": [],
@@ -100,22 +124,22 @@
       {
         "name": "ease-out",
         "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Existing control, image and index-appearance curve."
+        "purpose": "Existing control, image, opening and index entrance curve."
       },
       {
         "name": "control-feedback",
         "value": "180ms",
-        "purpose": "Control color, background and underline feedback, image hover and disclosure arrows."
+        "purpose": "Control color, background and underline feedback, image hover, disclosure arrows, enhanced disclosure-body opacity and selected-figure opacity."
       },
       {
-        "name": "project-index-appearance",
+        "name": "opening-and-index-entrance",
         "value": "300ms",
-        "purpose": "Project index only: opacity 0.85 to 1 and translateY(8px) to zero; content starts visible."
+        "purpose": "Shared useEntrance: opacity 0.85 to 1, translateY(8px) to zero and IntersectionObserver threshold 0.08. Reading starts visible. Mobile display:contents wrappers expand into rendered children. Preference changes cancel active animation; cleanup disconnects observation and removes the listener."
       },
       {
-        "name": "project-index-stagger",
+        "name": "entrance-stagger",
         "value": "50ms",
-        "purpose": "Sibling appearance delay capped at 100ms."
+        "purpose": "Shared opening and index sibling delay capped at 100ms."
       },
       {
         "name": "image-hover",
@@ -181,6 +205,14 @@
   },
   "components": [
     {
+      "name": "Opening Copy",
+      "kind": "custom",
+      "refersTo": "opening-copy",
+      "description": "Actual opening identity, Android role, responsibility and supporting copy typography. The full desktop pairing and mobile media order are documented in DESIGN.md Layout.",
+      "html": "<div class=\"ds-opening-copy\"><div class=\"ds-opening-identity\"><h1>최상록 <span>Ricky Choi</span></h1><p class=\"ds-opening-role\">Android 개발자</p></div><p class=\"ds-opening-lead\">Vuddy의 신규 Android 앱 구조를 설계하고, 채팅과 미디어 기능 개발부터 출시 후 운영까지 맡았습니다.</p><p class=\"ds-opening-support\">캐릭터 대화 모델의 학습과 서빙, Android 채팅과 결제를 개발했으며, Agent Skill로 QA 처리 절차를 자동화했습니다.</p></div>",
+      "css": ".ds-opening-copy { min-width: 0; color: var(--color-ink, #191F28); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; word-break: keep-all; } .ds-opening-identity h1 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 14px; margin: 0; font-size: 44px; font-weight: 750; letter-spacing: -.025em; line-height: 1.2; } .ds-opening-identity h1 span { font-family: var(--font-exhibit, 'Uncut Sans', 'Wanted Sans', sans-serif); font-size: 17px; color: var(--color-muted, #4E5968); font-weight: 500; letter-spacing: -.01em; } .ds-opening-role { margin: 10px 0 0; font-size: 18px; font-weight: 550; color: var(--color-ink-2, #4E5968); } .ds-opening-lead { margin: 32px 0 0; max-width: 30ch; font-size: clamp(28px, 2.5vw, 36px); font-weight: 700; letter-spacing: -.025em; line-height: 1.48; text-wrap: balance; } .ds-opening-support { margin: 24px 0 0; max-width: 54ch; font-size: 17px; line-height: 1.72; color: var(--color-ink-2, #4E5968); } @media (max-width: 760px) { .ds-opening-identity h1 { font-size: 32px; gap: 12px; } .ds-opening-identity h1 span { font-size: 15px; } .ds-opening-role { font-size: 16px; margin-top: 8px; } .ds-opening-lead { margin-top: 24px; font-size: 26px; line-height: 1.5; } .ds-opening-support { margin-top: 28px; font-size: 16px; line-height: 1.7; } }"
+    },
+    {
       "name": "Primary Action",
       "kind": "button",
       "refersTo": "project-action",
@@ -200,8 +232,8 @@
       "name": "Navigation",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "Actual header destinations, including current, hover and static mobile fallback appearances.",
-      "html": "<nav class=\"ds-navigation\" aria-label=\"주요 메뉴\"><a href=\"#projects\" aria-current=\"location\">프로젝트</a><a href=\"#experience\">경력</a><a href=\"#how-i-work\">개발 기록</a><a href=\"#more-work\">오픈소스</a><a href=\"#contact\">연락처</a><a class=\"ds-navigation-github\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\" aria-label=\"GitHub 새 창으로 열기\"><span>GitHub</span><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z\"/></svg></a></nav>",
+      "description": "Actual header destinations in project, development-record, career, open-source and contact order, including current, hover and static mobile fallback appearances.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"주요 메뉴\"><a href=\"#projects\" aria-current=\"location\">프로젝트</a><a href=\"#how-i-work\">개발 기록</a><a href=\"#experience\">경력</a><a href=\"#more-work\">오픈소스</a><a href=\"#contact\">연락처</a><a class=\"ds-navigation-github\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\" aria-label=\"GitHub 새 창으로 열기\"><span>GitHub</span><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z\"/></svg></a></nav>",
       "css": ".ds-navigation { display: flex; align-items: center; gap: 8px; background: var(--color-paper, #FFFFFF); } .ds-navigation > a { display: inline-flex; box-sizing: border-box; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 10px; color: var(--color-ink-2, #4E5968); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 14px; font-weight: 550; line-height: 1.72; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-navigation > a:hover { background: var(--color-paper-3, #F2F4F6); color: var(--color-ink, #191F28); } .ds-navigation > a[aria-current=\"location\"] { color: var(--color-accent, #1B64DA); background: var(--color-paper-3, #F2F4F6); } .ds-navigation .ds-navigation-github { margin-left: 16px; background: var(--color-paper-3, #F2F4F6); color: var(--color-ink, #191F28); } .ds-navigation svg { width: 16px; height: 16px; } .ds-navigation > a:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (max-width: 900px) { .ds-navigation { flex-wrap: wrap; gap: 0 16px; } .ds-navigation > a { min-height: 52px; padding: 10px 16px; border-radius: var(--radius-md, 12px); font-size: 20px; } .ds-navigation .ds-navigation-github { margin-left: 0; margin-top: 12px; justify-content: space-between; font-size: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-navigation > a { transition: none; } }"
     },
     {
@@ -216,9 +248,9 @@
       "name": "Contribution Disclosure",
       "kind": "custom",
       "refersTo": "case-summary",
-      "description": "The native Momentica 3D disclosure, with source context, choice and implemented behavior.",
-      "html": "<details class=\"ds-contribution\" open><summary><h3>3D 포토카드</h3><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></summary><dl><div><dt>상황과 제약</dt><dd>3D 포토카드의 Composition이 종료된 뒤에도 SceneView 내부 Bitmap이 해제되지 않았습니다.</dd></div><div><dt>선택과 이유</dt><dd>Android Profiler 힙 덤프로 원인을 추적하고, 라이브러리 API를 감싸 Composition 종료 시 자원을 명시적으로 해제하도록 했습니다.</dd></div><div><dt>구현과 확인한 동작</dt><dd>SceneView 기반 3D 포토카드와 퀵뷰를 구현했습니다. Composition 종료 시 Bitmap 자원을 명시적으로 해제하도록 개선했습니다.</dd></div></dl></details>",
-      "css": ".ds-contribution { border-bottom: 1px solid var(--color-rule, #E5E8EB); color: var(--color-ink, #191F28); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; } .ds-contribution summary { display: flex; box-sizing: border-box; justify-content: space-between; align-items: center; list-style: none; min-height: 72px; padding-block: 22px; gap: 24px; cursor: pointer; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution summary::-webkit-details-marker { display: none; } .ds-contribution h3 { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.45; } .ds-contribution summary svg { width: 18px; height: 18px; flex-shrink: 0; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution[open] summary svg { transform: rotate(90deg); } .ds-contribution summary:hover, .ds-contribution summary:focus-visible { color: var(--color-accent, #1B64DA); } .ds-contribution summary:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } .ds-contribution dl { margin: 0; padding-bottom: 32px; } .ds-contribution dl > div { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 24px; } .ds-contribution dl > div + div { margin-top: 20px; } .ds-contribution dt { font-size: 14px; font-weight: 650; color: var(--color-accent, #1B64DA); padding-top: 2px; } .ds-contribution dd { margin: 0; color: var(--color-ink-2, #4E5968); font-size: 17px; line-height: 1.72; max-width: 70ch; } @media (max-width: 800px) { .ds-contribution h3 { font-size: 20px; } .ds-contribution dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; } .ds-contribution dd { font-size: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-contribution summary, .ds-contribution summary svg { transition: none; } }"
+      "description": "Native Vuddy token-refresh disclosure with source context, choice, separate implementation and verification, neutral field labels and enhanced open-body feedback.",
+      "html": "<details class=\"ds-contribution\" open><summary><h3>토큰 갱신 동시성 제어</h3><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M5 12h13m-5-5 5 5-5 5\"/></svg></summary><dl><div><dt>상황과 제약</dt><dd>여러 API 요청이 동시에 401을 받으면 토큰 갱신 요청도 겹칠 수 있었습니다.</dd></div><div><dt>선택과 이유</dt><dd>synchronized로 갱신 구간을 제한하고, 다른 요청이 먼저 갱신한 토큰이 있으면 대기 중인 요청이 그 토큰을 재사용하도록 했습니다.</dd></div><div><dt>구현</dt><dd>네트워크 오류는 토큰을 유지한 채 전달하고 인증 만료는 로그인으로 연결했습니다. 갱신한 요청이 다시 401을 받으면 priorResponse 개수로 retry를 중단하도록 했습니다.</dd></div><div><dt>검증</dt><dd>Authenticator와 Refresher 단위 테스트로 오류 처리와 토큰 갱신 동작을 검증했습니다.</dd></div></dl></details>",
+      "css": ".ds-contribution { border-bottom: 1px solid var(--color-rule, #E5E8EB); color: var(--color-ink, #191F28); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; } .ds-contribution summary { display: flex; box-sizing: border-box; justify-content: space-between; align-items: center; list-style: none; min-height: 72px; padding-block: 22px; gap: 24px; cursor: pointer; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution summary::-webkit-details-marker { display: none; } .ds-contribution h3 { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.45; } .ds-contribution summary svg { width: 18px; height: 18px; flex-shrink: 0; transition: transform 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contribution[open] summary svg { transform: rotate(90deg); } .ds-contribution summary:hover, .ds-contribution summary:focus-visible { color: var(--color-accent, #1B64DA); } .ds-contribution summary:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } .ds-contribution dl { margin: 0; padding-bottom: 32px; } .ds-contribution dl > div { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 24px; } .ds-contribution dl > div + div { margin-top: 20px; } .ds-contribution dt { font-size: 14px; font-weight: 650; color: var(--color-ink-2, #4E5968); padding-top: 2px; } .ds-contribution dd { margin: 0; color: var(--color-ink-2, #4E5968); font-size: 17px; line-height: 1.72; max-width: 70ch; } @media (max-width: 800px) { .ds-contribution h3 { font-size: 20px; } .ds-contribution dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; } .ds-contribution dd { font-size: 16px; } } @media (prefers-reduced-motion: reduce) { .ds-contribution summary, .ds-contribution summary svg { transition: none; } } @keyframes ds-case-feedback { from { opacity: .85; } to { opacity: 1; } } .ds-contribution[open] dl { animation: ds-case-feedback 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } @media (prefers-reduced-motion: reduce) { .ds-contribution[open] dl { animation: none; } }"
     },
     {
       "name": "Screen Caption",
@@ -227,15 +259,23 @@
       "description": "The approved Momentica caption and direct original-image destination, without a fabricated screenshot.",
       "html": "<figure class=\"ds-caption-figure\"><figcaption class=\"ds-screen-caption\">3D PHOTOCARD / SceneView 기반<a href=\"/screens/mmtc-photocard-figma.png\" target=\"_blank\" rel=\"noreferrer\">원본 화면 열기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a></figcaption></figure>",
       "css": ".ds-caption-figure { margin: 0; } .ds-screen-caption { display: flex; flex-direction: column; align-items: start; gap: 4px; max-width: 330px; margin: 16px auto 0; font-family: var(--font-body, 'Wanted Sans', sans-serif); font-size: 12px; font-weight: 440; line-height: 1.65; color: var(--color-muted, #4E5968); } .ds-screen-caption a { display: inline-flex; align-items: center; min-height: 44px; gap: 8px; color: var(--color-accent, #1B64DA); text-decoration: underline; text-underline-offset: .22em; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-screen-caption svg { width: 16px; height: 16px; } .ds-screen-caption a:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-screen-caption a { transition: none; } }"
+    },
+    {
+      "name": "Contact Destination",
+      "kind": "card",
+      "refersTo": "contact-destination",
+      "description": "Actual GitHub contact destination with account label, gray rounded surface, source inline SVGs, hover and visible focus.",
+      "html": "<a class=\"ds-contact-destination\" href=\"https://github.com/EvergreenTree97\" target=\"_blank\" rel=\"noreferrer\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z\"/></svg><span><small>GitHub</small><strong>@EvergreenTree97</strong></span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path d=\"M13 4h7v7m0-7-9 9M18 14v6H4V6h6\"/></svg></a>",
+      "css": ".ds-contact-destination { display: flex; align-items: center; gap: 20px; padding: 24px; border-radius: var(--radius-lg, 16px); background: var(--color-paper-3, #F2F4F6); color: var(--color-ink, #191F28); font-family: var(--font-body, 'Wanted Sans', sans-serif); font-weight: 440; line-height: 1.72; text-decoration: none; transition: color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), background-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)), text-decoration-color 180ms var(--ease-out, cubic-bezier(.16,1,.3,1)); } .ds-contact-destination > svg { display: block; width: 22px; height: 22px; flex-shrink: 0; } .ds-contact-destination > svg:last-child { margin-left: auto; } .ds-contact-destination span { display: flex; flex-direction: column; } .ds-contact-destination small { font-size: 12px; color: var(--color-ink-2, #4E5968); } .ds-contact-destination strong { font-size: 18px; font-weight: 600; } .ds-contact-destination:hover { color: var(--color-accent, #1B64DA); } .ds-contact-destination:focus-visible { outline: 3px solid var(--color-focus, #1B64DA); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-contact-destination { transition: none; } }"
     }
   ],
   "narrative": {
     "northStar": "Approved Android screens on white and cool gray",
-    "overview": "Ricky Choi's portfolio pairs dark headings and Korean explanations with large approved Android application screens. White and cool-gray surfaces separate the opening, project images and technical reading. Blue identifies actions, current navigation, selected media and keyboard focus.\n\nThis scan records the implemented October 6, 2026 interpretation of the user's Toss UI and UX reference. Wanted Sans and Uncut Sans remain self-hosted. Blue is an implementation assumption because the optional accent-color question was unanswered. The local finish review reported ship; this records the implementation and does not imply user aesthetic acceptance or publication.",
+    "overview": "Ricky Choi's portfolio pairs dark headings and Korean explanations with large approved Android application screens. White and cool-gray surfaces separate the opening, project images and technical reading. Blue identifies actions, current navigation, selected media and keyboard focus. The current opening gives the Android responsibility statement more typographic emphasis than the name, with verified model, app and QA work in supporting copy.\n\nThis refresh records the approved October 6, 2026 career-emphasis revision within the established interpretation of the user's Toss UI and UX reference. Wanted Sans and Uncut Sans remain self-hosted. Blue remains an implementation assumption because the optional accent-color question was unanswered. The user authorized implementation and direct screenshot-based aesthetic review. The fresh local finish review returned ship for this revision; that disposition does not establish user aesthetic acceptance or publication.",
     "keyCharacteristics": [
       "Compact white navigation and broad rounded image surfaces.",
       "Complete approved app screens with captions and original-image access.",
-      "Introduction and responsibility beside app imagery, followed by native contribution disclosures.",
+      "Android responsibility beside actual app imagery, followed by native contribution disclosures with separate verification when documented.",
       "Visible keyboard focus, reduced motion and styled prerendered reading without JavaScript."
     ],
     "rules": [
@@ -257,9 +297,9 @@
     ],
     "dos": [
       "Do preserve complete approved images, intrinsic dimensions, captions, mockup labels and direct original-image links.",
-      "Do keep the model-development and Android responsibility groups separate, with only evidenced disclosure fields.",
+      "Do keep the model-development and Android responsibility groups separate, with only evidenced disclosure fields and distinct implementation and verification rows when documented.",
       "Do retain native disclosures, explicit media selection, visible keyboard focus and the readable no-JavaScript fallback.",
-      "Do use the implemented heading hierarchy and 16–18px explanatory body text.",
+      "Do use the implemented heading hierarchy and 16–18px explanatory body text, retaining the larger opening, contribution and development-record emphasis roles.",
       "Do inspect current desktop and mobile renders after visual changes and follow docs/portfolio/plain-language.md before adding copy."
     ],
     "donts": [

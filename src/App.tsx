@@ -18,8 +18,8 @@ export default function App() {
       <Hero />
       <Projects />
       <div className={styles.contentShell}>
-        <Experience />
         <HowIWork />
+        <Experience />
         <SideProjects />
         <div className={styles.secondaryGrid}><MoreWork /><Activities /></div>
         <Contact />

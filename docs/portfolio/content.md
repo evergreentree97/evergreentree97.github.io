@@ -9,15 +9,15 @@
 - 사내 AI TF의 데이터 정제, 학습, 평가와 서빙 경험은 문제를 판단하고 검증하는 방식을 보여주는 보조축으로 사용한다.
 - 제품 문제와 판단 범위를 먼저 설명하고, 기술 이름은 이를 증명하는 경험으로 연결한다.
 
-## Current first viewport (2026-10-06 Toss reference revision)
+## Current first viewport (2026-10-06 career emphasis revision)
 
 The latest request changes the visual reference to Toss while retaining the preceding factual-content requirements. The first heading names 최상록 with the verified English name Ricky Choi, followed by the Android role. Keep the following two factual introduction sentences visible:
 
-> Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.
+> Vuddy의 신규 Android 앱 구조를 설계하고, 채팅과 미디어 기능 개발부터 출시 후 운영까지 맡았습니다.
 >
-> 사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.
+> 캐릭터 대화 모델의 학습과 서빙, Android 채팅과 결제를 개발했으며, Agent Skill로 QA 처리 절차를 자동화했습니다.
 
-The Vuddy home screenshot accompanies this introduction. Project and GitHub actions use real destinations. No public resume URL is currently supplied, so do not invent a resume action. Follow [plain-language.md](plain-language.md) for all copy and reports.
+The approved Vuddy reply-chat screenshot accompanies this introduction. Emphasize the Android responsibility sentence with type size and weight; retain the factual model/app/QA sentence as supporting copy. Project and GitHub actions use real destinations. No public resume URL is currently supplied, so do not invent a resume action. Follow [plain-language.md](plain-language.md) for all copy and reports.
 
 ## 섹션 역할
 
@@ -146,4 +146,4 @@ The user approved applying the portfolio review. This is a general-profile safe 
 
 ## Current evidence and revision
 
-The latest approved Android reference is NextStep/career/resumes/base-resume-2026-10-06.md. Canonical evidence owns contribution and disclosure scope. Model development uses 2026.04–2026.08, honoring the owning chapter's explicit correction; Android app work uses 2026.06–current. The content revision adds existing constraints, choices and implementation facts, without new performance metrics. The following Toss reference revision changes presentation only. Public screenshots and the per-file approvals above remain unchanged. Earlier local design descriptions are historical and do not override the current user brief.
+The latest approved Android reference is NextStep/career/resumes/base-resume-2026-10-06.md. Canonical evidence owns contribution and disclosure scope. Model development uses 2026.04–2026.08, honoring the owning chapter's explicit correction; Android app work uses 2026.06–current. The content revision adds existing constraints, choices and implementation facts, without new performance metrics. The following Toss reference and career-emphasis revisions change presentation and selected evidence-backed wording. Public screenshots and the per-file approvals above remain unchanged. Earlier local design descriptions are historical and do not override the current user brief.

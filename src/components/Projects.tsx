@@ -19,6 +19,7 @@ export function Projects() {
               <div className={styles.copy}>
                 <h3><a href={`#${project.id}`}>{reading.shortName}</a></h3>
                 <p className={styles.service}>{reading.service}</p>
+                <p className={styles.contribution}>{reading.contribution}</p>
                 <dl className={styles.facts}>
                   <div><dt>담당</dt><dd>{reading.role}</dd></div>
                   {reading.periods.map(period => <div key={period.label}><dt>{period.label}</dt><dd>{period.value}</dd></div>)}

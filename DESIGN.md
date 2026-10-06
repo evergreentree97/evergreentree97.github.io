@@ -16,9 +16,26 @@ colors:
 typography:
   identity:
     fontFamily: Wanted Sans, sans-serif
-    fontSize: 56px
+    fontSize: 44px
     fontWeight: 750
     lineHeight: 1.2
+    letterSpacing: -.025em
+  english-name:
+    fontFamily: Uncut Sans, Wanted Sans, sans-serif
+    fontSize: 17px
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: -.01em
+  role:
+    fontFamily: Wanted Sans, sans-serif
+    fontSize: 18px
+    fontWeight: 550
+    lineHeight: 1.72
+  opening-lead:
+    fontFamily: Wanted Sans, sans-serif
+    fontSize: clamp(28px, 2.5vw, 36px)
+    fontWeight: 700
+    lineHeight: 1.48
     letterSpacing: -.025em
   headline:
     fontFamily: Wanted Sans, sans-serif
@@ -38,6 +55,24 @@ typography:
     fontWeight: 700
     lineHeight: 1.25
     letterSpacing: -.02em
+  representative-contribution:
+    fontFamily: Wanted Sans, sans-serif
+    fontSize: 22px
+    fontWeight: 650
+    lineHeight: 1.5
+    letterSpacing: -.015em
+  featured-contribution:
+    fontFamily: Wanted Sans, sans-serif
+    fontSize: 28px
+    fontWeight: 650
+    lineHeight: 1.5
+    letterSpacing: -.015em
+  development-lead:
+    fontFamily: Wanted Sans, sans-serif
+    fontSize: 24px
+    fontWeight: 650
+    lineHeight: 1.72
+    letterSpacing: -.015em
   body:
     fontFamily: Wanted Sans, sans-serif
     fontSize: 17px
@@ -87,6 +122,9 @@ spacing:
   xl: 2.5rem
   2xl: 4rem
 components:
+  opening-copy:
+    textColor: '{colors.ink}'
+    typography: '{typography.opening-lead}'
   project-action:
     backgroundColor: '{colors.accent}'
     textColor: '{colors.paper-2}'
@@ -155,18 +193,18 @@ components:
 
 **Creative North Star: "Approved Android screens on white and cool gray"**
 
-Ricky Choi's portfolio pairs dark headings and Korean explanations with large approved Android application screens. White and cool-gray surfaces separate the opening, project images and technical reading. Blue identifies actions, current navigation, selected media and keyboard focus.
+Ricky Choi's portfolio pairs dark headings and Korean explanations with large approved Android application screens. White and cool-gray surfaces separate the opening, project images and technical reading. Blue identifies actions, current navigation, selected media and keyboard focus. The current opening gives the Android responsibility statement more typographic emphasis than the name, with verified model, app and QA work in supporting copy.
 
-This scan records the implemented October 6, 2026 interpretation of the user's Toss UI and UX reference. Wanted Sans and Uncut Sans remain self-hosted. Blue is an implementation assumption because the optional accent-color question was unanswered. The local finish review reported ship; this records the implementation and does not imply user aesthetic acceptance or publication.
+This refresh records the approved October 6, 2026 career-emphasis revision within the established interpretation of the user's Toss UI and UX reference. Wanted Sans and Uncut Sans remain self-hosted. Blue remains an implementation assumption because the optional accent-color question was unanswered. The user authorized implementation and direct screenshot-based aesthetic review. The fresh local finish review returned ship for this revision; that disposition does not establish user aesthetic acceptance or publication.
 
 **Key Characteristics:**
 
 - Compact white navigation and broad rounded image surfaces.
 - Complete approved app screens with captions and original-image access.
-- Introduction and responsibility beside app imagery, followed by native contribution disclosures.
+- Android responsibility beside actual app imagery, followed by native contribution disclosures with separate verification when documented.
 - Visible keyboard focus, reduced motion and styled prerendered reading without JavaScript.
 
-The source record is [toss-revision-2026-10-06.md](docs/portfolio/toss-revision-2026-10-06.md). Existing per-file media approvals and provenance remain in [content.md](docs/portfolio/content.md); this refresh adds no image or career claim.
+The current direction and implementation record is [career-emphasis-2026-10-06.md](docs/portfolio/career-emphasis-2026-10-06.md); the established visual world is recorded in [toss-revision-2026-10-06.md](docs/portfolio/toss-revision-2026-10-06.md). Existing per-file media approvals and provenance remain in [content.md](docs/portfolio/content.md). This refresh documents the final source without adding an image or career claim. Local capture evidence lives under `.impeccable/review/career-emphasis/` and is not a published artifact.
 
 ## Colors
 
@@ -174,7 +212,7 @@ White and cool gray carry the reading and image surfaces. The frontmatter preser
 
 ### Primary
 
-- **Blue (`accent`):** primary actions, text links, current navigation, selected media and disclosure field labels.
+- **Blue (`accent`):** primary actions, text links, current navigation, selected media, and disclosure hover and focus states.
 - **Strong Blue (`accent-strong`):** the primary action's hover background.
 - **Focus Blue (`focus`):** the global keyboard outline (3px, offset 4px).
 
@@ -183,7 +221,7 @@ White and cool gray carry the reading and image surfaces. The frontmatter preser
 - **White (`paper`, `paper-2`):** page and header, secondary actions, and image stages inside gray detail sections.
 - **Cool Gray (`paper-3`):** opening, featured project, image stages, selected navigation and contact cards.
 - **Dark Ink (`ink`):** headings, main text and default control content.
-- **Secondary Ink (`ink-2`):** explanations and technology text.
+- **Secondary Ink (`ink-2`):** explanations, technology text and disclosure field labels.
 - **Muted Ink (`muted`):** facts, dates, captions and unselected media labels.
 - **Rule (`rule`):** contribution boundaries, footer dividers and neutral hover fills.
 - **Strong Rule (`rule-strong`):** career-link underlines and the scrollbar thumb.
@@ -200,10 +238,11 @@ Both variable fonts are self-hosted in `public/fonts/`. Utility aliases resolve 
 
 ### Hierarchy
 
-- **Identity:** the Korean name uses `identity`, becoming 36px below 760px. Its English name uses Uncut Sans at 18px, becoming 15px. The Android role uses 24px at weight 700, becoming 20px.
+- **Identity:** the Korean name uses `identity`, becoming 32px below 760px. The inline English name uses `english-name`, becoming 15px. The Android role uses `role`, becoming 16px.
+- **Opening responsibility:** `opening-lead` carries the factual Vuddy statement, with balanced wrapping and a 30ch maximum. It becomes 26px with line height 1.5 below 760px. Supporting copy uses the `body` role and a 54ch maximum, becoming 16px with line height 1.7 below 760px.
 - **Headline:** section headings use `headline`; detail headings share its size, weight and tracking with line height 1.28. Section headings become 32px below 700px; details become 32px with line height 1.3 below 800px.
-- **Project title:** secondary index titles use `project-title`; Vuddy uses `featured-project-title`. All become 32px below 760px.
-- **Body:** `body` is the global reading baseline, becoming 16px below 720px. Detail introductions use 18px and line height 1.7, becoming 16px below 800px. Case values and responsibility text remain within 16–18px.
+- **Project title:** secondary index titles use `project-title`; Vuddy uses `featured-project-title`. All become 32px below 760px. The separate contribution statement uses `representative-contribution`; Vuddy uses `featured-contribution` with a 26ch maximum. Both contribution variants become 22px below 760px.
+- **Body:** `body` is the global reading baseline, becoming 16px below 720px. Detail introductions use 18px and line height 1.7, becoming 16px below 800px. Case values and responsibility text remain within 16–18px. The development-record introduction uses `development-lead`, becoming 21px below 700px.
 - **Case title:** `case-title` names native contribution disclosures, becoming 20px below 800px. Responsibility-group titles use 24px, becoming 22px.
 - **Action and navigation labels:** `action-label` covers opening actions and detail links. `navigation-label` covers desktop destinations; mobile destinations use 20px at the 900px breakpoint.
 - **Media and career labels:** `media-selector-label` covers screen buttons, `media-caption` covers captions, and `chapter-title` covers career links. Field labels use 14px at weight 650.
@@ -214,13 +253,15 @@ Both variable fonts are self-hosted in `public/fonts/`. Utility aliases resolve 
 
 The rendered main shell uses `width: min(100% - 48px, 1160px)`, retaining 24px reading gutters. The fixed white header is 64px high; its outer maximum is 1208px including 24px horizontal padding. The unused global `--content-width` alias is not the rendered shell authority.
 
-The opening has a 1360px maximum and 16px outer gutters, with 48px by 80px padding, a 1.2:0.8 grid and 64px gap. At 1100px its horizontal padding becomes 48px and gap 40px. Below 760px it stacks, with 12px outer gutters plus 12px inner padding, preserving 24px text gutters; the image is at most 244px. The desktop opening image is at most 290px.
+The opening has a 1360px maximum and 16px outer gutters, with 48px by 80px padding, a 1.25:0.75 grid and 80px gap. Its desktop copy wrapper groups identity, responsibility, supporting introduction and actions beside the actual Vuddy reply-chat screen, which is at most 252px wide. At 1100px horizontal padding becomes 48px and the gap becomes 40px. Below 760px the copy wrapper uses `display: contents` and the grid order becomes identity, responsibility, actions, image, supporting introduction. The mobile opening uses 28px by 12px padding inside 12px outer gutters, preserving 24px text gutters; the image is at most 244px wide.
 
-Vuddy spans the project index's full desktop row. AI and Momentica use two columns with 32px between columns and 64px between rows. The index becomes one column below 760px. Project detail introductions and responsibility form one vertically centered text column beside a 440px media stage holding an intact screenshot at most 310px wide. The column gap is 80px; at 1050px the stage becomes 360px and gap 40px.
+The project index uses 88px top and 80px bottom padding, becoming 64px on both sides below 760px. Vuddy spans its full desktop row with a gray container, 48px padding, a 1:0.9 grid and 64px gap. At 1000px that padding becomes 36px and the gap becomes 40px. AI and Momentica use two columns with 32px between columns and 64px between rows. Below 760px the index becomes one column with a 48px row gap; the featured card uses 28px 20px 24px padding and a 28px internal gap. Secondary copy stays open below its image stage.
 
-Below 800px detail order is heading and facts, image, responsibility, reading, then links. Only the overview wrapper uses `display: contents` there to assign heading and responsibility to separate grid areas. Detail reading below the opening pair has a maximum width of 840px. Disclosure fields use a 136px label column and 24px gap, then stack with a 6px gap on mobile. Values retain a 70ch maximum.
+Vuddy uses reply chat in the opening, home in the index and the digital card in detail. The AI and Momentica allocations remain unchanged, keeping all eight approved source files distinct in rendered content. Project detail introductions and responsibility form one vertically centered text column beside a 440px media stage holding an intact screenshot at most 310px wide. The column gap is 80px; at 1050px the stage becomes 360px and the gap becomes 40px.
 
-Detail sections use 112px vertical padding, becoming 64px below 800px. Career uses a 190px period column and stacks below 760px; general evidence uses a 0.8:1.6 grid and stacks below 700px. Secondary work columns stack below 820px and contact cards below 650px. The frontmatter spacing steps are the active footer variables; other regions use their observed component-specific gaps. Opening and detail actions target at least 48px, selectors and caption links 44px, and mobile navigation 52px.
+Below 800px detail order is heading and facts, image, responsibility, reading, then links. The detail overview wrapper uses `display: contents` there to assign heading and responsibility to separate grid areas. The detail image maximum becomes 280px. Detail reading below the opening pair has a maximum width of 840px. Disclosure fields use a 136px label column and 24px gap, then stack with a 6px gap on mobile. Values retain a 70ch maximum.
+
+Detail sections use 96px vertical padding, becoming 64px below 800px. Development records precede career chronology and use 88px top and 40px bottom padding; below 700px the top padding becomes 64px. Evidence rows use a 0.8:1.6 grid with a 40px gap, stacking with a 10px gap below 700px. Career uses a 190px period column and stacks below 760px. Secondary work columns stack below 820px and contact cards below 650px. The frontmatter spacing steps are the active footer variables; other regions use their observed component-specific gaps. Opening and detail actions target at least 48px, selectors and caption links 44px, and mobile navigation 52px.
 
 ## Elevation & Depth
 
@@ -234,17 +275,21 @@ Controls use the `md` radius, desktop navigation uses `navigation`, and contact 
 
 ## Components
 
+### Opening Identity and Responsibility
+
+The name and Android role identify the candidate before the larger Vuddy responsibility statement. The supporting sentence contains the source-verified model, Android and Agent Skill QA work. Desktop groups these in one copy wrapper; mobile places actions and the actual app image before the supporting introduction. The sidecar includes the current copy typography as a standalone source-derived snippet; the full composition and image allocation follow Layout.
+
 ### Opening Actions
 
 The project anchor uses `project-action`: blue fill, white text and rounded corners. Hover uses `project-action-hover`. GitHub uses `secondary-action`: white fill and dark text, with `secondary-action-hover` on hover. Both use a 10px icon gap, inline SVGs and the global visible focus outline. Mobile horizontal padding becomes 16px.
 
 ### Navigation
 
-Compact English identity and desktop destinations sit on the white header. Hover uses a gray fill with dark text; the current destination uses blue text on gray and `aria-current="location"`. Below 900px, a 44px square button controls stacked destinations. Escape closes the menu and restores button focus; following a destination or the home link closes it. Without JavaScript, the toggle is hidden, the mobile header is static, and visible destinations wrap.
+Compact English identity and desktop destinations sit on the white header. Destinations follow project, development records, career, open source and contact order. Hover uses a gray fill with dark text; the current destination uses blue text on gray and `aria-current="location"`. Below 900px, a 44px square button controls stacked destinations. Escape closes the menu and restores button focus; following a destination or the home link closes it. Without JavaScript, the toggle is hidden, the mobile header is static, and visible destinations wrap.
 
 ### Project Summary and Contact Cards
 
-Project summaries pair approved screenshots with product name, service, responsibility, period, technologies and a named detail action. Vuddy has a gray full-row container; secondary summaries place gray image stages above open copy columns. Technology names are plain text. Contact destinations use gray cards, `contact-destination` padding and radius, account labels, inline SVGs and a blue text hover state.
+Project summaries pair approved screenshots with product name, service, a distinct representative contribution, responsibility, period, technologies and a named detail action. The service explanation precedes the heavier contribution statement; the contribution has its own typography role. Vuddy has a gray full-row container; secondary summaries place gray image stages above open copy columns. Technology names are plain text. Contact destinations use gray cards, `contact-destination` padding and radius, account labels, inline SVGs and a blue text hover state.
 
 ### Screenshot Selection and Caption
 
@@ -254,22 +299,24 @@ Each figure retains intrinsic image dimensions, its approved caption and an orig
 
 ### Contribution Disclosure
 
-Native `details` and `summary` reveal evidenced context, choice, implementation and boundaries. The first contribution in each responsibility group starts open. `case-summary` has a 72px minimum target; hover and visible focus use blue. Its inline arrow rotates 90 degrees when open. Label and value fields follow the Layout rules. AI model and Android responsibility groups remain separate.
+Native `details` and `summary` reveal only the evidenced context, choice, implementation, verification and boundary fields available in the source. Implementation and verification occupy distinct rows when verification is documented; missing context or reasons do not produce empty fields. The first contribution in each responsibility group starts open. `case-summary` has a 72px minimum target; hover and visible focus use blue. Its inline arrow rotates 90 degrees when open. Field labels and values use secondary ink and follow the Layout rules. AI model and Android responsibility groups remain separate. Enhanced open bodies use the opacity feedback described below; native disclosure operation remains available without JavaScript.
 
 ### Motion and Reading Fallback
 
-Only the project index appears with opacity 0.85 to 1 and translateY(8px) to zero over 300ms. Sibling delay is 50ms, capped at 100ms. Content starts visible, so reading does not depend on IntersectionObserver or animation success. Control feedback and disclosure arrows use 180ms with `ease-out`. Hover-capable devices apply image-only scale(1.015). The existing footer press uses a 120ms transition and translateY(1px).
+The opening and project index reuse `useEntrance`: opacity 0.85 to 1 and translateY(8px) to zero over 300ms, with `ease-out`. Sibling delay is 50ms, capped at 100ms. The hook expands a `display: contents` candidate into its rendered children so the mobile opening also receives entrance feedback. IntersectionObserver starts each item once at an 0.08 threshold. Content starts visible, so reading does not depend on observation or animation success.
 
-Reduced motion removes entrance animation, image transforms and transitions, and restores automatic scrolling. Styled prerendered HTML preserves reading, native disclosures, navigation and all eight actual screenshots without JavaScript. The sidecar contains six source-derived snippets: primary action, secondary action, navigation, media selector, contribution disclosure and screen caption. No input field or invented screenshot is introduced.
+Control feedback, disclosure arrows, newly open enhanced disclosure bodies and selected figures use 180ms with `ease-out`; bodies and figures use opacity 0.85 to 1. Hover-capable devices apply image-only scale(1.015). The existing footer press uses a 120ms transition and translateY(1px).
+
+Reduced motion suppresses entrance animation, image transforms and transitions, and restores automatic scrolling. The entrance hook listens for preference changes, cancels running animations when reduction is requested, and disconnects its observer, cancels remaining animations and removes its listener on cleanup. Styled prerendered HTML preserves reading, native disclosures, static navigation and all eight actual screenshots without JavaScript. The sidecar contains eight source-derived snippets: opening copy, primary action, secondary action, navigation, media selector, contribution disclosure, screen caption and contact destination. No input field or invented screenshot is introduced.
 
 ## Do's and Don'ts
 
 ### Do:
 
 - **Do** preserve complete approved images, intrinsic dimensions, captions, mockup labels and direct original-image links.
-- **Do** keep the model-development and Android responsibility groups separate, with only evidenced disclosure fields.
+- **Do** keep the model-development and Android responsibility groups separate, with only evidenced disclosure fields and distinct implementation and verification rows when documented.
 - **Do** retain native disclosures, explicit media selection, visible keyboard focus and the readable no-JavaScript fallback.
-- **Do** use the implemented heading hierarchy and 16–18px explanatory body text.
+- **Do** use the implemented heading hierarchy and 16–18px explanatory body text, retaining the larger opening, contribution and development-record emphasis roles.
 - **Do** inspect current desktop and mobile renders after visual changes and follow docs/portfolio/plain-language.md before adding copy.
 
 ### Don't:

@@ -20,5 +20,6 @@
 
 콘텐츠를 바꾸면 구현 파일과 `content.md`, 필요한 검사 항목을 함께 수정한다. 화면 순서나 시각 규칙을 바꾸면 `structure.md`를 갱신한다. 모든 변경 뒤에는 `npm run check`를 실행한다.
 
-- [Toss reference revision, October 6](toss-revision-2026-10-06.md): current visual reference, implementation choices and verification.
+- [Career emphasis revision, October 6](career-emphasis-2026-10-06.md): current introduction, contribution hierarchy, motion and screenshot verification.
+- [Toss reference revision, October 6](toss-revision-2026-10-06.md): established visual reference and preceding implementation choices.
 - [Olive revision, October 6](olive-revision-2026-10-06.md): preceding content selection, evidence and verification.

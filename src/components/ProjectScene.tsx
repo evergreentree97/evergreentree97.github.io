@@ -48,13 +48,14 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
               <dl className={styles.caseBody}>
                 {context.context && <div><dt>상황과 제약</dt><dd>{context.context}</dd></div>}
                 {context.choice && <div><dt>선택과 이유</dt><dd>{context.choice}</dd></div>}
-                <div><dt>구현과 확인한 동작</dt><dd>{context.implementation ?? highlight.slice(separator + 1).trim()}</dd></div>
+                <div><dt>구현</dt><dd>{context.implementation ?? highlight.slice(separator + 1).trim()}</dd></div>
+                {context.verified && <div><dt>검증</dt><dd>{context.verified}</dd></div>}
                 {context.boundary && <div><dt>적용 범위와 한계</dt><dd>{context.boundary}</dd></div>}
               </dl>
             </details>
           })}
         </div>)}
-        {extras.length > 0 && <div className={styles.relatedWork}><h3>함께 만든 개발 도구</h3>{extras.map(item => <div key={item.title}><h4>{item.title}</h4><p>{item.copy}</p></div>)}</div>}
+        {extras.length > 0 && <div className={styles.relatedWork}><h3>개발 도구와 문서 관리</h3>{extras.map(item => <div key={item.title}><h4>{item.title}</h4><p>{item.copy}</p></div>)}</div>}
       </div>
       <div className={styles.footer}>
         <ul aria-label={`${project.name} 사용 기술`}>{project.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul>
