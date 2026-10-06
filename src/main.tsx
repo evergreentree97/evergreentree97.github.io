@@ -4,7 +4,7 @@ import App from './App'
 
 const root = document.getElementById('root')
 if (root) {
-  if (root.hasChildNodes()) hydrate(<App path={location.pathname} />, root)
-  else render(<App path={location.pathname} />, root)
+  if (root.hasChildNodes()) hydrate(<App />, root)
+  else render(<App />, root)
   document.documentElement.classList.add('js-ready')
 }

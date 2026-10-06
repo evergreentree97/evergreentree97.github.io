@@ -20,7 +20,16 @@ export function Experience() {
                   <p>{experience.role}</p>
                 </div>
               </div>
-
+              <div className={styles.chapters}>
+                {experience.chapters.map((chapter) => (
+                  <section className={styles.chapter} key={`${chapter.title}-${chapter.period}`}>
+                    <div className={styles.chapterHeading}>
+                      <span>{chapter.period}</span>
+                      <h4><a href={chapter.href}>{chapter.title}</a></h4>
+                    </div>
+                  </section>
+                ))}
+              </div>
             </article>
             </li>
           ))}
