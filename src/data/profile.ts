@@ -8,9 +8,8 @@ export const profile = {
 
 export const navigation = [
   { label: '프로젝트', href: '#projects' },
-  { label: '개발 기록', href: '#how-i-work' },
   { label: '경력', href: '#experience' },
-  { label: '오픈소스', href: '#more-work' },
+  { label: '개발 기록', href: '#how-i-work' },
   { label: '연락처', href: '#contact' },
 ] as const
 

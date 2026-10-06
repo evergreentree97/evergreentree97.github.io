@@ -16,14 +16,14 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
     <div className={styles.sceneInner}>
       <div className={styles.overview}>
         <div className={styles.heading}>
-          <h2 id={`${project.id}-title`}>{project.name}</h2>
+          <h1 id={`${project.id}-title`}>{project.name}</h1>
           <p>{reading.service}</p>
           <dl className={styles.meta}>
             <div><dt>담당</dt><dd>{reading.role}</dd></div>
             {reading.periods.map(period => <div key={period.label}><dt>{period.label}</dt><dd>{period.value}</dd></div>)}
           </dl>
         </div>
-        <div className={styles.scope}><h3>담당 범위와 협업</h3><p>{reading.scope}</p></div>
+        <div className={styles.scope}><h2>담당 범위와 협업</h2><p>{reading.scope}</p></div>
       </div>
       <div className={styles.media}>
         {detailMedia.length > 1 && <div className={styles.selector} data-media-selector aria-label={`${project.name} 화면 선택`}>
@@ -38,11 +38,11 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
       </div>
       <div className={styles.reading}>
         {project.highlightGroups.map((group, groupIndex) => <div key={group.title ?? groupIndex} className={styles.group}>
-          {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
+          {group.title && <h2 className={styles.groupTitle}>{group.title}</h2>}
           {group.highlights.map((highlight, index) => {
             const separator = highlight.indexOf(':')
             const context = reading.cases[caseIndex++] ?? {}
-            const Heading = group.title ? 'h4' : 'h3'
+            const Heading = group.title ? 'h3' : 'h2'
             return <details className={styles.case} key={highlight} open={index === 0}>
               <summary><Heading>{highlight.slice(0, separator)}</Heading><PixelIcon name="arrow" /></summary>
               <dl className={styles.caseBody}>
@@ -55,12 +55,12 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
             </details>
           })}
         </div>)}
-        {extras.length > 0 && <div className={styles.relatedWork}><h3>개발 도구와 문서 관리</h3>{extras.map(item => <div key={item.title}><h4>{item.title}</h4><p>{item.copy}</p></div>)}</div>}
+        {extras.length > 0 && <div className={styles.relatedWork}><h2>개발 도구와 문서 관리</h2>{extras.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.copy}</p></div>)}</div>}
       </div>
       <div className={styles.footer}>
         <ul aria-label={`${project.name} 사용 기술`}>{project.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul>
         <div>{project.links.map(link => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label} <PixelIcon name="external" /></a>)}</div>
-        <a href="#projects">프로젝트 목록으로</a>
+        <a href="/#projects">프로젝트 목록으로</a>
       </div>
     </div>
   </section>

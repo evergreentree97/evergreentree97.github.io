@@ -1,4 +1,7 @@
-# 포트폴리오 문서
+# Portfolio documentation
+
+The current structure is the October 6 response to the user-rejected long page: a home overview and three static project-detail pages. See [structure.md](structure.md) for routing and reading order. Earlier Toss and career-emphasis records describe superseded layouts and remain historical.
+
 
 이 디렉토리에는 현재 공개 포트폴리오를 운영할 때 필요한 기준만 둔다.
 

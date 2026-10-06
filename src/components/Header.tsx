@@ -4,7 +4,7 @@ import { useActiveSection } from '../hooks/useActiveSection'
 import { PixelIcon } from './PixelIcon'
 import styles from './Header.module.css'
 
-export function Header() {
+export function Header({ detail = false }: { detail?: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
   const activeSection = useActiveSection()
   const menuButtonRef = useRef<HTMLButtonElement>(null)
@@ -14,7 +14,7 @@ export function Header() {
       if (event.key === 'Escape') { setIsOpen(false); menuButtonRef.current?.focus() }
     }}>
       <div className={styles.inner}>
-        <a className={styles.logo} href="#top" aria-label="홈으로 이동" onClick={() => setIsOpen(false)}>
+        <a className={styles.logo} href={detail ? "/#top" : "#top"} aria-label="홈으로 이동" onClick={() => setIsOpen(false)}>
           <span>ricky choi<span className={styles.logoMark}>.</span></span>
         </a>
 
@@ -40,9 +40,9 @@ export function Header() {
           {navigation.map((item) => (
             <a
               key={item.href}
-              href={item.href}
-              className={item.href === activeSection ? styles.activeLink : undefined}
-              aria-current={item.href === activeSection ? 'location' : undefined}
+              href={detail ? `/${item.href}` : item.href}
+              className={(detail ? item.href === "#projects" : item.href === activeSection) ? styles.activeLink : undefined}
+              aria-current={(detail ? item.href === "#projects" : item.href === activeSection) ? 'location' : undefined}
               onClick={() => setIsOpen(false)}
             >
               {item.label}
