@@ -9,20 +9,23 @@
 - 사내 AI TF의 데이터 정제, 학습, 평가와 서빙 경험은 문제를 판단하고 검증하는 방식을 보여주는 보조축으로 사용한다.
 - 제품 문제와 판단 범위를 먼저 설명하고, 기술 이름은 이를 증명하는 경험으로 연결한다.
 
-## Current first viewport (2026-10-06 career emphasis revision)
+## 현재 첫 화면
 
-The latest request changes the visual reference to Toss while retaining the preceding factual-content requirements. The first heading names 최상록 with the verified English name Ricky Choi, followed by the Android role. Keep the following two factual introduction sentences visible:
+> 제품을 만드는<br>
+> 엔지니어입니다
 
-> Vuddy의 신규 Android 앱 구조를 설계하고, 채팅과 미디어 기능 개발부터 출시 후 운영까지 맡았습니다.
+> Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.
 >
-> 캐릭터 대화 모델의 학습과 서빙, Android 채팅과 결제를 개발했으며, Agent Skill로 QA 처리 절차를 자동화했습니다.
+> 사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.
 
-The approved Vuddy reply-chat screenshot accompanies this introduction. Emphasize the Android responsibility sentence with type size and weight; retain the factual model/app/QA sentence as supporting copy. Project and GitHub actions use real destinations. No public resume URL is currently supplied, so do not invent a resume action. Follow [plain-language.md](plain-language.md) for all copy and reports.
+첫 화면 위쪽 라벨은 `ANDROID & AI PRODUCT`다. 직군을 Android로만 좁히지 않기 위해 2026-08-24 `ANDROID DEVELOPER`에서 바꿨다.
+
+본문은 2026-09-09 사용자가 검토 제안 반영을 요청해 현재 문구로 갱신했다. 제목과 직군 라벨은 유지한다. 별도 요청이 없으면 이 확정 문구를 바꾸지 않는다. `npm run check:content`가 구현과 이 문서의 문구를 함께 확인한다. 구체적인 경력과 사례는 경력 타임라인과 주요 프로젝트에서 설명한다.
 
 ## 섹션 역할
 
 - 첫 화면: 전체 경력과 담당 범위 요약
-- Career: show organization, role, dates and linked project chapters. Do not repeat the implementation summaries already present in the cases.
+- 경력: 첫 화면과 겹치는 별도 도입 문단을 두지 않고 회사, 기간과 프로젝트 흐름을 타임라인으로 보여준다. 구체적인 구현과 결과는 주요 프로젝트에서 설명한다
 - 주요 프로젝트: 문제, 판단, 맡은 구현과 확인 가능한 결과. 카드 제목 아래 소개 문장은 제품 맥락을 쓰고 경력 챕터 요약은 대표 구현 기술과 기능을 한 문장으로 보여준다. 상세한 해결 과정은 주요 프로젝트 항목에만 둔다 (2026-08-25)
 - 기술 이름은 주요 프로젝트의 태그에서 사용 맥락과 함께 보여주며 별도 기술 섹션은 두지 않는다
 - AI와 함께 개발하는 방식: AI에 맡긴 범위와 개발자가 직접 확인한 범위
@@ -36,7 +39,7 @@ The approved Vuddy reply-chat screenshot accompanies this introduction. Emphasiz
 
 - 기본 절차보다 문제와 판단, 선택한 해결 방식과 결과를 중심으로 쓴다.
 - 특정 사례의 해결 방식이나 문장을 다른 경력에 그대로 반복하지 않는다.
-- The current brief explicitly requests responsibility and collaborating roles. Describe verified Android work and Backend collaboration without presenting server implementation as personal work. Preserve the distinction between personal model implementation and the team's model review and selection.
+- 담당한 구현 사실만 쓰고 "(기능은 동료와 분담)", "두 명이 분담해", "(구현은 단독, 심사는 팀 공동)" 같은 분담과 공동, 단독 고지 문구는 쓰지 않는다. 경력, 프로젝트, 대외 활동 모두 적용한다 (2026-08-24 사용자 결정). 단, 공동 작업을 "주도"나 "단독"으로 격상하는 것은 여전히 금지다.
 - 수치는 무엇을 바꿨는지, 비교 조건과 결과가 무엇인지 함께 적는다.
 - AI나 룰 기반 방식은 실제로 사용했고 문제 해결에 의미가 있을 때만 언급한다.
 
@@ -98,9 +101,12 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 - 신규 AI 프로젝트는 `새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리하고 AI가 개발 전에 최신 내용을 확인하도록 했습니다.`를 사용한다.
 - 위 항목을 임의의 순서형 개발 절차로 바꾸지 않는다. 큰 핵심 문장 하나와 독립된 근거 항목으로 구성한다.
 
-## Current media layout
+## 프로젝트 미디어 배치
 
-Allocate approved screenshots across the hero, index and details without repeating a screen within its project. The exact allocation is in [structure.md](structure.md). Preserve full image proportions, intrinsic dimensions and project colors. Each figure has a short approved caption and original-image action. AI images remain identified as masked mockups. Momentica detail selection is explicit; every image remains readable without JavaScript. Do not fabricate a project icon, phone screenshot or service.
+- 데스크톱에서는 프로젝트 글과 화면을 같은 너비로 함께 읽고, 화면 높이는 글의 흐름을 압도하지 않도록 제한한다. 캡션에서 가져온 화면 선택 버튼으로 원하는 한 장을 크게 보여준다.
+- 작은 화면에서도 같은 선택 버튼으로 한 장을 크게 보여준다. 자동 전환은 사용하지 않으며 가로 스크롤을 만들지 않는다.
+- 스크린샷과 영상은 원본 비율을 유지해 전체 화면이 보이도록 맞춘다. 칸의 비율과 맞지 않아 생기는 여백은 검정으로 채우고 각 미디어에 경계선을 두며, 화면을 잘라 칸을 채우지 않는다.
+- 캡션은 짧은 영문 기능명과 자연스러운 한국어 설명을 슬래시로 구분한다. Vuddy는 `HOME / 크리에이터 굿즈 탐색`, `CHATTING / 특정 사용자에게 답장`, `MEDIA / 디지털 카드 상세`를 사용한다. Momentica는 `3D PHOTOCARD / SceneView 기반`, `TAKE ALARM / 락스크린 영상 알람`을 사용한다. 알람 관련 문구는 `락스크린`으로 통일한다. 캡션은 화면 위에 겹치지 않고 각 미디어 아래 전용 영역에 둔다.
 
 ## 공개 자산 승인 기록
 
@@ -143,7 +149,3 @@ The user approved applying the portfolio review. This is a general-profile safe 
 - Add Vuddy's design-token-to-Kotlin automation and the verified brand-color change. State that unchanged screen code applied only to screens using the semantic tokens. Keep the shorter planning-document item and add Compose Stable checks to the validation item.
 - Use one purpose-led sentence for each open-source project. Do not repeat the release fact as a second sentence.
 - The old source comment recorded a dashboard publication decision on 2026-08-23. This refresh removes that dashboard from the page and published assets to follow the current evidence disclosure restriction. Use only the already approved masked chat and chat-list images, with the chat image selected initially. Do not restore the internal evaluation image or its scores.
-
-## Current evidence and revision
-
-The latest approved Android reference is NextStep/career/resumes/base-resume-2026-10-06.md. Canonical evidence owns contribution and disclosure scope. Model development uses 2026.04–2026.08, honoring the owning chapter's explicit correction; Android app work uses 2026.06–current. The content revision adds existing constraints, choices and implementation facts, without new performance metrics. The following Toss reference and career-emphasis revisions change presentation and selected evidence-backed wording. Public screenshots and the per-file approvals above remain unchanged. Earlier local design descriptions are historical and do not override the current user brief.

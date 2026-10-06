@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
         summary: 'SSE 기반 캐릭터 채팅과 Google Play 인앱 결제 개발을 맡았습니다.',
       },
       {
-        period: '2026.04 - 2026.08',
+        period: '2026.02 - 2026.08',
         title: '사내 AI TF 캐릭터 대화 모델 파인튜닝',
         href: '#model-evaluation',
         summary: '캐릭터 대화 모델의 데이터 구성과 파인튜닝, 평가와 서빙을 맡았습니다.',

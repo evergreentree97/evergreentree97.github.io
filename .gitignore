@@ -7,7 +7,3 @@ dist
 .playwright-cli/
 .hallmark/
 .unlazy/
-
-.impeccable/review/
-.impeccable/mocks/
-.impeccable/seeds/

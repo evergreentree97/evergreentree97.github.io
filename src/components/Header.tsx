@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { navigation, profile } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { PixelIcon } from './PixelIcon'
@@ -9,17 +9,29 @@ export function Header() {
   const activeSection = useActiveSection()
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const closeWithEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    window.addEventListener('keydown', closeWithEscape)
+    return () => window.removeEventListener('keydown', closeWithEscape)
+  }, [isOpen])
+
   return (
-    <header data-site-header className={styles.header} onKeyDown={(event) => {
-      if (event.key === 'Escape') { setIsOpen(false); menuButtonRef.current?.focus() }
-    }}>
+    <header className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.logo} href="#top" aria-label="홈으로 이동" onClick={() => setIsOpen(false)}>
-          <span>ricky choi<span className={styles.logoMark}>.</span></span>
+        <a className={styles.logo} href="#top" aria-label="홈으로 이동">
+          <img className={styles.logoIcon} src="/icons/android-mark-dark.png" alt="" width="260" height="260" />
+          <span>최상록</span>
         </a>
 
         <button
-          data-menu-toggle
           ref={menuButtonRef}
           className={styles.menuButton}
           type="button"
@@ -32,7 +44,6 @@ export function Header() {
         </button>
 
         <nav
-          data-nav-panel
           id="site-navigation"
           className={`${styles.navigation} ${isOpen ? styles.open : ''}`}
           aria-label="주요 메뉴"
@@ -42,7 +53,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={item.href === activeSection ? styles.activeLink : undefined}
-              aria-current={item.href === activeSection ? 'location' : undefined}
+              aria-current={item.href === activeSection ? 'page' : undefined}
               onClick={() => setIsOpen(false)}
             >
               {item.label}

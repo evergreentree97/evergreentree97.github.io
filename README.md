@@ -1,25 +1,24 @@
 # Choi Sangrok Portfolio
 
-Public Android portfolio for [evergreentree97.github.io](https://evergreentree97.github.io/), built with Preact, TypeScript and Vite. Career facts and image permissions start at [docs/portfolio/README.md](docs/portfolio/README.md).
+[evergreentree97.github.io](https://evergreentree97.github.io/)에 배포하는 공개 포트폴리오입니다.
 
-## Local development
+## 로컬 실행
 
-Use Node.js 22 or later.
+Node.js 22 이상을 권장합니다.
 
 ```bash
-npm ci
+npm install
 npm run dev
 ```
 
-## Validation and preview
+배포 전에는 전체 검사를 실행합니다.
 
 ```bash
 npm run check
-npm run preview
 ```
 
-The check command validates public facts and asset approvals, known copy regressions, lint, TypeScript and the production build. Vite's Preact preset prerenders the same App into HTML, then the browser hydrates it. Test the production preview for the no-JavaScript fallback; the development server renders on the client.
+포트폴리오 문서의 시작점은 [`docs/portfolio/README.md`](docs/portfolio/README.md)입니다.
 
-## Deployment
+## 배포
 
-GitHub Actions checks and builds updates to main, then deploys dist to GitHub Pages. Generated build output and review captures stay untracked. A local redesign does not publish the live site.
+`main` 브랜치가 갱신되면 GitHub Actions가 검사와 빌드를 실행한 뒤 GitHub Pages에 배포합니다.

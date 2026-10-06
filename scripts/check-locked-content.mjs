@@ -9,21 +9,28 @@ if (projectsSource.includes('/screens/smt-dashboard.jpg') || screenAssets.includ
   throw new Error('내부 평가 대시보드를 공개 화면이나 배포 자산에 다시 넣지 마세요.')
 }
 const sideProjectsSource = await readFile(new URL('../src/data/sideProjects.ts', import.meta.url), 'utf8')
-const howIWorkSource = [await readFile(new URL('../src/components/HowIWork.tsx', import.meta.url), 'utf8'), await readFile(new URL('../src/data/workEvidence.ts', import.meta.url), 'utf8')].join('\n')
+const howIWorkSource = await readFile(new URL('../src/components/HowIWork.tsx', import.meta.url), 'utf8')
 const experienceSource = await readFile(new URL('../src/data/experience.ts', import.meta.url), 'utf8')
 const appSource = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8')
 const profileSource = await readFile(new URL('../src/data/profile.ts', import.meta.url), 'utf8')
 
 const indexSource = await readFile(new URL('../index.html', import.meta.url), 'utf8')
 
-if (!heroSource.includes('{profile.name}') || !heroSource.includes('{profile.englishName}')) {
-  throw new Error('Keep the verified public identity in the first heading.')
-}
-if (!contentGuide.includes('Ricky Choi')) {
-  throw new Error('Document the current public identity heading.')
+const lockedHeadline = ['제품을 만드는', '엔지니어입니다']
+
+for (const line of lockedHeadline) {
+  if (!heroSource.includes(`>${line}<`)) {
+    throw new Error(`고정된 첫 화면 문구가 변경되었습니다: ${line}`)
+  }
 }
 
-const approvedIntroduction = ['Vuddy의 신규 Android 앱 구조를 설계하고, 채팅과 미디어 기능 개발부터 출시 후 운영까지 맡았습니다.', '캐릭터 대화 모델의 학습과 서빙, Android 채팅과 결제를 개발했으며, Agent Skill로 QA 처리 절차를 자동화했습니다.']
+const documentedHeadline = `> ${lockedHeadline[0]}<br>\n> ${lockedHeadline[1]}`
+
+if (!contentGuide.includes(documentedHeadline)) {
+  throw new Error('콘텐츠 가이드의 고정된 첫 화면 문구가 변경되었습니다.')
+}
+
+const approvedIntroduction = ['Vuddy의 신규 Android 앱 구조와 공통 기반을 설계하고 핵심 기능 개발, QA 배포와 출시 후 운영을 담당했습니다.', '사내 AI TF에서 캐릭터 대화 모델을 개발한 뒤 해당 모델을 사용하는 Android 채팅 기능을 주도했습니다.']
 
 for (const paragraph of approvedIntroduction) {
   if (![heroSource, contentGuide, indexSource].every((source) => source.includes(paragraph))) {
@@ -118,7 +125,7 @@ const requiredProjectCopy = [
   'Router 인터페이스로 분리해 feature 모듈 간 의존을 제거하고 mock Router로 UI 없이 이동 로직을 테스트로 검증',
   "title: '모델 개발과 팀 검토'",
   "title: 'Android 채팅과 결제 개발'",
-  '예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
+  '다양한 오류 상황에 대응하는 예외 처리와 재시도 로직을 구현하고 단위 테스트로 주요 동작 검증',
   '팀원의 대화 피드백을 받아 학습 데이터를 수정하고 기능 실험에 반영',
   "eyebrow: 'LLM FINE-TUNING / ANDROID'",
   "headline: '크리에이터와 팬이 채팅과 디지털 콘텐츠로 만나는 팬 플랫폼입니다. 앱의 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.'",
@@ -193,4 +200,4 @@ if (/MOMENTICA Figma 목업은 여전히 게시 금지|사내 Figma 화면\(참�
   throw new Error('사이트 구조 문서가 포트폴리오 콘텐츠 가이드의 화면별 승인 기록과 충돌합니다.')
 }
 
-console.log('공개 이름, 경력 근거와 자산 승인을 확인했습니다.')
+console.log('고정된 첫 화면 문구와 포트폴리오 표현을 확인했습니다.')

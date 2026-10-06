@@ -3,7 +3,6 @@
 이 디렉토리에는 현재 공개 포트폴리오를 운영할 때 필요한 기준만 둔다.
 
 - [`content.md`](content.md): 공개 문구, 경력 서술 원칙, 프로젝트별 선택과 공개 자산 승인 기록
-- [`plain-language.md`](plain-language.md): User-defined writing method and known copy regressions
 - [`structure.md`](structure.md): 현재 화면 순서, 레이아웃 결정, 수정 위치와 유지할 구분선 규칙
 - [`../../README.md`](../../README.md): 로컬 실행, 검사와 GitHub Pages 배포 방법
 
@@ -19,7 +18,3 @@
 최신 공개 상태는 `main` 브랜치의 성공한 배포 실행과 실제 공개 화면을 함께 확인한다.
 
 콘텐츠를 바꾸면 구현 파일과 `content.md`, 필요한 검사 항목을 함께 수정한다. 화면 순서나 시각 규칙을 바꾸면 `structure.md`를 갱신한다. 모든 변경 뒤에는 `npm run check`를 실행한다.
-
-- [Career emphasis revision, October 6](career-emphasis-2026-10-06.md): current introduction, contribution hierarchy, motion and screenshot verification.
-- [Toss reference revision, October 6](toss-revision-2026-10-06.md): established visual reference and preceding implementation choices.
-- [Olive revision, October 6](olive-revision-2026-10-06.md): preceding content selection, evidence and verification.

@@ -1,20 +1,191 @@
-.header { position: fixed; inset: 0 0 auto; z-index: var(--z-sticky); background: var(--color-paper); }
-.inner { display: flex; justify-content: space-between; align-items: center; min-height: 64px; max-width: 1208px; padding-inline: 24px; margin-inline: auto; }
-.logo { display: inline-flex; align-items: center; text-decoration: none; font-family: var(--font-exhibit); font-size: 22px; font-weight: 700; letter-spacing: -.02em; min-height: 44px; }
-.logoMark { color: var(--color-accent); }
-.navigation { display: flex; align-items: center; gap: 8px; }
-.navigation > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 10px; color: var(--color-ink-2); font-size: 14px; font-weight: 550; text-decoration: none; }
-.navigation > a:hover { background: var(--color-paper-3); color: var(--color-ink); }
-.navigation .activeLink { color: var(--color-accent); background: var(--color-paper-3); }
-.navigation .github { margin-left: 16px; background: var(--color-paper-3); color: var(--color-ink); }
-.github svg { width: 16px; height: 16px; }
-.menuButton { display: none; border: 0; background: transparent; border-radius: 10px; width: 44px; height: 44px; place-items: center; cursor: pointer; }
-.menuButton:hover { background: var(--color-paper-3); }
-.menuButton svg { width: 24px; height: 24px; }
-@media (max-width: 900px) {
- .menuButton { display: grid; }
- .navigation { position: absolute; top: 64px; left: 0; right: 0; display: none; background: var(--color-paper); padding: 24px 24px 32px; border-bottom: 1px solid var(--color-rule); gap: 8px; max-height: calc(100dvh - 64px); overflow-y: auto; }
- .navigation.open { display: grid; }
- .navigation > a { min-height: 52px; font-size: 20px; padding: 10px 16px; border-radius: 12px; }
- .navigation .github { margin-left: 0; margin-top: 12px; justify-content: space-between; font-size: 16px; }
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-sticky);
+  min-height: 72px;
+  padding-block: 0;
+  border-block-end: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  transition: border-color var(--dur-short) var(--ease-out);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 32px);
+  max-width: calc(var(--content-width) + 48px);
+  min-height: 64px;
+  margin-block-start: 0;
+  margin-inline: auto;
+  padding-inline: 24px;
+  border: 0;
+  background: var(--color-paper);
+  transform: translateY(0);
+
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: var(--space-xs);
+  color: var(--color-ink);
+  font-family: var(--font-utility);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logoIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-sm), 2vw, var(--space-xl));
+}
+
+.navigation > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-ink-2);
+  font-family: var(--font-utility);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.navigation > a:not(.github)::after {
+  position: absolute;
+  inset: auto 0 5px;
+  height: var(--rule-strong);
+  background: var(--color-accent);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-short) var(--ease-out);
+}
+
+.navigation > a.activeLink {
+  color: var(--color-ink);
+}
+
+.navigation > a.activeLink:not(.github)::after {
+  transform: scaleX(1);
+}
+
+.navigation .github {
+  gap: var(--space-xs);
+  padding-inline: var(--space-sm);
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+}
+
+.github svg {
+  width: 17px;
+  height: 17px;
+}
+
+.menuButton {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  border-radius: 50%;
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  cursor: pointer;
+  place-items: center;
+}
+
+.menuButton svg {
+  width: 21px;
+  height: 21px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navigation > a:hover {
+    color: var(--color-accent);
+  }
+
+  .navigation > a:not(.github):hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .inner {
+    padding-inline: var(--space-md);
+  }
+
+  .menuButton {
+    display: grid;
+  }
+
+  .navigation {
+    position: absolute;
+    inset: 64px var(--space-md) auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    max-height: calc(100dvh - 76px);
+    padding: var(--space-xs) var(--space-md) var(--space-md);
+    overflow-y: auto;
+    border: var(--rule-hair) solid var(--color-rule-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-paper-3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out),
+      visibility 0ms var(--dur-short);
+  }
+
+
+  .navigation.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0ms;
+  }
+
+  .navigation > a {
+    min-height: 52px;
+    border-block-end: var(--rule-hair) solid var(--color-rule);
+  }
+
+  .navigation .github {
+    justify-content: center;
+    margin-block-start: 0;
+    border: var(--rule-hair) solid var(--color-rule-strong);
+  }
+}
+
+@media (max-width: 25rem) {
+  .inner {
+    width: calc(100% - 20px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .inner,
+  .navigation {
+    transition: none;
+  }
+
 }

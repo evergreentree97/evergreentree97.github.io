@@ -1,8 +1,46 @@
-import { type ReactNode } from 'react'
-import { useEntrance } from '../hooks/useEntrance'
+import { useEffect, useRef, type ReactNode } from 'react'
 import styles from './Reveal.module.css'
 
-export function Reveal({ children, className = '', stagger = false, animate = false }: { children: ReactNode; className?: string; stagger?: boolean; animate?: boolean }) {
-  const ref = useEntrance({ animate, stagger })
-  return <div ref={ref} className={`${styles.reveal} ${className}`}>{children}</div>
+type RevealProps = {
+  children: ReactNode
+  className?: string
+  stagger?: boolean
+}
+
+export function Reveal({ children, className = '', stagger = false }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const element = ref.current
+
+    if (!element) return
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reduceMotion || !('IntersectionObserver' in window)) return
+
+    element.dataset.revealReady = 'true'
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+
+        element.dataset.visible = 'true'
+        observer.disconnect()
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.04 },
+    )
+
+    observer.observe(element)
+    return () => {
+      observer.disconnect()
+      delete element.dataset.revealReady
+    }
+  }, [])
+
+  return (
+    <div ref={ref} className={`${styles.reveal} ${stagger ? styles.stagger : ''} ${className}`}>
+      {children}
+    </div>
+  )
 }

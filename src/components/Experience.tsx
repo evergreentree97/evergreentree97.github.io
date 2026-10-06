@@ -1,4 +1,5 @@
 import { experiences } from '../data/experience'
+import { PixelIcon } from './PixelIcon'
 import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
 import styles from './Experience.module.css'
@@ -11,6 +12,9 @@ export function Experience() {
         <ol className={styles.timeline}>
           {experiences.map((experience) => (
             <li key={`${experience.organization}-${experience.period}`} data-reveal-item>
+            <div className={styles.marker} aria-hidden="true">
+              <PixelIcon name={experience.current ? 'flag' : 'save'} />
+            </div>
             <div className={styles.period}>{experience.period}</div>
             <article className={styles.entry}>
               <div className={styles.entryHeading}>
@@ -26,6 +30,9 @@ export function Experience() {
                     <div className={styles.chapterHeading}>
                       <span>{chapter.period}</span>
                       <h4><a href={chapter.href}>{chapter.title}</a></h4>
+                    </div>
+                    <div className={styles.chapterContent}>
+                      <p>{chapter.summary}</p>
                     </div>
                   </section>
                 ))}
