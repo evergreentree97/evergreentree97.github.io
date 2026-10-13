@@ -4,8 +4,11 @@ import styles from './Projects.module.css'
 
 export function Projects() {
   return (
-    <div id="projects" className={styles.wrapper}>
-      {featuredProjects.map((project) => <ProjectScene key={project.id} project={project} />)}
-    </div>
+    <section id="projects" className={styles.wrapper} aria-labelledby="projects-title">
+      <h2 id="projects-title" className={styles.title}>프로젝트</h2>
+      <div className={styles.gallery}>
+        {featuredProjects.map((project) => <ProjectScene key={project.id} project={project} />)}
+      </div>
+    </section>
   )
 }

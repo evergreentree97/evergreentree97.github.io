@@ -12,9 +12,7 @@ export const activities: Activity[] = [
     organization: 'Mash-Up',
     role: 'Android Developer',
     summary: 'IT 연합동아리에서 밈 공유 앱 파밈을 함께 개발했습니다.',
-    highlights: [
-      'Kotlin과 Jetpack Compose로 주요 화면을 개발했습니다.',
-    ],
+    highlights: [],
   },
   {
     period: '2022.10 - 2023.02',
@@ -22,7 +20,7 @@ export const activities: Activity[] = [
     role: 'Android Developer',
     summary: '팀 프로젝트 관리 앱 티미티미를 개발했습니다.',
     highlights: [
-      'Android와 WebView가 주고받는 메서드와 파라미터를 문서로 정리했습니다.',
+      'Android와 WebView 간 연동 메서드와 파라미터를 문서화했습니다.',
       'Clean Architecture 기반 모듈 구조와 공통 디자인 시스템을 개발했습니다.',
     ],
   },

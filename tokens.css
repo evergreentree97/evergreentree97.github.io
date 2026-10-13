@@ -1,27 +1,23 @@
-/* Neutral charcoal foundation with orange reserved for actions and active states. */
+/* Shared color, typography, spacing and motion tokens. */
 :root {
-  /* 오렌지 다크 팔레트: 배경은 웜 차콜 단계, 글자는 밝은 웜 그레이,
-     강조 텍스트는 밝은 오렌지, 주 버튼은 채도 있는 오렌지 면에 흰 글자. */
-  --color-paper: #121212;
-  --color-paper-2: #1c1c1c;
-  --color-paper-3: #242424;
-  --color-paper-4: #2b2b2b;
-  --color-scrim: #0b0b0b;
-  --color-ink: #f5f5f5;
-  --color-ink-2: #d0d0d0;
-  --color-muted: #b5b5b5;
-  --color-rule: #353535;
-  --color-rule-strong: #575757;
-  --color-accent: #f68a4f;
-  --color-accent-strong: #c74000;
+  --color-paper: #ffffff;
+  --color-paper-2: #f9fafb;
+  --color-paper-3: #f2f4f6;
+  --color-paper-4: #e5e8eb;
+  --color-scrim: #191f28;
+  --color-ink: #191f28;
+  --color-ink-2: #4e5968;
+  --color-muted: #66717f;
+  --color-rule: #e5e8eb;
+  --color-rule-strong: #b0b8c1;
+  --color-accent: #1b64da;
+  --color-accent-strong: #1754b9;
   --color-accent-ink: #ffffff;
-  --color-warning: oklch(78% 0.14 85);
-  --color-focus: #f68a4f;
-
+  --color-warning: #946400;
+  --color-focus: #1b64da;
   --font-display: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
   --font-body: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
   --font-utility: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
-
   --space-3xs: 0.125rem;
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
@@ -32,9 +28,8 @@
   --space-2xl: 4rem;
   --space-3xl: 6rem;
   --space-4xl: 9rem;
-
-  --text-xs: 0.72rem;
-  --text-sm: 0.84rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-md: 1.25rem;
   --text-lg: 1.5625rem;
@@ -43,24 +38,34 @@
   --text-3xl: 3.052rem;
   --text-4xl: 3.815rem;
   --text-display-s: clamp(2.75rem, 5vw, 4.75rem);
-  --text-display: clamp(3rem, 6vw, 5.5rem);
-
+  --text-display: clamp(3rem, 6vw, 6rem);
+  --section-space: 6rem;
+  --section-content-space: 2.25rem;
+  --group-space: 3rem;
+  --column-gap: 3rem;
+  --control-height: 44px;
+  --icon-size: 18px;
+  --header-height: 72px;
+  --page-gutter: 32px;
+  --section-heading-size: clamp(1.75rem, 2.4vw, 2rem);
+  --case-heading-size: clamp(1.375rem, 2vw, 1.75rem);
+  --body-size: 1rem;
+  --body-leading: 1.8;
+  --panel-radius: 1rem;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-micro: 120ms;
   --dur-short: 180ms;
-  --dur-mid: 280ms;
-  --dur-long: 320ms;
-
+  --dur-mid: 360ms;
+  --dur-long: 600ms;
   --rule-hair: 1px;
   --rule-strong: 2px;
   --radius-sm: 0.75rem;
-  --radius-md: 1.25rem;
+  --radius-md: 1rem;
   --radius-lg: 2rem;
   --radius-pill: 999px;
-
   --z-base: 1;
   --z-raised: 10;
   --z-dropdown: 100;
@@ -69,3 +74,8 @@
   --z-toast: 500;
   --z-tooltip: 600;
 }
+
+@media (max-width: 760px) {
+  :root { --section-space: 4.5rem; --section-content-space: 1.75rem; --group-space: 2.25rem; --column-gap: 2rem; --page-gutter: 24px; }
+}
+@media (max-width: 900px) { :root { --header-height: 64px; } }

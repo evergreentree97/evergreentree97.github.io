@@ -1,53 +1,40 @@
 .panel {
-  margin-top: 72px;
-  padding-block: 30px 36px;
-  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-rule);
 }
 
 .label {
   display: block;
-  margin-bottom: 28px;
-  color: var(--android-green);
-  font-family: var(--font-pixel);
-  font-size: 0.8125rem;
+  margin-bottom: 16px;
+  color: var(--color-ink);
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .panel ul {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 4vw, 52px);
+  gap: 24px;
   list-style: none;
 }
 
-.panel li {
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  align-items: start;
-  gap: 2px 12px;
-}
-
-.panel svg {
-  grid-row: span 2;
-  width: 24px;
-  height: 24px;
-  color: var(--android-green);
-}
-
 .panel strong {
-  font-size: 1rem;
+  font-size: var(--body-size);
+  font-weight: 500;
 }
 
 .panel li span {
-  margin-top: 3px;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
+  display: block;
+  margin-top: 8px;
+  color: var(--color-ink-2);
+  font-size: var(--body-size);
+  line-height: 1.8;
 }
 
 @media (max-width: 760px) {
-  .panel ul {
-    grid-template-columns: 1fr;
-  }
+  .panel { margin-top: 40px; padding-top: 24px; }
+  .panel ul { grid-template-columns: 1fr; gap: 20px; }
+  .panel li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; }
+  .panel li span { margin-top: 0; }
 }
-
-@media (max-width: 63.9375rem) { .panel { margin-top: 56px; } }

@@ -1,7 +1,9 @@
-# Portfolio Project Context
+# Portfolio project context
 
-공개 포트폴리오 사이트다.
+Public Android developer portfolio for `evergreentree97.github.io`.
 
-- 포트폴리오 작업은 `docs/portfolio/README.md`에서 시작하고, 공개 기준은 `docs/portfolio/content.md`를 따른다.
-- 구현과 배포 방법은 `README.md`를 따른다.
-- 수정 후 `npm run check`를 실행한다.
+- Start with [docs/portfolio/README.md](docs/portfolio/README.md). Content and disclosure belong to [content.md](docs/portfolio/content.md); section organization belongs to [structure.md](docs/portfolio/structure.md). [DESIGN.md](DESIGN.md) records current visual values.
+- The user approved the current version for release on 2026-10-13. Preserve their selected narrative introduction and factual contribution boundaries. The latest explicit user request takes precedence over earlier guidance and generic skills.
+- Use natural Korean and established engineering terms. Avoid unnecessary preambles, repeated explanations, decorative arrows and unsupported claims. Do not replace the narrative introduction with an implementation inventory.
+- Keep private career material and internal evaluation data out of this public repository. Preserve approved screenshots and masking.
+- Run `npm run check` after changes. Inspect desktop and mobile when design changes. Commands and GitHub Pages deployment are documented in [README.md](README.md).

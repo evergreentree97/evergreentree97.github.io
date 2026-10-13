@@ -1,6 +1,5 @@
 import { profile } from '../data/profile'
-import { PixelIcon, type PixelIconName } from './PixelIcon'
-import { Reveal } from './Reveal'
+import { Icon, type IconName } from './Icon'
 import { SectionTitle } from './SectionTitle'
 import styles from './Contact.module.css'
 
@@ -8,7 +7,7 @@ const contactLinks: {
   label: string
   value: string
   href: string
-  icon: PixelIconName
+  icon: IconName
   external?: boolean
 }[] = [
   {
@@ -30,43 +29,23 @@ const contactLinks: {
 export function Contact() {
   return (
     <section className={styles.contact} id="contact" aria-labelledby="contact-title">
-      <Reveal>
+      <div className={styles.layout}>
         <SectionTitle id="contact-title" title="연락처" />
-        <div className={styles.layout}>
-        <div className={styles.workbenchReturn}>
-          <picture>
-            <source srcSet="/images/hero-product-developer-hand-hidden-480.avif" type="image/avif" />
-            <img
-              src="/images/hero-product-developer-hand-hidden.jpg"
-              alt="창가 책상에서 노트북으로 작업하는 개발자의 도트 일러스트"
-              width="480"
-              height="320"
-              loading="lazy"
-            />
-          </picture>
+        <div className={styles.links}>
+          {contactLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noreferrer' : undefined}
+              aria-label={`${link.label} ${link.value}`}
+            >
+              <Icon name={link.icon} />
+              <span>{link.label}</span>
+            </a>
+          ))}
         </div>
-        <div className={styles.contactBody}>
-          <h3>LinkedIn으로 연락 주세요.</h3>
-          <div className={styles.links}>
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.external ? '_blank' : undefined}
-                rel={link.external ? 'noreferrer' : undefined}
-              >
-                <PixelIcon name={link.icon} />
-                <span>
-                  <small>{link.label}</small>
-                  <strong>{link.value}</strong>
-                </span>
-                <PixelIcon name={link.external ? 'external' : 'arrow'} />
-              </a>
-            ))}
-          </div>
-        </div>
-        </div>
-      </Reveal>
+      </div>
     </section>
   )
 }

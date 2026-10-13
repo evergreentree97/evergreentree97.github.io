@@ -7,3 +7,5 @@ dist
 .playwright-cli/
 .hallmark/
 .unlazy/
+
+.impeccable/

@@ -1,4 +1,14 @@
 .wrapper {
-  scroll-margin-top: 64px;
+  width: min(100%, calc(var(--content-width) + 64px));
+  margin-inline: auto;
+  padding: var(--section-space) var(--page-gutter) 0;
   background: var(--color-paper);
+}
+
+.title { margin-bottom: var(--section-content-space); font-size: var(--section-heading-size); line-height: 1.4; letter-spacing: -0.035em; }
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 72px var(--column-gap); }
+
+@media (max-width: 860px) {
+  .title { margin-bottom: var(--section-content-space); }
+  .gallery { grid-template-columns: 1fr; gap: 48px; }
 }

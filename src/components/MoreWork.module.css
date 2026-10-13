@@ -1,73 +1,59 @@
 .section {
   min-width: 0;
-  padding-top: 88px;
+  padding-top: var(--section-space);
 }
 
 .list {
-  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--column-gap);
+  margin-top: var(--section-content-space);
 }
 
 .list article {
-  padding: 25px 0 28px;
-  border-bottom: 1px solid var(--border);
-}
-
-.list article:last-child {
-  border-bottom: 0;
-}
-
-.heading span {
-  color: var(--android-green);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  min-width: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-rule);
 }
 
 .heading h3 {
-  margin-top: 7px;
-  font-size: 1.34rem;
+  font-size: var(--case-heading-size);
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  text-wrap: pretty;
 }
 
 .copy {
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .copy p {
-  color: var(--text-primary);
-}
-
-.copy ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px 12px;
-  margin-top: 14px;
-  list-style: none;
-}
-
-.copy li {
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  color: var(--color-ink-2);
+  font-size: 1rem;
+  line-height: var(--body-leading);
 }
 
 .list article > a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  margin-top: 12px;
+  color: var(--color-ink-2);
   gap: 8px;
-  margin-top: 16px;
-  color: var(--android-green);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
   text-decoration: none;
+  font-size: 0.875rem;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
 }
 
 .list article > a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
-.list article > a svg {
-  width: 17px;
-  height: 17px;
+@media (max-width: 720px) {
+  .section { padding-top: var(--section-space); }
+  .list { grid-template-columns: 1fr; gap: 32px; }
+  .copy p { font-size: var(--body-size); }
 }
 
-@media (max-width: 63.9375rem) { .section { padding-top: 64px; } }
+.list article > a svg { width: var(--icon-size); height: var(--icon-size); flex-shrink: 0; }

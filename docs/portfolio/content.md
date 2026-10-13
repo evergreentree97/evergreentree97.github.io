@@ -1,117 +1,64 @@
-# 포트폴리오 콘텐츠 가이드
+# Portfolio content
 
-이 문서는 `evergreentree97.github.io`에 공개할 경력 내용과 작성 기준을 관리한다. 구현과 배포 방법은 [`../../README.md`](../../README.md)를 따른다.
+This is the current authority for public wording, contribution scope and asset disclosure. Start with [README.md](README.md). The latest explicit user request takes precedence over earlier wording and general writing or design skills. This version was approved for release on 2026-10-13.
 
-## 포트폴리오 방향
+## Approved introduction
 
-- 주요 독자는 Android 개발자 채용 담당자와 협업을 검토하는 개발자다.
-- Android 앱의 초기 구조와 주요 기능을 개발하고, 출시 이후 운영까지 맡아온 경험을 주축으로 둔다.
-- 사내 AI TF의 데이터 정제, 학습, 평가와 서빙 경험은 문제를 판단하고 검증하는 방식을 보여주는 보조축으로 사용한다.
-- 제품 문제와 판단 범위를 먼저 설명하고, 기술 이름은 이를 증명하는 경험으로 연결한다.
-
-## 현재 첫 화면
+> 단단한 기반 위에 제품의 완성도를 높이고, 필요한 기술을 유연하게 연결하는 안드로이드 개발자입니다.
 
 > 최상록
 
-> Vuddy의 Android 앱 구조를 설계하고 채팅과 미디어 기능을 개발했습니다. QA 배포와 출시 후 운영도 맡았습니다.
->
-> 사내 AI TF에서 캐릭터 대화 모델을 개발하고 이 모델을 사용하는 Android 채팅 개발을 주도했습니다.
+> 초기 설계부터 Google Play 배포와 운영을 겪으며, 좋은 구조가 팀의 개발 속도와 제품의 확장성을 지켜준다는 점을 배웠습니다. Jetpack Compose와 Clean Architecture 기반 멀티 모듈 구조를 바탕으로 인증, 실시간 채팅, 미디어 재생을 구현해 왔습니다. 단순히 화면에 기능이 나오는 것에 만족하기보다, API 토큰 동시 갱신 제어나 힙 덤프 기반 메모리 누수 해결처럼 실제 프로덕션 환경에서 마주하는 기술적 난제를 집요하게 분석하고 개선하는 데 집중합니다.
 
-첫 화면에는 이름 `최상록`과 직무 `Android 개발자`를 표시한다. AI 경험은 소개 본문과 해당 프로젝트에서 설명한다.
+> 동시에 모바일 개발의 울타리에 갇히지 않고, 사내 AI TF에서 대화 모델의 데이터 구성부터 파인튜닝, 평가, 서빙까지 직접 다루었습니다. 이를 활용해 클라이언트에서 SSE 스트리밍 채팅과 결제 기능까지 엮어내며, 새로운 기술을 실제 사용자가 체감하는 프로덕트 기능으로 구현하는 데 즐거움을 느낍니다.
 
-2026-10-06 사용자가 폰트와 표현 개편을 요청해 일반적인 자기소개 제목을 이름으로 바꾸고 소개 본문을 다듬었다. 담당 범위와 경력 사실은 유지한다. `npm run check:content`가 구현과 이 문서의 문구를 함께 확인한다. 구체적인 경력과 사례는 경력 타임라인과 주요 프로젝트에서 설명한다.
+Preserve this opening sentence and both full paragraphs in the site. The user's perspective, learning, persistence and enjoyment of applying new technology are intentional parts of the introduction. Do not reduce them to an implementation inventory or substitute a name-and-role introduction unless the user requests a rewrite. General advice to shorten copy, avoid slogans or use factual resume language does not override this preference.
 
-## 섹션 역할
+The current composition preserves the selected narrative. The current hero places name and role above a smaller neutral headline, followed by one compact action group and the two complete narrative paragraphs. Removing the former blue sentence emphasis, animated underline and oversized action treatment does not authorize rewriting the introduction. Search and social descriptions may summarize it more briefly without adding claims.
 
-- 첫 화면: 전체 경력과 담당 범위 요약
-- 경력: 첫 화면과 겹치는 별도 도입 문단을 두지 않고 회사, 기간과 프로젝트 흐름을 타임라인으로 보여준다. 구체적인 구현과 결과는 주요 프로젝트에서 설명한다
-- 주요 프로젝트: 문제, 판단, 맡은 구현과 확인 가능한 결과. 카드 제목 아래 소개 문장은 제품 맥락을 쓰고 경력 챕터 요약은 대표 구현 기술과 기능을 한 문장으로 보여준다. 상세한 해결 과정은 주요 프로젝트 항목에만 둔다 (2026-08-25)
-- 기술 이름은 주요 프로젝트의 태그에서 사용 맥락과 함께 보여주며 별도 기술 섹션은 두지 않는다
-- 개발 도구와 자동화: AI에 맡긴 범위와 개발자가 직접 확인한 범위
-- 사이드 프로젝트: 회사 경력 밖의 개인 프로젝트. 동아리 프로젝트와 섞지 않는다
-- 경력과 대외 활동: 소속, 역할과 협업 범위
-- Nexters 21기는 홀디 개발과 Play Store 출시 소개만 남기고 별도 기여 목록은 두지 않는다.
-- 사이드 프로젝트는 공개한 결과물과 배포, 운영 경험을 보여준다. 대외 활동은 모듈 구조, 공통 디자인 시스템, 연동과 실제 기능 개발 등 제품 개발 기여를 우선한다. 스터디와 개별 빌드 문제 해결은 현재 대외 활동 항목에서 제외한다. 얻은 점 한 줄(takeaway) 문장은 다시 추가하지 않는다
-- 연락처: Android 채용에 한정하지 않고 채용과 협업 제안을 모두 포함
+## Audience and writing scope
 
-## 경력 작성 원칙
+The portfolio introduces an Android developer to hiring readers and potential collaborators. Present Android architecture, development and operation together with the AI model work and client integration. Do not demote the AI experience to a generic supplementary skill.
 
-- 기본 절차보다 문제와 판단, 선택한 해결 방식과 결과를 중심으로 쓴다.
-- 특정 사례의 해결 방식이나 문장을 다른 경력에 그대로 반복하지 않는다.
-- 담당한 구현 사실만 쓰고 "(기능은 동료와 분담)", "두 명이 분담해", "(구현은 단독, 심사는 팀 공동)" 같은 분담과 공동, 단독 고지 문구는 쓰지 않는다. 경력, 프로젝트, 대외 활동 모두 적용한다 (2026-08-24 사용자 결정). 단, 공동 작업을 "주도"나 "단독"으로 격상하는 것은 여전히 금지다.
-- 수치는 무엇을 바꿨는지, 비교 조건과 결과가 무엇인지 함께 적는다.
-- AI나 룰 기반 방식은 실제로 사용했고 문제 해결에 의미가 있을 때만 언급한다.
+Project and career claims must accurately describe the user's responsibility. Keep proposals, implemented features, team decisions and observed results distinct. Do not invent metrics, adoption, independent ownership or production outcomes. This factual limit applies to work claims; it does not remove the user's own learning or motivation statements from the introduction.
 
-프로젝트 설명은 상황에 맞게 다음 흐름을 사용한다.
+Use natural Korean and retain technical names when they explain the work. Project descriptions may explain product context, responsibilities and technical reasoning in connected prose. Do not force all sections into one sentence pattern or a mandatory problem/solution template. Avoid unexplained internal terminology and unnecessary lists of tools or counts.
 
-1. 해결해야 했던 문제와 확인된 제약
-2. 비교한 대안과 선택 기준
-3. 책임 범위와 구조를 어떻게 나눴는지
-4. 운영, 변경 또는 확장 측면에서 달라진 결과
+Use familiar developer language over translated workflow labels. Review roles use requirements organization, code review and UI review; the implementation names them `요구사항 정리`, `코드 리뷰` and `UI 리뷰`. Retain established terms such as API, SSE, worktree, Heap Dump, feature module and Google Play Billing in context. Describe token automation as Kotlin code generation and PR creation rather than converting JSON into a PR. Edit whole sentences when an action is unclear; this is not a word ban or permission to translate every technical term into English. Preserve the selected introduction, supplied Career copy and contribution boundaries.
 
-## Sendbird 사례
+Use precise nouns in visible descriptions, expanded details and image alternatives. Name the actual data or action: the Inspector shows SSE events and response messages, the billing case verifies payment UI, and the WebView activity documents integration methods and parameters. Preserve established Korean and English engineering terms when they are accurate. A familiar term is not a translation defect merely because another synonym exists; avoid blanket replacements or claims that a phrase is statistically common in Korean portfolios.
 
-Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보다, 외부 SDK의 제약을 확인하고 제품 요구사항에 맞게 책임을 나눈 판단을 보여준다.
+Evaluate visible copy by what a hiring reader can assess: product context, the user's responsibility, technical decisions and supported results. Omit section-wide preambles that repeat the cases below, repeated contribution summaries, technology lists already explained in the same block, and instructions for obvious profile links. Do not replace removed copy with shorter filler or preserve a layout built around it. Keep one owning location for each fact within a case; Career's role/tenure summary and Projects' technical depth serve different purposes. Preserve the selected narrative introduction and concise personal context. Do not require invented metrics or remove engineering reasoning merely because it is detailed.
 
-현재 문안의 방향은 다음과 같다.
+Avoid translated marketing summaries, repetitive range slogans and decorative arrows beside career project titles. The user subsequently supplied factual bullet-point copy for Vuddy and the two AI projects, with specific bold technical terms. Apply that supplied wording and emphasis instead of rewriting it into narrative prose. The AI TF introduction also uses the user's supplied wording and punctuation. These career choices do not authorize rewriting the approved introduction or removing icons that communicate an actual function elsewhere.
 
-> 참여자가 많은 채팅방에 알림을 보낼 때 발생하는 Sendbird의 제약을 출시 전에 확인하고, 채팅은 Sendbird로 처리하되 알림은 자체 발송하는 구조를 제안했습니다.
+## Contribution and disclosure boundaries
 
-이 문장은 다른 경력에 적용하는 고정 양식이 아니다. 각 사례에서 실제 문제와 선택한 해결 방식이 드러나도록 다시 작성한다.
+- **Vuddy:** Keep the push architecture as a proposal, and Backend API work as Android integration. Do not present Backend implementation as the user's contribution. Router navigation, concurrent token-refresh control, bidirectional reply paging and ViewModel-owned media lifecycle are distinct contributions.
+- **AI model and Android app:** Keep model development/team review separate from Android chat and billing work. Model selection followed team review; it does not establish external validation or service operation. Do not publish the internal evaluation dashboard, its scores, private product names, GPU environment or omitted distribution-automation details. Use only the approved masked chat images.
+- **Momentica:** Artist Top Ranker swipe and image-cache updates belong to the take-home redesign. Do not merge them with the separate headline banner's pager or restore the omitted automatic rotation description. The blur-painter cache API already existed; the user's work separated the image Composable and update scope. The current public selection omits Google AdMob.
+- **Tools and automation:** Preserve the QA-ticket harness, planning/design references, role-based review, post-deployment QA checks and personally implemented SSE inspector within the public scope below. Describe configured procedures and personal use without adding sole-ownership, adoption or productivity claims.
+- **Other projects and activities:** Preserve each project's actual responsibility and release status. Do not promote shared work to sole ownership or claim unverified adoption.
 
-## 표현과 공개 기준
+Current project, career and activity wording belongs to the owning source files listed in [structure.md](structure.md). This guide records contribution boundaries rather than duplicating every implementation sentence as an immutable copy rule.
 
-- 짧고 자연스러운 한국어로 실제 행동과 판단을 적는다.
-- 화면만 봐도 알 수 있는 `포트폴리오입니다`, `정리했습니다`, `소개합니다` 같은 설명은 쓰지 않는다.
-- 공개 본문에서는 `BFF` 대신 `Backend`를 사용한다.
-- 추상적인 제약 대신 확인된 제한사항과 실패 조건을 쓴다.
-- 구체적인 구현을 `컴포넌트 4종`처럼 개수로만 줄이지 않는다. 이름이 기여 범위를 보여주면 컴포넌트나 기능명을 남긴다.
-- 프로젝트 설명에서 `JSONL`, `GitHub Actions`, 예문 개수처럼 구현 수단이나 검증 자료를 억지로 나열하지 않는다. 공개 프로젝트는 무엇을 다른 사람도 쓸 수 있게 공유했는지를 우선해 쓴다.
-- 기능명과 `구현`, `개선`, `해결`로 끝나는 짧은 문장은 사용할 수 있다. 다만 한 항목 안에서 명사구를 연달아 끊거나 API 이름만 나열하지 않는다. 맡은 기능, 사용한 기술과 해결한 문제를 한 흐름으로 연결한다.
-- 한 항목에는 한 기능의 기여만 담는다. 같은 화면에 있다는 이유로 서로 다른 컴포넌트의 작업을 한 성과처럼 합치지 않는다.
-- API 이름은 기여 범위를 구분하거나 해결 근거가 될 때만 남긴다. 기존 API를 사용하거나 적용 방식을 고친 일을 API 자체 개발로 확대하지 않는다.
-- 과장, 번역투, 설명 없는 내부 용어와 가운뎃점을 피한다.
-- 공개가 허용된 경력 정보만 사용한다.
-- 개인 연락처, 원본 이력서, 사내 코드명과 비공개 제품 정보는 저장하지 않는다.
-- 팀의 최종 결정을 개인 성과로 바꾸지 않는다.
+## Tools and automation
 
-## 프로젝트별 공개 선택
+The current selection in `src/components/HowIWork.tsx` presents how the user applies AI to Android QA and UI implementation, then verifies output through tests, device checks and code review.
 
-- 프로젝트 분류 라벨은 Vuddy와 Momentica에 `Android`, 캐릭터 대화 모델과 AI 캐릭터 앱에 `LLM fine-tuning / Android`를 사용한다. `ANDROID PRODUCT`는 다시 쓰지 않는다.
-- Vuddy 프로젝트 소개는 `크리에이터와 팬을 위한 채팅과 디지털 콘텐츠 앱입니다. 공통 기반과 주요 기능을 개발하고 Google Play 출시 후 운영까지 맡았습니다.`를 사용한다.
-- Vuddy의 푸시 구조 제안과 채팅방 Backend API 연동은 별도 기여 항목으로 구분한다. 채팅은 답장 원문 이동에서 앞뒤 메시지를 함께 불러오는 양방향 페이징과 사진 및 영상 메시지를 설명하고, 채팅방 관리는 클라이언트별 정보 해석 문제와 Android API 연동 범위를 함께 쓴다. 미디어는 재생 상태와 생명주기를 ViewModel 범위에서 관리하고 화면 전환 때 같은 ExoPlayer를 다시 연결해 재생 위치를 유지한 구현을 한 항목으로 쓴다.
-- 캐릭터 대화 모델과 AI 캐릭터 앱 소개는 `사내 AI TF에서 캐릭터 대화 모델의 데이터 구성부터 파인튜닝, 평가와 서빙을 맡았습니다. 이 모델을 사용하는 Android 앱에서는 SSE 채팅과 Google Play 결제를 개발했습니다.`를 사용한다.
-- 모델 평가는 자동 평가 구현과 팀의 실제 대화 검토를 거친 제품 적용 대상 선정만 공개하고, 표시 보정이 포함된 내부 점수는 새 소개 문구에서 사용하지 않는다.
-- 모델 검토 도구는 vLLM 서빙과 웹 MVP를 구현하고 팀원의 대화 피드백으로 학습 데이터를 수정한 범위로 설명한다. 외부 사용자 검증이나 서비스 운영 성과로 넓히지 않는다.
-- Momentica 공개 항목 이름은 `3D 포토카드`, `테이크 홈 개편`, `알람 기능`을 사용한다. 검증 조건은 별도 항목으로 떼지 않고 알람 기능의 구현 설명에 붙인다.
-- Momentica 프로젝트 소개는 `글로벌 팬 플랫폼 Momentica에서 3D 포토카드와 영상 알람 기능을 개발했습니다.`를 사용한다.
-- Artist Top Ranker belongs to the take-home redesign. Describe its swipe implementation and repeated image-cache reset fix in the redesign's body paragraph, using the same heading and body format as the other contributions (user formatting correction, 2026-09-09). Preserve the approved home screenshot and its description.
-- Artist Top Ranker는 Compose `pointerInput` 기반 가로 스와이프와 블러 이미지 Composable 분리로 해결한 캐시 초기화 문제를 중심으로 쓴다. `LaunchedEffect`, `Crossfade`, 자동 순환은 확인된 기술 근거로만 보관하며 현재 공개 문구에는 넣지 않는다.
-- 헤드라인 배너의 `HorizontalPager` 전환과 탭 복귀 위치 정리는 Artist Top Ranker와 별도 작업이다. 두 기능을 한 성과처럼 합치지 않는다.
-- `rememberImageBlurPainterWithCache`는 기존 공통 API다. 새 캐시 API를 개발했다고 쓰지 않고, API를 사용하는 이미지의 Composable과 갱신 범위를 분리한 작업으로 쓴다.
-- Google AdMob 적용은 경력 근거에는 남기되 현재 포트폴리오 공개 문구에서는 선택하지 않는다.
+Keep the public presentation distinct: the QA harness owns validation and post-deployment Hook checks in its procedure disclosure; the planning/design article owns document management and token automation; the multi-agent article explains each review role through a definition list. Do not restore a separate post-deployment article or repeat the general validation paragraph under design implementation. These presentation choices do not change the contribution boundaries below.
 
-## 개발 도구와 자동화 공개 선택
+The AI section starts with its heading and representative case, without a generic usage/verification preamble. The QA contribution uses a short introduction and bullets for separate tasks. Planning/design work also separates document-management context from implementation bullets. Validation and post-deployment checks use nested bullets only where a stage contains several distinct checks. The multi-agent handoff configuration belongs to its requirements-organization entry, without a duplicate introductory paragraph.
 
-- 큰 문장은 `QA 티켓 처리와 디자인 토큰 변환을 자동화했습니다.`를 중심으로 쓴다. 특정 AI 도구 이름을 먼저 내세우지 않는다.
-- 근거 항목은 `QA 티켓에 기록된 문제의 재현, 원인 분석, 코드 수정과 테스트를 Agent Skill로 자동화했습니다. PR과 배포 상태도 함께 동기화합니다.`를 사용한다.
-- Android Studio에서 확인하기 불편했던 SSE 트래픽을 PC 브라우저에서 볼 수 있도록 디버그 앱 전용 네트워크 검사 도구를 구현한 사실을 사용한다.
-- AI 산출물은 중요도에 따라 검증 범위를 달리한다. AI가 구현한 화면과 기능은 Compose Stable 검사, 스크린샷 테스트와 코드 리뷰로 확인하고 결제와 미디어 같은 핵심 모듈은 테스트 코드로도 검증한다.
-- 신규 AI 프로젝트는 `새 AI 프로젝트의 기획과 디자인 문서를 GitHub에서 관리했습니다. AI가 개발을 시작하기 전에 최신 문서를 확인하도록 했습니다.`를 사용한다.
-- 위 항목을 임의의 순서형 개발 절차로 바꾸지 않는다. 큰 핵심 문장 하나와 독립된 근거 항목으로 구성한다.
+- **QA-ticket harness:** The user created an Agent Skill connecting ticket/reproduction checks through Notion MCP, worktree isolation, diagnosis, code changes, validation and PR follow-up, and applied it to Android QA. Worktree parallelism is a qualitative account of personal work, without measured throughput or productivity gains. Describe the pictured UI as a personal work-management tool used in this workflow; sole authorship of the integrated UI and wider adoption are unverified.
+- **Planning, design and verification:** The user proposed managing planning/design documents in GitHub and applied that practice with the team. Figma MCP and the team's Design SSOT supplied tokens and shared components for Android implementation; do not claim ownership of the team SSOT. Preserve design-token JSON-to-Kotlin/PR automation and semantic-token remapping for screens using those tokens. Compose stability checks, payment-screen screenshot tests and tests for core payment/media logic do not establish exhaustive screen coverage or unchanged screen code.
+- **Role-based review:** The configured multi-agent procedure separates requirements organization, code review and UI review, sharing a requirements document and restricting design comparison to the selected Figma scope. Unobserved behavior remains unverified. Do not claim that every review used every role, that imported third-party Skills were personally authored, or that the procedure produced measured defect reduction.
+- **Post-deployment QA checks:** The user requested a generic description of the PostToolUse Hook in this tools section. It checks a success record, merged PR and inclusion of the fix in the deployed commit, then rechecks the assignee and current status for tickets in the personal work list. Failed deployment or unproven inclusion prevents a status change. This describes configured checks; automatic transitions for every historical ticket are unverified. Keep the AI project's omitted private distribution-automation details, internal pipeline information and API details private.
+- **Ricky Inspector:** The user personally implemented the debug-only HTTP/SSE/logcat inspector and used it in their local development environment for Vuddy and the AI character app. Preserve inspection of SSE events, response messages assembled from those events and app logs, with debug-build injection that does not edit the target app's source. Other developers' use is unverified.
 
-## 프로젝트 미디어 배치
+## Public assets
 
-- 데스크톱에서는 프로젝트 글과 화면을 같은 너비로 함께 읽고, 화면 높이는 글의 흐름을 압도하지 않도록 제한한다. 캡션에서 가져온 화면 선택 버튼으로 원하는 한 장을 크게 보여준다.
-- 작은 화면에서도 같은 선택 버튼으로 한 장을 크게 보여준다. 자동 전환은 사용하지 않으며 가로 스크롤을 만들지 않는다.
-- 스크린샷과 영상은 원본 비율을 유지해 전체 화면이 보이도록 맞춘다. 칸의 비율과 맞지 않아 생기는 여백은 검정으로 채우고 각 미디어에 경계선을 두며, 화면을 잘라 칸을 채우지 않는다.
-- 캡션은 짧은 영문 기능명과 자연스러운 한국어 설명을 슬래시로 구분한다. Vuddy는 `HOME / 크리에이터 굿즈 탐색`, `CHATTING / 특정 사용자에게 답장`, `MEDIA / 디지털 카드 상세`를 사용한다. Momentica는 `3D PHOTOCARD / SceneView 기반`, `TAKE ALARM / 락스크린 영상 알람`을 사용한다. 알람 관련 문구는 `락스크린`으로 통일한다. 캡션은 화면 위에 겹치지 않고 각 미디어 아래 전용 영역에 둔다.
-
-## 공개 자산 승인 기록
-
-- 사내 Figma 화면은 기본적으로 참고 전용이다. 정확한 Figma 화면을 사용할 수 있으면 임의로 다시 그린 화면이나 대체 이미지를 만들지 않는다.
-- 게시 결정은 Figma 파일 전체가 아니라 내보낸 노드와 파생 파일 단위로 기록한다. 같은 파일의 다른 화면까지 허용된 것으로 확대하지 않는다.
-- 사용자 게시 결정은 회사의 공식 공개 승인이나 라이선스 확인을 뜻하지 않는다.
+Use official public product screens or the specific derivatives recorded below. Figma file access is not permission to publish other nodes. A user-selected export does not establish company approval or a license for the whole file. Preserve masking and approved image content; do not redraw product screens or add simulated device interfaces.
 
 | 공개 파일 | Figma 출처 | 허용 범위 |
 |---|---|---|
@@ -122,29 +69,19 @@ Vuddy 사례는 샘플 앱 확인이나 실기기 검증 같은 기본 절차보
 | `smt-chat-masked.png` | 출처 노드 확인 필요 | 제목과 이름을 가린 현재 파생 파일만 허용 |
 | `smt-chatlist-masked.png` | 출처 노드 확인 필요 | 제목과 이름을 가린 현재 파생 파일만 허용 |
 
-## 수정 위치
+The generated developer illustration was rejected and removed from the hero, contact and social metadata. Do not restore it or add substitute decorative imagery to those sections. Keep private career documents, internal source paths, unpublished product information and new personal contact details out of public assets. Existing public profile links belong to `src/data/profile.ts`.
 
-- 첫 화면 소개: `src/components/Hero.tsx`
-- 프로필과 내비게이션: `src/data/profile.ts`
-- 주요 프로젝트: `src/data/projects.ts`
-- 프로젝트 스크린샷: `public/screens/` (Google Play 공식 스크린샷을 기본으로 사용. 사내 화면은 위 공개 자산 승인 기록에 있는 파일만 게시)
-- 경력 타임라인: `src/data/experience.ts`
-- 사이드 프로젝트: `src/data/sideProjects.ts`
-- 대외 활동: `src/data/activities.ts`
-- 화면 구성: `src/components`
-- 공통 스타일: `src/styles`
+### Tool demonstration images
 
-내용을 수정한 뒤에는 문안과 실제 구현이 일치하는지 확인하고 `npm run check`를 실행한다.
+Both JPEGs are fresh local browser captures of the original tool UIs running with fabricated, publicly safe demonstration data. They do not document historical company execution. The capture process made no company API calls and left company source unchanged; only the JPEGs are public artifacts. Keep source workspaces, internal product names, real tickets/commits, API details and private paths out of the public repository.
 
-## Approved content refresh (2026-09-09)
+| Public asset | Provenance and public scope |
+| --- | --- |
+| `public/images/tooling/qa-worktree-demo.jpg` (1280 x 720) | Original work-management UI restored locally with fabricated ticket rows, review states and display counts. The demonstration runs without the original company backend or workflow operations. The UI's displayed times and counts are examples, not processing-volume or productivity evidence. |
+| `public/images/tooling/ricky-inspector-sse-demo.jpg` (1440 x 900) | Original Inspector frontend running with isolated local mock logic, generic identifiers and fabricated streaming events. No production endpoints, internal schemas, credentials or device connection are included. |
 
-The user approved applying the portfolio review. This is a general-profile safe edit for Android hiring readers and developers considering collaboration. The existing title, positioning, timeline, project order, side projects, activities and visual direction remain the baseline. Copy was checked against the approved 2026-09-09 resume and its verified career evidence.
+At the user's request, tool figures have no visible captions about demonstration data or image interaction, and the QA procedure omits meta commentary about its source summary. Alt text describes the depicted tool content and accessible link names identify the original-image action. Each original-image link opens the shipped demonstration JPEG in a new tab for closer inspection; it does not open an internal tool or execution record. Preserve the provenance recorded above without restoring the removed UI explanations.
 
-- Reuse the approved introduction and SSE error-handling copy. Keep model development and Android implementation as separate responsibilities.
-- Expand Vuddy's architecture item with Router-based navigation separation and tests without UI. Keep push design proposals and Backend API integration as separate contributions.
-- Group the AI project into model development and team review, followed by Android chat and billing. Remove the GPU environment and the standalone distribution-automation item from this presentation.
-- Describe the team's model selection, web MVP feedback and resulting training-data changes. Preserve the distinction between model selection and production operation.
-- Compress Momentica's screen inventory and describe the Profiler heap-dump diagnosis and explicit resource release at Composition end. Preserve the other public feature names and alarm conditions.
-- Add Vuddy's design-token-to-Kotlin automation and the verified brand-color change. State that unchanged screen code applied only to screens using the semantic tokens. Keep the shorter planning-document item and add Compose Stable checks to the validation item.
-- Use one purpose-led sentence for each open-source project. Do not repeat the release fact as a second sentence.
-- The old source comment recorded a dashboard publication decision on 2026-08-23. This refresh removes that dashboard from the page and published assets to follow the current evidence disclosure restriction. Use only the already approved masked chat and chat-list images, with the chat image selected initially. Do not restore the internal evaluation image or its scores.
+## Maintaining content
+
+Update rendered content and this guide together when the user changes the introduction or disclosure choices. `npm run check:content` checks the approved introduction and public assets; it does not enforce historical project wording. Keep the font subset and metadata synchronized with actual rendered text. Font maintenance is documented in [public/fonts/README.md](../../public/fonts/README.md).

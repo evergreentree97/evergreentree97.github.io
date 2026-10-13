@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import type { FeaturedProject, ProjectMedia, ProjectVideo } from '../data/projects'
-import { PixelIcon } from './PixelIcon'
 import styles from './ProjectScene.module.css'
+import { Icon } from './Icon'
 
 function VideoMedia({ media }: { media: ProjectVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -43,97 +43,79 @@ function MediaContent({ media }: { media: ProjectMedia }) {
   return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
 }
 
-function HighlightText({ text, grouped }: { text: string; grouped: boolean }) {
-  const separator = text.indexOf(':')
-  if (separator < 0) return <p>{text}</p>
-  const Heading = grouped ? 'h4' : 'h3'
-
+function WorkDetails({ project }: { project: FeaturedProject }) {
   return (
-    <>
-      <Heading>{text.slice(0, separator)}</Heading>
-      <p>{text.slice(separator + 1).trimStart()}</p>
-    </>
+    <div className={styles.workDetails}>
+      {project.highlightGroups.map((group, index) => (
+        <div className={styles.workGroup} key={group.title ?? index}>
+          {group.title && <h4>{group.title}</h4>}
+          <dl>
+            {group.highlights.map((text) => {
+              const separator = text.indexOf(':')
+              return (
+                <div className={styles.workItem} key={text}>
+                  <dt>{separator < 0 ? text : text.slice(0, separator)}</dt>
+                  {separator >= 0 && <dd>{text.slice(separator + 1).trimStart()}</dd>}
+                </div>
+              )
+            })}
+          </dl>
+        </div>
+      ))}
+    </div>
   )
 }
 
-export function ProjectScene({ project }: { project: FeaturedProject }) {
-  const mediaRef = useRef<HTMLDivElement>(null)
-  const initialMedia = Math.max(0, project.media.findIndex((media) => media.featured))
-  const [selectedMedia, setSelectedMedia] = useState(initialMedia)
-  const serviceLink = project.links[0]
-  const activeMedia = project.media[selectedMedia]
+function Contribution({ text, emphasis }: FeaturedProject['contribution'][number]) {
+  if (!emphasis || !text.includes(emphasis)) return <>{text}</>
+  const start = text.indexOf(emphasis)
+  return <>{text.slice(0, start)}<strong>{emphasis}</strong>{text.slice(start + emphasis.length)}</>
+}
 
-  useEffect(() => {
-    const media = mediaRef.current
-    if (!media || !('ResizeObserver' in window)) return
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => {
-      const canStick = window.innerWidth >= 1024 && window.innerHeight >= 800 && !motion.matches && media.offsetHeight <= window.innerHeight - 112
-      media.dataset.sticky = String(canStick)
-    }
-    const observer = new ResizeObserver(update)
-    observer.observe(media)
-    window.addEventListener('resize', update)
-    motion.addEventListener('change', update)
-    update()
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('resize', update)
-      motion.removeEventListener('change', update)
-    }
-  }, [])
+export function ProjectScene({ project }: { project: FeaturedProject }) {
+  const isFeatured = project.id === 'vuddy'
 
   return (
-    <section className={styles.scene} id={project.id} aria-labelledby={`${project.id}-title`}>
-      <div className={styles.sceneInner}>
-        <div className={styles.copyColumn}>
-          <div className={styles.projectHeading}>
-            <span>{project.eyebrow}</span>
-            <h2 id={`${project.id}-title`}>{project.name}</h2>
-            <p>{project.headline}</p>
-          </div>
-          {project.highlightGroups.map((group, index) => (
-            <div key={group.title ?? index} className={group.title ? styles.highlightGroup : undefined}>
-              {group.title && <h3 className={styles.groupTitle}>{group.title}</h3>}
-              <ul className={styles.highlightList} aria-label={`${project.name} ${group.title ?? '담당 업무'}`}>
-                {group.highlights.map((highlight) => (
-                  <li key={highlight}><HighlightText text={highlight} grouped={Boolean(group.title)} /></li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {activeMedia && (
-          <div ref={mediaRef} className={styles.mediaColumn}>
-            <div className={styles.mediaSelector} aria-label={`${project.name} 화면 선택`}>
-              {project.media.map((media, index) => (
-                <button key={media.src} type="button" aria-pressed={selectedMedia === index} aria-controls={`${project.id}-media`} onClick={() => setSelectedMedia(index)}>
-                  {media.caption?.split(' / ')[0] ?? `화면 ${index + 1}`}
-                </button>
-              ))}
-            </div>
-            <figure id={`${project.id}-media`} className={`${styles.mediaItem} ${activeMedia.width > activeMedia.height ? styles.landscape : ''}`} aria-live="polite">
-              <div className={styles.mediaStage}><MediaContent media={activeMedia} /></div>
-              <figcaption>
-                {activeMedia.caption && <span>{activeMedia.caption}</span>}
-                {activeMedia.type === 'image' && (
-                  <a href={activeMedia.src} target="_blank" rel="noreferrer" aria-label={`${activeMedia.alt} 원본 보기`}>
-                    원본 화면 보기 <PixelIcon name="external" />
+    <article className={`${styles.project} ${isFeatured ? styles.featured : ''}`} id={project.id} data-project={project.id} aria-labelledby={`${project.id}-title`}>
+      <div className={styles.coverFrame}>
+        <div className={styles.cover}>
+          <div className={styles.screens}>
+            {project.media.map((media) => (
+              <figure key={media.src} className={`${styles.screen} ${media.featured ? styles.mainScreen : ''}`}>
+                {media.type === 'image' ? (
+                  <a href={media.src} target="_blank" rel="noreferrer" aria-label={`${media.alt}, 원본 화면 열기`}>
+                    <MediaContent media={media} />
                   </a>
-                )}
-              </figcaption>
-            </figure>
+                ) : <MediaContent media={media} />}
+              </figure>
+            ))}
           </div>
-        )}
-
-        <div className={styles.projectMeta}>
-          <ul aria-label={`${project.name} 기술`}>{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
-          {serviceLink ? (
-            <a href={serviceLink.href} target="_blank" rel="noreferrer">{serviceLink.label} <PixelIcon name="external" /></a>
-          ) : <span className={styles.internalCase}>사내 프로젝트</span>}
         </div>
       </div>
-    </section>
+
+      <div className={styles.information}>
+        <div className={styles.identity}>
+          <h3 id={`${project.id}-title`}>{project.name}</h3>
+          <p className={styles.metadata}><span>{project.eyebrow}</span><span>{project.period}</span></p>
+          {project.links.map((link) => <a className={styles.serviceLink} key={link.href} href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noreferrer' : undefined}>{link.label}</a>)}
+        </div>
+        <div className={styles.description}>
+          {project.headline && <p className={styles.introduction}>{project.headline}</p>}
+          <ul className={styles.contribution}>
+            {project.contribution.map((item) => <li key={item.text}><Contribution {...item} /></li>)}
+          </ul>
+          <p className={styles.technologies}>{project.technologies.join(' / ')}</p>
+        </div>
+      </div>
+
+      <details className={styles.disclosure}>
+        <summary>
+          <span className={styles.closedLabel}>개발 내용</span>
+          <span className={styles.openLabel}>개발 내용 접기</span>
+          <Icon name="expand" />
+        </summary>
+        <WorkDetails project={project} />
+      </details>
+    </article>
   )
 }

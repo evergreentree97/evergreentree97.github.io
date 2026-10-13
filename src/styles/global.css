@@ -18,7 +18,7 @@
   --wide-width: 1360px;
   --motion-fast: var(--dur-short);
   --motion-medium: var(--dur-mid);
-  color-scheme: dark;
+  color-scheme: light;
   font-size: 100%;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -33,7 +33,7 @@
 html {
   min-width: 320px;
   background: var(--background);
-  scroll-padding-top: 80px;
+  scroll-padding-top: calc(var(--header-height) + 12px);
 }
 
 body {
@@ -111,7 +111,8 @@ h4 {
 }
 
 section[id] {
-  scroll-margin-top: 0;
+  /* Offset section padding so navigation aligns the heading below the header. */
+  scroll-margin-top: calc(24px - var(--anchor-inset, var(--section-space)));
 }
 
 ::selection {
@@ -184,3 +185,7 @@ section[id] {
 :focus-visible, :focus-visible::after {
   transition: none !important;
 }
+
+html { scrollbar-color: var(--color-rule-strong) var(--color-paper-2); scrollbar-width: thin; }
+button { caret-color: var(--color-accent); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }

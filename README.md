@@ -1,24 +1,24 @@
 # Choi Sangrok Portfolio
 
-[evergreentree97.github.io](https://evergreentree97.github.io/)에 배포하는 공개 포트폴리오입니다.
+Public portfolio deployed to [evergreentree97.github.io](https://evergreentree97.github.io/).
 
-## 로컬 실행
+## Local development
 
-Node.js 22 이상을 권장합니다.
+Node.js 22 or later is recommended.
 
 ```bash
 npm install
 npm run dev
 ```
 
-배포 전에는 전체 검사를 실행합니다.
+Run the repository checks after changes:
 
 ```bash
 npm run check
 ```
 
-포트폴리오 문서의 시작점은 [`docs/portfolio/README.md`](docs/portfolio/README.md)입니다.
+Start portfolio work with [docs/portfolio/README.md](docs/portfolio/README.md). It routes to current content, disclosure and implementation guidance.
 
-## 배포
+## Deployment
 
-`main` 브랜치가 갱신되면 GitHub Actions가 검사와 빌드를 실행한 뒤 GitHub Pages에 배포합니다.
+Updates to `main` trigger GitHub Actions to check, build and deploy to GitHub Pages. A local build or preview does not deploy the site.

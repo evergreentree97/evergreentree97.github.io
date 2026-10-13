@@ -1,30 +1,44 @@
 import { useEffect, useState } from 'react'
 import { navigation } from '../data/profile'
 
-// 화면 중앙 밴드에 걸린 내비게이션 섹션의 href를 돌려준다. 첫 화면에서는 빈 문자열이다.
 export function useActiveSection() {
   const [active, setActive] = useState('')
 
   useEffect(() => {
-    if (!('IntersectionObserver' in window)) return
+    const targets = navigation.flatMap((item) => {
+      const element = document.querySelector(item.href)
+      return element ? [{ href: item.href, element }] : []
+    })
+    let frame = 0
 
-    const hero = document.querySelector('main > section:first-of-type')
-    const targets = navigation
-      .map((item) => document.querySelector(item.href))
-      .filter((element): element is Element => element !== null)
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue
-          setActive(entry.target === hero ? '' : `#${entry.target.id}`)
-        }
-      },
-      { rootMargin: '-35% 0px -55% 0px' },
-    )
-    if (hero) observer.observe(hero)
-    targets.forEach((target) => observer.observe(target))
-    return () => observer.disconnect()
+    const updateActiveSection = () => {
+      frame = 0
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        setActive(navigation[navigation.length - 1].href)
+        return
+      }
+      const readingPosition = window.innerHeight * 0.35
+      let current = ''
+      for (const target of targets) {
+        if (target.element.getBoundingClientRect().top <= readingPosition) current = target.href
+      }
+      setActive(current)
+    }
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSection)
+    }
+    const layoutObserver = 'ResizeObserver' in window ? new ResizeObserver(scheduleUpdate) : null
+    const main = document.querySelector('main')
+    if (main) layoutObserver?.observe(main)
+    window.addEventListener('scroll', scheduleUpdate, { passive: true })
+    window.addEventListener('resize', scheduleUpdate)
+    updateActiveSection()
+    return () => {
+      layoutObserver?.disconnect()
+      window.cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', scheduleUpdate)
+      window.removeEventListener('resize', scheduleUpdate)
+    }
   }, [])
 
   return active

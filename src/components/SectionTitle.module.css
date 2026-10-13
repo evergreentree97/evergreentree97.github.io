@@ -3,48 +3,26 @@
   align-items: end;
   justify-content: space-between;
   gap: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
 }
 
 .headingRow h2 {
-  font-size: clamp(2.5rem, 4vw, 3rem);
+  color: var(--color-ink);
+  font-size: var(--section-heading-size);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.035em;
+  line-height: 1.4;
 }
 
 .action a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  gap: 8px;
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
+  color: var(--color-accent);
   font-size: 0.875rem;
-  text-decoration: none;
-}
-
-.action a:hover {
-  color: var(--android-green);
   text-decoration: underline;
 }
 
-.action svg {
-  width: 17px;
-  height: 17px;
-}
-
 @media (max-width: 540px) {
-  .headingRow {
-    align-items: start;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .action {
-    align-self: stretch;
-  }
+  .headingRow { align-items: start; flex-direction: column; gap: 6px; }
+  .action { align-self: stretch; }
 }
-
-@media (max-width: 45rem) { .headingRow h2 { font-size: clamp(1.75rem, 8vw, 2rem); } }

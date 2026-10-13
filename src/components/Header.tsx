@@ -1,15 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
-import { navigation, profile } from '../data/profile'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { navigation } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
-import { PixelIcon } from './PixelIcon'
+import { Icon } from './Icon'
 import styles from './Header.module.css'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const activeSection = useActiveSection()
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const headerRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen) return undefined
 
     const closeWithEscape = (event: KeyboardEvent) => {
@@ -19,15 +20,23 @@ export function Header() {
       }
     }
 
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) setIsOpen(false)
+    }
+    window.addEventListener('pointerdown', closeOutside)
     window.addEventListener('keydown', closeWithEscape)
-    return () => window.removeEventListener('keydown', closeWithEscape)
+    return () => {
+      window.removeEventListener('keydown', closeWithEscape)
+      window.removeEventListener('pointerdown', closeOutside)
+    }
   }, [isOpen])
 
   return (
-    <header className={styles.header}>
+    <header ref={headerRef} className={styles.header} onBlur={(event) => {
+      if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) setIsOpen(false)
+    }}>
       <div className={styles.inner}>
         <a className={styles.logo} href="#top" aria-label="홈으로 이동">
-          <img className={styles.logoIcon} src="/icons/android-mark-dark.png" alt="" width="260" height="260" />
           <span>최상록</span>
         </a>
 
@@ -40,7 +49,7 @@ export function Header() {
           aria-controls="site-navigation"
           onClick={() => setIsOpen((current) => !current)}
         >
-          <PixelIcon name={isOpen ? 'close' : 'menu'} />
+          <Icon name={isOpen ? 'close' : 'menu'} />
         </button>
 
         <nav
@@ -59,16 +68,6 @@ export function Header() {
               {item.label}
             </a>
           ))}
-          <a
-            className={styles.github}
-            href={profile.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub 새 창으로 열기"
-          >
-            <span>GitHub</span>
-            <PixelIcon name="github" />
-          </a>
         </nav>
       </div>
     </header>
