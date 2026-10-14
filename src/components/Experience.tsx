@@ -12,19 +12,18 @@ function CareerProject({ project, grouped = false }: { project: ExperienceProjec
 
   return (
     <article className={`${styles.project} ${project.featured ? styles.featured : ''}`}>
-      <Heading className={styles.projectTitle}>
-        <a href={project.href}>
-          {project.title}
-        </a>
-      </Heading>
-      <p className={styles.period}>{project.period}</p>
-      {project.intro && <p className={styles.projectIntro}>{project.intro}</p>}
-      {project.bullets && (
+      <header className={styles.projectIdentity}>
+        <Heading className={styles.projectTitle}>
+          <a href={project.href}>{project.title}</a>
+        </Heading>
+        <p className={styles.period}>{project.period}</p>
+      </header>
+      <div className={styles.contribution}>
+        {project.intro && <p className={styles.projectIntro}>{project.intro}</p>}
         <ul className={styles.bullets}>
           {project.bullets.map((bullet, index) => <li key={index}>{renderText(bullet)}</li>)}
         </ul>
-      )}
-      {project.summary && <p className={styles.summary}>{renderText(project.summary)}</p>}
+      </div>
     </article>
   )
 }
@@ -35,15 +34,19 @@ export function Experience() {
       <h2 id="experience-title" className={styles.sectionTitle}>경력</h2>
       {experiences.map((experience) => (
         <article className={styles.employer} key={`${experience.organization}-${experience.period}`}>
-          <div className={styles.identity}>
-            <h3>{experience.organization}</h3>
-            <p className={styles.affiliation}>{experience.affiliation}</p>
-            <p className={styles.intro}>{experience.intro}</p>
+          <header className={styles.identity}>
+            <div>
+              <div className={styles.companyHeading}>
+                <h3>{experience.organization}</h3>
+                <p className={styles.affiliation}>{experience.affiliation}</p>
+              </div>
+              <p className={styles.intro}>{experience.intro}</p>
+            </div>
             <div className={styles.employment}>
               <p className={styles.role}>{experience.role}</p>
               <p className={styles.period}>{experience.period}</p>
             </div>
-          </div>
+          </header>
           <div className={styles.work}>
             {experience.chapters.map((chapter) => (
               <div key={chapter.title ?? chapter.projects[0].title} className={chapter.title ? styles.group : styles.single}>
@@ -53,7 +56,7 @@ export function Experience() {
                     {chapter.description && <p className={styles.groupDescription}>{chapter.description}</p>}
                   </div>
                 )}
-                <div className={chapter.title ? styles.pairedProjects : undefined}>
+                <div className={chapter.title ? styles.pairedProjects : styles.standaloneProject}>
                   {chapter.projects.map((project) => (
                     <CareerProject key={project.title} project={project} grouped={Boolean(chapter.title)} />
                   ))}

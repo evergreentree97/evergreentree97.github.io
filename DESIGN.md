@@ -14,6 +14,12 @@ colors:
   momentica-cover: "#ecebe8"
   screen-shadow: "rgb(12 20 26 / 15%)"
 typography:
+  hero-name:
+    fontSize: "clamp(2rem, 3.2vw, 2.5rem)"
+    fontWeight: 600
+    lineHeight: 1.3
+  hero-role:
+    fontSize: "0.9375rem"
   section-heading:
     fontSize: "clamp(1.75rem, 2.4vw, 2rem)"
   featured-title:
@@ -22,6 +28,10 @@ typography:
     fontSize: "1.375rem"
   context:
     fontSize: "1rem"
+  project-message:
+    fontSize: "1.25rem"
+    fontWeight: 500
+    lineHeight: 1.65
   disclosure:
     fontSize: "0.875rem"
   metadata:
@@ -46,37 +56,37 @@ rounded:
 
 # Portfolio design reference
 
-This records the current version approved for release on 2026-10-13. Preserve the selected introduction and factual contribution scope. Earlier studies do not authorize additional redesign. [Content](docs/portfolio/content.md) owns wording and disclosure, and [structure](docs/portfolio/structure.md) owns component organization. Local verification does not establish a public deployment.
+This records the local revision prepared on 2026-10-13. Visual acceptance and deployment are separate steps. Preserve the selected introduction and factual contribution scope. Earlier studies do not authorize additional redesign. [Content](docs/portfolio/content.md) owns wording and disclosure, and [structure](docs/portfolio/structure.md) owns component organization. Local verification does not establish a public deployment.
 
 ## Project presentation
 
-The project section uses an image-led composition. Vuddy is the full-width representative project. The related AI model/app and Momentica sit below in two columns. Up to 860px, all three use one column. The gallery has no text-card enclosure, case tabs or illustrative technical diagrams.
+All projects use the full reading width. Project identity sits in a 280px column beside a 20px medium-weight main message and any store link. Approved screens follow in a 460px cover. This separates product context from the cases and removes the narrow paired articles that constrained substantive text. At 1023px, the identity column narrows to 220px and covers to 420px. At 760px, headers and cases stack and covers use a 1.1 aspect ratio.
 
-Each article presents approved screens, project identity, role and period, a short bulleted contribution summary, technologies and a native development disclosure. Product context appears when it adds information beyond the title. All eight approved images are visible without opening a disclosure. Clicking an image opens its existing original file. The summary highlights specific responsibilities without adding claims or metrics. The full descriptions preserve proposals, Android API integration and team review as distinct scopes.
+Visible contributions use an open two-column grid with 48px column gaps and 32px row gaps. Each case starts with a 1px gray rule and one 20px semibold ink heading naming the core work or feature. The heading is followed after 12px by 16px bullet points explaining the relevant constraint, decision, action and supported result. Parent bullets have a 12px gap; nested details start after 6px. There is no second outcome headline. Only concrete phrases receive 600-weight emphasis. Mobile uses one column, 28px case gaps and 18px feature headings. There are no enclosed text cards, decorative counters or forced STAR labels.
 
-All main sections share a 1120px reading width and the same 32px gutters, reduced to 24px up to 760px. Vuddy's cover is 560px high on desktop, 480px up to 1023px. The paired covers are 440px and 380px respectively. Single-column covers use a 1.1 aspect ratio with a 480px height cap. Screen widths remain bounded to preserve complete images within those covers. Full image aspect ratios and masking are preserved. Screens share a common alignment; there are no simulated devices or transformed product interfaces.
+All essential contributions are visible without interaction. The native disclosure is named `기술 설계와 트러블슈팅 상세` and supplies mechanisms and secondary cases as bullets, with an 800px reading measure. Repeated main summaries are removed from the disclosure. Quantitative evidence stays in its owning case: the common image component's file count describes implementation scope. The user excluded single-file PNG compression from the selected achievements. Unconfirmed historical productivity percentages are not used.
 
-Project names use the shared 22–28px case-heading scale. Descriptions, contribution summaries and expanded detail use 16px, metadata 13px and technologies 12px. The 600 weight identifies projects, while 500 emphasizes actual technical contributions. Long descriptions use a reading measure up to 65ch.
+The shared reading width remains 1120px with 32px gutters, reduced to 24px on mobile. All eight approved product screens retain their aspect ratio and masking and are visible without expanding details. Images remain bounded within their covers and link to the shipped originals.
 
 Covers and screenshots stay static. Linked-image hover uses a thin blue outline without moving the image or enlarging its shadow. Text controls respond through color. No section uses a viewport-triggered entrance. Videos, if supplied in project data, require user playback.
 
 ## Shared visual language
 
-White and cool gray surfaces, dark Korean typography and blue interactive feedback come from [tokens.css](tokens.css). Blue identifies navigation, actions and keyboard focus. Product-cover surfaces are local colors chosen around the existing approved screens, rather than new site-wide semantic colors.
+White and cool gray surfaces, dark Korean typography and blue interactive feedback come from [tokens.css](tokens.css). Blue identifies navigation, actions and keyboard focus. Case headings use ink; supported results are emphasized within the bullets. Product-cover surfaces are local colors chosen around the existing approved screens, rather than new site-wide semantic colors.
 
-The site self-hosts Noto Sans KR weights 400, 500 and 600. The established type family remains in use across display, body and controls. Shared tokens own 96px major section spacing (72px on mobile), 36px heading-to-content spacing (28px on mobile), 48px shared desktop column gaps, the 28–32px section-heading scale, the 22–28px case-heading scale, 16px body text with 1.8 leading and 16px panel radii. Metadata and technology lists intentionally remain smaller than prose. White surfaces and open groups replace the former career-wide gray band and generic gray enclosures. Colored project covers remain behind the actual product screens.
+The site self-hosts Noto Sans KR weights 400, 500 and 600. The established type family remains in use across display, body and controls. Shared tokens own 80px major section spacing (64px on mobile), 32px heading-to-content spacing (24px on mobile), 48px shared desktop column gaps, the 28–32px section-heading scale, the 22–28px case-heading scale, 16px body text with 1.8 leading and 16px panel radii. Metadata and technology lists intentionally remain smaller than prose. White surfaces and open groups replace the former career-wide gray band and generic gray enclosures. Colored project covers remain behind the actual product screens.
 
 Links use restrained color feedback; Career titles and profile links underline on hover. Service and footer links underline on hover. The site uses native page scrolling, visible 3px keyboard focus, themed selection and scrollbars. The fixed header is 72px on desktop and 64px on compact layouts. Its AI link goes directly to the tools section. Section anchor offsets account for their own padding so titles clear the header without duplicated blank space.
 
 ## Other current sections
 
-The hero starts with name and role above the complete selected sentence. Its neutral 500-weight headline is capped at 44px with three desktop lines and natural mobile wrapping. It has no sentence-wide blue emphasis or animated underline. A 44px project action and quiet GitHub/LinkedIn links form one compact group. The full narrative paragraphs remain in two desktop columns and stack on mobile. Entry motion is a short 8px fade/translation, removed with reduced motion.
+The hero uses the person's name as its single main heading with a quiet role label on the same baseline. Project and profile links align to the right on desktop and wrap below the identity on mobile. The resume introduction appears as two continuous paragraphs at a 900px maximum reading width with a 16px gap below the identity row and 12px between paragraphs. The experience sentence begins the first paragraph. There are no mini-section headings, separate large career-sentence headline or decorative divider. In the PDF, the name is 24pt, the role 9.5pt and the profile links 9pt; the isolated website/date row is replaced by a compact Portfolio link.
 
-Career pairs employer identity and tenure with Vuddy, the related AI projects and Momentica using the same reading columns and heading scale as project descriptions. The supplied Career bullets and selected technical emphasis remain. The related AI work shares an open group separated from Vuddy by a subtle rule. Company information is sticky only on sufficiently large desktop viewports with reduced motion off.
+Career starts with a 32px employer name, a quiet affiliation and company description. Role and tenure align to the right on desktop and stack below the company on mobile. A stronger rule separates employment identity from three open project rows. Desktop rows use a 240px identity column and a flexible contribution column. Vuddy leads with a 24px blue linked title; other row titles use 22px, and the two nested AI projects use 18px. Dates use 13px muted text and contributions retain 16px body text. All Career contributions use bullet lists, including Momentica; selected technical emphasis and contribution boundaries remain. At 1023px, the identity column narrows to 200px and the AI projects stack. At 600px, all rows stack; an inset vertical rule identifies the AI projects as children of the TF group. Company information stays in normal document flow. No new panels, icons or animation are introduced.
 
-Development tools start directly with the section heading and representative case. The QA case places its title, short introduction and task bullets before the full-width image. Agent Skill, Notion MCP and worktree appear in context, without a separate keyword line or duplicate process inventory. Its native disclosure uses a plain text control with a plus/minus state icon. Planning/token work and multi-agent review sit side by side on desktop, stacking up to 1023px, with titles above their own descriptions. Planning work separates context from implementation bullets. Longer QA stages separate validation and deployment checks with nested bullets; short stages retain prose. The review definition list owns the handoff configuration without a duplicate introductory paragraph. Inspector pairs a narrower description with a wider capture on desktop and stacks up to 1023px. Values belong to `HowIWork.module.css`.
+Development tools start directly with the section heading and representative case. The QA case places its title, actual Skill application and contribution bullets before the full-width image. Notion MCP and worktree appear in the procedure disclosure, without a separate keyword line or duplicate process inventory. Its native disclosure uses a plain text control with a plus/minus state icon. Planning/token work and multi-agent review sit side by side on desktop, stacking up to 1023px, with titles above their own descriptions. Planning work separates context from implementation bullets. Longer QA stages separate validation and deployment checks with nested bullets; short stages retain prose. The review bullet list owns the handoff configuration without a duplicate introductory paragraph. The Android network debugging tool pairs a narrower description with a wider capture on desktop and stacks up to 1023px. Values belong to `HowIWork.module.css`.
 
-Side projects use open columns with names before dates. Open source uses two columns. Activities use open rows. Interests use an open text aside with a subtle top rule. Their headings and body text follow the shared scale. Contact closes with its heading and compact public profile links, without a generic invitation, card enclosure or decorative illustration. The duplicate header GitHub link is removed; the hero and Contact keep their profile destinations.
+Side projects use open columns with names before dates. Open source uses two columns. Activities use open rows. Their headings and body text follow the shared scale. The user removed the closing Interests and Contact sections on 2026-10-14. Activities now lead directly to the footer; public profile destinations remain in the hero.
 
 ## Sources and maintenance
 
@@ -87,3 +97,5 @@ Run `npm run check` and inspect actual desktop/mobile views, including 320px, af
 ## Spacing and icons, 2026-10-13
 
 The header uses the name as its wordmark without a separate decorative Android symbol. Shared `Icon.tsx` supplies 18px GitHub, LinkedIn and disclosure icons, with a 20px mobile menu icon. Text controls use a minimum 44px target. Native disclosures show a plus when closed and a minus when open. Major-section, heading-to-content and column spacing use shared tokens. The approved introduction, contribution scope and ten images remain intact.
+
+The introduction-to-Career gap is 48px on desktop and 40px on narrow mobile layouts. In PDF output, use 10pt from identity to introduction, 6pt between introduction paragraphs and 16pt before Career. Keep the document continuous: do not bind a project header to its complete image block when that moves the next section out of available page space.

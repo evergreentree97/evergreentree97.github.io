@@ -6,8 +6,7 @@ export type ExperienceProject = {
   href: string
   featured?: boolean
   intro?: string
-  summary?: ExperienceText
-  bullets?: ExperienceText[]
+  bullets: ExperienceText[]
 }
 
 export type ExperienceChapter = {
@@ -40,24 +39,23 @@ export const experiences: Experience[] = [
           title: 'Vuddy Android',
           href: '#vuddy',
           featured: true,
-          intro: '초기 설계부터 출시 및 운영에 참여한 프로젝트입니다.',
           bullets: [
-            [{ emphasis: 'Jetpack Compose 기반 멀티모듈 구조' }, ' 설계'],
-            ['인증, 실시간 채팅, 미디어 재생 기능 개발'],
+            ['Clean Architecture와 MVI 패턴 기반 Feature 단위 Multi-Module 구조 초기 설계'],
+            ['주요 화면과 인증, 채팅, 미디어 플레이어 등 앱 전반의 기능 개발'],
           ],
         }],
       },
       {
         title: '사내 AI TF',
-        description: '대화 모델 학습·서빙 및 연동 Android 앱 개발',
+        description: '캐릭터 대화 모델과 이를 사용하는 Android 앱 개발',
         projects: [
           {
-            period: '2026.02 - 2026.08',
+            period: '2026.04 - 2026.08',
             title: '캐릭터 대화 모델',
             href: '#model-evaluation',
             bullets: [
-              ['캐릭터 대화 데이터셋 구축 및 ', { emphasis: 'LoRA 파인튜닝' }],
-              ['모델 자동 평가 및 ', { emphasis: 'vLLM 서빙 환경' }, ' 구축'],
+              ['캐릭터 페르소나 데이터셋 구축, LoRA 파인튜닝과 평가, vLLM 서빙 환경 구축'],
+              ['개발한 모델이 서비스 적용 모델로 선정'],
             ],
           },
           {
@@ -65,8 +63,8 @@ export const experiences: Experience[] = [
             title: 'AI 캐릭터 앱',
             href: '#model-evaluation',
             bullets: [
-              [{ emphasis: 'SSE 기반 실시간 스트리밍 채팅' }, ' UI 구현'],
-              [{ emphasis: 'Google Play 결제(구독 및 인앱 상품)' }, ' 연동 및 구현'],
+              ['SSE 스트리밍 채팅과 Google Play Billing 기반 인앱 결제 및 정기 구독 개발'],
+              ['Backend 결제 검증과 구독 상태 동기화, 단위 테스트와 스크린샷 테스트 적용'],
             ],
           },
         ],
@@ -76,14 +74,9 @@ export const experiences: Experience[] = [
           period: '2023.10 - 2024.05',
           title: 'Momentica Android',
           href: '#momentica',
-          summary: [
-            'SceneView로 ',
-            { emphasis: '3D 포토카드' },
-            '를 만들고 ',
-            { emphasis: '테이크 홈을 개편' },
-            '했습니다. Room과 AlarmManager를 사용한 ',
-            { emphasis: '영상 알람' },
-            '도 개발했습니다.',
+          bullets: [
+            ['SceneView 기반 3D 포토카드와 영상 모닝콜 반복 알림 구현'],
+            ['홈 콘텐츠 탐색 영역 개편, ', 'Bitmap 메모리 누수와 불필요한 이미지 갱신 해결'],
           ],
         }],
       },

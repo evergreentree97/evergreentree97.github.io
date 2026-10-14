@@ -1,5 +1,5 @@
 .experience {
-  padding: var(--section-space) 0 0;
+  padding: 48px 0 0;
 }
 
 .sectionTitle {
@@ -9,42 +9,48 @@
   line-height: 1.4;
 }
 
-.employer {
-  display: grid;
-  grid-template-columns: 264px minmax(0, 1fr);
-  align-items: start;
-  gap: var(--column-gap);
-}
-
 .employer + .employer {
-  margin-top: 88px;
+  margin-top: var(--section-space);
 }
 
-.identity h3 {
-  font-size: 1.75rem;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+.identity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 32px;
+}
+
+.companyHeading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.companyHeading h3 {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
 }
 
 .affiliation {
-  margin-top: 12px;
   color: var(--color-muted);
   font-size: 0.875rem;
 }
 
 .intro {
-  max-width: 27ch;
-  margin-top: 24px;
+  margin-top: 8px;
   color: var(--color-ink-2);
   font-size: var(--body-size);
-  line-height: 1.8;
+  line-height: var(--body-leading);
 }
 
 .employment {
   display: grid;
-  justify-items: start;
-  gap: 10px;
-  margin-top: 28px;
+  gap: 6px;
+  flex-shrink: 0;
+  text-align: right;
 }
 
 .role {
@@ -59,34 +65,50 @@
   line-height: 1.6;
 }
 
-.employment .period {
-  color: var(--color-ink-2);
+.work {
+  border-top: 1px solid var(--color-rule-strong);
 }
 
-.work {
+.single,
+.group {
+  padding-block: 32px;
+}
+
+.single + .group,
+.group + .single,
+.single + .single,
+.group + .group {
+  border-top: 1px solid var(--color-rule);
+}
+
+.standaloneProject > .project,
+.group {
   display: grid;
-  gap: var(--group-space);
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: var(--column-gap);
+}
+
+.projectIdentity,
+.contribution,
+.groupHeading {
   min-width: 0;
 }
 
-.single {
-  padding-inline: 0;
-}
-
 .projectTitle {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-family: var(--font-display);
-  font-size: var(--case-heading-size);
+  font-size: 1.375rem;
   font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.35;
+  letter-spacing: -0.035em;
+  line-height: 1.5;
+  text-wrap: pretty;
 }
 
 .projectTitle a {
   display: flex;
   width: fit-content;
   max-width: 100%;
-  min-height: 44px;
+  min-height: var(--control-height);
   align-items: center;
   text-decoration: none;
   transition: color var(--dur-short) ease-out;
@@ -98,30 +120,36 @@
 }
 
 .featured .projectTitle {
-  font-size: var(--case-heading-size);
+  color: var(--color-accent);
+  font-size: 1.5rem;
 }
 
 .projectIntro {
-  margin-top: 24px;
+  margin-top: 7px;
   color: var(--color-ink);
   font-size: var(--body-size);
-  letter-spacing: -0.025em;
-  line-height: 1.5;
+  line-height: var(--body-leading);
 }
 
-.summary,
 .bullets {
-  margin-top: 16px;
   color: var(--color-ink-2);
-  font-size: 1rem;
+  font-size: var(--body-size);
   line-height: var(--body-leading);
+}
+
+.standaloneProject .contribution > .bullets:first-child {
+  padding-top: 7px;
 }
 
 .bullets {
   display: grid;
   gap: 8px;
-  padding-left: 1.15em;
+  padding-left: 1.1em;
   list-style: disc;
+}
+
+.projectIntro + .bullets {
+  margin-top: 12px;
 }
 
 .bullets li::marker {
@@ -129,178 +157,53 @@
   font-size: 0.75em;
 }
 
-.summary strong,
 .bullets strong {
   color: var(--color-ink);
-  font-weight: 600;
-}
-
-.featured .summary,
-.featured .bullets {
-  margin-top: 12px;
-}
-
-.group {
-  padding-top: 24px;
-  border-top: 1px solid var(--color-rule);
-}
-
-.groupHeading {
-  margin-bottom: 24px;
+  font-weight: 500;
 }
 
 .groupTitle {
-  color: var(--color-ink);
-  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  padding-top: 5px;
+  font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1.5;
-  text-wrap: pretty;
 }
 
 .groupDescription {
-  max-width: 40ch;
+  max-width: 24ch;
   margin-top: 12px;
   color: var(--color-ink-2);
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.8;
 }
 
 .pairedProjects {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 28px;
+  min-width: 0;
 }
 
 .pairedProjects > .project + .project {
-  padding-left: 24px;
+  padding-left: 28px;
   border-left: 1px solid var(--color-rule);
 }
 
 .pairedProjects .projectTitle {
-  font-size: 1.25rem;
-  letter-spacing: -0.03em;
+  font-size: 1.125rem;
+  letter-spacing: -0.025em;
 }
 
-.pairedProjects .summary,
-.pairedProjects .bullets {
-  margin-top: 16px;
-  font-size: var(--body-size);
-}
-
-@media (min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference) {
-  .identity {
-    position: sticky;
-    top: 120px;
-  }
+.pairedProjects .contribution {
+  margin-top: 20px;
 }
 
 @media (max-width: 1023px) {
-  .experience {
-    padding: var(--section-space) 0 0;
-  }
-
-  .sectionTitle {
-    margin-bottom: var(--section-content-space);
-  }
-
-  .employer {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
-  }
-
-  .identity {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: start;
-    column-gap: 32px;
-  }
-
-  .identity h3,
-  .affiliation,
-  .intro {
-    grid-column: 1;
-  }
-
-  .intro {
-    max-width: none;
-    margin-top: 16px;
-  }
-
-  .employment {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-    margin-top: 4px;
-  }
-
-  .single {
-    padding-inline: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .experience {
-    padding-top: var(--section-space);
-  }
-
-  .sectionTitle {
-    margin-bottom: var(--section-content-space);
-    font-size: 1.75rem;
-  }
-
-  .identity {
-    display: block;
-  }
-
-  .identity h3 {
-    font-size: 1.75rem;
-  }
-
-  .affiliation {
-    margin-top: 8px;
-  }
-
-  .employment {
-    gap: 8px;
-    margin-top: 20px;
-  }
-
-  .employer {
-    gap: 40px;
-  }
-
-  .work {
-    gap: 36px;
-  }
-
-  .projectTitle {
-    font-size: var(--case-heading-size);
-  }
-
-  .featured .projectTitle {
-    font-size: var(--case-heading-size);
-  }
-
-  .projectIntro {
-    margin-top: 20px;
-    font-size: var(--body-size);
-  }
-
-  .summary,
-  .bullets {
-    font-size: var(--body-size);
-  }
-
+  .standaloneProject > .project,
   .group {
-    padding-top: 24px;
-  }
-
-  .groupHeading {
-    margin-bottom: 24px;
-  }
-
-  .groupTitle {
-    font-size: 1.375rem;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 32px;
   }
 
   .pairedProjects {
@@ -312,5 +215,68 @@
     padding: 24px 0 0;
     border-top: 1px solid var(--color-rule);
     border-left: 0;
+  }
+
+  .pairedProjects .contribution {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience {
+    padding-top: 40px;
+  }
+
+  .identity {
+    display: block;
+    padding-bottom: 24px;
+  }
+
+  .companyHeading {
+    gap: 8px 16px;
+  }
+
+  .companyHeading h3 {
+    font-size: 1.75rem;
+  }
+
+  .employment {
+    justify-items: start;
+    gap: 4px;
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  .standaloneProject > .project,
+  .group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .single,
+  .group {
+    padding-block: 28px;
+  }
+
+  .groupDescription {
+    max-width: none;
+    margin-top: 6px;
+  }
+
+  .projectIntro,
+  .standaloneProject .contribution > .bullets:first-child,
+  .groupTitle {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .pairedProjects {
+    gap: 24px;
+    padding-left: 20px;
+    border-left: 2px solid var(--color-rule);
+  }
+
+  .pairedProjects > .project + .project {
+    padding-top: 20px;
   }
 }

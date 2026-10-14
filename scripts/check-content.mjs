@@ -11,7 +11,7 @@ const [heroSource, contentGuide, projectsSource, contactSource, indexSource, scr
   readdir(new URL('public/images/', root)),
 ])
 
-const introductionSection = contentGuide.split('## Approved introduction\n')[1]?.split('\n## ')[0]
+const introductionSection = contentGuide.split('## Selected introduction\n')[1]?.split('\n## ')[0]
 const approvedIntroduction = [...(introductionSection ?? '').matchAll(/^> (.+)$/gm)].map((match) => match[1])
 if (approvedIntroduction.length !== 4) {
   throw new Error('콘텐츠 가이드에 승인된 첫 문장, 이름과 두 문단을 기록해 주세요.')

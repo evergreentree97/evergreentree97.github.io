@@ -39,9 +39,9 @@
   --text-4xl: 3.815rem;
   --text-display-s: clamp(2.75rem, 5vw, 4.75rem);
   --text-display: clamp(3rem, 6vw, 6rem);
-  --section-space: 6rem;
-  --section-content-space: 2.25rem;
-  --group-space: 3rem;
+  --section-space: 5rem;
+  --section-content-space: 2rem;
+  --group-space: 2.5rem;
   --column-gap: 3rem;
   --control-height: 44px;
   --icon-size: 18px;
@@ -76,6 +76,6 @@
 }
 
 @media (max-width: 760px) {
-  :root { --section-space: 4.5rem; --section-content-space: 1.75rem; --group-space: 2.25rem; --column-gap: 2rem; --page-gutter: 24px; }
+  :root { --section-space: 4rem; --section-content-space: 1.5rem; --group-space: 2rem; --column-gap: 2rem; --page-gutter: 24px; }
 }
 @media (max-width: 900px) { :root { --header-height: 64px; } }

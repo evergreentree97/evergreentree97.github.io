@@ -4,7 +4,6 @@
  .qaCase { margin-top: var(--section-content-space); }
 .caseIntroduction { max-width: 760px; margin-top: 16px; }
 .caseIntroduction p, .practiceBody p, .inspectorIntroduction > div:last-child p { max-width: 65ch; color: var(--color-ink-2); font-size: var(--body-size); line-height: var(--body-leading); }
-.practiceBody p + p, .inspectorIntroduction p + p { margin-top: 12px; }
 .bullets { display: grid; gap: 8px; max-width: 65ch; margin-top: 12px; padding-left: 1.15em; list-style: disc; color: var(--color-ink-2); font-size: var(--body-size); line-height: var(--body-leading); }
 .bullets li::marker { color: var(--color-muted); font-size: 0.75em; }
 .workflow { min-width: 0; margin-top: 16px; }
@@ -21,11 +20,7 @@
 .practice { min-width: 0; }
 .practice h3 { font-size: 1.5rem; }
 .practiceBody { margin-top: 20px; }
-.reviewRoles { margin: 0; }
-.reviewRoles > div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; }
-.reviewRoles > div + div { margin-top: 20px; }
-.reviewRoles dt { color: var(--color-ink); font-size: var(--body-size); font-weight: 500; line-height: var(--body-leading); }
-.reviewRoles dd { margin: 0; color: var(--color-ink-2); font-size: var(--body-size); line-height: var(--body-leading); }
+.practiceBody > .bullets:first-child { margin-top: 0; }
 .inspector { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: start; gap: var(--column-gap); margin-top: 64px; }
 .inspectorIntroduction { min-width: 0; }
 .inspector .evidenceFigure { margin-top: 0; }
@@ -49,7 +44,6 @@
   .practices { margin-top: 48px; gap: var(--group-space); }
   .practice h3 { font-size: 1.375rem; }
   .practiceBody { margin-top: 20px; }
-  .reviewRoles > div { grid-template-columns: 1fr; gap: 4px; }
   .inspector { margin-top: 48px; }
   .evidenceFigure { margin-top: 24px; }
 }

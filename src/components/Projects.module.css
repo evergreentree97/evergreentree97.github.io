@@ -6,7 +6,7 @@
 }
 
 .title { margin-bottom: var(--section-content-space); font-size: var(--section-heading-size); line-height: 1.4; letter-spacing: -0.035em; }
-.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 72px var(--column-gap); }
+.gallery { display: grid; grid-template-columns: 1fr; gap: var(--section-space); }
 
 @media (max-width: 860px) {
   .title { margin-bottom: var(--section-content-space); }

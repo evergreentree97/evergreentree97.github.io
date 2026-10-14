@@ -1,27 +1,26 @@
 # Portfolio structure
 
-Current version approved by the user on 2026-10-13. [content.md](content.md) owns wording and disclosure; [DESIGN.md](../../DESIGN.md) records visual values. `src/App.tsx` owns the section order.
+Current local revision prepared on 2026-10-13. [content.md](content.md) owns wording and disclosure; [DESIGN.md](../../DESIGN.md) records visual values. `src/App.tsx` owns the section order.
 
 ## Section order and presentation
 
-1. Introduction: name and role, the selected opening sentence, project/profile links and both complete narrative paragraphs. Two body columns on desktop, one on mobile.
-2. Career: employer, role and tenure with project responsibilities. Related AI model and Android app work share one group while retaining individual dates.
-3. Projects: Vuddy is full width; the AI model/app and Momentica follow in two columns, stacking at 860px. Approved product screens precede identity, contribution bullets, technologies and one native development disclosure.
-4. AI usage and development tools: QA-ticket harness and its capture, a native procedure disclosure with validation and Hook checks, planning/design-token work, multi-agent review and Ricky Inspector. Related descriptions use two columns where space permits and stack at 1023px.
+1. Introduction: a single identity row with name, role and project/profile links. The selected resume introduction follows as two continuous paragraphs at a bounded reading width. The first paragraph begins with the experience sentence. Mobile wraps the links below the identity. The PDF omits the isolated URL/date line and places its profile links beside the name and role.
+2. Career: employer and affiliation above the project rows, with role and tenure aligned to the right on desktop. Vuddy leads with the blue linked title. Each row pairs project identity with contributions. Related AI model and Android app work share one group while retaining individual dates and smaller nested titles. Mobile stacks the rows and uses an inset rule to preserve the AI group relationship.
+3. Projects: all three projects use full-width articles. Identity, main message and store links precede approved product screens. Named cases follow in an open two-column grid with one core feature heading and bullets for context, action and supported results. Headers and cases stack at 760px. Technologies and one native technical-detail disclosure close each project.
+4. AI usage and development tools: AI-assisted QA ticket processing and its capture, a native procedure disclosure with validation and Hook checks, planning/design-token work, role-based AI review and the Android network debugging tool. Related descriptions use two columns where space permits and stack at 1023px.
 5. Side projects: Duckie and its Compose design system.
 6. Open source and activities: open columns and organization-based rows.
-7. Interests: a compact text aside.
-8. Contact and footer: public profile destinations and a back-to-top link.
+7. Footer: a back-to-top link. The user removed the closing Interests and Contact sections on 2026-10-14. Public profile links remain in the introduction.
 
-The introduction explains perspective and motivation, Career summarizes roles and tenure, and Projects provide technical depth. Keep reasoning and supported results without repeating generic summaries. Use bullets for distinct responsibilities and prose for related reasoning.
+The introduction follows the Summary in the user's selected Dreamus resume. Career summarizes roles and tenure, and Projects present representative responsibilities and supported outcomes, with technical depth in their disclosures. Keep reasoning and supported results without repeating generic summaries. Use bullets for project context, actions and results; reserve inline emphasis for short, meaningful outcome or constraint phrases. Keep the selected introduction as prose.
 
 ## Interaction and responsive behavior
 
 Product and tool captures retain their aspect ratios and masking. All ten images are visible without opening disclosures and link to shipped originals. Videos, if supplied, require user playback. No generated decorative illustration, simulated device interface or technical diagram is used.
 
-The header uses the name wordmark. Its mobile menu closes on selection, Escape, outside pointer input or focus leaving the header; Escape returns focus to the trigger. Native disclosures use a plus/minus icon. Career identity is sticky only at sufficiently large desktop sizes with reduced motion off.
+The header uses the name wordmark. Its mobile menu closes on selection, Escape, outside pointer input or focus leaving the header; Escape returns focus to the trigger. Native disclosures use a plus/minus icon. Career identity remains above its project rows in normal document flow.
 
-Shared tokens own section spacing, columns and typography. Text controls have a 44px minimum target. Reduced-motion styles remove the short hero entrance, transitions and smooth scrolling. Other sections have no viewport-triggered entrance.
+Project cases use one title and selectively emphasized points. Disclosures use feature headings and bullet points for supplementary mechanisms; headings retain the project/group nesting. Shared tokens own section spacing, columns and typography. Text controls have a 44px minimum target. Reduced-motion styles remove the short hero entrance, transitions and smooth scrolling. Other sections have no viewport-triggered entrance.
 
 ## Ownership
 
@@ -34,8 +33,7 @@ Shared tokens own section spacing, columns and typography. Text controls have a 
 | Side projects | `src/data/sideProjects.ts` |
 | Open source | `src/data/projects.ts`, `src/components/MoreWork.tsx` |
 | Activities | `src/data/activities.ts`, `src/components/Activities.tsx` |
-| Interests and navigation | `src/data/profile.ts` |
-| Contact | `src/components/Contact.tsx` |
+| Public profile links and navigation | `src/data/profile.ts` |
 | Shared icons | `src/components/Icon.tsx` |
 | Visual values | `tokens.css`, `src/styles/`, component CSS modules |
 
@@ -43,4 +41,4 @@ Shared tokens own section spacing, columns and typography. Text controls have a 
 
 `npm run check` validates the selected introduction/assets, font coverage, ESLint, TypeScript and the production build. Inspect actual desktop/mobile views after visual changes, including narrow layouts and expanded disclosures. Successful checks do not establish visual acceptance or public deployment.
 
-The release preparation inspected 1440px desktop, 390px mobile, 320px expanded model detail and 743px compact views. Images loaded, text fit, disclosure icons reflected state, and menu Escape restored focus. Local review artifacts are kept outside the repository.
+The current project revision was inspected at 1440px desktop and 390px mobile, with the model detail expanded at 320px. The three project summaries use visible feature headings and bullets, all eight product images loaded outside disclosures, and no horizontal page overflow was observed. Earlier menu checks confirmed Escape focus restoration. Local review artifacts are kept outside the repository.
