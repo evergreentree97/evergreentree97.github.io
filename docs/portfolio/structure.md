@@ -4,7 +4,7 @@ Current local revision prepared on 2026-10-13. [content.md](content.md) owns wor
 
 ## Section order and presentation
 
-1. Introduction: a single identity row with name, role and project/profile links. The selected resume introduction follows as two continuous paragraphs at a bounded reading width. The first paragraph begins with the experience sentence. Mobile wraps the links below the identity. The PDF omits the isolated URL/date line and places its profile links beside the name and role.
+1. Introduction: a two-column hero pairs a large name and blue role with three approved product screenshots. The selected resume introduction stays as two continuous paragraphs below the identity, followed by project/profile links. On mobile, the product stage sits between the identity and introduction. Each screenshot links to its project. The PDF retains its existing compact identity and profile links.
 2. Career: employer and affiliation above the project rows, with role and tenure aligned to the right on desktop. Vuddy leads with the blue linked title. Each row pairs project identity with contributions. Related AI model and Android app work share one group while retaining individual dates and smaller nested titles. Mobile stacks the rows and uses an inset rule to preserve the AI group relationship.
 3. Projects: all three projects use full-width articles. Identity, main message and store links precede approved product screens. Named cases follow in an open two-column grid with one core feature heading and bullets for context, action and supported results. Headers and cases stack at 760px. Technologies and one native technical-detail disclosure close each project.
 4. AI usage and development tools: AI-assisted QA ticket processing and its capture, a native procedure disclosure with validation and Hook checks, planning/design-token work, role-based AI review and the Android network debugging tool. Related descriptions use two columns where space permits and stack at 1023px.
@@ -20,7 +20,7 @@ Product and tool captures retain their aspect ratios and masking. All ten images
 
 The header uses the name wordmark. Its mobile menu closes on selection, Escape, outside pointer input or focus leaving the header; Escape returns focus to the trigger. Native disclosures use a plus/minus icon. Career identity remains above its project rows in normal document flow.
 
-Project cases use one title and selectively emphasized points. Disclosures use feature headings and bullet points for supplementary mechanisms; headings retain the project/group nesting. Shared tokens own section spacing, columns and typography. Text controls have a 44px minimum target. Reduced-motion styles remove the short hero entrance, transitions and smooth scrolling. Other sections have no viewport-triggered entrance.
+Project cases use one title and selectively emphasized points. Disclosures use feature headings and bullet points for supplementary mechanisms; headings retain the project/group nesting. Shared tokens own section spacing, columns and typography. Text controls have a 44px minimum target. Reduced-motion styles remove the hero entrance, pointer tilt, transitions and smooth scrolling. The hero screens fan out once on entry. Fine-pointer movement tilts the stage with damped interpolation, which stops when settled. Touch input never tilts the stage. Other sections have no viewport-triggered entrance.
 
 ## Ownership
 

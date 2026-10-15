@@ -14,7 +14,7 @@ This is the current authority for public wording, contribution scope and asset d
 
 The user selected the attached Dreamus Android resume as the wording priority on 2026-10-14. Its Summary supplies the current opening and both introduction paragraphs. Preserve the user's nested-bullet structure, minimal inline emphasis and feature-oriented headings such as `영상 플레이어`. For matching experience, prefer the resume's wording while retaining contribution boundaries and portfolio-only supporting detail. Do not restore wording superseded by this request.
 
-The user revised the introduction layout on 2026-10-14: make the person's name the main heading, group role and profile links with it, and show the resume wording as two continuous paragraphs without mini-section headings. Keep the experience sentence at the start of the first paragraph rather than using it as a large headline. The PDF has no standalone URL/date row; the website URL remains available as a compact Portfolio link beside GitHub and LinkedIn.
+The introduction uses the person's name as the main heading and preserves the resume wording as two continuous paragraphs without mini-section headings. Keep the experience sentence at the start of the first paragraph. The current visual revision enlarges the name and role, places project/profile links below the introduction, and adds an animated stage using the approved Momentica, Vuddy chat and masked AI chat screenshots. It changes no introduction wording or contribution claims. The PDF has no standalone URL/date row; the website URL remains available as a compact Portfolio link beside GitHub and LinkedIn.
 
 ## Audience and writing scope
 

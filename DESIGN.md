@@ -15,11 +15,11 @@ colors:
   screen-shadow: "rgb(12 20 26 / 15%)"
 typography:
   hero-name:
-    fontSize: "clamp(2rem, 3.2vw, 2.5rem)"
+    fontSize: "clamp(4.5rem, 7.3vw, 6.5rem)"
     fontWeight: 600
-    lineHeight: 1.3
+    lineHeight: 1.12
   hero-role:
-    fontSize: "0.9375rem"
+    fontSize: "clamp(1.5rem, 2.4vw, 2rem)"
   section-heading:
     fontSize: "clamp(1.75rem, 2.4vw, 2rem)"
   featured-title:
@@ -80,7 +80,7 @@ Links use restrained color feedback; Career titles and profile links underline o
 
 ## Other current sections
 
-The hero uses the person's name as its single main heading with a quiet role label on the same baseline. Project and profile links align to the right on desktop and wrap below the identity on mobile. The resume introduction appears as two continuous paragraphs at a 900px maximum reading width with a 16px gap below the identity row and 12px between paragraphs. The experience sentence begins the first paragraph. There are no mini-section headings, separate large career-sentence headline or decorative divider. In the PDF, the name is 24pt, the role 9.5pt and the profile links 9pt; the isolated website/date row is replaced by a compact Portfolio link.
+The hero uses a large name and blue role in the left column, followed by the unchanged introduction at a 475px reading width and the project/profile links. The right column presents the approved Momentica, Vuddy chat and masked AI chat images, retaining aspect ratios and adding no simulated device chrome. The product stage uses open white space, neutral layered screen shadows and a soft floor shadow. It has no colored backdrop or outer ring. Screens fan out once over 1.3 seconds, following the 900ms identity entrance with short staggered delays. Fine-pointer movement tilts the parent stage with damped interpolation and no component re-renders. The frame loop ends when the stage settles. Reduced-motion preferences disable the entrance, tilt and moving hover feedback. Mobile places the stage below the identity and above the two introduction paragraphs, reducing screen sizes at 480px and 350px. The experience sentence remains in the first paragraph. Other sections retain their existing presentation. In the PDF, the name is 24pt, the role 9.5pt and the profile links 9pt; the isolated website/date row is replaced by a compact Portfolio link.
 
 Career starts with a 32px employer name, a quiet affiliation and company description. Role and tenure align to the right on desktop and stack below the company on mobile. A stronger rule separates employment identity from three open project rows. Desktop rows use a 240px identity column and a flexible contribution column. Vuddy leads with a 24px blue linked title; other row titles use 22px, and the two nested AI projects use 18px. Dates use 13px muted text and contributions retain 16px body text. All Career contributions use bullet lists, including Momentica; selected technical emphasis and contribution boundaries remain. At 1023px, the identity column narrows to 200px and the AI projects stack. At 600px, all rows stack; an inset vertical rule identifies the AI projects as children of the TF group. Company information stays in normal document flow. No new panels, icons or animation are introduced.
 
