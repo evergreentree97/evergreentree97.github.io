@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import type { FeaturedProject, ProjectMedia, ProjectPoint, ProjectVideo } from '../data/projects'
 import styles from './ProjectScene.module.css'
 import { Icon } from './Icon'
+import { OptimizedImage } from './OptimizedImage'
 
 function VideoMedia({ media }: { media: ProjectVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -40,7 +41,7 @@ function VideoMedia({ media }: { media: ProjectVideo }) {
 
 function MediaContent({ media }: { media: ProjectMedia }) {
   if (media.type === 'video') return <VideoMedia media={media} />
-  return <img src={media.src} alt={media.alt} loading="lazy" width={media.width} height={media.height} />
+  return <OptimizedImage src={media.src} alt={media.alt} loading="lazy" decoding="async" width={media.width} height={media.height} />
 }
 
 function WorkDetails({ project }: { project: FeaturedProject }) {

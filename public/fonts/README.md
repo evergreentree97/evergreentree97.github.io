@@ -11,4 +11,4 @@ python scripts/subset-font.py /path/to/NotoSansKR.ttf
 npm run check:fonts
 ```
 
-The full upstream TTF and temporary Python environment are not shipped. `font-display: swap` keeps text visible while the font loads. Preload only the regular weight used by body text; the browser loads other weights when needed.
+The full upstream TTF and temporary Python environment are not shipped. `font-display: swap` keeps text visible while the font loads. Preload the regular weight used by body text and the semibold weight used by the hero name. The browser loads the medium weight when needed.

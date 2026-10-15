@@ -7,6 +7,7 @@ The user approved the current portfolio for release on 2026-10-13. These documen
 | Selected introduction, contribution boundaries and public assets | [content.md](content.md) |
 | Section order and implementation ownership | [structure.md](structure.md) |
 | Current visual values | [DESIGN.md](../../DESIGN.md) |
+| Prerendering, lossless images and frame/layout work | [performance.md](performance.md) |
 | Development, checks and GitHub Pages deployment | [Repository README](../../README.md) |
 
 The latest user request takes precedence. Preserve the selected introduction and accurate contribution scope. Superseded prompts, exploratory studies and chronological review documents have been removed from the repository. Do not recreate them as current instructions.

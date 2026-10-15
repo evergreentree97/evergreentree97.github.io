@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 import { profile } from '../data/profile'
 import { featuredProjects } from '../data/projects'
 import { Icon } from './Icon'
+import { OptimizedImage } from './OptimizedImage'
+import { attachHeroMotion } from '../lib/heroMotion'
 import styles from './Hero.module.css'
 
 const screenOrder = ['momentica', 'vuddy', 'model-evaluation'] as const
@@ -20,59 +22,7 @@ function ProductStage() {
     const plane = planeRef.current
     if (!stage || !plane) return
 
-    const motion = window.matchMedia('(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) and (min-width: 901px)')
-    let frame = 0
-    let currentX = 0
-    let currentY = 0
-    let targetX = 0
-    let targetY = 0
-
-    const render = () => {
-      currentX += (targetX - currentX) * 0.09
-      currentY += (targetY - currentY) * 0.09
-      plane.style.transform = `rotateX(${currentY}deg) rotateY(${currentX}deg)`
-      if (Math.abs(targetX - currentX) + Math.abs(targetY - currentY) > 0.015) {
-        frame = requestAnimationFrame(render)
-      } else {
-        frame = 0
-      }
-    }
-
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(render)
-    }
-
-    const move = (event: PointerEvent) => {
-      if (!motion.matches || event.pointerType !== 'mouse') return
-      const bounds = stage.getBoundingClientRect()
-      targetX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 12
-      targetY = -((event.clientY - bounds.top) / bounds.height - 0.5) * 8
-      schedule()
-    }
-
-    const reset = () => {
-      targetX = 0
-      targetY = 0
-      schedule()
-    }
-
-    const stop = () => {
-      cancelAnimationFrame(frame)
-      frame = 0
-      currentX = currentY = targetX = targetY = 0
-      plane.style.removeProperty('transform')
-    }
-
-    stage.addEventListener('pointermove', move)
-    stage.addEventListener('pointerleave', reset)
-    motion.addEventListener('change', stop)
-
-    return () => {
-      stop()
-      stage.removeEventListener('pointermove', move)
-      stage.removeEventListener('pointerleave', reset)
-      motion.removeEventListener('change', stop)
-    }
+    return attachHeroMotion(stage, plane)
   }, [])
 
   return (
@@ -82,7 +32,7 @@ function ProductStage() {
         {screens.map(({ project, media }, index) => (
           <div className={`${styles.screenSlot} ${styles[project.id]}`} key={project.id}>
             <a className={styles.screen} href={`#${project.id}`} aria-label={project.name}>
-              <img
+              <OptimizedImage
                 src={media.src}
                 alt={media.alt}
                 width={media.width}

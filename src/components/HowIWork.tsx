@@ -1,5 +1,6 @@
 import { SectionTitle } from './SectionTitle'
 import { Icon } from './Icon'
+import { OptimizedImage } from './OptimizedImage'
 import styles from './HowIWork.module.css'
 
 const qaStages: { title: string; copy: string; bullets?: string[] }[] = [
@@ -38,7 +39,7 @@ export function HowIWork() {
         </div>
         <figure className={styles.evidenceFigure}>
           <a href="/images/tooling/qa-worktree-demo.jpg" target="_blank" rel="noreferrer" aria-label="QA 작업 관리 화면 원본 열기">
-            <img src="/images/tooling/qa-worktree-demo.jpg" alt="QA 작업 관리 도구의 티켓별 branch, worktree와 리뷰 상태" width="1280" height="720" loading="lazy" decoding="async" />
+            <OptimizedImage src="/images/tooling/qa-worktree-demo.jpg" alt="QA 작업 관리 도구의 티켓별 branch, worktree와 리뷰 상태" width="1280" height="720" loading="lazy" decoding="async" />
           </a>
         </figure>
         <details className={styles.workflow}>
@@ -98,7 +99,7 @@ export function HowIWork() {
         </div>
         <figure className={styles.evidenceFigure}>
           <a href="/images/tooling/ricky-inspector-sse-demo.jpg" target="_blank" rel="noreferrer" aria-label="Android 네트워크 디버깅 도구의 SSE 이벤트 화면 원본 열기">
-            <img src="/images/tooling/ricky-inspector-sse-demo.jpg" alt="Android 네트워크 디버깅 도구의 SSE 요청 목록, 수신 이벤트와 응답 메시지" width="1440" height="900" loading="lazy" decoding="async" />
+            <OptimizedImage src="/images/tooling/ricky-inspector-sse-demo.jpg" alt="Android 네트워크 디버깅 도구의 SSE 요청 목록, 수신 이벤트와 응답 메시지" width="1440" height="900" loading="lazy" decoding="async" />
           </a>
         </figure>
       </article>
