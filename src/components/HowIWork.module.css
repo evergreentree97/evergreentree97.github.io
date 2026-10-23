@@ -1,7 +1,10 @@
 .section { padding-top: var(--section-space); }
 .section h3 { font-size: var(--case-heading-size); font-weight: 600; line-height: 1.5; letter-spacing: -0.025em; text-wrap: balance; }
 .section strong { color: var(--color-ink); font-weight: 500; }
- .qaCase { margin-top: var(--section-content-space); }
+.qaCase { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: start; column-gap: var(--column-gap); margin-top: var(--section-content-space); }
+.qaIntroduction { min-width: 0; }
+.qaCase .evidenceFigure { margin-top: 0; }
+.qaCase .workflow { grid-column: 1 / -1; }
 .caseIntroduction { max-width: 760px; margin-top: 16px; }
 .caseIntroduction p, .practiceBody p, .inspectorIntroduction > div:last-child p { max-width: 65ch; color: var(--color-ink-2); font-size: var(--body-size); line-height: var(--body-leading); }
 .bullets { display: grid; gap: 8px; max-width: 65ch; margin-top: 12px; padding-left: 1.15em; list-style: disc; color: var(--color-ink-2); font-size: var(--body-size); line-height: var(--body-leading); }
@@ -33,6 +36,8 @@
   .workflow summary:hover { color: var(--color-accent); }
 }
 @media (max-width: 1023px) {
+  .qaCase { grid-template-columns: 1fr; row-gap: 24px; }
+  .qaCase .workflow { margin-top: 0; }
   .practices { grid-template-columns: 1fr; gap: 48px; }
   .inspector { grid-template-columns: 1fr; gap: 28px; }
 }

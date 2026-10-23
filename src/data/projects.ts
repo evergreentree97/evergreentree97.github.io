@@ -65,21 +65,18 @@ export const featuredProjects: FeaturedProject[] = [
           { text: 'Clean Architecture와 MVI 패턴을 기반으로 Feature 단위 Multi-Module 구조 초기 설계', children: [
             { text: 'Gradle Convention Plugin으로 모듈별 빌드 설정과 의존성 관리 일원화' },
           ] },
-          { text: 'feature 모듈, MVI 템플릿, 디자인 토큰과 Analytics Event 코드 생성 자동화로 반복 작성 작업 축소' },
+          { text: 'Feature 모듈과 MVI 보일러플레이트 템플릿, 디자인 토큰과 Analytics Event 코드 생성 파이프라인을 구축해 반복적인 수작업과 설정 누락을 줄이도록 자동화' },
           { text: '시맨틱 컬러 토큰 구조를 체계화해 브랜드 리뉴얼 시 개별 화면 코드 수정 없이 토큰 매핑 변경만으로 앱 전반의 테마 색상 일괄 반영', emphasis: '개별 화면 코드 수정 없이' },
         ],
       },
       {
         title: '실시간 채팅',
         points: [
-          { text: '출시 일정에 맞춰 채팅 기능을 제공하기 위해 Sendbird SDK 도입 제안', children: [
+          { text: '빠듯한 출시 일정에 맞춰 Sendbird SDK 도입을 제안하고, 향후 이관을 고려해 SDK 의존성을 도메인 인터페이스로 분리 설계', children: [
             { text: '샘플 앱과 기술 문의로 필수 기능과 대규모 채팅방의 푸시 제약 사전 검토' },
           ] },
-          { text: '클라이언트 간 데이터 불일치를 해결하기 위해 채팅방 관리 로직을 Backend로 옮기도록 제안하고 데이터 스키마 정리', children: [
-            { text: 'Android의 채팅방 생성, 목록 조회와 검색을 자체 Backend API로 전환' },
-          ] },
-          { text: 'Sendbird SDK 의존성을 도메인 인터페이스로 분리', children: [
-            { text: 'API 전환 시 인터페이스의 구현체를 교체하고 기존 UI 레이어는 수정 없이 재사용', emphasis: '기존 UI 레이어는 수정 없이 재사용' },
+          { text: '클라이언트 간 데이터 불일치를 해결하기 위해 채팅방 관리를 Backend로 옮기도록 제안하고 데이터 스키마 정리', children: [
+            { text: '채팅방 생성, 목록 조회와 검색을 자체 Backend API로 전환할 때 도메인 구현체를 교체해 기존 UI 레이어는 수정 없이 재사용', emphasis: '기존 UI 레이어는 수정 없이 재사용' },
           ] },
         ],
       },
@@ -94,10 +91,8 @@ export const featuredProjects: FeaturedProject[] = [
       {
         title: '이미지 컴포넌트와 Custom Lint',
         points: [
-          { text: '여러 화면에서 이미지 크기를 일관되게 처리하도록 리사이징 컴포넌트 개발', children: [
-            { text: '홈, 채널, 샵 등 20개 이상 파일에 적용' },
-          ] },
-          { text: 'Custom Lint로 Compose Image 사용 규칙을 자동 검사해 모듈별 이미지 처리 방식 통일' },
+          { text: '화면 크기에 맞춘 이미지 리사이징 컴포넌트를 설계해 불필요한 고해상도 Bitmap 로딩을 줄이고 이미지 처리 방식 통일' },
+          { text: '표준 이미지 컴포넌트 사용 규칙을 Custom Lint로 검사하고 presentation 모듈에 자동 적용해, Compose Image 직접 사용 시 경고하도록 구성' },
         ],
       },
     ],
@@ -130,10 +125,7 @@ export const featuredProjects: FeaturedProject[] = [
                 text: '화면이 실제 색상값 대신 역할별 시맨틱 토큰을 참조하도록 기초 색상 팔레트와 시맨틱 컬러 토큰 분리'
               },
               {
-                text: 'GitHub Actions를 구축해 디자인 토큰 JSON을 Kotlin 코드로 변환하고 PR을 생성하는 워크플로우 자동화'
-              },
-              {
-                text: 'Notion에 정의한 이벤트를 Analytics Event 코드로 생성해 반복 작성 작업 축소'
+                text: '이벤트 정의를 기준으로 Analytics Event 코드를 생성해 이름과 속성의 반복 작성 오류를 줄이도록 자동화'
               }
             ]
           },
@@ -149,7 +141,7 @@ export const featuredProjects: FeaturedProject[] = [
             title: '답장 원문 탐색',
             points: [
               {
-                text: '현재 목록 밖의 답장 원문도 탐색할 수 있도록 원문 작성 시점을 기준으로 양방향 페이징 적용'
+                text: '현재 목록 밖의 과거 메시지에 대한 답장을 눌러도 원문을 찾아갈 수 있도록, 원문 작성 시점을 기준으로 양방향 페이징을 설계해 대화 맥락을 유지하는 원문 탐색 구현'
               }
             ]
           },
@@ -200,10 +192,8 @@ export const featuredProjects: FeaturedProject[] = [
           { text: '캐릭터 페르소나 데이터셋 구축과 LoRA 파인튜닝, 정량 및 정성 평가 진행', children: [
             { text: 'vLLM 기반으로 모델을 배포하고 Android 앱의 SSE 스트리밍 채팅과 연동' },
           ] },
-          { text: '비개발 팀원이 모델과 직접 대화하고 비교할 수 있도록 웹 MVP 개발', children: [
-            { text: '자동 평가 결과와 팀원들의 대화 피드백을 반영해 학습 데이터를 보완하고 어색한 응답 개선' },
-          ] },
-          { text: '개발한 모델이 서비스 적용 모델로 선정', emphasis: '서비스 적용 모델로 선정' },
+          { text: '비개발 팀원이 모델과 직접 대화하고 비교할 수 있는 웹 MVP를 개발해 모델 개선을 위한 피드백 수집' },
+          { text: '자동 평가와 팀원들의 대화 피드백을 반영해 학습 데이터와 어색한 응답을 개선한 모델이 서비스 적용 모델로 선정', emphasis: '서비스 적용 모델로 선정' },
         ],
       },
       {
@@ -212,8 +202,8 @@ export const featuredProjects: FeaturedProject[] = [
           { text: '사내 AI 모델과 연동한 SSE 스트리밍 채팅 개발 주도', children: [
             { text: '네트워크 오류와 응답 지연에 대응하는 재시도 처리 적용' },
           ] },
-          { text: 'Google Play Billing Library 기반 인앱 결제 및 정기 구독 연동', children: [
-            { text: 'Backend 결제 검증 결과를 앱의 구독 상태에 반영' },
+          { text: 'Google Play Billing과 Backend 구매 검증을 연결해 보류 결제, 이미 소유한 상품과 일시 오류에 대응하는 결제 상태 처리 설계', children: [
+            { text: '구독 취소와 재개, 만료 및 재진입 시 상태를 갱신해 구매 결과와 앱의 구독 상태 동기화' },
           ] },
           { text: '결제와 구독 화면에 Compose Preview Screenshot Test를 도입해 UI 변경 전후 비교 자동화' },
         ],
@@ -244,17 +234,14 @@ export const featuredProjects: FeaturedProject[] = [
       {
         title: '홈 콘텐츠 탐색',
         points: [
-          { text: '아티스트와 판매 중인 포토카드를 탐색하는 헤드라인 배너와 관련 영역 개편. 아티스트별 팬 순위 카드의 가로 스와이프 구현' },
-          { text: '팬 순위 진행률이 바뀔 때 이미지 캐시 처리가 반복되는 문제 확인', children: [
-            { text: '이미지 Composable을 분리해 진행률 변경에 따른 불필요한 이미지 갱신 방지', emphasis: '불필요한 이미지 갱신 방지' },
-          ] },
+          { text: '홈 탐색 영역 개편과 아티스트별 팬 순위 카드의 가로 스와이프 UI 구현' },
+          { text: '팬 순위 진행률이 바뀔 때 프로필 블러 이미지의 캐시 처리가 반복되는 병목을 찾아, 진행률과 이미지 Composable의 갱신 범위를 분리해 불필요한 이미지 갱신 방지', emphasis: '불필요한 이미지 갱신 방지' },
         ],
       },
       {
         title: '영상 모닝콜',
         points: [
-          { text: '사용자가 선택한 아티스트 영상으로 지정한 요일과 시간에 울리는 알람 기능 개발' },
-          { text: '기기 재부팅 후 알람 예약을 복원하고, 앱 종료와 락스크린에서도 실행되는지 검증' },
+          { text: '앱 종료와 화면 꺼짐, 기기 재부팅 환경에서도 알람 예약과 락스크린 영상 재생이 이어지도록 Room과 AlarmManager 기반 알람 스케줄링 설계' },
         ],
       },
     ],

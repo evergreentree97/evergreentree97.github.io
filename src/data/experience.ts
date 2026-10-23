@@ -40,8 +40,7 @@ export const experiences: Experience[] = [
           href: '#vuddy',
           featured: true,
           bullets: [
-            ['Clean Architecture와 MVI 패턴 기반 Feature 단위 Multi-Module 구조 초기 설계'],
-            ['주요 화면과 인증, 채팅, 미디어 플레이어 등 앱 전반의 기능 개발'],
+            ['신규 Android 앱의 초기 아키텍처와 핵심 기능 개발을 이끌고 런칭 주도'],
           ],
         }],
       },
@@ -54,8 +53,7 @@ export const experiences: Experience[] = [
             title: '캐릭터 대화 모델',
             href: '#model-evaluation',
             bullets: [
-              ['캐릭터 페르소나 데이터셋 구축, LoRA 파인튜닝과 평가, vLLM 서빙 환경 구축'],
-              ['개발한 모델이 서비스 적용 모델로 선정'],
+              ['캐릭터 대화 모델 개발을 주도하고, 데이터 구축과 학습, 평가 및 서빙을 앱 적용으로 연결'],
             ],
           },
           {
@@ -63,8 +61,7 @@ export const experiences: Experience[] = [
             title: 'AI 캐릭터 앱',
             href: '#model-evaluation',
             bullets: [
-              ['SSE 스트리밍 채팅과 Google Play Billing 기반 인앱 결제 및 정기 구독 개발'],
-              ['Backend 결제 검증과 구독 상태 동기화, 단위 테스트와 스크린샷 테스트 적용'],
+              ['AI 캐릭터 앱의 핵심 채팅과 결제 개발을 주도하고 주요 사용자 흐름의 안정성 확보'],
             ],
           },
         ],
@@ -75,8 +72,7 @@ export const experiences: Experience[] = [
           title: 'Momentica Android',
           href: '#momentica',
           bullets: [
-            ['SceneView 기반 3D 포토카드와 영상 모닝콜 반복 알림 구현'],
-            ['홈 콘텐츠 탐색 영역 개편, ', 'Bitmap 메모리 누수와 불필요한 이미지 갱신 해결'],
+            ['기존 팬 플랫폼의 핵심 기능을 확장하고 메모리 누수와 화면 갱신 문제 개선'],
           ],
         }],
       },

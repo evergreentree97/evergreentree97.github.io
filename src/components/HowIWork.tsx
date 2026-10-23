@@ -17,9 +17,9 @@ const qaStages: { title: string; copy: string; bullets?: string[] }[] = [
   },
   {
     title: 'PR 리뷰와 배포 후 확인',
-    copy: '코드 변경 사항과 검증 결과를 리뷰하고, 수정 코드의 실제 배포 여부를 확인하도록 PostToolUse Hook 구성',
+    copy: 'Agent가 코드 수정만으로 티켓을 임의 종료하는 것을 방지하기 위해, 실제 배포 성공과 수정 코드 반영 여부를 교차 검증한 뒤에만 상태를 전환하도록 검증 가드레일 구축',
     bullets: [
-      '개인 작업 목록에서 담당자와 티켓 상태를 다시 확인하고, 배포 성공과 수정 코드 반영이 확인된 경우에만 상태를 변경하도록 구성',
+      'PostToolUse Hook에서 배포 기록과 merged PR, 배포 커밋을 대조하고 티켓 담당자와 현재 상태를 재확인하도록 구성',
     ],
   },
 ]
@@ -30,12 +30,14 @@ export function HowIWork() {
       <SectionTitle id="how-i-work-title" title="AI 활용과 개발 자동화" />
 
       <article className={styles.qaCase} aria-labelledby="qa-harness-title">
-        <h3 id="qa-harness-title">Agent 기반 QA 워크플로우</h3>
-        <div className={styles.caseIntroduction}>
-          <ul className={styles.bullets}>
-            <li>버그 재현, 원인 파악과 코드 수정을 Agent가 처리하도록 파이프라인 구축</li>
-            <li>티켓별 작업을 병렬로 진행하고, QA 대응을 Agent의 수정안과 검증 결과를 리뷰하는 방식으로 전환</li>
-          </ul>
+        <div className={styles.qaIntroduction}>
+          <h3 id="qa-harness-title">Agent 기반 QA 워크플로우</h3>
+          <div className={styles.caseIntroduction}>
+            <ul className={styles.bullets}>
+              <li>버그 재현, 원인 파악과 코드 수정을 Agent가 처리하도록 파이프라인 구축</li>
+              <li>티켓별 작업을 병렬로 진행하고, QA 대응을 Agent의 수정안과 검증 결과를 리뷰하는 방식으로 전환</li>
+            </ul>
+          </div>
         </div>
         <figure className={styles.evidenceFigure}>
           <a href="/images/tooling/qa-worktree-demo.jpg" target="_blank" rel="noreferrer" aria-label="QA 작업 관리 화면 원본 열기">
@@ -63,11 +65,10 @@ export function HowIWork() {
         <article className={styles.practice} aria-labelledby="ai-design-title">
           <h3 id="ai-design-title">기획 문서와 디자인 토큰</h3>
           <div className={styles.practiceBody}>
-            <p>기획과 디자인 명세를 GitHub SSOT로 관리하도록 제안하고 팀에 적용</p>
+            <p>기획과 디자인 변경이 구현에 일관되게 반영되도록 GitHub SSOT와 Figma MCP를 연결하는 개발 흐름을 제안하고 팀에 적용</p>
             <ul className={styles.bullets}>
               <li>Agent가 최신 변경 사항을 Context로 참조하도록 개발 지침 정의. Figma MCP와 팀 Design SSOT의 토큰, 공용 컴포넌트를 참조해 Android 화면 구현</li>
               <li>GitHub Actions를 구축해 디자인 토큰 JSON을 Kotlin 코드로 변환하고 PR을 생성하는 워크플로우 자동화</li>
-              <li>브랜드 리뉴얼 시 개별 화면 코드 수정 없이 토큰 매핑 변경만으로 앱 전반의 테마 색상 일괄 반영</li>
             </ul>
           </div>
         </article>

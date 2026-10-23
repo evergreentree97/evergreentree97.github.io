@@ -127,8 +127,8 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
 
       {project.highlightGroups.some((group) => group.highlights.length > 0) && <details className={styles.disclosure}>
         <summary>
-          <span className={styles.closedLabel}>기술 설계와 트러블슈팅 상세</span>
-          <span className={styles.openLabel}>기술 설계와 트러블슈팅 상세 접기</span>
+          <span className={styles.closedLabel}>개발 내용 더 보기</span>
+          <span className={styles.openLabel}>개발 내용 접기</span>
           <Icon name="expand" />
         </summary>
         <WorkDetails project={project} />

@@ -47,6 +47,7 @@ body {
   line-height: 1.72;
   overflow-wrap: break-word;
   word-break: keep-all;
+  text-wrap: pretty;
   -webkit-font-smoothing: antialiased;
 }
 

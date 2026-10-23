@@ -9,16 +9,9 @@ export function Activities() {
       <div className={styles.grid}>
         {activities.map((activity) => (
           <article key={activity.organization}>
-            <div className={styles.identity}>
-              <h3>{activity.organization}</h3>
-              <p className={styles.meta}>{activity.period}<span>{activity.role}</span></p>
-            </div>
-            <div className={styles.copy}>
-              <p>{activity.summary}</p>
-              {activity.highlights.length > 0 && (
-                <ul>{activity.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
-              )}
-            </div>
+            <h3>{activity.organization}</h3>
+            <p className={styles.meta}>{activity.period}</p>
+            <p className={styles.summary}>{activity.summary}</p>
           </article>
         ))}
       </div>

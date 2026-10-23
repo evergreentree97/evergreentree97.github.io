@@ -56,11 +56,12 @@ export function Hero() {
         <div className={styles.intro}>
           <div className={styles.identity}>
             <h1 id="hero-title" className={styles.headline}>최상록</h1>
-            <p className={styles.role}>Android Developer</p>
+            <p className={styles.role}>Software Developer</p>
           </div>
           <div className={styles.details}>
-            <p>3년 차 안드로이드 개발자입니다. 신규 프로덕트의 초기 아키텍처 설계부터 배포와 운영을 주도했으며, 런타임 최적화와 메모리 누수 해결로 앱 안정성을 높여왔습니다.</p>
-            <p>LLM 파인튜닝과 서빙 경험을 바탕으로 AI 기능을 직접 구현하고, Agent 기반 개발과 검증 파이프라인을 구축해 일하는 방식을 개선하고 있습니다.</p>
+            <p className={styles.lead}>모바일 엔지니어링 역량을 기반으로 AI 기술과 개발 프로세스 자동화를 내재화해 나가는 3년 차 안드로이드 개발자입니다.</p>
+            <p>확장성 높은 멀티 모듈 아키텍처를 설계하고 메모리 최적화와 런타임 성능 개선을 통해 높은 서비스 신뢰성을 확보해 왔습니다.</p>
+            <p>이에 더해 LLM 파인튜닝 및 서빙 환경을 구축하여 서비스 영역을 AI 도메인으로 확장했으며, AI Agent를 활용한 개발, 테스트 자동화 파이프라인으로 배포 품질과 개발 효율을 개선하고 있습니다.</p>
           </div>
           <div className={styles.actions}>
             <a className={styles.primaryAction} href="#projects">프로젝트 보기</a>

@@ -15,7 +15,7 @@
 }
 
 .intro { position: relative; z-index: 1; }
-.identity { margin-bottom: 32px; }
+.identity { margin-bottom: 24px; }
 
 .headline {
   font-size: clamp(4.5rem, 7.3vw, 6.5rem);
@@ -35,6 +35,7 @@
 
 .details { display: grid; gap: 16px; max-width: 475px; }
 .details p { color: var(--color-ink-2); font-size: var(--body-size); line-height: var(--body-leading); text-wrap: pretty; }
+.details .lead { margin-bottom: 8px; color: var(--color-ink); font-size: 1.125rem; font-weight: 500; line-height: 1.75; text-wrap: balance; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 32px; }
 
 .actions a {
@@ -150,8 +151,8 @@
 
 @media (max-width: 900px) {
   .inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; min-height: 0; padding-top: 110px; padding-bottom: 0; }
-  .intro { display: contents; }
-  .identity { order: 1; margin-bottom: 0; }
+  .intro { order: 1; }
+  .identity { margin-bottom: 24px; }
   .headline { font-size: clamp(4rem, 13vw, 5.75rem); }
   .role { margin-top: 12px; font-size: 1.5rem; }
   .stage { order: 2; width: min(100%, 480px); height: 425px; margin: 28px auto 24px; }
@@ -160,8 +161,8 @@
   .momentica { transform: translate3d(-98px, 10px, -28px) rotate(-13deg); }
   .model-evaluation { transform: translate3d(98px, 16px, -20px) rotate(12deg); }
   .screen { border-radius: 14px; }
-  .details { order: 3; max-width: 100%; }
-  .actions { order: 4; margin-top: 24px; gap: 8px 20px; }
+  .details { max-width: 100%; }
+  .actions { margin-top: 24px; gap: 8px 20px; }
 }
 
 @media (max-width: 480px) {

@@ -10,13 +10,8 @@ export function SideProjects() {
         {sideProjects.map((project) => (
           <article key={project.name}>
             <h3>{project.name}</h3>
-            <div className={styles.meta}>
-              <span>{project.period}</span>
-            </div>
-            <p>{project.summary}</p>
-            <ul>
-              {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-            </ul>
+            <p className={styles.meta}>{project.period}</p>
+            <p className={styles.summary}>{project.summary}</p>
           </article>
         ))}
       </div>
