@@ -11,11 +11,11 @@ export const vuddyCopy = {
   latestName: '별빛',
   latest: '공지 확인했어요',
   placeholder: '텍스트를 입력해주세요.',
-  older: '이전 메시지',
-  newer: '이후 메시지',
+  older: '이전 페이지',
+  newer: '다음 페이지',
   originalMark: '답장한 메시지',
   latestMark: '최신 메시지',
-  title: '답장한 메시지 앞뒤만 불러오기',
+  title: '답장한 메시지 기준 양방향 페이징',
   time: '12:30 PM',
 }
 
@@ -37,7 +37,7 @@ export const momenticaCopy = {
 
 // Accessible names for each stage: what the reconstructed demo shows
 export const demoLabels = {
-  vuddy: '답장 위에 인용된 메시지를 누르면 그 메시지로 이동하고, 그 앞뒤 메시지만 불러오는 Vuddy 채팅 재구성 화면',
+  vuddy: '답장 위에 인용된 메시지를 누르면 그 메시지로 이동하고, 그 메시지를 기준으로 양방향 페이징하는 Vuddy 채팅 재구성 화면',
   'model-evaluation': '메시지를 보내면 캐릭터 답변이 한 단어씩 나타나고, 옆 터미널에 vLLM 서버가 보낸 SSE 이벤트가 같은 순서로 찍히는 재구성 화면',
   momentica: '포토카드를 길게 눌러 3D로 돌려 보고, 화면을 닫으면 Bitmap 메모리가 처음만큼 줄어드는 Momentica 재구성 화면',
 } as const
