@@ -138,10 +138,10 @@ export const featuredProjects: FeaturedProject[] = [
             ]
           },
           {
-            title: '답장 원문 탐색',
+            title: '답장한 메시지로 이동',
             points: [
               {
-                text: '현재 목록 밖의 과거 메시지에 대한 답장을 눌러도 원문을 찾아갈 수 있도록, 원문 작성 시점을 기준으로 양방향 페이징을 설계해 대화 맥락을 유지하는 원문 탐색 구현'
+                text: '현재 목록 밖에 있는 과거 메시지에 단 답장을 눌러도 그 메시지로 이동할 수 있도록, 해당 메시지의 작성 시점을 기준으로 이전 메시지와 이후 메시지를 불러오는 양방향 페이징을 설계해 대화 맥락 유지'
               }
             ]
           },
@@ -228,7 +228,7 @@ export const featuredProjects: FeaturedProject[] = [
         title: '3D 포토카드',
         points: [
           { text: 'SceneView 라이브러리를 활용해 터치 제스처에 반응하는 3D 포토카드의 360도 회전과 플립 인터랙션 구현' },
-          { text: 'Heap Dump 분석으로 SceneView의 Bitmap 메모리 누수 원인을 찾고, 화면 종료 시 자원이 해제되도록 개선', emphasis: 'Bitmap 메모리 누수' },
+          { text: 'Heap Dump 분석으로 SceneView의 Bitmap 메모리 누수 원인을 찾고, 화면을 닫을 때 자원이 해제되도록 개선', emphasis: 'Bitmap 메모리 누수' },
         ],
       },
       {

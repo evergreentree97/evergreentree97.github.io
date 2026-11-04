@@ -9,7 +9,8 @@ from fontTools.varLib.instancer import instantiateVariableFont
 
 root = Path(__file__).resolve().parent.parent
 source = Path(sys.argv[1])
-text = ''.join(path.read_text() for path in (root / 'src').rglob('*.tsx'))
+# The vendored Stageshow kit renders in its own font stacks, not this subset
+text = ''.join(path.read_text() for path in (root / 'src').rglob('*.tsx') if 'stageshow' not in path.relative_to(root / 'src').parts[:1])
 text += ''.join(path.read_text() for path in (root / 'src/data').glob('*.ts'))
 text += (root / 'index.html').read_text()
 codepoints = sorted(set(map(ord, text)) | set(range(32, 127)))

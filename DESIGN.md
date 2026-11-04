@@ -64,7 +64,7 @@ This records the local revision prepared on 2026-10-13. Visual acceptance and de
 
 ## Project presentation
 
-All projects use the full reading width. Project identity sits in a 280px column beside a 20px medium-weight main message and any store link. Approved screens follow in a 460px cover. This separates product context from the cases and removes the narrow paired articles that constrained substantive text. At 1023px, the identity column narrows to 220px and covers to 420px. Contribution cases stack at 1023px within an 800px reading width. At 760px, headers stack and covers use a 1.1 aspect ratio.
+All projects use the full reading width. Project identity sits in a 280px column beside a 20px medium-weight main message and any store link. The cover follows at a 760:460 aspect ratio capped at 460px high, and 342:311 at 647px and below, matching the StageShow demo that replaces the prerendered screens. Each demo is a 760 x 460 stage centered on the cover's color: an Android phone 64px from the right edge, bled off the top and bottom, and one satellite card or terminal 64px from the left edge, straddling the phone's left bezel. Demo type uses the system font stack. At 1023px, the identity column narrows to 220px. Contribution cases stack at 1023px within an 800px reading width. At 760px, headers stack.
 
 Visible contributions use an open two-column grid with 48px column gaps and 32px row gaps. Each case starts with a 1px gray rule and one 20px semibold ink heading naming the core work or feature. The heading is followed after 12px by 16px bullet points explaining the relevant constraint, decision, action and supported result. Parent bullets have a 12px gap; nested details start after 6px. There is no second outcome headline. Only concrete phrases receive 600-weight emphasis. Mobile uses one column, 28px case gaps and 18px feature headings. There are no enclosed text cards, decorative counters or forced STAR labels.
 
@@ -72,7 +72,7 @@ All essential contributions are visible without interaction. The native disclosu
 
 The shared reading width remains 1120px with 32px gutters, reduced to 24px on mobile. All eight approved product screens retain their aspect ratio and masking and are visible without expanding details. Images remain bounded within their covers and link to the shipped originals.
 
-Covers and screenshots stay static. Linked-image hover uses a thin blue outline without moving the image or enlarging its shadow. Text controls respond through color. No section uses a viewport-triggered entrance. Videos, if supplied in project data, require user playback.
+Cover demos animate their own story only; the rest of the page stays static. Linked-image hover uses a thin blue outline without moving the image or enlarging its shadow. Text controls respond through color. No section uses a viewport-triggered entrance. Videos, if supplied in project data, require user playback.
 
 ## Shared visual language
 

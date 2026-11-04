@@ -20,6 +20,8 @@ Run `npm run optimize:images` after changing an approved source image. The scrip
 
 `useActiveSection` retains the viewport's 35% reading line and the 2px bottom threshold. It caches section positions until a main-content, navigation-section or viewport resize invalidates them, including changes from disclosure expansion and font loading. Browsers without ResizeObserver retain per-scroll measurements. The active state updates only when its value changes.
 
+Project cover demos and the vendored StageShow kit load as separate chunks through an IntersectionObserver with a 600px margin, so they are outside the initial module budget. The cover keeps the same box before and after the swap.
+
 Section heights are not estimated or replaced with containment placeholders. Native page scrolling, anchor navigation and browser find continue to operate on the full document.
 
 ## Verification

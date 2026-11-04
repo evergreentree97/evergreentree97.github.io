@@ -1,8 +1,42 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ComponentType, type ReactNode } from 'react'
 import type { FeaturedProject, ProjectMedia, ProjectPoint, ProjectVideo } from '../data/projects'
 import styles from './ProjectScene.module.css'
 import { Icon } from './Icon'
 import { OptimizedImage } from './OptimizedImage'
+import { demoLoaders } from './demos'
+import { demoLabels } from './demos/copy'
+
+// The prerendered cover keeps the approved screens; the reconstructed demo
+// replaces them once its chunk has loaded near the viewport.
+function ProjectDemo({ project, children }: { project: FeaturedProject; children: ReactNode }) {
+  const frameRef = useRef<HTMLDivElement>(null)
+  const [Demo, setDemo] = useState<ComponentType | null>(null)
+
+  useEffect(() => {
+    const frame = frameRef.current
+    if (!frame || typeof IntersectionObserver === 'undefined') return
+    let live = true
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return
+      observer.disconnect()
+      demoLoaders[project.id]().then((module) => { if (live) setDemo(() => module.default) }, () => {})
+    }, { rootMargin: '600px 0px' })
+    observer.observe(frame)
+    return () => { live = false; observer.disconnect() }
+  }, [project.id])
+
+  return (
+    <div ref={frameRef} className={styles.coverFrame} data-demo={Demo ? '' : undefined}>
+      {Demo ? (
+        <div className={styles.demo} role="img" aria-label={demoLabels[project.id]}>
+          <Demo />
+        </div>
+      ) : (
+        <div className={styles.cover}>{children}</div>
+      )}
+    </div>
+  )
+}
 
 function VideoMedia({ media }: { media: ProjectVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -99,21 +133,19 @@ export function ProjectScene({ project }: { project: FeaturedProject }) {
           {project.links.map((link) => <a className={styles.serviceLink} key={link.href} href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noreferrer' : undefined}>{link.label}</a>)}
         </div>
       </div>
-      <div className={styles.coverFrame}>
-        <div className={styles.cover}>
-          <div className={styles.screens}>
-            {project.media.map((media) => (
-              <figure key={media.src} className={`${styles.screen} ${media.featured ? styles.mainScreen : ''}`}>
-                {media.type === 'image' ? (
-                  <a href={media.src} target="_blank" rel="noreferrer" aria-label={`${media.alt}, 원본 화면 열기`}>
-                    <MediaContent media={media} />
-                  </a>
-                ) : <MediaContent media={media} />}
-              </figure>
-            ))}
-          </div>
+      <ProjectDemo project={project}>
+        <div className={styles.screens}>
+          {project.media.map((media) => (
+            <figure key={media.src} className={`${styles.screen} ${media.featured ? styles.mainScreen : ''}`}>
+              {media.type === 'image' ? (
+                <a href={media.src} target="_blank" rel="noreferrer" aria-label={`${media.alt}, 원본 화면 열기`}>
+                  <MediaContent media={media} />
+                </a>
+              ) : <MediaContent media={media} />}
+            </figure>
+          ))}
         </div>
-      </div>
+      </ProjectDemo>
 
       <div className={styles.contribution}>
         {project.contribution.map((item) => (
