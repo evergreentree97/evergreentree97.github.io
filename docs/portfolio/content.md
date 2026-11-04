@@ -89,7 +89,9 @@ The AI section starts with its heading and representative case, without a generi
 
 ## Public assets
 
-Use official public product screens or the specific derivatives recorded below. Figma file access is not permission to publish other nodes. A user-selected export does not establish company approval or a license for the whole file. Preserve masking and approved image content; do not redraw product screens or add simulated device interfaces.
+Use official public product screens or the specific derivatives recorded below. Figma file access is not permission to publish other nodes. A user-selected export does not establish company approval or a license for the whole file. Preserve masking and approved image content; do not redraw product screens or add simulated device interfaces outside the project-cover demos described below.
+
+On 2026-11-04 the user chose to reconstruct the three project covers as animated StageShow demos. Each demo shows one contribution named in the project text or its development details, not the product's visual design: Vuddy's reply jump to the original message with pages loaded around its timestamp, the AI app's SSE streaming reply beside the vLLM server's events, and Momentica's held photocard turned in 3D with Bitmap memory released when the viewer closes. Demo copy and people are invented placeholders, character names stay masked, and photocard art is abstract color rather than artist imagery. The memory chart has no axis values and does not represent a measurement. The approved screens above remain the prerendered cover and the fallback when JavaScript does not run.
 
 | 공개 파일 | Figma 출처 | 허용 범위 |
 |---|---|---|

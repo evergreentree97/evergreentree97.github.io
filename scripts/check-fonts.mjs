@@ -10,7 +10,8 @@ async function sourceText(directory) {
   const entries = await readdir(directory, { withFileTypes: true })
   return (await Promise.all(entries.map(async (entry) => {
     const url = new URL(entry.name + (entry.isDirectory() ? '/' : ''), directory)
-    if (entry.isDirectory()) return sourceText(url)
+    // The vendored Stageshow kit renders in its own font stacks, not the site subset
+    if (entry.isDirectory()) return entry.name === 'stageshow' && directory.pathname.endsWith('/src/') ? '' : sourceText(url)
     if (entry.name.endsWith('.tsx') || directory.pathname.endsWith('/data/') && entry.name.endsWith('.ts')) return readFile(url, 'utf8')
     return ''
   }))).join('')

@@ -6,10 +6,17 @@
 .introduction { max-width: 40ch; color: var(--color-ink); font-size: 1.25rem; font-weight: 500; line-height: 1.65; letter-spacing: -0.025em; text-wrap: balance; }
 .serviceLink { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; font-size: 0.8125rem; color: var(--color-accent); text-decoration: none; transition: color 180ms; }
 
-.coverFrame { height: 460px; margin-top: 32px; }
+/* The cover takes the demo stage's proportions (760 x 460, or the 342 x 311
+   compact design), so swapping the prerendered screens for it moves nothing. */
+.coverFrame { width: 100%; max-height: 460px; aspect-ratio: 760 / 460; margin-top: 32px; }
+.coverFrame > * { height: 100%; }
 .cover { display: grid; height: 100%; padding: 28px; align-items: center; overflow: hidden; border-radius: var(--panel-radius); background: #e6ecef; }
 .project[data-project='vuddy'] .cover { background: #202324; }
 .project[data-project='momentica'] .cover { background: #ecebe8; }
+.demo { display: flex; justify-content: center; overflow: hidden; border-radius: var(--panel-radius); background: #e6ecef; }
+.project[data-project='vuddy'] .demo { background: #202324; }
+.project[data-project='momentica'] .demo { background: #ecebe8; }
+.demo > * { flex: 1; min-width: 0; }
 .screens { display: flex; justify-content: center; align-items: center; gap: 32px; min-width: 0; }
 .screen { flex: 0 1 25%; max-width: 192px; min-width: 0; margin: 0; }
 .screen a { display: block; border-radius: 8px; }
@@ -55,7 +62,6 @@
 
 @media (max-width: 1023px) {
   .information { grid-template-columns: 220px minmax(0, 1fr); gap: 32px; }
-  .coverFrame { height: 420px; }
   .screen { max-width: 172px; }
   .project[data-project='vuddy'] .mainScreen,
   .project[data-project='model-evaluation'] .screen,
@@ -66,7 +72,7 @@
 @media (max-width: 760px) {
   .information { grid-template-columns: 1fr; gap: 18px; }
   .introduction { font-size: 1.25rem; font-weight: 500; }
-  .coverFrame { width: 100%; height: auto; max-height: 420px; aspect-ratio: 1.1; margin-top: 24px; }
+  .coverFrame { margin-top: 24px; }
   .cover { padding: 24px 20px; }
   .screens { gap: 12px; }
   .screen { flex-basis: 30%; }
@@ -78,6 +84,10 @@
   .points { margin-top: 14px; }
   .technologies { margin-top: 24px; }
   .workDetails { padding-top: 18px; }
+}
+
+@media (max-width: 647px) {
+  .coverFrame { aspect-ratio: 342 / 311; }
 }
 
 @media (max-width: 360px) {

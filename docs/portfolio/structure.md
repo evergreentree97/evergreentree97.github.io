@@ -16,7 +16,7 @@ The introduction follows the user's current selected wording in content.md. Care
 
 ## Interaction and responsive behavior
 
-Product and tool captures retain their aspect ratios and masking. Project disclosures share the closed label `개발 내용 더 보기` and open label `개발 내용 접기`, without parenthetical previews. All ten images are visible without opening disclosures and link to shipped originals. Videos, if supplied, require user playback. No generated decorative illustration, simulated device interface or technical diagram is used.
+Product and tool captures retain their aspect ratios and masking. Project disclosures share the closed label `개발 내용 더 보기` and open label `개발 내용 접기`, without parenthetical previews. All ten images are in the prerendered HTML and link to shipped originals. Videos, if supplied, require user playback. No generated decorative illustration is used. Since 2026-11-04 each project cover loads an animated StageShow demo (`src/components/demos/`) when it nears the viewport: an Android phone on the cover's own ground with one technical satellite card. The demo replaces the approved screens without changing the cover's size, plays its story once or loops with a visible cause, shows its final frame under reduced motion and switches to a phone-only compact design below a 600px cover width. Content scope is in [content.md](content.md#public-assets).
 
 The header uses the name wordmark. Its mobile menu closes on selection, Escape, outside pointer input or focus leaving the header; Escape returns focus to the trigger. Native disclosures use a plus/minus icon; project controls keep the icon 8px beside their label within a content-sized 44px minimum-height target. Career identity remains above its project rows in normal document flow.
 
@@ -29,6 +29,7 @@ Project cases use one title and selectively emphasized points. Disclosures use f
 | Introduction | `src/components/Hero.tsx` |
 | Career | `src/data/experience.ts`, `src/components/Experience.tsx` |
 | Projects | `src/data/projects.ts`, `src/components/Projects.tsx`, `src/components/ProjectScene.tsx` |
+| Project cover demos | `src/components/demos/`, vendored kit in `src/stageshow/` |
 | AI workflows and tools | `src/components/HowIWork.tsx` |
 | Side projects | `src/data/sideProjects.ts` |
 | Open source | `src/data/projects.ts`, `src/components/MoreWork.tsx` |
