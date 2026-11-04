@@ -13,7 +13,7 @@ const initial: S = { at: 'latest', flash: false, fab: false, loaded: false }
 const poster: S = { at: 'original', flash: true, fab: true, loaded: true }
 
 async function script(a: Act<S>) {
-  await a.wait(1200)
+  await a.wait(150)
   a.mark('tap')
   await a.click('quote')
   a.put({ at: 'original', loaded: true })
@@ -27,7 +27,7 @@ async function script(a: Act<S>) {
   a.put({ at: 'latest', fab: false })
   await a.wait(900)
   a.put({ loaded: false })
-  await a.move({ x: 560, y: 200 })
+  await a.move('quote')
   await a.wait(600)
 }
 
@@ -66,7 +66,7 @@ export default function VuddyDemo() {
       initial={initial}
       poster={poster}
       script={script}
-      cursor={{ at: { x: 560, y: 200 }, style: 'touch' }}
+      cursor={{ at: 'quote', style: 'touch' }}
       className="vd"
     >
       {(s, rect, layout) => (
